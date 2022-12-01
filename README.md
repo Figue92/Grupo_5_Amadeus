@@ -5,10 +5,10 @@ Tenemos todo lo necesario para tu PC: para trabajar, diseñar, transmitir, jugar
 Las mejores marcas y los mejores precios, una gran variedad. Procesadores, memorias, discos, monitores, placas de vídeo, teclados, mousses. 
 Contás con la asesoría personalizada de nuestros expertos en Diseño y Arquitectura, Edición de Música y Video, Gaming y Tecnología para Oficinas y Hogares.
 
-###Público Objetivo:
+### Público Objetivo:
  Nuestros productos están orientados a todas las personas que deseen tener la pc perfecta para sus necesidades. Desde un joven gamer, un estudiante universitario o un emprendedor independiente, hasta un empresario que desee equipar sus oficinas… ¡tenemos el producto adecuado para cada usuario!
 
-###¿Quiénes somos?
+### ¿Quiénes somos?
 
 
 - Matias Nuñez: Miembro del equipo desde Noviembre de 2022.
