@@ -1,11 +1,12 @@
 # AMADEUS PC
 
- ### Somos un equipo dedicado a la venta de hardware de computación.
-Tenemos todo lo necesario para tu PC: para trabajar, diseñar, transmitir, jugar y crear.
-Las mejores marcas y los mejores precios, una gran variedad. Procesadores, memorias, discos, monitores, placas de vídeo, teclados, mousses. 
-Contás con la asesoría personalizada de nuestros expertos en Diseño y Arquitectura, Edición de Música y Video, Gaming y Tecnología para Oficinas y Hogares.
+ ### Somos un equipo dedicado al desarrollo de aplicaciones y páginas web.
+Fuimos contratados por AMADEUS PC para desarrollar su página web para el e-commerce.
+Creando todas las secciones necesarias para descubrir hardware para cada ocasión, ya sea trabajar, diseñar, transmitir, jugar o crear.
+Comparando productos, ordenándolos por precio, buscando por ofertas o tipo de producto.
+Cada usuario tiene la posibilidad de registrarse, cargar sus datos y poder llenar su carrito con los productos del cliente AMADEUS PC, para luego pagar online y poder recibir el envío en su hogar.
 
-### Público Objetivo:
+### Público Objetivo del cliente:
  Nuestros productos están orientados a todas las personas que deseen tener la pc perfecta para sus necesidades. Desde un joven gamer, un estudiante universitario o un emprendedor independiente, hasta un empresario que desee equipar sus oficinas… ¡tenemos el producto adecuado para cada usuario!
 
 ### ¿Quiénes somos?
