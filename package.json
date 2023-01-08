@@ -1,0 +1,23 @@
+{
+  "name": "grupo_5_amadeus",
+  "version": "1.0.0",
+  "description": "Fuimos contratados por AMADEUS PC para desarrollar su página web para el e-commerce.\r Creando todas las secciones necesarias para descubrir hardware para cada ocasión, ya sea trabajar, diseñar, transmitir, jugar o crear.\r Comparando productos, ordenándolos por precio, buscando por ofertas o tipo de producto.\r Cada usuario tiene la posibilidad de registrarse, cargar sus datos y poder llenar su carrito con los productos del cliente AMADEUS PC, para luego pagar online y poder recibir el envío en su hogar.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Figue92/Grupo_5_Amadeus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Figue92/Grupo_5_Amadeus/issues"
+  },
+  "homepage": "https://github.com/Figue92/Grupo_5_Amadeus#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,10 @@
+@import './variables.css';
+@import './general.css';
+@import './normalize.css';
+@import './footer.css';
+@import './header.css';
+@import './home.css';
+@import './login.css';
+@import './productCart.css';
+@import './productDetail.css';
+@import './register.css';
