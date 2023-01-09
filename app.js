@@ -4,8 +4,8 @@ const path = require('path');
 const app = express();
 const port = 3030;
 
-const publicPath = path.resolve(__dirname, './public');
-app.use = express.static(publicPath);
+app.use(express.static(path.resolve(__dirname,  'public' )))
+
 
 app.listen(port, () => console.log(`Servidor corriendo en puerto ${port}`));
 

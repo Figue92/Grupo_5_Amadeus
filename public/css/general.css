@@ -1,3 +1,9 @@
 * {
     box-sizing: border-box;
 }
+li{
+    list-style: none;
+}
+ul, ol{
+    padding: 0;
+}
