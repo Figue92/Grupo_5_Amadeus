@@ -1,0 +1,34 @@
+/*Header*/
+
+.header{
+background:linear-gradient(var(--colorCeleste),#fff);
+}
+.header__section {
+    display: flex;
+    padding: 10px ;
+}
+.header__section--logo{
+
+}
+
+.header__section--logo img{
+width: 30%;
+border-radius: 10%;
+
+}
+
+.header__section__nav--redes{
+display: none;
+
+}
+.header__section__armado-pc{
+
+    display: none;
+}
+.header__section__nav--registro{
+
+}
+.header__section__nav--registro--texto{
+    display:none;
+}
+
