@@ -1,21 +1,21 @@
 /*Header*/
 
-.header{
-background:linear-gradient(var(--colorCeleste),#fff);
-}
+.header{background:linear-gradient(var(--colorCeleste),#fff);display: flex;flex-wrap: wrap-reverse;}
 .header__section {
     display: flex;
-    padding: 10px ;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .header__section--logo{
 
+width: 30%;
 }
 
 .header__section--logo img{
-width: 30%;
-border-radius: 10%;
-
-}
+   
+    width: 100%;
+    border-radius: 10%;}
 
 .header__section__nav--redes{
 display: none;
@@ -25,10 +25,22 @@ display: none;
 
     display: none;
 }
-.header__section__nav--registro{
-
+.header__section__nav--registro ul{
+display: flex;
+width: 20%;
+font-size: 30px;
+gap: 20px;
 }
+.header__section__nav--registro--icono{
+    justify-content: center;}
 .header__section__nav--registro--texto{
     display:none;
+}
+.header__section--carrito{
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
