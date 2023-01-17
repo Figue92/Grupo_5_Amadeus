@@ -1,46 +1,112 @@
 /*Header*/
 
-.header{background:linear-gradient(var(--colorCeleste),#fff);display: flex;flex-wrap: wrap-reverse;}
+.header {
+    background:linear-gradient(var(--colorCeleste),#fff);
+    border-bottom: 5px solid #000;
+}
+
 .header__section {
     display: flex;
     padding: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.header__section--logo{
 
-width: 30%;
+.header__section--logo {
+    width: 30%;
 }
 
-.header__section--logo img{
-   
+.header__section--logo img {
     width: 100%;
-    border-radius: 10%;}
-
-.header__section__nav--redes{
-display: none;
-
+    border-radius: 10%;
 }
-.header__section__armado-pc{
 
+.header__section__nav--redes {
+    display: none;
+    font-size: 35px;
+    position: absolute;
+    right: 20px;
+}
+
+.header__section__armado-pc {
     display: none;
 }
-.header__section__nav--registro ul{
-display: flex;
-width: 20%;
-font-size: 30px;
-gap: 20px;
-}
-.header__section__nav--registro--icono{
-    justify-content: center;}
-.header__section__nav--registro--texto{
-    display:none;
-}
-.header__section--carrito{
-    font-size: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
+.header__section__nav--registro {
+    width: 60%;
 }
 
+.header__section__nav--registro ul {
+    display: flex;
+    font-size: 10vw;
+    justify-content: space-around;
+}
+
+.header__section__nav--registro--texto {
+    display: none;
+    padding: 10px;
+    font-family: var(--tipografiaPrincipal);
+    text-transform: uppercase;
+    font-size: 4vw;
+    color: var(--colorAzul);
+}
+
+.header i {
+    color: #000;
+}
+
+@media (min-width: 426px) {
+    .header__section--logo {
+        width: 20%;
+    }
+
+    .header__section__nav--redes {
+        display: inline-block;
+    }
+
+    .header__section__nav--registro {
+        width: 80%;
+    }
+
+    .header__section__nav--registro ul {
+        font-size: 6vw;
+    }
+
+    .header__section__nav--registro--texto {
+        display: inline-block;
+    }
+
+    .header__section__armado-pc {
+        display: none;
+    }
+
+    .fa-cart-shopping {
+        margin-top: 7px;
+    }
+}
+
+@media (min-width: 769px) {
+    .header__section--logo {
+        width: 10%;
+    }
+
+    .header__section__nav--registro {
+        width: 90%;
+    }
+
+    .header__section__nav--registro ul {
+        font-size: 3vw;
+    }
+
+    .header__section__nav--registro--texto {
+        font-size: 30px;
+    }
+
+    .header__section__armado-pc {
+        display: inline-block;
+    }
+
+    .fa-cart-shopping {
+        margin-top: 12px;
+    }
+}
