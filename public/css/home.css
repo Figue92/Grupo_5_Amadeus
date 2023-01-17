@@ -5,15 +5,16 @@ font-family: var(--tipografiaPrincipal);
     background: linear-gradient(var(--colorCeleste),#fff);
     display: flex;
     justify-content: space-evenly;
-    height: 50px;
+    height: 60px;
     align-items: center;
 }
 .main__section--burguer-menu{
     width: 10%;
     background-color: var(--colorAzul);
-    text-align: center;
     border-radius: 10px;
     padding: 10px 20px;
+    display: flex;
+    justify-content: center;
 }
 .main__section--burguer-menu i{
     color:#fff;
@@ -22,18 +23,31 @@ font-family: var(--tipografiaPrincipal);
     display: none;
 }
 .main__section--search-box button{
-    border-radius: 50%;
+    border-radius: 46%;
+    width: 30px;
 }
 .main__section__productos{
     background: linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .main__section__calificacion{
+    display: flex;
     background: linear-gradient(var(--colorCeleste),#fff);
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .main__section__compra{
     background: linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    flex-direction: column;
 }
-.main__section__compra i{width: 30%;}
+.main__section__compra i{text-align: center;width: 30%;}
 .main__section__marcas{
     background: linear-gradient(var(--colorCeleste),#fff);
+    text-align: center;
 }
