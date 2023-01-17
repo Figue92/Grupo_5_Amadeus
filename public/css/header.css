@@ -1,6 +1,8 @@
 /*Header*/
 
-.header{background:linear-gradient(var(--colorCeleste),#fff);display: flex;flex-wrap: wrap-reverse;}
+.header{background:linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
+    flex-wrap: wrap-reverse;}
 .header__section {
     display: flex;
     padding: 10px;

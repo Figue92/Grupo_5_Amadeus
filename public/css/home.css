@@ -1,0 +1,39 @@
+.main{
+font-family: var(--tipografiaPrincipal);
+}
+.main__section{
+    background: linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
+    justify-content: space-evenly;
+    height: 50px;
+    align-items: center;
+}
+.main__section--burguer-menu{
+    width: 10%;
+    background-color: var(--colorAzul);
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.main__section--burguer-menu i{
+    color:#fff;
+}
+.main__section--search-box input{
+    display: none;
+}
+.main__section--search-box button{
+    border-radius: 50%;
+}
+.main__section__productos{
+    background: linear-gradient(var(--colorCeleste),#fff);
+}
+.main__section__calificacion{
+    background: linear-gradient(var(--colorCeleste),#fff);
+}
+.main__section__compra{
+    background: linear-gradient(var(--colorCeleste),#fff);
+}
+.main__section__compra i{width: 30%;}
+.main__section__marcas{
+    background: linear-gradient(var(--colorCeleste),#fff);
+}
