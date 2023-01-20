@@ -18,13 +18,13 @@ font-family: var(--tipografiaPrincipal);
 }
 .main__section--burguer-menu i{
     color:#fff;
+    font-size: xx-large;
 }
 .main__section--search-box input{
     display: none;
 }
 .main__section--search-box button{
-    border-radius: 46%;
-    width: 30px;
+    border-radius: 45%;
 }
 .main__section__productos{
     background: linear-gradient(var(--colorCeleste),#fff);
@@ -46,8 +46,31 @@ font-family: var(--tipografiaPrincipal);
     padding: 30px;
     flex-direction: column;
 }
-.main__section__compra i{text-align: center;width: 30%;}
+.main__section__compra i{text-align: center;width: 30%;font-size: xxx-large;}
 .main__section__marcas{
     background: linear-gradient(var(--colorCeleste),#fff);
     text-align: center;
+}
+
+@media (min-width:767px) {
+    .main__section--burguer-menu{
+    /* padding: 0px; */
+    }
+    .main__section{
+        display: flex;
+    }
+    .main__section--search-box{
+        display: flex;
+        font-size: xx-large;
+    }
+    .main__section--search-box input{
+        display: flex;
+        border-radius: 20px;
+    }
+    .main__section__productos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
