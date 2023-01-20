@@ -1,34 +1,50 @@
 /*Header*/
 
 .header{
-background:linear-gradient(var(--colorCeleste),#fff);
-}
-.header__section {
+    background:linear-gradient(var(--colorCeleste),#fff);
     display: flex;
-    padding: 10px ;
-}
-.header__section--logo{
-
-}
-
-.header__section--logo img{
-width: 30%;
-border-radius: 10%;
-
-}
-
-.header__section__nav--redes{
-display: none;
-
-}
-.header__section__armado-pc{
-
+    flex-wrap: wrap;
+    }
+    .header__section {
+        display: flex; 
+        padding: 10px ;
+    }
+    .header__section--logo{
+    width: 70%;
+    }
+    
+    .header__section--logo img{
+    width: 30%;
+    border-radius: 10%;
+    
+    }
+    
+    .header__section__nav--redes{
     display: none;
-}
-.header__section__nav--registro{
-
-}
-.header__section__nav--registro--texto{
-    display:none;
-}
-
+    
+    }
+    .header__section__armado-pc{
+    
+        display: none;
+    }
+    .header__section__nav--registro{
+         width: 50%;
+        position: relative;
+    
+    
+    }
+    .header__section__nav--registro--icono{
+    width: 20%;
+    justify-content: center;
+    display: flex;
+    }
+    .header__section__nav--login--icono{
+    
+    }
+    .header__section__nav--login--texto{
+        display: none;
+    }
+    .header__section__nav--registro--texto{
+        display:none;
+    }
+    
