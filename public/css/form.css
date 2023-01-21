@@ -39,19 +39,17 @@
     margin: 10px auto;
 }
 
-.form__main--registro .form__main--registro-email {
+.form__main--registro .form__main--registro-email, .form__main--registro .form__main--registro-direccion, .form__main--registro .form__main--registro-contrato, .form__main--registro .form__main--registro-spam {
     width: 95%;
 }
 
-.form__main--registro .form__main--registro-codarea {
-    width: 25%;
+.form__main--registro .form__main--registro-codarea, .form__main--registro .form__main--registro-codpostal {
+    width: 30%;
 }
 
-.form__main--registro .form__main--registro-tel {
-    width: 65%;
+.form__main--registro .form__main--registro-tel, .form__main--registro .form__main--registro-ciudad {
+    width: 60%;
 }
-
-
 
 .form__main--registro div input {
     width: 100%;
@@ -62,13 +60,33 @@
     font-size: 0.8rem;
 }
 
+.form__main--registro div .checkbox {
+    width: 20px;
+    margin: 0;
+}
+
+.form__main--registro div select {
+    width: 100%;
+    margin: 10px auto;
+    border-style: none;
+    border-bottom: 1px solid #000;
+    font-family: var(--tipografiaForms);
+    font-size: 0.8rem;
+    color: grey ;
+}
+
 .form__main--registro div input:focus {
     border-bottom: 1px solid var(--colorAzul);
 }
 
+.form__main--registro div label {
+    font-size: 9px;
+    font-weight: 600;
+}
+
 .form__button--siguiente {
     margin: 10px auto;
-    padding: 15px;
+    padding: 15px 5px;
     font-size: 32px;
     background: lightskyblue;
     border: none;
@@ -76,12 +94,13 @@
     transition: 1s all;
     cursor: pointer;
     text-transform: uppercase;
-    width: 80%;
-    letter-spacing: 2px;
+    width: 85%;
+    letter-spacing: 1px;
 }
 
 .form__button--siguiente a {
     color: #FFF;
+    align-self: center;
 }
 
 .form__button--siguiente:hover {
@@ -93,6 +112,12 @@
     font-size: 1.2rem;
     width: 100%;
     text-align: center;
+}
+
+.form__main--registro h3 a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
 }
 
 .form__button--google {
@@ -130,11 +155,23 @@
     .form__button--google img {
         width: 30px;
     }
+
+    .form__main--registro div label {
+        font-size: 12px;
+    }
 }
 
 @media (min-width: 769px) {
     .form__main {
         width: 70%;
         margin: 0 auto;
+    }
+
+    .form__main--titulo {
+      font-size: 2rem;
+    }
+    
+    .form__main .form__main--subtitulo {
+        font-size: 1.2rem;
     }
 }

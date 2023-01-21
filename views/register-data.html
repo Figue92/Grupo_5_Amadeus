@@ -33,41 +33,87 @@
     </header>
 
     <main class="form__main">
-        <h1 class="form__main--titulo">registrarse</h1>
-        <h4 class="form__main--subtitulo">ingresá tus datos para crear tu cuenta</h4>
+        <h1 class="form__main--titulo">datos de facturación</h1>
+        <h4 class="form__main--subtitulo">completá los siguientes campos</h4>
         <form action="" method="POST" class="form__main--registro">
-            <div class="form__main--registro-nombre">
-                <label for="nombre"></label>
-                <input name="nombre" type="text" id="nombre" placeholder="Nombre" required>
+            <div class="form__main--registro-dni">
+                <label for="dni"></label>
+                <input name="dni" type="number" id="dni" placeholder="DNI" required>
             </div>
-            <div class="form__main--registro-apellido">
-                <label for="apellido"></label>
-                <input name="apellido" type="text" id="apellido" placeholder="Apellido" required>
+            <div class="form__main--registro-cliente">
+                <select name="cliente" id="cliente">
+                    <option value="" selected hidden>Tipo de cliente</option>
+                    <option value="">Comprador</option>
+                    <option value="">Vendedor</option>
+                </select>
             </div>
-            <div class="form__main--registro-email">
-                <label for="email"></label>
-                <input type="email" id="email" placeholder="E-mail" required>
+            <div class="form__main--registro-direccion">
+                <label for="direccion"></label>
+                <input type="text" id="direccion" placeholder="Dirección" required>
             </div>
-            <h4>Teléfono de Contacto</h4>
-            <div class="form__main--registro-codarea">
-                <label for="codarea"></label>
-                <input type="number" id="codarea" placeholder="Código de área" required>
+            <div class="form__main--registro-ciudad">
+                <label for="ciudad"></label>
+                <input type="text" id="ciudad" placeholder="Ciudad" required>
             </div>
-            <div class="form__main--registro-tel">
-                <label for="tel"></label>
-                <input type="tel" id="tel" placeholder="Número de teléfono" required>
+            <div class="form__main--registro-codpostal">
+                <label for="codpostal"></label>
+                <input type="text" id="codpostal" placeholder="Código postal" required>
             </div>
-            <div class="form__main--registro-pass">
-                <label for="password"></label>
-                <input type="password" id="password" placeholder="Contraseña" required>
+            <div class="form__main--registro-pais">
+                <select name="pais" id="pais">
+                    <option value="" selected hidden>País</option>
+                    <option value="">Argentina</option>
+                    <option value="">Bolivia</option>
+                    <option value="">Brasil</option>
+                    <option value="">Chile</option>
+                    <option value="">Colombia</option>
+                    <option value="">Ecuador</option>
+                    <option value="">Paraguay</option>
+                    <option value="">Perú</option>
+                    <option value="">Uruguay</option>
+                    <option value="">Venezuela</option>
+                </select>
             </div>
-            <div class="form__main--registro-repeatPass">
-                <label for="confirmPassword"></label>
-                <input type="password" id="confirmPassword" placeholder="Repetir contraseña" required>
+            <div class="form__main--registro-provincia">
+                <select name="provincia" id="provincia">
+                    <option value="" selected hidden>Provincia</option>
+                    <option value="">Buenos Aires</option>
+                    <option value="">Ciudad Autónoma de Buenos Aires</option>
+                    <option value="">Catamarca</option>
+                    <option value="">Chaco</option>
+                    <option value="">Chubut</option>
+                    <option value="">Córdoba</option>
+                    <option value="">Corrientes</option>
+                    <option value="">Entre Ríos</option>
+                    <option value="">Formosa</option>
+                    <option value="">Jujuy</option>
+                    <option value="">La Pampa</option>
+                    <option value="">La Rioja</option>
+                    <option value="">Mendoza</option>
+                    <option value="">Misiones</option>
+                    <option value="">Neuquén</option>
+                    <option value="">Río Negro</option>
+                    <option value="">Salta</option>
+                    <option value="">San Juan</option>
+                    <option value="">San Luis</option>
+                    <option value="">Santa Cruz</option>
+                    <option value="">Santa Fe</option>
+                    <option value="">Santiago del Estero</option>
+                    <option value="">Tierra del Fuego</option>
+                    <option value="">Tucumán</option>
+                </select>
             </div>
-            <a href=""><button class="form__button--siguiente" disabled="disabled">siguiente</button></a>
+            <div class="form__main--registro-contrato">
+                <input class="checkbox" type="checkbox" id="contrato">
+                <label for="contrato">He leído y acepto los <a href="">términos y condiciones</a> del sitio.</label>
+            </div>
+            <div class="form__main--registro-spam">
+                <input class="checkbox" type="checkbox" id="spam">
+                <label for="spam">Deseo recibir ofertas y promociones de productos en mi email.</label>
+            </div>
+            
+            <button class="form__button--siguiente"><a href="">registrarse</a></button>
             <h2>¿Ya tenés cuenta? Entrá <a href="/login.html">acá</a></h2>
-            <a href=""><button>Continuar con Google</button></a>
         </form>
     </main>
 
