@@ -51,8 +51,11 @@ font-family: var(--tipografiaPrincipal);
     background: linear-gradient(var(--colorCeleste),#fff);
     text-align: center;
 }
+.main__section__calificacion img{
+    display: none;
+}
 
-@media (min-width:767px) {
+@media (min-width:768px) {
     .main__section--burguer-menu{
     /* padding: 0px; */
     }
@@ -69,8 +72,69 @@ font-family: var(--tipografiaPrincipal);
     }
     .main__section__productos{
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    
+    .main__section__productos--article{
+        width: 30%;
+       
+    }
+    .main__section__productos h1{
+        width: 100%;
+    }
+    .main__section__productos--article img{
+        width: 50%;
+    }
+    .main__section__productos-ofertas{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: linear-gradient(var(--colorCeleste),#fff);
+    }
+    .main__section__productos--article-ofertas{
+        display: flex;
+        background-color: var(--colorCeleste);
+    }
+    .main__section__productos--article-ofertas img{
+        width: 30%;
+    }
+    .main__section__productos--article-ofertas h3, h2{
+        width: 100%;
+    }
+    .main__section__productos--article-ofertas a{
+        display: none;
+    }
+    .main__section__calificacion img{
+        display: block;
+    }
+    .main__section__calificacion a{
+        display: none;
+    }
+}
+@media (min-width:1024px) {
+    .main__section__productos-ofertas h1{
+        width: 100%;
+    }
+    .main__section__productos--article-ofertas{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 30%;
+    }
+    .main__section__productos--article-ofertas img{
+        width: 50%;
+    }
+    .main__section__productos--article-ofertas h3, h2{
+        width: 90%;
+    }
+    .main__section__calificacion{
+        display: flex;
+        flex-direction: column;
+    }
+    .main__section__calificacion-estrellas{
+        width: 30%;
+    }
+    .home__main__section--carrouselMarcas img{
+        width: 100%;
+    }
 }
