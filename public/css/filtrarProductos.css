@@ -1,0 +1,32 @@
+.main__section__filtros h1{
+    font-size: 1.5rem;
+    width: 80%;
+}
+
+.main__section__filtros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main__section__filtros-images{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+.main__section__filtros-images img{
+    width: 60%;
+}
+@media (min-width:768px){
+    .main__section__filtros-images{
+        display: flex;
+        flex-wrap: nowrap;
+        text-align: center;
+        flex-direction: row;
+        align-items: center;
+    }
+    .main__section__filtros-images img{
+        width: 90%;
+    }
+    
+}

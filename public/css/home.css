@@ -107,7 +107,7 @@ display: none;
     /* padding: 0px; */
     }
     .main__section{
-        display: flex;
+    display: flex;
     }
     .main__section--search-box{
         display: flex;
