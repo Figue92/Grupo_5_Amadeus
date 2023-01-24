@@ -26,11 +26,49 @@ font-family: var(--tipografiaPrincipal);
 .main__section--search-box button{
     border-radius: 45%;
 }
+.home__main__section--banner{
+display: none;
+}
 .main__section__productos{
     background: linear-gradient(var(--colorCeleste),#fff);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    font-size: 0.5rem;
+}
+.main__section__productos--article{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.main__section__productos--article img{
+    width: 40%;
+}
+.main__section__productos--article h2{
+    font-size: 1rem;
+}
+.main__section__productos--article h3{
+    display: none;
+}
+.main__section__productos--article-ofertas{
+    background: linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.main__section__productos--article-ofertas img{
+    width: 40%;
+    margin: 20px 90px;
+}
+.main__section__productos-ofertas{
+    background: linear-gradient(var(--colorCeleste),#fff);
+    font-size: 0.5rem;
+}
+.main__section__productos-ofertas h1{
+    font-size: 1rem;
+}
+.main__section__productos--article-ofertas-desc h2{
+    font-size: 1rem;
 }
 .main__section__calificacion{
     display: flex;
@@ -51,12 +89,18 @@ font-family: var(--tipografiaPrincipal);
     background: linear-gradient(var(--colorCeleste),#fff);
     text-align: center;
 }
-.main__section__calificacion img{
+.main__section__marcas h2{
+    font-size: 1rem;
+}
+.main__section__calificacion-reseñas{
     display: none;
 }
-.glider-img{
-    font-size: 3rem;
-}
+.main__section__calificacion-estrellas{
+    display: block;
+} 
+
+
+
 
 @media (min-width:768px) {
     .main__section--burguer-menu{
@@ -67,31 +111,41 @@ font-family: var(--tipografiaPrincipal);
     }
     .main__section--search-box{
         display: flex;
-        font-size: xx-large;
+        font-size: 1.5rem;
     }
     .main__section--search-box input{
         display: flex;
         border-radius: 20px;
     }
+    .home__main__section--banner{
+        display: block;
+        }
     .main__section__productos{
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
     }
     .main__section__productos--article{
-        width: 30%;
-       
+        /* width: 60%; */
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
- .main__section__productos--article-ofertas-desc{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
- }
+  
+    .main__section__productos--article h3{
+        margin: 10px 50px;
+        font-size: 1rem;
+        display: flex;
+        width: 50%;
+    }
+    .main__section__productos--article a{
+        display: none;
+    }
+
     .main__section__productos h1{
         width: 100%;
     }
     .main__section__productos--article img{
-        width: 50%;
     }
     .main__section__productos-ofertas{
         /* display: flex; */
@@ -100,10 +154,16 @@ font-family: var(--tipografiaPrincipal);
         background-color: linear-gradient(var(--colorCeleste),#fff);
     }
     .main__section__productos--article-ofertas{
-        /* display: flex; */
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
         background-color: var(--colorCeleste);
+        align-items: center;
     }
+    .main__section__productos--article-ofertas-desc{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+     }
     .main__section__productos--article-ofertas img{
         width: 20%;
     }
@@ -122,29 +182,12 @@ font-family: var(--tipografiaPrincipal);
     }
 }
 @media (min-width:1024px) {
-    .main__section__productos-ofertas h1{
-        width: 100%;
-    }
-    .main__section__productos--article-ofertas{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        width: 30%;
-    }
-    .main__section__productos--article-ofertas img{
-        width: 50%;
-    }
-    .main__section__productos--article-ofertas h3, h2{
-        width: 90%;
-    }
-    .main__section__calificacion{
+     .main__section__calificacion{
         display: flex;
         flex-direction: column;
     }
     .main__section__calificacion-estrellas{
         width: 30%;
     }
-    .home__main__section--carrouselMarcas img{
-        width: 100%;
-    }
+
 }
