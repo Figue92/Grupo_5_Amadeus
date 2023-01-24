@@ -1,5 +1,6 @@
 .productDetail__main * {
     margin: 0;
+    font-family: var(--tipografiaPrincipal);
 }
 
 .productDetail__main {
@@ -12,12 +13,17 @@
 
 .section--imagenPrincipal img {
     width: 50%;
+    display: block;
+    margin: 0 auto;
 }
 
-.section--info {
+.section__div--info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    padding: 5px;
+    gap: 10px;
 }
 
 .section--info h1 {
@@ -28,10 +34,40 @@
 
 .section--info h4 {
     text-transform: uppercase;
-    background-color: grey;
+    background-color: #BBBBBB;
     padding: 3px;
     font-size: 10px;
     margin: 0 auto;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.section__div--info div {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.section__div--info div h3 {
+    font-size: 18px;
+    color: var(--colorAzul);
+}
+
+.section__div--info div p {
+    font-size: 12px;
+}
+
+.section__div--info > p {
+    width: 45%;
+    font-size: 12px;
+}
+
+.section__div--info button {
+    width: 45%;
+    background-color: orangered;
+    color: white;
+    text-transform: capitalize;
 }
 
 .section--vistasImages {
@@ -55,8 +91,6 @@
     text-transform: uppercase;
 }
 
-
-
 .productDetail__main__section--detallesDesktop {
     display: none;
 }
@@ -65,6 +99,6 @@
     display: none;
 }
 
-.productDetail__main__section--detallesMobile:hover .productDetail__main__section__article {
+/* .section--caracteristicas:hover .productDetail__main__section__article {
     display: block;
-}
+} */
