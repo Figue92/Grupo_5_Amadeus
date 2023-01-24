@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import './normalize.css';
 @import './variables.css';
 @import './general.css';
-@import './normalize.css';
 @import './footer.css';
 @import './header.css';
 @import './home.css';
