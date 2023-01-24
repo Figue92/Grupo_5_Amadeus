@@ -54,6 +54,9 @@ font-family: var(--tipografiaPrincipal);
 .main__section__calificacion img{
     display: none;
 }
+.glider-img{
+    font-size: 3rem;
+}
 
 @media (min-width:768px) {
     .main__section--burguer-menu{
@@ -79,6 +82,11 @@ font-family: var(--tipografiaPrincipal);
         width: 30%;
        
     }
+ .main__section__productos--article-ofertas-desc{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+ }
     .main__section__productos h1{
         width: 100%;
     }
@@ -86,19 +94,21 @@ font-family: var(--tipografiaPrincipal);
         width: 50%;
     }
     .main__section__productos-ofertas{
-        display: flex;
+        /* display: flex; */
         flex-wrap: wrap;
         flex-direction: row;
         background-color: linear-gradient(var(--colorCeleste),#fff);
     }
     .main__section__productos--article-ofertas{
-        display: flex;
+        /* display: flex; */
+        flex-direction: column;
         background-color: var(--colorCeleste);
     }
     .main__section__productos--article-ofertas img{
-        width: 30%;
+        width: 20%;
     }
     .main__section__productos--article-ofertas h3, h2{
+        font-size: 1rem;
         width: 100%;
     }
     .main__section__productos--article-ofertas a{
