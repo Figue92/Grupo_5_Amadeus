@@ -28,7 +28,7 @@
 
 .section--info h1 {
     font-family: var(--tipografiaPrincipal);
-    font-size: 2vw;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -41,7 +41,7 @@
     text-transform: uppercase;
     background-color: #BBBBBB;
     padding: 3px;
-    font-size: 1.2vw;
+    font-size: 12.8px;
     align-self: flex-start;
     display: inline;
 }
@@ -53,17 +53,17 @@
 }
 
 .section__div--info div h3 {
-    font-size: 1.8vw;
+    font-size: 19.2px;
     color: var(--colorAzul);
 }
 
 .section__div--info div p {
-    font-size: 1.2vw;
+    font-size: 12.8px;
 }
 
 .section__div--info > p {
     width: 45%;
-    font-size: 1.2vw;
+    font-size: 12.8px;
 }
 
 .section__div--info-btn {
@@ -78,7 +78,7 @@
 
 .section__div--info a {
     color: #FFF;
-    font-size: 1.8vw;
+    font-size: 19.2px;
 }
 
 .section--vistasImages {
@@ -114,7 +114,7 @@
 
 .productDetail__main__section--detallesDesktop {
     display: none;
-    font-size: 1.6vw;
+    font-size: 19.2px;
     width: 100%;
 }
 
@@ -134,13 +134,13 @@
 }
 
 .productDetail__main__section__article h1 {
-    font-size: 1.6vw;
+    font-size: 19.2px;
     margin: 10px 0;
     text-transform: uppercase;
 }
 
 .productDetail__main__section__article p {
-    font-size: 1vw;
+    font-size: 0.8rem;
     display: none;
 }
 
@@ -150,16 +150,12 @@
 
 .productDetail__main__section__article ul li {
     text-transform: capitalize;
-    font-size: 1.2vw;
+    font-size: 0.8rem;
 }
 
 @media (min-width: 426px) {
-    html {
-        font-size: 18px;
-    }
-    
     .section--imagenPrincipal {
-        width: 35vw;
+        width: 40%;
     }
 
     .section--imagenPrincipal img {
@@ -172,12 +168,18 @@
 
     .section--info h1 {
         margin-top: 15px;
+        font-size: 18px;
     }
 
     .section__div--info-sku {
         padding-bottom: 10px;
         border-bottom: 2px solid #BBB;
         text-align: center;
+        width: 100%;
+    }
+
+    .section--info h4, .section__div--info div p, .section__div--info > p, .productDetail__main__section__article ul li {
+        font-size: 14.4px;
     }
 
     .section__div--info-btn {
@@ -213,13 +215,13 @@
     /* .productDetail__main__section__article p {
         display: block;
     } */
+
+    .section__div--info div h3, .section__div--info a, .productDetail__main__section--detallesDesktop, .productDetail__main__section__article h1 {
+        font-size: 21.6px;
+    }
 }
 
 @media (min-width: 769px) {
-    html {
-        font-size: 20px;
-    }
-
     .productDetail__main {
         position: relative;
         justify-content: end;
@@ -237,6 +239,7 @@
 
     .section--info h1 {
         margin-top: 15px;
+        font-size: 20px;
     }
 
     .section__div--info-sku {
@@ -246,6 +249,10 @@
         border-top: 2px solid #BBB;
         border-bottom: none;
         text-align: left;
+    }
+
+    .section--info h4, .section__div--info div p, .section__div--info > p, .productDetail__main__section__article ul li {
+        font-size: 16px;
     }
 
     .section--vistasImages {
@@ -265,5 +272,9 @@
 
     .productDetail__main__section__article {
         width: 25%;
+    }
+
+    .section__div--info div h3, .section__div--info a, .productDetail__main__section--detallesDesktop, .productDetail__main__section__article h1 {
+        font-size: 24px;
     }
 }
