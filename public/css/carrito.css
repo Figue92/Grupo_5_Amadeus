@@ -1,0 +1,452 @@
+body{
+    background-color: #599399
+}
+
+.banner{
+    display: none;
+
+}
+.conteiner-titulo--principal{
+    text-align: center;
+    font-size: 44px;
+    
+}
+
+/*   MENU    */
+.search {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin-right: 6%;
+    
+    
+}
+.search input {
+    display: flex;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 15px;
+    width: 100%;
+}
+.fa-search {
+    color: black;
+    position: relative;
+    right: 21px;
+    background-color: #8aced5 ;
+    font-size: 18px;
+}
+
+.conteiner--menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.hamburguesaasd{
+    padding-left: 20px;
+    margin: 10px;
+    padding: 5px;
+   
+}
+
+.hamburguesa{
+    padding: 10px;
+    padding-left: 15px;
+    font-size: 30px;
+    border: 1px solid #3846BE;
+    border-radius: 50%;
+    background-color: #3846BE;
+}
+p {
+    font-family: var(--tipografiaPrincipal);
+}
+
+div i{
+    color: white;
+    font-size: 30px;
+}
+
+/*Titulo*/
+
+hr{
+    display: none;
+}
+.conteiner-titulo{
+    display: flex;
+    justify-content: center;
+    border-top: 3px solid #000;
+    border-bottom:3px solid #000 ;
+    background-color: #599399;
+    color: black
+}
+.conteiner-titulo--div{
+    margin: auto;
+}
+
+
+
+/* Productos */
+
+
+.conteiner--producto{
+    display: flex;
+    justify-content:space-around;
+    padding: 5px;
+}
+
+
+.imagen-producto{
+    width: 40%;
+    margin: 5px;
+    padding: 5px;
+    background-color: black;
+}
+img{
+    width: 100%;
+}
+
+h5{
+    font-size: 19px;
+    color: white;
+
+}
+
+a{
+    color: blue;
+    text-decoration: underline ;
+    padding: 4px;
+    font-size: 20px;
+ 
+}
+
+.precio {
+    top: 45px;  
+    position: relative;  
+    padding-right: 15px;
+
+}
+
+
+
+.precio--num{
+color: #000;
+position: absolute;
+top: 30%;
+right: 1px;
+
+}
+span{
+    text-decoration: double;
+    color: black;
+    font-size: x-large;
+}
+
+.linea--separadora{
+    border: solid 5px silver;
+}
+
+/*Detalle de envio */
+.conteiner-titulo--div{
+    border-top: 8px solid silver;
+}
+
+
+.conteiner-titulo--div--texto{
+    text-align: center;
+    font-size: 22px;
+}
+
+
+.conteiner-titulo--div--datos {
+
+
+
+}
+.logo--ubicacion{
+    width: 6%;
+}
+
+.direccion{
+    font-size: 18px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+
+.precio--envio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.bonificacion{
+    text-align: center;
+    font-size: 22px;
+}
+
+.precio--p1{
+    font-size: 18px;
+    padding-right: 28px;
+    text-decoration:line-through;
+    color: silver;
+
+}
+.precio--p2{
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+.precio--p3{
+    font-size: 25px;
+}
+.contenedor--boton--agregar{
+    display: flex;
+    justify-content: center;
+}
+.boton--agregar{
+    background-color: #3846BE;
+    color: white;
+    margin-bottom: 15px;
+    padding: 6px
+}
+
+
+/* COMO QUERES PAGAR */
+
+.conteiner-titulo--div--texto2{
+    font-size: 17px;
+    padding-left: 15px;
+    
+}
+.conteiner-titulo--div--subtitulo{
+    display:flex;
+    justify-content:center;
+}
+
+.logo--mp {
+    width: 13%;
+    
+}
+
+.conteiner-cuadro1--pago{
+    background-color:  rgb(192, 192, 192) ;
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+}
+
+.boton--pago{
+ align-items: center;
+ background-color: #3846BE;
+ color: white;
+ padding: 5px;
+ margin: 15px;
+ font-size: 16px;
+
+}
+
+.formulario--metodo--pago{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 0px;
+    margin: 5px;
+    background-color: rgb(192, 192, 192);
+    color: black;
+    font-size: 19px;
+    border-radius: 3%;
+    
+}
+label{
+    border-bottom: solid 1px black ;   
+    flex-direction: row-reverse;
+}
+i{
+    color: black; 
+
+}
+
+/* Display none*/
+
+
+.subtitulo--principal{
+    display: none;
+
+}
+
+.contenedor--tabla--productos{
+    display: none;
+    
+}
+                                    
+                                /* TABLET  */ 
+
+
+
+@media (min-width: 426px) {
+    
+    .banner{
+        display: block;
+    }
+    .conteiner-titulo{
+       background-color: silver;
+       border:none;
+       text-decoration: underline;
+       font-size: 2222px;
+    }
+   
+    .subtitulo--principal{
+        display: flex;
+        justify-content: center;
+        margin: -10px;
+
+    }
+    .subtitulo--principal h4 {
+      font-size: 30px;
+      text-decoration: none;
+    
+    }
+    
+    .subtitulo--principal{
+       /* border-bottom: 1px solid black;*/
+
+        
+    }
+    hr{
+        height: 3px;
+        width: 80%;
+        background-color:#599399 ;
+    }
+    .cuadro--de--productos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left:10% ;
+        padding-right: 10%;
+        background-color: silver;
+        align-items: center    
+    }
+    .imagen-producto {
+        width: 14%;
+       
+    }
+    .descripcion--de--compra{
+        display: none;
+    }
+
+   td{
+        text-align: center;
+            font-size: 25px;
+            border: solid 1px white;
+    }
+    th{
+        padding: 29px
+    };
+    
+    img {
+        width: 50%;
+    }
+    td th tr{
+        width: 100%;
+        
+    }
+    .contenedor--tabla--productos {
+            display: block;
+        }
+
+
+        .direccion {
+            font-size: 26px;
+            text-align: center;
+        }
+
+    .conteiner-titulo--div--texto {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    
+    th {
+            font-size: 24px;
+            padding: 29px;
+            background-color: silver;
+        }
+
+
+.bonificacion {
+    text-align: center;
+    font-size: 26px;
+}
+
+.conteiner-titulo--div--texto2 {
+    font-size: 21px;
+    padding-left: 15px;
+}
+
+.logo--mp {
+    width: 10%;
+}
+.boton--agregar {
+    background-color: #3846BE;
+    color: white;
+    margin-bottom: 15px;
+    padding: 6px;
+    width: 40%;
+}
+
+.conteiner-cuadro1--pago {
+    background-color: rgb(192, 192, 192);
+        display: flex;
+        padding: 10px;
+        margin: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 175px;
+        margin-right: 175px
+  
+}
+
+.formulario--metodo--pago {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 0px;
+    margin: 5px;
+    background-color: rgb(192, 192, 192);
+    color: black;
+    font-size: 19px;
+    border-radius: 3%;
+    width: 40%;
+    justify-content: center;
+}
+
+.boton--agregar {
+    background-color: #3846BE;
+    color: white;
+    margin-bottom: 15px;
+    padding: 6px;
+    width: 40%;
+    font-size: 22px;
+}
+
+.logo--ubicacion {
+    width: 3%;
+}
+
+
+};
+
+
+
+
+
+
+@media (min-width: 769px) {
+
+
+
+};
