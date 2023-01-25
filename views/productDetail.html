@@ -6,9 +6,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/75929d6988.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Home</title>
+    <title>Detalle del Producto</title>
 </head>
 <body>
+    <header class="header">
 
+        <section class="header__section">
+            <span class="header__section--logo">
+                <img src="/images/Amadeus PC.jpg" alt="Logo Amadeus">
+            </span>
+            <nav class="header__section__nav--redes">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            </nav>
+            <nav class="header__section__nav--registro">
+                <ul>
+                    <li><a class="header__section__armado-pc header__section__nav--registro--texto" href="">arma tu pc</a></li>
+                    <li><a class="header__section__nav--registro--icono" href="./register.html"><i class="fa-solid fa-user-plus"></i></a><a class="header__section__nav--registro--texto" href="./register.html">Registrate</a></li>
+                    <li><a class="header__section__nav--registro--icono" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i></a><a class="header__section__nav--registro--texto" href="./login.html">Ingresa</a></li>
+                    <li><a class= "header__section__nav--registro--icono" href="./productCart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main class="productDetail__main">
+        <section class="productDetail__main__section section--imagenPrincipal">
+            <img src="/images/detail01.jpg" alt="">
+        </section>
+        <section class="productDetail__main__section section--info">
+            <h1>Monitor ASUS 24'' VA24EHE-J Full HD</h1>
+            <div class="section__div--info">
+                <div class="section__div--info-sku">
+                    <h4>sku: 1234</h4>
+                </div>
+                <div class="section__div--info-precio">
+                    <h3>$49.999</h3>
+                    <p>precio en un pago</p>
+                </div>
+                <p>12 cuotas sin interés de: $7500</p>
+                <div class="section__div--info-btn">
+                    <button><a href="">comprar</a></button>
+                </div>
+            </div>
+        </section>
+        <section class="productDetail__main__section section--vistasImages">
+            <img src="/images/detail01.jpg" alt="">
+            <img src="/images/detail02.jpg" alt="">
+            <img src="/images/detail03.jpg" alt="">
+            <img src="/images/detail04.jpg" alt="">
+        </section>
+        <section class="productDetail__main__section section--caracteristicas">
+            <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
+            <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:</h2>
+            <article class="productDetail__main__section__article">
+                <h1>pantalla</h1>
+                <p>(Toque aquí para más info)</p>
+                <ul class="productDetail__main__section__article--lista">
+                    <li>pulgadas: 24''</li>
+                    <li>pulgadas visibles: 23.8''</li>
+                    <li>resolucion maxima: 1920x1080</li>
+                    <li>máxima frecuencia: 75hz</li>
+                    <li>cantidad de colores: 16.7m</li>
+                </ul>
+            </article>
+            <article class="productDetail__main__section__article">
+                <h1>conectividad</h1>
+                <ul>
+                    <li>conexión 3.5mm - entrada: no</li>
+                    <li>conector auriculares: no</li>
+                    <li>hdmi: 1</li>
+                    <li>vga: 1</li>
+                </ul>
+            </article>
+            <article class="productDetail__main__section__article">
+                <h1>dimensiones</h1>
+                <ul>
+                    <li>ancho: 540mm</li>
+                    <li>alto: 324mm</li>
+                    <li>espesor: 44mm</li>
+                    <li>curvatura: 0r</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer__section">
+            <h2 class="footer__section--titulo"><span>Seguinos</span> en Nuestras Redes</h2>
+            
+            <nav class="footer__section__nav--redes">
+                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                <a href=""><i class="fa-brands fa-discord"></i></a>
+                <a href=""><i class="fa-brands fa-twitch"></i></a>
+            </nav>
+        </section>
+        <section class="footer__section">
+            <img class="footer__section--qr" src="/images/QR AMD.png" alt="QR">
+            <article class="footer__section--article article--informacion">
+                <h3>Información</h3>
+                <nav class="footer__section--nav">
+                    <a href="">¿Quienes Somos?</a>
+                    <a href="">Preguntas Frecuentes</a>
+                    <a href="">¿Cómo comprar?</a>
+                </nav>
+            </article>
+            <article class="footer__section--article article--contactanos">
+                <h3>Contactanos</h3>
+                <p>Avenida Siempre Viva 123</p>
+                <p>Buenos Aires</p>
+                <p>Email: amadeus-pc@gmail.com</p>
+            </article>
+            <article class="footer__section--article article--horarios">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes de 9 a 18hs</p>
+                <p>Sábados de 9 a 13hs</p>
+            </article>
+            <article class="footer__section--article article--ventatel">
+                <h3>Venta Telefónica</h3>
+                <p>0800-222-AMDPC</p>
+                <p>(26372)</p>   
+                </article>
+        </section>
+    </footer>
 </body>
 </html>
