@@ -115,10 +115,9 @@ h5{
 
 a{
     color: blue;
-    text-decoration: underline ;
+    text-decoration: none;
     padding: 4px;
     font-size: 20px;
- 
 }
 
 .precio {
