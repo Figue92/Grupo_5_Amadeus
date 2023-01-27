@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs')  %> 
+<body>
+    <%- include('./partials/header.ejs')  %> 
+    <main class="main">
+        
+        <%- include('./partials/burguermenu-search.ejs')  %>
+
+        <section class="main__section__filtros"><h1>Home>Memorias>Memorias Ram Dim DDR3</h1>
+        <h2>Filtros</h2>
+        <h2>Memorias Ram x</h2>
+        <h2>Memoria Ram dim ddr3</h2>
+        <form action="#">
+            <label for="lang">Ordenar por</label>
+            <select name="ordenar" id="ordenar">
+              <option value="Destacados">Destacados</option>
+              <option value="Mas Popular">Mas Popular</option>
+              </select></form>
+            <label>
+                <input type="radio" name="entrega">Entrega Inmediata
+            </label>
+            <h2>Categorias</h2>
+            <h2>Capacidad</h2>
+            <label>
+                <input type="radio" name="capacidad" value="2GB">2GB
+            </label>
+            <label>
+                <input type="radio" name="capacidad" value="4GB">4GB
+            </label>
+            <label>
+                <input type="radio" name="capacidad" value="6GB">6GB
+            </label>
+            <label>
+                <input type="radio" name="capacidad" value="8GB">8GB
+            </label>
+            <label>
+                <input type="radio" name="capacidad" value="12GB">12GB
+            </label>
+            <label>
+                <input type="radio" name="capacidad" value="16GB">16GB
+            </label>
+            <h2>Disipador</h2>
+            <label>
+                <input type="radio" name="disipador" value="Si">Si
+            </label>
+            <label>
+                <input type="radio" name="disipador" value="No">No
+            </label>
+            <h2>Tipo</h2>
+            <label>
+                <input type="radio" name="tipo" value="DDR3">2GB
+            </label>
+            <label>
+                <input type="radio" name="tipo" value="DDR4">4GB
+            </label>
+            <label>
+                <input type="radio" name="tipo" value="DDR5">6GB
+            </label>
+            </section>
+            <section class="main__section__filtros-images">
+                <a href="/views/productDetail.html"><img src="/images/producto1.png" alt=""></a>
+                <a href="/views/productDetail.html"><img src="/images/producto2.jpg" alt=""></a>
+                <a href="/views/productDetail.html"><img src="/images/producto3.jpg" alt=""></a>
+                <a href="/views/productDetail.html"><img src="/images/producto1.png" alt=""></a>
+                <a href="/views/productDetail.html"><img src="/images/producto2.jpg" alt=""></a>
+                <a href="/views/productDetail.html"><img src="/images/producto3.jpg" alt=""></a>
+                <a href="/views/productDetail.html"><img src="/images/producto1.png" alt=""></a>
+                <a href="/views/productDetail.html"><img src="/images/producto2.jpg" alt=""></a>
+            </section>
+        
+            <%- include('./partials/footer.ejs')  %>
+    </body>
+    </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs')  %> 
+<body>
+    <%- include('./partials/header.ejs')  %> 
+
+    <main class="productDetail__main">
+        <section class="productDetail__main__section section--imagenPrincipal">
+            <img src="/images/detail01.jpg" alt="">
+        </section>
+        <section class="productDetail__main__section section--info">
+            <h1>Monitor ASUS 24'' VA24EHE-J Full HD</h1>
+            <div class="section__div--info">
+                <div class="section__div--info-sku">
+                    <h4>sku: 1234</h4>
+                </div>
+                <div class="section__div--info-precio">
+                    <h3>$49.999</h3>
+                    <p>precio en un pago</p>
+                </div>
+                <p>12 cuotas sin interés de: $7500</p>
+                <div class="section__div--info-btn">
+                    <button><a href="">comprar</a></button>
+                </div>
+            </div>
+        </section>
+        <section class="productDetail__main__section section--vistasImages">
+            <img src="/images/detail01.jpg" alt="">
+            <img src="/images/detail02.jpg" alt="">
+            <img src="/images/detail03.jpg" alt="">
+            <img src="/images/detail04.jpg" alt="">
+        </section>
+        <section class="productDetail__main__section section--caracteristicas">
+            <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
+            <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:</h2>
+            <article class="productDetail__main__section__article">
+                <h1>pantalla</h1>
+                <p>(Toque aquí para más info)</p>
+                <ul class="productDetail__main__section__article--lista">
+                    <li>pulgadas: 24''</li>
+                    <li>pulgadas visibles: 23.8''</li>
+                    <li>resolucion maxima: 1920x1080</li>
+                    <li>máxima frecuencia: 75hz</li>
+                    <li>cantidad de colores: 16.7m</li>
+                </ul>
+            </article>
+            <article class="productDetail__main__section__article">
+                <h1>conectividad</h1>
+                <ul>
+                    <li>conexión 3.5mm - entrada: no</li>
+                    <li>conector auriculares: no</li>
+                    <li>hdmi: 1</li>
+                    <li>vga: 1</li>
+                </ul>
+            </article>
+            <article class="productDetail__main__section__article">
+                <h1>dimensiones</h1>
+                <ul>
+                    <li>ancho: 540mm</li>
+                    <li>alto: 324mm</li>
+                    <li>espesor: 44mm</li>
+                    <li>curvatura: 0r</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs')  %>
+</body>
+</html>

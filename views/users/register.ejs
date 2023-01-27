@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs')  %> 
+
+<body>
+    <%- include('./partials/header.ejs')  %> 
+
+    <main class="form__main">
+        <h1 class="form__main--titulo">registrarse</h1>
+        <h4 class="form__main--subtitulo">ingresá tus datos para crear tu cuenta</h4>
+        <form action="" method="POST" class="form__main--registro">
+            <div class="form__main--registro-nombre">
+                <label for="nombre"></label>
+                <input name="nombre" type="text" id="nombre" placeholder="Nombre" required>
+            </div>
+            <div class="form__main--registro-apellido">
+                <label for="apellido"></label>
+                <input name="apellido" type="text" id="apellido" placeholder="Apellido" required>
+            </div>
+            <div class="form__main--registro-email">
+                <label for="email"></label>
+                <input type="email" id="email" placeholder="E-mail" required>
+            </div>
+            <h4>Teléfono de Contacto</h4>
+            <div class="form__main--registro-codarea">
+                <label for="codarea"></label>
+                <input type="number" id="codarea" placeholder="Código de área" required>
+            </div>
+            <div class="form__main--registro-tel">
+                <label for="tel"></label>
+                <input type="tel" id="tel" placeholder="Número de teléfono" required>
+            </div>
+            <div class="form__main--registro-pass">
+                <label for="password"></label>
+                <input type="password" id="password" placeholder="Contraseña" required>
+            </div>
+            <div class="form__main--registro-repeatPass">
+                <label for="confirmPassword"></label>
+                <input type="password" id="confirmPassword" placeholder="Repetir contraseña" required>
+            </div>
+            <button class="form__button--siguiente"><a href="./register-data.html">siguiente</a></button>
+            <h2>¿Ya tenés cuenta? Entrá <a href="/login.html">acá</a></h2>
+            <button class="form__button--google"><a href=""><img src="/images/logo-google.png" alt=""><p>Continuar con Google</p></a></button>
+        </form>
+    </main>
+
+    <%- include('./partials/footer.ejs')  %>
+</body>
+
+</html>
