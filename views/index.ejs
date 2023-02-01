@@ -45,60 +45,31 @@
         </section>
         <section class="main__section__productos">
             <h1>Productos de Última Generación</h1>
-            <article class="main__section__productos--article">
-                <div> <a href= "./productDetail"><img src="/images/producto3.jpg" alt=""></a>
-                    <h2>$293342</h2>
-                    <a class= "main__section__productos--article--vermas" href="./productDetail">Ver más...</a>
-                    <h3>PC Intel i3 12100 8Gb SSD</h3>
-                    <h3>240Gb + Monitor 22''</h3>
-                </div>
+            <% productos.forEach(({id, title, price, description, image}) => { %>
                 <article class="main__section__productos--article">
-                    <div> <a href= "./productDetail"><img src="/images/producto2.jpg" alt=""></a>
-                        <h2>$7987</h2>
-                        <a class= "main__section__productos--article--vermas" href="./productDetail">Ver más...</a>
-                        <h3>PC Intel Gamer Thermaltake i3</h3>
-                    <h3>10100 8Gb 1TB 650W RX 570 4Gb</h3>
+                    <div> <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image %> " alt=""></a>
+                        <h2>$ <%= price%></h2>
+                        <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
+                        <h3><%= title %> </h3>
+                    <h3><%= description %> </h3>
                     </div>
                 </article>
-                <article class="main__section__productos--article">
-                    <div> <a href= "./productDetail"><img src="/images/producto3.jpg" alt=""></a>
-                        <h2>$8078</h2>
-                        <a class= "main__section__productos--article--vermas" href="./productDetail">Ver más...</a>
-                        <h3>Placa de Video PALIT NVIDIA GEFORCE</h3>
-                        <h3>GT 730 2GB DDR3</h3>
-                    </div>
-                </article>
+            <% }) %>
+          
         </section>
         <section class="main__section__productos-ofertas">
             <h1>Ofertas Imperdibles</h1>
-            <span class="main__section__productos--article-ofertas">
-                 <a href= "./productDetail"><img src="/images/producto3.jpg" alt=""></a>
-                <span class="main__section__productos--article-ofertas-desc">
-                    <h2>$293342</h2>
-                    <a class= "main__section__productos--article--vermas" href="./productDetail">Ver más...</a>
-                    <h3>PC Intel i3 12100 8Gb SSD</h3>
-                    <h3>240Gb + Monitor 22''</h3>
-                </span>
-            </span>
-            <span class="main__section__productos--article-ofertas">
-                 <a href= "./productDetail"><img src="/images/producto2.jpg" alt=""></a>
-                <div class="main__section__productos--article-ofertas-desc">
-                    <h2>$7987</h2>
-                    <a class= "main__section__productos--article--vermas" href="./productDetail">Ver más...</a>
-                    <h3>PC Intel Gamer Thermaltake i3</h3>
-                    <h3>10100 8Gb 1TB 650W RX 570 4Gb</h3>
-                </div>
-            </span>
-            <span class="main__section__productos--article-ofertas">
-                 <a href= "./productDetail"><img src="/images/producto3.jpg" alt=""></a>
-                <div class="main__section__productos--article-ofertas-desc">
-                    <h2>$8078</h2>
-                    <a class= "main__section__productos--article--vermas" href="./productDetail">Ver más...</a>
-                    <h3>Placa de Video PALIT NVIDIA GEFORCE</h3>
-                    <h3>GT 730 2GB DDR3</h3>
-                </div>
-            </span>
-        </section>
+            <% productos.forEach(({id, title, price, description, image}) => { %>
+                <article class="main__section__productos--article">
+                    <div> <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image %> " alt=""></a>
+                        <h2>$ <%= price%></h2>
+                        <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
+                        <h3><%= title %> </h3>
+                    <h3><%= description %> </h3>
+                    </div>
+                </article>
+            <% }) %>
+
     
         <section class="main__section__compra">
             <i class="fa-regular fa-credit-card"></i>

@@ -20,6 +20,16 @@ module.exports = {
             title: "Detalle del curso",
             producto
         })
+      },
+      cart: (req, res) => {
+        return res.render('productos/carrito',{
+            
+            title : "Carrito",
+
+        })
+        
+       
+
       }
 
 

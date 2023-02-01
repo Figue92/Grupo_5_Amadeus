@@ -1,4 +1,5 @@
    .footer{
+    font-family: var(--tipografiaPrincipal);
      background:linear-gradient(var(--colorCeleste),#fff);
     border-bottom: 5px solid #000;
     border-top: 5px solid #000;

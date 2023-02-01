@@ -1,6 +1,7 @@
 .form__main {
     padding: 0 2.5%;
     font-family: var(--tipografiaForms);
+    background-color: #FFF;
 }
 
 .form__main h4 {
@@ -8,6 +9,7 @@
     font-weight: 600;
     margin-bottom: 10px;
     font-size: 0.8rem;
+    
 }
 
 .form__main--titulo {
