@@ -9,5 +9,7 @@ module.exports = {
             title: "Ingresá"
         })
     },
-   
+    register2 : (req,res) => {
+        return res.render('users/register-data');
+    },   
 }

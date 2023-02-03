@@ -27,10 +27,9 @@ module.exports = {
             title : "Carrito",
 
         })
-        
-       
-
-      }
-
+      },
+      add : (req,res) => {
+        return res.render('productos/formAdd');
+    },
 
     }

@@ -1,0 +1,59 @@
+.formAdd {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.formAdd div input {
+    width: 100%;
+    margin: 10px auto;
+    border-style: none;
+    border-bottom: 1px solid #000;
+    font-family: var(--tipografiaForms);
+    font-size: 0.8rem;
+}
+
+.formAdd__name {
+    width: 100%;
+}
+
+.formAdd__description {
+    width: 100%;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.formAdd__description textarea {
+    width: 100%;
+}
+
+.formAdd__category {
+    width: 45%;
+}
+
+.formAdd div select {
+    width: 100%;
+    margin: 10px auto;
+    border-style: none;
+    border-bottom: 1px solid #000;
+    font-family: var(--tipografiaForms);
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.formAdd__price {
+    width: 25%;
+}
+
+.formAdd__image {
+    width: 70%;
+}
+
+@media (min-width: 426px) {
+    .formAdd {
+        width: 70%;
+    }
+}
