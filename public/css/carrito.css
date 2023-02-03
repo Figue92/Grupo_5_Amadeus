@@ -59,11 +59,11 @@
     border-radius: 50%;
     background-color: #3846BE;
 }
-p {
+.carrito__main p {
     font-family: var(--tipografiaPrincipal);
 }
 
-div i{
+.carrito__main div i{
     color: white;
     font-size: 30px;
 }
@@ -103,17 +103,17 @@ hr{
     padding: 5px;
     background-color: black;
 }
-img{
+.carrito__main img{
     width: 100%;
 }
 
-h5{
+.carrito__main h5{
     font-size: 19px;
     color: white;
 
 }
 
-a{
+.carrito__main a{
     color: blue;
     text-decoration: none;
     padding: 4px;
@@ -136,7 +136,7 @@ top: 30%;
 right: 1px;
 
 }
-span{
+.carrito__main span{
     text-decoration: double;
     color: black;
     font-size: x-large;
@@ -260,11 +260,11 @@ span{
     border-radius: 3%;
     
 }
-label{
+.carrito__main label{
     border-bottom: solid 1px black ;   
     flex-direction: row-reverse;
 }
-i{
+.carrito__main i{
     color: black; 
 
 }
@@ -315,7 +315,7 @@ i{
 
         
     }
-    hr{
+    .carrito__main hr{
         height: 3px;
         width: 80%;
         background-color:#599399 ;
@@ -337,19 +337,19 @@ i{
         display: none;
     }
 
-   td{
+    .carrito__main td{
         text-align: center;
             font-size: 25px;
             border: solid 1px white;
     }
-    th{
+    .carrito__main th{
         padding: 29px
     };
     
-    img {
+    .carrito__main img {
         width: 50%;
     }
-    td th tr{
+    .carrito__main td th tr{
         width: 100%;
         
     }
@@ -369,7 +369,7 @@ i{
     }
 
     
-    th {
+    .carrito__main th {
             font-size: 24px;
             padding: 29px;
             background-color: silver;
