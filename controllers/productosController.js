@@ -31,5 +31,8 @@ module.exports = {
       add : (req,res) => {
         return res.render('productos/formAdd');
     },
+    edit : (req,res) => {
+        return res.render('productos/formEdit');
+    }
 
     }

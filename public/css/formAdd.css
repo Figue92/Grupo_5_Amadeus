@@ -52,6 +52,45 @@
     width: 70%;
 }
 
+.formAdd__button {
+    margin: 10px auto;
+    width: 70%;
+}
+
+.formAdd__button--agregar {
+    padding: 10px 5px;
+    font-size: 20px;
+    background: lightskyblue;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formAdd__button--agregar a {
+    color: #FFF;
+    align-self: center;
+}
+
+.formAdd__button--cancelar {
+    padding: 10px 5px;
+    font-size: 20px;
+    background: rgb(255, 76, 76);
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formAdd__button--cancelar a {
+    color: #000;
+    align-self: center;
+}
+
 @media (min-width: 426px) {
     .formAdd {
         width: 70%;
