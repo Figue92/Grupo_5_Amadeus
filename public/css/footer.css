@@ -3,6 +3,7 @@
     border-bottom: 5px solid #000;
     border-top: 5px solid #000;
     padding: 20px 0;
+    font-family: var(--tipografiaPrincipal);
 }
 
 .footer * {
@@ -22,7 +23,7 @@
 .footer__section--titulo{
     text-transform: uppercase;
     margin: 0 auto;
-    align-content: center;
+    text-align: center;
     /* display: none; */
 }
 
