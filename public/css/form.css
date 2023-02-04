@@ -1,13 +1,15 @@
 .form__main {
     padding: 0 2.5%;
     font-family: var(--tipografiaForms);
+    background-color: #FFF;
 }
 
 .form__main h4 {
     width: 95%;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-top: 50px;
     font-size: 0.8rem;
+    height: 20px;
 }
 
 .form__main--titulo {
@@ -32,11 +34,13 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .form__main--registro div {
     width: 45%;
-    margin: 10px auto;
+    height: 20px;
+    /* margin: 0px 0px; */
 }
 
 .form__main--registro .form__main--registro-email, .form__main--registro .form__main--registro-direccion, .form__main--registro .form__main--registro-contrato, .form__main--registro .form__main--registro-spam {
@@ -53,7 +57,7 @@
 
 .form__main--registro div input {
     width: 100%;
-    margin: 10px auto;
+    /* margin: 0px auto; */
     border-style: none;
     border-bottom: 1px solid #000;
     font-family: var(--tipografiaForms);
@@ -163,7 +167,7 @@
 
 @media (min-width: 769px) {
     .form__main {
-        width: 70%;
+        width: 65%;
         margin: 0 auto;
     }
 
