@@ -19,7 +19,7 @@
 }
 
 .header__section--logo img {
-    width: 100%;
+    width: 70%;
     border-radius: 10%;
 }
 
@@ -40,7 +40,7 @@
 
 .header__section__nav--registro ul {
     display: flex;
-    font-size: 10vw;
+    font-size: 6vw;
     justify-content: space-around;
 }
 
@@ -64,6 +64,7 @@
 
     .header__section__nav--redes {
         display: inline-block;
+        font-size: 25px;
     }
 
     .header__section__nav--registro {
@@ -116,6 +117,9 @@
 @media (min-width: 1024px) {
     .header__section--logo {
         width: 8%;
+    }
+    .header__section__nav--registro ul{
+        font-size: 20px;
     }
 }
 
