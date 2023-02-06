@@ -47,12 +47,11 @@
             <h1>Productos de Última Generación</h1>
             <% productos.forEach(({id, title, price, description, image}) => { %>
                 <article class="main__section__productos--article">
-                    <div> <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image %> " alt=""></a>
+                     <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image %> " alt=""></a>
                         <h2>$ <%= price%></h2>
                         <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
                         <h3><%= title %> </h3>
                     <h3><%= description %> </h3>
-                    </div>
                 </article>
             <% }) %>
           
@@ -61,8 +60,8 @@
             <h1>Ofertas Imperdibles</h1>
             <% productos.forEach(({id, title, price, description, image}) => { %>
                 <article class="main__section__productos--article">
-                    <div> <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image %> " alt=""></a>
-                        <h2>$ <%= price%></h2>
+                     <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image %> " alt=""></a>
+                     <div>  <h2>$ <%= price%></h2>
                         <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
                         <h3><%= title %> </h3>
                     <h3><%= description %> </h3>
