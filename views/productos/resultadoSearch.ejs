@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs')  %> 
+
+<body>
+    <%- include('../partials/header.ejs')  %> 
+
+    <main class="main">
+        
+        <%- include('../partials/burguermenu-search.ejs')  %> 
+<h2>Resultados de la búsqueda : </h2>
+       
+        <section class="main__section__productos">
+            <h1>Productos de Última Generación</h1>
+            <% productoFiltrado.forEach(({id, name, price, description,image}) => { %>
+                <article class="main__section__productos--article">
+                     <a
+                     href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt=""></a>
+                        <h2>$ <%= price%></h2>
+                        <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
+                        <h3><%= name %></h3>
+                    <h3><%= description %></h3>
+                </article>
+            <% }) %>
+          
+        </section>
+        <section class="main__section__compra">
+            <i class="fa-regular fa-credit-card"></i>
+            <h4>Pagá hasta en 12 cuotas</h4>
+            <i class="fa-sharp fa-solid fa-truck"></i>
+            <h4>Recibí tu producto</h4>
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>Compra 100% Segura</h4>
+        </section>
+        <section class="main__section__marcas">
+            <h2>Las Mejores Marcas están en AMADEUS</h2>
+            <section class="home__main__section--carrouselMarcas">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="width: 90rem;">
+                            <div class="row">
+                                <div class="col"><img src="/images/home/adata.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="col"><img src="/images/home/amd.jpg" class="d-block w-100" alt="..."></div>
+                                <div class="col"><img src="/images/home/CORSAIR.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="col"><img src="/images/home/cougar.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="col"><img src="/images/home/intel.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="col"><img src="/images/home/logitech.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="col"><img src="/images/home/razer.jpg" class="d-block w-100" alt="...">
+                                </div>
+
+                            </div>
+                        </div>
+
+    </main>
+    
+    <%- include('../partials/footer.ejs')  %>
+</body>
+
+</html>
