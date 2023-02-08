@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "title": "PC Intel i3 12100 8Gb SSD",
+        "description": "240Gb + Monitor 22''",
+        "price": 293342,
+        "image": "producto3.jpg"
+    },
+    {
+        "id": 2,
+        "title": "PC Intel Gamer Thermaltake i3",
+        "description": "10100 8Gb 1TB 650W RX 570 4Gb",
+        "price": 7987,
+        "image": "producto2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Placa de Video PALIT NVIDIA GEFORCE",
+        "description": "GT 730 2GB DDR3",
+        "price": 8078,
+        "image": "producto3.jpg"
+    }
+]
+
+
+
+

@@ -1,6 +1,7 @@
 /*Header*/
 
-.header{background:linear-gradient(var(--colorCeleste),#fff);
+.header{
+    background:linear-gradient(var(--colorCeleste),#fff);
     display: flex;
     flex-wrap: wrap-reverse;
     border-bottom: 5px solid #000;
@@ -14,18 +15,18 @@
 }
 
 .header__section--logo {
-    width: 30%;
+    width: 20%;
 }
 
 .header__section--logo img {
-    width: 100%;
+    width: 70%;
     border-radius: 10%;
 }
 
 .header__section__nav--redes {
     display: none;
     font-size: 35px;
-    position: absolute;
+    position: relative;
     right: 20px;
 }
 
@@ -39,7 +40,7 @@
 
 .header__section__nav--registro ul {
     display: flex;
-    font-size: 10vw;
+    font-size: 6vw;
     justify-content: space-around;
 }
 
@@ -48,7 +49,7 @@
     padding: 10px;
     font-family: var(--tipografiaPrincipal);
     text-transform: uppercase;
-    font-size: 4vw;
+    font-size: 3vw;
     color: var(--colorAzul);
 }
 
@@ -58,11 +59,12 @@
 
 @media (min-width: 426px) {
     .header__section--logo {
-        width: 20%;
+        width: 10%;
     }
 
     .header__section__nav--redes {
         display: inline-block;
+        font-size: 25px;
     }
 
     .header__section__nav--registro {
@@ -70,11 +72,12 @@
     }
 
     .header__section__nav--registro ul {
-        font-size: 6vw;
+    font-size: 1rem;
     }
 
     .header__section__nav--registro--texto {
         display: inline-block;
+        font-size: 1rem;
     }
 
     .header__section__armado-pc {
@@ -100,7 +103,7 @@
     }
 
     .header__section__nav--registro--texto {
-        font-size: 30px;
+        font-size: 15px;
     }
 
     .header__section__armado-pc {
@@ -111,3 +114,12 @@
         margin-top: 12px;
     }
 }
+@media (min-width: 1024px) {
+    .header__section--logo {
+        width: 8%;
+    }
+    .header__section__nav--registro ul{
+        font-size: 20px;
+    }
+}
+

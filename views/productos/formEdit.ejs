@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('../partials/head') %> 
+<body>
+    <!-- Header -->
+    <%- include('../partials/header') %>
+    <main class="form__main">
+        <h1 class="form__main--titulo">editar producto</h1>
+        <form action="" method="POST" class="formAdd">
+            <div class="formAdd__name">
+                <label for=""></label>
+                <input type="text" name="productName" placeholder="Nombre del producto">
+            </div>
+            <div class="formAdd__description">
+                <label for="productDescription">Descripción del producto</label>
+                <textarea name="productDescription" id="productDescription" cols="50" rows="5"></textarea>
+            </div>
+            <div class="formAdd__category">
+                <select name="category" id="category">
+                    <option value="" selected hidden>Categoría</option>
+                </select>
+            </div>
+            <div class="formAdd__category">
+                <select name="subcategory" id="subcategory">
+                    <option value="" selected hidden>Subcategoría</option>
+                </select>
+            </div>
+            <div class="formAdd__price">
+                <label for=""></label>
+                <input type="number" name="productPrice" placeholder="Precio">
+            </div>
+            <div class="formAdd__image">
+                <label for=""></label>
+                <input type="file" name="productImage">
+            </div>
+            <div class="formAdd__button">
+                <button class="formAdd__button--agregar" type="submit"><a href="/">editar</a></button>
+                <button class="formAdd__button--cancelar"><a href="/">cancelar</a></button>
+            </div>
+        </form>
+    </main>
+    <!-- Footer -->
+    <%- include('../partials/footer') %> 
+</body>
+</html>

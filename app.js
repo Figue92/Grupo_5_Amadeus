@@ -1,18 +1,44 @@
+const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const productosRouter = require('./routes/productos');
+
 
 const app = express();
-const port = 3002;
 
-app.use(express.static(path.resolve(__dirname,  'public' )))
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port, () => console.log(`Servidor corriendo en puerto ${port}`));
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/productos', productosRouter);
 
-app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, './views/index.html')));
-app.get('/productDetail.html', (req, res) => res.sendFile(path.resolve(__dirname, './views/productDetail.html')));
-app.get('/register.html', (req, res) => res.sendFile(path.resolve(__dirname, './views/register.html')));
-app.get('/login.html', (req, res) => res.sendFile(path.resolve(__dirname, './views/login.html')));
-app.get('/filtrarProductos', (req, res) => res.sendFile(path.resolve(__dirname, './views/filtrarProductos.html')));
-app.get('/carrito.html', (req, res) => res.sendFile(path.resolve(__dirname, './views/carrito.html')));
-app.get('/register-data', (req, res) => res.sendFile(path.resolve(__dirname, './views/register-data.html')));
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
