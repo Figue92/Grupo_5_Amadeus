@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head.ejs')  %> 
-<body>
-    <%- include('../partials/header.ejs')  %> 
+<%- include('../partials/head.ejs') %>
 
-    <main class="productDetail__main">
-        <section class="productDetail__main__section section--imagenPrincipal">
-            <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-        </section>
+    <body>
+        <%- include('../partials/header.ejs') %>
 
-            <article class="main__section__productos--article">
-                 <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt=""></a>
-                    <h2>$ <%= price%></h2>
-                    <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
-                    <h3><%= name %> </h3>
+            <main class="productDetail__main">
+                <section class="productDetail__main__section section--imagenPrincipal">
+                    <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                </section>
+
+                <section class="productDetail__main__section section--info">
+                    <h1>Monitor ASUS 24'' VA24EHE-J Full HD</h1>
+                    <div class="section__div--info">
+                        <div class="section__div--info-sku">
+                            <h4>sku: <%= id %></h4>
+                        </div>
+                        <div class="section__div--info-precio">
+                            <h3>$<%= price*((100-discount)/100) %></h3>
+                            <p>precio en un pago</p>
+                        </div>
+                        <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %></p>
+                        <div class="section__div--info-btn">
+                            <button><a href="">comprar</a></button>
+                        </div>
+                    </div>
+                    <section class="productDetail__main__section section--vistasImages">
+                        <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                        <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                        <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                        <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                    </section>
+                </section>
+
                 
-            </article>
-        <section class="productDetail__main__section section--vistasImages">
-            <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-            <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-            <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-            <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-        </section>
-        <section class="productDetail__main__section section--caracteristicas">
-            <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
-            <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:</h2>
-            <h3><%= description %> </h3>
-          
-        </section>
-    </main>
+                <section class="productDetail__main__section section--caracteristicas">
+                    <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
+                    <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:
+                    </h2>
+                    <p class="productDetail__main__section__description">
+                        <%= description %>
+                    </p>
 
-    <%- include('../partials/footer.ejs')  %>
-</body>
+                </section>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
 </html>
