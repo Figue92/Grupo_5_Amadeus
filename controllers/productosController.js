@@ -5,6 +5,7 @@ const productos = JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
 
 
 module.exports = {
+  
 
     filter: (req, res) => {
 
@@ -45,7 +46,7 @@ module.exports = {
             category: category,
             marca: marca,
             discount: +discount,
-            novedad: novedad,
+            novedad: novedad==="on",
             image: null
         }
         productos.push(newProduct);

@@ -13,8 +13,8 @@
                  <a href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt=""></a>
                     <h2>$ <%= price%></h2>
                     <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
-                    <h3><%= title %> </h3>
-                <h3><%= description %> </h3>
+                    <h3><%= name %> </h3>
+                
             </article>
         <section class="productDetail__main__section section--vistasImages">
             <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
@@ -25,35 +25,8 @@
         <section class="productDetail__main__section section--caracteristicas">
             <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
             <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:</h2>
-            <article class="productDetail__main__section__article">
-                <h1>pantalla</h1>
-                <p>(Toque aquí para más info)</p>
-                <ul class="productDetail__main__section__article--lista">
-                    <li>pulgadas: 24''</li>
-                    <li>pulgadas visibles: 23.8''</li>
-                    <li>resolucion maxima: 1920x1080</li>
-                    <li>máxima frecuencia: 75hz</li>
-                    <li>cantidad de colores: 16.7m</li>
-                </ul>
-            </article>
-            <article class="productDetail__main__section__article">
-                <h1>conectividad</h1>
-                <ul>
-                    <li>conexión 3.5mm - entrada: no</li>
-                    <li>conector auriculares: no</li>
-                    <li>hdmi: 1</li>
-                    <li>vga: 1</li>
-                </ul>
-            </article>
-            <article class="productDetail__main__section__article">
-                <h1>dimensiones</h1>
-                <ul>
-                    <li>ancho: 540mm</li>
-                    <li>alto: 324mm</li>
-                    <li>espesor: 44mm</li>
-                    <li>curvatura: 0r</li>
-                </ul>
-            </article>
+            <h3><%= description %> </h3>
+          
         </section>
     </main>
 

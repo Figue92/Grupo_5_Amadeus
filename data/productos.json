@@ -130,5 +130,27 @@
       "discount": 20,
       "novedad": false,
       "image": null
+   },
+   {
+      "id": 13,
+      "name": "zapatillas",
+      "price": 10000,
+      "description": "baratas",
+      "category": "",
+      "marca": "",
+      "discount": 0,
+      "novedad": "on",
+      "image": null
+   },
+   {
+      "id": 14,
+      "name": "PC",
+      "price": 2000,
+      "description": "jdhfjksfg",
+      "category": "",
+      "marca": "",
+      "discount": 0,
+      "novedad": true,
+      "image": null
    }
 ]
