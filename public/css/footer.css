@@ -1,9 +1,10 @@
-   .footer{
+.footer{
     font-family: var(--tipografiaPrincipal);
-     background:linear-gradient(var(--colorCeleste),#fff);
+    background:linear-gradient(var(--colorCeleste),#fff);
     border-bottom: 5px solid #000;
     border-top: 5px solid #000;
     padding: 20px 0;
+    line-height: 1.5;
 }
 
 .footer * {
@@ -24,6 +25,10 @@
     text-transform: uppercase;
     margin: 0 auto;
     align-content: center;
+    font-weight: bold;
+    line-height: 1.15;
+    font-size: 1.5em;
+    text-align: center;
     /* display: none; */
 }
 
@@ -46,6 +51,7 @@
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    line-height: 1.15;
 }
 
 .footer__section--article nav {
@@ -55,12 +61,16 @@
 .footer__section--article a {
     display: block;
     margin: 5px auto;
+    color: #000;
+    text-decoration: none;
 }
 
 .footer__section--article h3 {
     text-transform: uppercase;
     color: var(--colorAzul);
     margin: 10px auto;
+    font-size: 1.17em;
+    font-weight: bold;
 }
 
 .footer__section--article p {
@@ -146,6 +156,7 @@
 @media (min-width: 769px) {
     .footer__section {
         width: 95%;
+        line-height: 1.5;
     }
 
     .footer__section--qr {
