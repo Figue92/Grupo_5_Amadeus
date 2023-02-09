@@ -131,6 +131,12 @@
     display: block;
 }
 
+.productDetail__main .productDetail__section--buttons {
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+
 @media (min-width: 426px) {
     .productDetail__main {
         gap: 2%;
