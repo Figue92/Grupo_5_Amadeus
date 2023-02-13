@@ -33,6 +33,20 @@ No postergar tareas.
 ### Otras observaciones:
 Hubo complicaciones con el tiempo personal, y no se le pudo dedicar las horas necesarias.
 
+# RETROSPECTIVA SPRINT 3
+### Comenzar a hacer: 
+Avisar a tiempo al equipo cualquier retraso o dificultad.
 
+### Hacer más:
+Realizar Dailys de 15 minutos.
+
+### Continuar haciendo:
+Planificar antes de comenzar el sprint, para optimizar el tiempo. Fluir la comunicación.
+
+### Hacer Menos:
+Perder tiempo en pedir ayuda a los compañeros.
+
+### Dejar de hacer:
+--
 
 
