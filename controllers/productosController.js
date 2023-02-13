@@ -72,32 +72,34 @@ module.exports = {
 		});
     },
     update : (req,res) => {
+        
         const {id} = req.params;
 		const { name, price, description, category, marca, discount, novedad } = req.body;
 		const producto = productos.find(producto => producto.id === +id);
-		
+		console.log(producto);
+
 		const productoUpdate = {
 			id : +id,
-			name : name.trim(),
+			name : name?.trim(),
             price : +price,
-			description : description.trim(),
-			category,
-            marca,
+			description : description?.trim(),
+			category: producto.category,
+            marca: producto.marca,
 			discount : +discount,
-            novedad,
+            novedad: novedad === "on" ,
 			image : null,
 		};
 
 		const productosUpdate = productos.map(producto => {
 			if(producto.id === +id){
-				return productoUpdate;
+				return productoUpdate
 			}
 			return producto;
 		});
 
 		fs.writeFileSync(productosFilePath,JSON.stringify(productosUpdate, null, 3), 'UTF-8');
 
-  		return res.redirect('/productos/productDetail/' + id);
+  		return res.redirect('/');
     }
 
 }

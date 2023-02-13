@@ -12,9 +12,9 @@
    },
    {
       "id": 2,
-      "name": "Mother ASUS",
-      "price": 329400,
-      "description": "Mother ASUS ROG MAXIMUS XIII EXTREME GLACIAL",
+      "name": "Motherboard INTEL",
+      "price": 40000,
+      "description": "Mother Intel X670E Taichi Carrara AM5",
       "category": "Motherboard",
       "marca": "Intel",
       "discount": 0,
@@ -45,11 +45,11 @@
    },
    {
       "id": 5,
-      "name": "Placa de Video Asrock",
-      "price": 35700,
-      "description": "Placa de Video Asrock Radeon RX 550 2GB GDDR5 Phantom Gaming",
-      "category": "Placas de Video",
-      "marca": "Asrock",
+      "name": "Auriculares Redragon",
+      "price": 15000,
+      "description": "Auriculares Redragon Color Blue Inalambricos",
+      "category": "Accesorios",
+      "marca": "Redragon",
       "discount": 0,
       "novedad": true,
       "image": null
@@ -62,18 +62,18 @@
       "category": "Accesorios",
       "marca": "Redragon",
       "discount": 40,
-      "novedad": false,
+      "novedad": true,
       "image": null
    },
    {
       "id": 7,
-      "name": "Auriculares Inalambricos ",
-      "price": 34390,
+      "name": "Auriculares Inalambricos",
+      "price": 2000,
       "description": "Auriculares Inalambricos Logitech G733 Lightspeed RGB Blue",
       "category": "Accesorios",
       "marca": "Logitech",
       "discount": 0,
-      "novedad": true,
+      "novedad": false,
       "image": null
    },
    {
@@ -129,28 +129,6 @@
       "marca": "Redragon",
       "discount": 20,
       "novedad": false,
-      "image": null
-   },
-   {
-      "id": 13,
-      "name": "zapatillas",
-      "price": 10000,
-      "description": "baratas",
-      "category": "",
-      "marca": "",
-      "discount": 0,
-      "novedad": "on",
-      "image": null
-   },
-   {
-      "id": 14,
-      "name": "PC",
-      "price": 2000,
-      "description": "jdhfjksfg",
-      "category": "",
-      "marca": "",
-      "discount": 0,
-      "novedad": true,
       "image": null
    }
 ]
