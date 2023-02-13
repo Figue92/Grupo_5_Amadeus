@@ -11,7 +11,7 @@
                 </section>
 
                 <section class="productDetail__main__section section--info">
-                    <h1>Monitor ASUS 24'' VA24EHE-J Full HD</h1>
+                    <h1><%= name %></h1>
                     <div class="section__div--info">
                         <div class="section__div--info-sku">
                             <h4>sku: <%= id %></h4>
@@ -45,8 +45,8 @@
                 </section>
 
                 <section class="formAdd__button productDetail__section--buttons">
-                    <button class="formAdd__button--agregar" type="submit"><a href="/">editar</a></button>
-                    <button class="formAdd__button--cancelar"><a href="/">cancelar</a></button>
+                    <button class="formAdd__button--agregar"><a href="/productos/edit/<%= id %>">editar</a></button>
+                    <button type="submit" class="formAdd__button--cancelar"><a href="/">eliminar</a></button>
                 </section>
             </main>
 
