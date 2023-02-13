@@ -84,7 +84,18 @@ hr{
 .conteiner-titulo--div{
     margin: auto;
 }
-
+.conteiner-titulo--div--datos .logo--ubicacion{
+    width: 10%;
+}
+.conteiner-titulo--div--subtitulo .logo--mp {
+    width: 10%;
+}
+.conteiner-cuadro1--pago .logo--mp{
+    width: 10%;
+}
+.footer__section .footer__section--qr{
+    width: 10%;
+}
 
 
 /* Productos */
