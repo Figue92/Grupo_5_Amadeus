@@ -6,8 +6,9 @@ const productos= JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
 module.exports={
     index :
     (req,res) =>{
-
-        const nuevos= productos.filter(producto=>producto.nuevo);
+      const productosFilePath= path.join(__dirname, '../data/productos.json');
+      const productos= JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
+        const nuevos= productos.filter(producto=>producto.novedad);
         const oferta= productos.filter(producto=> producto.discount > 0 );
        return res.render('index',
        {title : 'Amadeus PC | HOME',

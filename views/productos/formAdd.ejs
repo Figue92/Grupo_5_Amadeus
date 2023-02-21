@@ -7,35 +7,54 @@
     <%- include('../partials/header') %>
     <main class="form__main">
         <h1 class="form__main--titulo">agregar producto</h1>
-        <form action="" method="POST" class="formAdd">
+        <form action="/productos" method="POST" class="formAdd">
             <div class="formAdd__name">
                 <label for=""></label>
-                <input type="text" name="productName" placeholder="Nombre del producto">
+                <input type="text" name="name" placeholder="Nombre del producto">
             </div>
             <div class="formAdd__description">
                 <label for="productDescription">Descripción del producto</label>
-                <textarea name="productDescription" id="productDescription" cols="50" rows="5"></textarea>
+                <textarea name="description" id="productDescription" cols="50" rows="5"></textarea>
             </div>
             <div class="formAdd__category">
                 <select name="category" id="category">
                     <option value="" selected hidden>Categoría</option>
+                    <option value="">Accesorios</option>
+                    <option value="">Motherboard</option>
+                    <option value="">Placas de video</option>
+                    <option value="">Procesadores</option>
+                    <option value="">Memorias Ram</option>
                 </select>
             </div>
             <div class="formAdd__category">
-                <select name="subcategory" id="subcategory">
-                    <option value="" selected hidden>Subcategoría</option>
+                <select name="marca" id="marca">
+                    <option value="" selected hidden>Marca</option>
+                    <option value="">AMD</option>
+                    <option value="">INTEL</option>
+                    <option value="">Gigabyte</option>
+                    <option value="">Redragon</option>
+                    <option value="">HyperX</option>
+                    <option value="">GeForce</option>
                 </select>
             </div>
             <div class="formAdd__price">
                 <label for=""></label>
-                <input type="number" name="productPrice" placeholder="Precio">
+                <input type="number" name="price" placeholder="Precio">
+            </div>
+            <div class="formAdd__novedad">
+                <input type="checkbox" name="novedad" id="novedad">
+                <label for="novedad">Es un producto recién salido al mercado.</label>
+            </div>
+            <div class="formAdd__price">
+                <label for=""></label>
+                <input type="number" name="discount" placeholder="Descuento">
             </div>
             <div class="formAdd__image">
                 <label for=""></label>
-                <input type="file" name="productImage">
+                <input type="file" name="image">
             </div>
             <div class="formAdd__button">
-                <button class="formAdd__button--agregar" type="submit"><a href="/">agregar</a></button>
+                <button class="formAdd__button--agregar" type="submit">agregar</button>
                 <button class="formAdd__button--cancelar"><a href="/">cancelar</a></button>
             </div>
         </form>

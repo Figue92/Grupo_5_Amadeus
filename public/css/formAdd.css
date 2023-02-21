@@ -48,6 +48,19 @@
     width: 25%;
 }
 
+.formAdd__novedad {
+    align-self: center;
+    text-align: left;
+    width: 70%;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.formAdd .formAdd__novedad input {
+    width: 10%;
+    margin: 0;
+}
+
 .formAdd__image {
     width: 70%;
 }
@@ -89,6 +102,10 @@
 .formAdd__button--cancelar a {
     color: #000;
     align-self: center;
+}
+
+.formAdd__form--eliminar {
+    display: inline-flex;
 }
 
 @media (min-width: 426px) {
