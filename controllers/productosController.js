@@ -100,6 +100,14 @@ module.exports = {
 		fs.writeFileSync(productosFilePath,JSON.stringify(productosUpdate, null, 3), 'UTF-8');
 
   		return res.redirect('/');
+    },
+    remove : (req,res) => {
+        const id = +req.params.id;
+        const productosFinales = productos.filter(producto => producto.id !== id);
+        
+        fs.writeFileSync(productosFilePath, JSON.stringify(productosFinales, null, 3), 'utf-8');
+        return res.redirect('/productos/productos');
+        
     }
 
 }

@@ -104,6 +104,10 @@
     align-self: center;
 }
 
+.formAdd__form--eliminar {
+    display: inline-flex;
+}
+
 @media (min-width: 426px) {
     .formAdd {
         width: 70%;
