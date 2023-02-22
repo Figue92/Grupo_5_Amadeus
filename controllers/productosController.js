@@ -31,6 +31,7 @@ module.exports = {
         return res.render('productos/productDetail', {
             title: "Detalle del curso",
             ...producto
+            
         })
     },
     cart: (req, res) => {
@@ -55,7 +56,7 @@ module.exports = {
             marca: marca,
             discount: +discount,
             novedad: novedad==="on",
-            image: null
+            image: req.files.map(file=>file.filename)
         }
         productos.push(newProduct);
 
@@ -87,7 +88,7 @@ module.exports = {
             marca: producto.marca,
 			discount : +discount,
             novedad: novedad === "on" ,
-			image : null,
+			image : req.files.length ? req.files.map(file => file.filename) : producto.image,
 		};
 
 		const productosUpdate = productos.map(producto => {

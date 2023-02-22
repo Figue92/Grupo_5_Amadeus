@@ -7,7 +7,7 @@
     <%- include('../partials/header') %>
     <main class="form__main">
         <h1 class="form__main--titulo">editar producto</h1>
-        <form action="/productos/edit/<%= id %>?_method=PUT" method="POST" class="formAdd">
+        <form action="/productos/edit/<%= id %>?_method=PUT" method="POST" class="formAdd" enctype="multipart/form-data">
             <div class="formAdd__name">
                 <label for="name"></label>
                 <input type="text" name="name" placeholder="Nombre del producto" value="<%= name %>">
@@ -50,7 +50,7 @@
             </div>
             <div class="formAdd__image">
                 <label for=""></label>
-                <input type="file" name="productImage">
+                <input type="file" name="images" multiple>
             </div>
             <div class="formAdd__button">
                 <button class="formAdd__button--agregar" type="submit">editar</button>

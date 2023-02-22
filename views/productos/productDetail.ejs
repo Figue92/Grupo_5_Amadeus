@@ -7,7 +7,7 @@
         <%- include('../partials/burguermenu-search') %>
             <main class="productDetail__main">
                 <section class="productDetail__main__section section--imagenPrincipal">
-                    <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                    <img src="/images/<%= image ? image[0] : 'imageNull.jpeg'%> " alt="">
                 </section>
 
                 <section class="productDetail__main__section section--info">
@@ -26,13 +26,19 @@
                         </div>
                     </div>
                     <section class="productDetail__main__section section--vistasImages">
+                      <% if (image) { %>
+                         <% image.forEach(image => { %>
+                            <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                        <% }) %>
+                     <% }else{ %>
                         <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-                        <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-                        <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
-                        <img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                      <% } %>
+                       
+                       
+               
                     </section>
                 </section>
-
+            
                 
                 <section class="productDetail__main__section section--caracteristicas">
                     <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>

@@ -8,7 +8,12 @@
       "marca": "Gigabyte",
       "discount": 20,
       "novedad": false,
-      "image": null
+      "image": [
+         "1677082210121_products_.jpg",
+         "1677082210132_products_.jpg",
+         "1677082210138_products_.webp",
+         "1677082210138_products_.png"
+      ]
    },
    {
       "id": 2,
@@ -19,7 +24,12 @@
       "marca": "Intel",
       "discount": 0,
       "novedad": true,
-      "image": null
+      "image": [
+         "1677080969075_products_.jpg",
+         "1677080969076_products_.jpg",
+         "1677080969082_products_.png",
+         "1677080969083_products_.png"
+      ]
    },
    {
       "id": 3,
