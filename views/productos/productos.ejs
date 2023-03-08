@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs', {otherScript: include('../partials/scripts.ejs',{view:'Home'})}) %>
 
     <body>
         <%- include('../partials/header.ejs') %>
 
             <main class="main">
-
+<%- include('../partials/burguermenu-search') %>
                 <section class="main__section__productos-ofertas">
                     <h1>Todos los productos</h1>
                     <% productos.forEach(({id, title, price, description, image})=> { %>
