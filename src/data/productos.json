@@ -140,5 +140,16 @@
       "discount": 20,
       "novedad": false,
       "image": null
+   },
+   {
+      "id": 13,
+      "name": "",
+      "price": 0,
+      "description": "",
+      "category": "",
+      "marca": "",
+      "discount": 0,
+      "novedad": false,
+      "image": []
    }
 ]
