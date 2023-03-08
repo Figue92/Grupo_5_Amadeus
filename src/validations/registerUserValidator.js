@@ -28,7 +28,10 @@ module.exports = [
             let user = readJSON('users.json').find(user => user.email === value);
             return !user // user ? false : true
         }).withMessage('El email ya se encuentra registrado'),
-
+ check('codarea')
+ .notEmpty().withMessage('Debe ingresar código de área').bail(),
+ check('tel')
+ .notEmpty().withMessage('Debe ingresar un número de contacto').bail(),
     check('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .isLength({

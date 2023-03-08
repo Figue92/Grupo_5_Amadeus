@@ -28,7 +28,7 @@
             <h4>Teléfono de Contacto</h4>
             <div class="form__main--registro-codarea">
                 <label for="codarea">Código de área</label>
-                <input type="number" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" name="email" value="<%= (locals.old && old.email) && old.email  %>">
+                <input type="number" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="codarea" name="codarea" value="<%= (locals.old && old.email) && old.email  %>">
                 <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
             </div>
             <div class="form__main--registro-tel">
@@ -53,7 +53,7 @@
 
             <button class="form__button--siguiente"><a href="">registrarse</a></button>
             <h2>¿Ya tenés cuenta? Entrá <a href="/users/login">acá</a></h2>
-            <button class="form__button--google"><a href=""><img src="/images/logo-google.png" alt=""><p>Continuar con Google</p></a></button>
+            <button type="submit" class="form__button--google"><a href=""><img src="/images/logo-google.png" alt=""><p>Continuar con Google</p></a></button>
         </form>
     </main>
 

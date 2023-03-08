@@ -5,10 +5,6 @@
     "pass" : "quet1!",
     "tel" : "1123456789",
     "dni" : "12345678",
-    "type" : "admin",
-    "address" : "Calle 123",
-    "city" : "Lanus",
-    "state" : "Buenos Aires",
-    "country" : "Argentina",
+    "rol": "admin",
     "proms" : true
 }]

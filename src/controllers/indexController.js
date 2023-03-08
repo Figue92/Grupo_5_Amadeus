@@ -26,5 +26,10 @@ const productoFiltrado = productos.filter(producto => producto.name.toLowerCase(
     productoFiltrado,
     keywords
   }) 
+},
+admin : (req,res) => {
+  return res.render('dashboard', {
+    productos
+  })
 }
 }
