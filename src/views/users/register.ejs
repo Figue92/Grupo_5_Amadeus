@@ -11,35 +11,47 @@
         <h4 class="form__main--subtitulo">ingresá tus datos para crear tu cuenta</h4>
         <form action="" method="POST" class="form__main--registro">
             <div class="form__main--registro-nombre">
-                <label for="nombre"></label>
-                <input name="nombre" type="text" id="nombre" placeholder="Nombre" required>
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>" id="name" name="name" value="<%= (locals.old && old.name) && old.name %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
             </div>
             <div class="form__main--registro-apellido">
-                <label for="apellido"></label>
-                <input name="apellido" type="text" id="apellido" placeholder="Apellido" required>
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.surname) && 'is-invalid'%>" id="surname" name="surname" value="<%= (locals.old && old.surname) && old.surname   %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
             </div>
             <div class="form__main--registro-email">
-                <label for="email"></label>
-                <input type="email" id="email" placeholder="E-mail" required>
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" name="email" value="<%= (locals.old && old.email) && old.email  %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
             </div>
             <h4>Teléfono de Contacto</h4>
             <div class="form__main--registro-codarea">
-                <label for="codarea"></label>
-                <input type="number" id="codarea" placeholder="Código de área" required>
+                <label for="codarea">Código de área</label>
+                <input type="number" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" name="email" value="<%= (locals.old && old.email) && old.email  %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
             </div>
             <div class="form__main--registro-tel">
-                <label for="tel"></label>
-                <input type="tel" id="tel" placeholder="Número de teléfono" required>
+                <label for="tel">Teléfono</label>
+                <input type="number" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="tel" value="<%= (locals.old && old.tel) && old.tel  %>">
+                <small><%= locals.errors && errors.tel ? errors.tel.msg : null %></small>
             </div>
             <div class="form__main--registro-pass">
-                <label for="password"></label>
-                <input type="password" id="password" placeholder="Contraseña" required>
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control  <%= (locals.errors && errors.password) && 'is-invalid'%>" id="password" name="password">
+                <small class="text-danger ms-2"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
             </div>
             <div class="form__main--registro-repeatPass">
-                <label for="confirmPassword"></label>
-                <input type="password" id="confirmPassword" placeholder="Repetir contraseña" required>
+                <label for="password2">Repita su contraseña</label>
+                <input type="password" class="form-control  <%= (locals.errors && errors.password2) && 'is-invalid'%>" id="password2" name="password2">
+                <small class="text-danger ms-2"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
             </div>
-            <button class="form__button--siguiente"><a href="/users/register-data">siguiente</a></button>
+            <div class="form__main--registro-spam">
+                <input class="checkbox" type="checkbox" id="spam">
+                <label for="spam">Deseo recibir ofertas y promociones de productos en mi email.</label>
+            </div>
+
+            <button class="form__button--siguiente"><a href="">registrarse</a></button>
             <h2>¿Ya tenés cuenta? Entrá <a href="/users/login">acá</a></h2>
             <button class="form__button--google"><a href=""><img src="/images/logo-google.png" alt=""><p>Continuar con Google</p></a></button>
         </form>
