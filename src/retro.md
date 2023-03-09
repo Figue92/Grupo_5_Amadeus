@@ -49,4 +49,21 @@ Perder tiempo en pedir ayuda a los compañeros.
 ### Dejar de hacer:
 --
 
+# RETROSPECTIVA SPRINT 4
+### Comenzar a hacer: 
+Revisar las correcciones antes de comenzar el siguiente sprint.
+
+### Hacer más:
+Realizar Dailys de 15 minutos.
+
+### Continuar haciendo:
+Planificar antes de comenzar el sprint, para optimizar el tiempo. Fluir la comunicación.
+
+### Hacer Menos:
+--
+
+### Dejar de hacer:
+--
+
+
 
