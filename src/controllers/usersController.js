@@ -13,8 +13,10 @@ module.exports = {
             title: "Ingresá"
         })
     },
-    register2 : (req,res) => {
+
+    processRegister : (req,res) => {
        const errors = validationResult(req);
+
        if(errors.isEmpty()){
         const users = readJSON('users.json')
         const {name, surname, email, tel, password}  = req.body;
@@ -45,7 +47,7 @@ module.exports = {
 },
 processLogin : (req,res) => {
     const errors = validationResult(req);
-    console.log(hashSync(req.body.password, 12));
+
     if(!errors.isEmpty()){
         return res.render('users/login',{
             title : "Inicio de sesión",

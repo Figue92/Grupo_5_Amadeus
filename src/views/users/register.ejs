@@ -13,7 +13,7 @@
             <div class="form__main--registro-nombre">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>" id="name" name="name" value="<%= (locals.old && old.name) && old.name %>">
-                <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                <small class=""><%= locals.errors && errors.name ? errors.name.msg : null %></small>
             </div>
             <div class="form__main--registro-apellido">
                 <label for="apellido">Apellido</label>
@@ -28,8 +28,8 @@
             <h4>Teléfono de Contacto</h4>
             <div class="form__main--registro-codarea">
                 <label for="codarea">Código de área</label>
-                <input type="number" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="codarea" name="codarea" value="<%= (locals.old && old.email) && old.email  %>">
-                <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                <input type="number" class="form-control  <%= (locals.errors && errors.codarea) && 'is-invalid'%>" id="codarea" name="codarea" value="<%= (locals.old && old.codarea) && old.codarea  %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.codarea ? errors.codarea.msg : null %></small>
             </div>
             <div class="form__main--registro-tel">
                 <label for="tel">Teléfono</label>
@@ -46,14 +46,15 @@
                 <input type="password" class="form-control  <%= (locals.errors && errors.password2) && 'is-invalid'%>" id="password2" name="password2">
                 <small class="text-danger ms-2"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
             </div>
+            <!-- subir img -->
             <div class="form__main--registro-spam">
                 <input class="checkbox" type="checkbox" id="spam">
                 <label for="spam">Deseo recibir ofertas y promociones de productos en mi email.</label>
             </div>
 
-            <button class="form__button--siguiente"><a href="">registrarse</a></button>
+            <button type="submit" class="form__button--siguiente">registrarse</button>
             <h2>¿Ya tenés cuenta? Entrá <a href="/users/login">acá</a></h2>
-            <button type="submit" class="form__button--google"><a href=""><img src="/images/logo-google.png" alt=""><p>Continuar con Google</p></a></button>
+            <button class="form__button--google"><a href=""><img src="/images/logo-google.png" alt=""><p>Continuar con Google</p></a></button>
         </form>
     </main>
 
