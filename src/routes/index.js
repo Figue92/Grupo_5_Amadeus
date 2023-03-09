@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/indexController')
+const {index, search, admin} = require('../controllers/indexController');
+const checkUserAdmin = require('../middlewares/checkUserAdmin');
 
 
-router.get('/',(controller.index));
-router.get('/search',(controller.search));
+router.get('/', index);
+router.get('/search', search);
+router.get('/admin', checkUserAdmin, admin)
 
 
 module.exports = router;

@@ -9,6 +9,8 @@ const session = require('express-session');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productosRouter = require('./routes/productos');
+const localUserCheck = require('./middlewares/localsUserCheck');
+const cookieCheck = require('./middlewares/cookieCheck');
 
 
 const app = express();
@@ -24,6 +26,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret : "amdGrupo5", resave : true, saveUninitialized : true}))
+app.use(cookieCheck)
+app.use(localUserCheck)
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

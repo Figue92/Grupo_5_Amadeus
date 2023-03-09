@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs,{
+    title : 'Dashboard'
+}) %>
+
+  <body class="home">
+    <!-- encabezado -->
+    <%- include('./partials/header.ejs') %>
+
+      <!-- principal -->
+      <main class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Descuento</th>
+                                <th scope="col">Novedad</th>
+                                <th scope="col">Acciones</th>
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <% productos.forEach(({id, name, price, description, category, marca, discount, novedad }) => { %>
+                                    <tr>
+                                        <th scope="row"><%= id %></th>
+                                        <td><%= name %></td>
+                                        <td><%= price %></td>
+                                        <td><%= description %></td>
+                                        <td><%= category %></td>
+                                        <td><%= marca %></td>
+                                        <td><%= discount %></td>
+                                        <td><%= novedad %></td>
+                                        <td>
+                                           <div class="d-flex gap-2">
+                                            <a class="btn btn-sm btn-primary" href="/productos/productDetail/<%= id %>"><i class="far fa-eye"></i></a>
+                                            <a class="btn btn-sm btn-success" href="/prductos/edit/<%= id %>"><i class="far fa-edit"></i></a>
+                                            <a class="btn btn-sm btn-danger" href="/productos/remove/<%= id %>"><i class="fas fa-trash"></i></a>
+                                           </div> 
+                                        </td>
+                                      </tr>
+                                <% }) %>
+                            
+                           
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+     
+
+      </main>
+      <!-- pie de pagina -->
+
+
+
+  </body>
+
+</html>
