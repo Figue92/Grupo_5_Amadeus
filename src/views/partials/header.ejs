@@ -10,17 +10,28 @@
         </nav>
         <nav class="header__section__nav--registro">
             <ul>
-                <li><a class="header__section__armado-pc header__section__nav--registro--texto" href="/productos/productos">arma tu
+                <li><a class="header__section__armado-pc header__section__nav--registro--texto"
+                        href="/productos/productos">arma tu
                         pc</a></li>
-                <li><a class="header__section__nav--registro--icono" href="/productos/add"><i class="fa-solid fa-hand-holding-dollar"></i></a><a class="header__section__nav--registro--texto" href="/productos/add">vender</a></li>
-                <li><a class="header__section__nav--registro--icono" href="/users/register"><i
-                            class="fa-solid fa-user-plus"></i></a><a class="header__section__nav--registro--texto"
-                        href="/users/register">Registrate</a></li>
-                <li><a class="header__section__nav--registro--icono" href="/users/login"><i
-                            class="fa-solid fa-right-to-bracket"></i></a><a
-                        class="header__section__nav--registro--texto" href="/users/login">Ingresa</a></li>
-                <li><a class="header__section__nav--registro--icono" href="/productos/carrito"><i
-                            class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a class="header__section__nav--registro--icono" href="/productos/add"><i
+                            class="fa-solid fa-hand-holding-dollar"></i></a><a
+                        class="header__section__nav--registro--texto" href="/productos/add">vender</a></li>
+                <% if (locals.userLogin) { %>
+                    <li><a class="header__section__nav--registro--icono" href="/users/profile"><i class="fa-solid fa-user"></i></a><a
+                            class="header__section__nav--registro--texto" href="/users/profile">Hola, <%= locals.userLogin.name %></a></li>
+                    <li><a class="header__section__nav--registro--icono" href="/users/logout"><i class="fa-solid fa-right-from-bracket"></i></a><a
+                            class="header__section__nav--registro--texto" href="/users/logout">Cerrar Sesión</a></li>
+                    <% } else { %>
+                        
+                        <li><a class="header__section__nav--registro--icono" href="/users/register"><i
+                                    class="fa-solid fa-user-plus"></i></a><a
+                                class="header__section__nav--registro--texto" href="/users/register">Registrate</a></li>
+                        <li><a class="header__section__nav--registro--icono" href="/users/login"><i
+                                    class="fa-solid fa-right-to-bracket"></i></a><a
+                                class="header__section__nav--registro--texto" href="/users/login">Ingresa</a></li>
+                        <% } %>
+                            <li><a class="header__section__nav--registro--icono" href="/productos/carrito"><i
+                                        class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </nav>
     </section>

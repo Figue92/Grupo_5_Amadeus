@@ -1,10 +1,20 @@
-[{
-    "id" : 1,
-    "user" : "Matias Nuñez",
-    "email" : "matdnunez@gmail.com",
-    "pass" : "quet1!",
-    "tel" : "1123456789",
-    "dni" : "12345678",
-    "rol": "admin",
-    "proms" : true
-}]
+[
+    {
+        "id" : 1,
+        "name" : "Matias",
+        "surname" : "Nuñez",
+        "email" : "matias@gmail.com",
+        "tel" : "1123456789",
+        "password" : "$2a$12$KvmwWiLbj5pz2RktLAcwM.poqoz5tPNoxLR7m53OM1oBSzYnJhn6O",
+        "rol": "admin"
+    },
+    {
+        "id" : 2,
+        "name" : "Sol",
+        "surname" : "Lopez",
+        "email" : "sol@gmail.com",
+        "tel" : "1123456789",
+        "password" : "$2a$12$V4viEq1XCdCpokPEomjtR.yzfaFr87sN3I3dSBUiTStaIo/.V0tl6",
+        "rol": "admin"
+    }
+]

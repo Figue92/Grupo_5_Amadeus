@@ -13,12 +13,6 @@ module.exports = {
             title: "Ingresá"
         })
     },
-    processLogin: (req,res) => {
-        
-
-        
-        return res.redirect('/');
-    },
     register2 : (req,res) => {
        const errors = validationResult(req);
        if(errors.isEmpty()){
@@ -51,40 +45,39 @@ module.exports = {
 },
 processLogin : (req,res) => {
     const errors = validationResult(req);
-
-    if(errors.isEmpty()){
-
-        const {id, name, rol} = readJSON('users.json').find(user => user.email === req.body.email);
-
-        req.session.userLogin = {
-            id,
-            name,
-            rol
-        };
-
-       if(req.body.remember){
-            res.cookie('userAmadeusPC',req.session.userLogin,{maxAge: 1000*60} )
-       }
-
-        return res.redirect('/')
-    }else{
+    console.log(hashSync(req.body.password, 12));
+    if(!errors.isEmpty()){
         return res.render('users/login',{
             title : "Inicio de sesión",
-            errors : errors.mapped()
-        })
+            errors : errors.mapped(),
+            old : req.body
+        });
     }
+
+    const userLogin = readJSON('users.json').find(user => user.email === req.body.email);
+    delete userLogin.password;
+    
+    req.session.userLogin = userLogin;
+
+    if(req.body.remember){
+        res.cookie('userAmadeusPC', req.session.userLogin, {maxAge: 1000*60*5} )
+    }
+
+    return res.redirect('/users/profile')
 },
 profile : (req,res) => {
     return res.render('users/profile',{
-        title : "Perfil de usuario"
+        title : "Perfil de usuario",
+        user : req.session.userLogin
     })
 },
 update : (req,res) => {
     return res.send(req.body)
 },
 logout : (req,res) => {
+    res.clearCookie('userAmadeusPC');
     req.session.destroy();
-    return res.redirect('/')
+    return res.redirect('/');
 },
 list : (req,res) => {
     return res.render('users/users',{

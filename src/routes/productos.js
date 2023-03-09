@@ -3,12 +3,14 @@ const router = express.Router();
 
 
 const{detail, filter, cart, add, edit, store, update, list, remove}= require('../controllers/productosController')
+const checkUserLogin = require('../middlewares/checkUserLogin');
 const {uploadImage}= require('../middlewares/upload')
+
 router
     .get('/carrito', cart)
     .get('/productDetail/:id', detail )
     .get('/filtrarProductos', filter)
-    .get('/add', add)
+    .get('/add', checkUserLogin, add)
     .post('/', uploadImage.array('images'), store)
     .get('/edit/:id', edit)
     .put('/edit/:id', uploadImage.array('images'), update)

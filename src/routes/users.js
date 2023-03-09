@@ -13,7 +13,7 @@ router.get('/login', checkUser, login)
 router.post('/login', loginUserValidator, processLogin)
 router.post('/register', registerUserValidator, register2)
 router.get('/profile', checkUserLogin, profile)
-router.put('/logout', checkUserLogin, logout)
+router.get('/logout', logout)
 router.get('/', checkUserAdmin, list)
 
 
