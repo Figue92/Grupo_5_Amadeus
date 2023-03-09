@@ -25,5 +25,15 @@
       "tel": "12345678",
       "password": "$2a$12$lYyLLzaY/92s/JpTSM.0uOl2PPjdha2gDzIpyGCdz86XAliEYfOQq",
       "rol": "user"
+   },
+   {
+      "id": 4,
+      "name": "Emanuel",
+      "surname": "Programador",
+      "email": "ema@gmail.com",
+      "tel": "12365478",
+      "password": "$2a$12$OkRkpy6Qub1Z.iF9MEJdjuE53AaX2niG7IxsGrDdZUtO/.VKgJPf2",
+      "image": "1678374868659_products_.jpeg",
+      "rol": "user"
    }
 ]

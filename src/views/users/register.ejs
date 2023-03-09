@@ -9,7 +9,7 @@
     <main class="form__main">
         <h1 class="form__main--titulo">registrarse</h1>
         <h4 class="form__main--subtitulo">ingresá tus datos para crear tu cuenta</h4>
-        <form action="" method="POST" class="form__main--registro">
+        <form action="" method="POST" class="form__main--registro" enctype="multipart/form-data">
             <div class="form__main--registro-nombre">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>" id="name" name="name" value="<%= (locals.old && old.name) && old.name %>">
@@ -47,6 +47,12 @@
                 <small class="text-danger ms-2"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
             </div>
             <!-- subir img -->
+
+            <div class="formAdd__image">
+                <label for="">Inserte foto de perfil</label>
+                <input type="file" name="image">
+            </div>
+
             <div class="form__main--registro-spam">
                 <input class="checkbox" type="checkbox" id="spam">
                 <label for="spam">Deseo recibir ofertas y promociones de productos en mi email.</label>

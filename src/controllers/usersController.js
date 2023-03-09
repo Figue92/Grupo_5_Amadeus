@@ -28,6 +28,7 @@ module.exports = {
             email : email.trim(),
             tel : tel,
             password : hashSync(password,12),
+            image: req.file ? req.file.filename : null,
             rol : 'user'
         }
 
