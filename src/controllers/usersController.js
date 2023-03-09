@@ -9,6 +9,12 @@ module.exports = {
             title: "Ingresá"
         })
     },
+    processLogin: (req,res) => {
+        
+
+        
+        return res.redirect('/');
+    },
     register2 : (req,res) => {
         return res.render('users/register-data');
     },   
