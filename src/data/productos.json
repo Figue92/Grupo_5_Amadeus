@@ -25,10 +25,7 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "1677080969075_products_.jpg",
-         "1677080969076_products_.jpg",
-         "1677080969082_products_.png",
-         "1677080969083_products_.png"
+         "1678375914131_products_.png"
       ]
    },
    {
@@ -140,16 +137,5 @@
       "discount": 20,
       "novedad": false,
       "image": null
-   },
-   {
-      "id": 13,
-      "name": "",
-      "price": 0,
-      "description": "",
-      "category": "",
-      "marca": "",
-      "discount": 0,
-      "novedad": false,
-      "image": []
    }
 ]

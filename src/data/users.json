@@ -35,5 +35,15 @@
       "password": "$2a$12$OkRkpy6Qub1Z.iF9MEJdjuE53AaX2niG7IxsGrDdZUtO/.VKgJPf2",
       "image": "1678374868659_products_.jpeg",
       "rol": "user"
+   },
+   {
+      "id": 5,
+      "name": "Cosme",
+      "surname": "Fulanito",
+      "email": "cosme@gmail.com",
+      "tel": "15234569",
+      "password": "$2a$12$XJlnKjkyLOWlUMdnNe9LrOMF/ZPdmigzvjCacToxmuxiGv1JLV6pa",
+      "image": "1678713967317_products_.jpg",
+      "rol": "user"
    }
 ]

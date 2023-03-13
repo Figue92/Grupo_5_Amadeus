@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs,{
+<%- include('./partials/head',{
     title : 'Dashboard'
 }) %>
 
@@ -45,9 +45,13 @@
                                         <td>
                                            <div class="d-flex gap-2">
                                             <a class="btn btn-sm btn-primary" href="/productos/productDetail/<%= id %>"><i class="far fa-eye"></i></a>
-                                            <a class="btn btn-sm btn-success" href="/prductos/edit/<%= id %>"><i class="far fa-edit"></i></a>
-                                            <a class="btn btn-sm btn-danger" href="/productos/remove/<%= id %>"><i class="fas fa-trash"></i></a>
-                                           </div> 
+                                            <a class="btn btn-sm btn-success" href="/productos/edit/<%= id %>"><i class="far fa-edit"></i></a>
+                                            
+
+                                            <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar">
+                                              <button onclick="eliminar()" type="button"><i class="fas fa-trash"></i></button>
+                                          </form>
+                                          </div> 
                                         </td>
                                       </tr>
                                 <% }) %>
@@ -66,7 +70,7 @@
       <!-- pie de pagina -->
 
 
-
+      <%- include('./partials/scripts.ejs',{view:'detail'})  %>
   </body>
 
 </html>

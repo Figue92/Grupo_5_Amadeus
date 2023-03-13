@@ -15,7 +15,7 @@ router.post('/login', loginUserValidator, processLogin)
 router.post('/register', uploadPerfil.single('image') ,registerUserValidator, processRegister)
 router.get('/profile', checkUserLogin, profile)
 router.get('/logout', logout)
-router.get('/', checkUserAdmin, list)
+
 
 
 module.exports = router;
