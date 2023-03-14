@@ -1,7 +1,12 @@
-.carrito__main{
-    background-color: #599399
-}
 
+.main__carrito{
+   
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: var(--tipografiaPrincipal);
+   
+}
 .banner{
     display: none;
 
@@ -51,13 +56,13 @@
    
 }
 
-.hamburguesa{
-    padding: 10px;
-    padding-left: 15px;
-    font-size: 30px;
-    border: 1px solid #3846BE;
-    border-radius: 50%;
-    background-color: #3846BE;
+.main__section--burguer-menu{
+    width: 10%;
+    background-color: var(--colorAzul);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
 }
 .carrito__main p {
     font-family: var(--tipografiaPrincipal);
@@ -70,9 +75,9 @@
 
 /*Titulo*/
 
-hr{
+/* hr{
     display: none;
-}
+} */
 .conteiner-titulo{
     display: flex;
     justify-content: center;
@@ -168,12 +173,6 @@ right: 1px;
     font-size: 22px;
 }
 
-
-.conteiner-titulo--div--datos {
-
-
-
-}
 .logo--ubicacion{
     width: 6%;
 }
@@ -211,11 +210,15 @@ right: 1px;
     padding-right: 15px;
 }
 .precio--p3{
+
     font-size: 25px;
 }
-.contenedor--boton--agregar{
+.conteiner-titulo--div--subtitulo{
     display: flex;
     justify-content: center;
+}
+.contenedor--boton--agregar{
+   
 }
 .boton--agregar{
     background-color: #3846BE;

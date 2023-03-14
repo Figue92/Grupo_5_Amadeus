@@ -37,7 +37,9 @@
       "marca": "Adata",
       "discount": 30,
       "novedad": false,
-      "image": null
+      "image": [
+         "1678826638024_products_.jpg"
+      ]
    },
    {
       "id": 4,
@@ -48,18 +50,22 @@
       "marca": "AMD",
       "discount": 20,
       "novedad": false,
-      "image": null
+      "image": [
+         "1678827340469_products_.jpg"
+      ]
    },
    {
       "id": 5,
-      "name": "Auriculares Redragon",
+      "name": "Auriculares HyperX",
       "price": 15000,
-      "description": "Auriculares Redragon Color Blue Inalambricos",
+      "description": "Auriculares Inalámbricos Cat Ear Luz Led C/ Mic - Celeste",
       "category": "Accesorios",
       "marca": "Redragon",
       "discount": 0,
       "novedad": true,
-      "image": null
+      "image": [
+         "1678826894003_products_.jpg"
+      ]
    },
    {
       "id": 6,
@@ -70,7 +76,9 @@
       "marca": "Redragon",
       "discount": 40,
       "novedad": true,
-      "image": null
+      "image": [
+         "1678826958082_products_.jpg"
+      ]
    },
    {
       "id": 7,
@@ -87,12 +95,14 @@
       "id": 8,
       "name": "Placa de Video GeForce",
       "price": 13650,
-      "description": "Placa de Video GeForce MSI G210 1GB DDR3 Low Profile ",
+      "description": "Placa de Video GeForce MSI G210 1GB DDR3 Low Profile",
       "category": "Placas de Video",
       "marca": "GeForce",
       "discount": 40,
       "novedad": false,
-      "image": null
+      "image": [
+         "1678827485714_products_.jpg"
+      ]
    },
    {
       "id": 9,
@@ -103,7 +113,9 @@
       "marca": "AMD",
       "discount": 0,
       "novedad": true,
-      "image": null
+      "image": [
+         "1678827075449_products_.png"
+      ]
    },
    {
       "id": 10,
@@ -114,7 +126,9 @@
       "marca": "HyperX",
       "discount": 0,
       "novedad": true,
-      "image": null
+      "image": [
+         "1678827173953_products_.jpg"
+      ]
    },
    {
       "id": 11,
@@ -125,7 +139,9 @@
       "marca": "Intel",
       "discount": 0,
       "novedad": true,
-      "image": null
+      "image": [
+         "1678827246923_products_.jpg"
+      ]
    },
    {
       "id": 12,
@@ -136,6 +152,8 @@
       "marca": "Redragon",
       "discount": 20,
       "novedad": false,
-      "image": null
+      "image": [
+         "1678827565387_products_.jpg"
+      ]
    }
 ]

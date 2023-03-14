@@ -9,17 +9,10 @@
         align-items: center;
         border-radius: 15px;
     }
-    .main__section--burguer-menu{
-        width: 10%;
-        background-color: var(--colorAzul);
-        border-radius: 10px;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: center;
-    }
+
     .main__section--burguer-menu i{
         color:#fff;
-        font-size: xx-large;
+        font-size: 2vh;
     }
     .main__section--search-box input{
         display: none;

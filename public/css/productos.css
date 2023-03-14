@@ -1,0 +1,23 @@
+.main__productos {
+   width: 100%;
+}
+.main__section__productos--article-ofertas{
+    background: linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
+    text-align: center;
+   
+}
+.main__section__productos--article-ofertas img{
+    width: 40%;
+    margin: 20px 90px;
+    border-radius: 8px;
+    border: solid 3px darkturquoise;
+}
+.main__section__productos-ofertas{
+    background: linear-gradient(var(--colorCeleste),#fff);
+    font-size: 0.5rem;
+}
+.main__section__productos-ofertas h1{
+    width: 100%;
+    font-size: 5vh;
+}
