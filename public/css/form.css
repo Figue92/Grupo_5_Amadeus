@@ -86,8 +86,8 @@
 
 .form__button--siguiente {
     margin: 10px auto;
-    padding: 15px 5px;
-    font-size: 32px;
+    padding: 5px 2px;
+    font-size: 12px;
     background: lightskyblue;
     border: none;
     border-radius: 5px;
@@ -109,7 +109,7 @@
 
 .form__main h2 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     width: 100%;
     text-align: center;
 }
@@ -167,7 +167,7 @@
     }
 
     .form__main--registro div label {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .form__button--siguiente {

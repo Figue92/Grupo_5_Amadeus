@@ -25,29 +25,31 @@
 
 .form__main__recordar--container__switch-track {
     background: rgb(231, 230, 255);
-	border: 1px solid var(--colorAzul);
-	border-radius: 100px;
-	cursor: pointer;
-	display: flex;
-	height: 30px;
-	margin-right: 12px;
-	position: relative;
-	width: 60px;
+    border: 1px solid var(--colorAzul);
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    height: 20px;
+    margin-right: 12px;
+    position: relative;
+    width: 30px;
 }
 
 .form__main__recordar--container__switch-indicator {
     align-items: center;
-	background: var(--colorAzul);
-	border-radius: 24px;
-	bottom: 2px;
-	display: flex;
-	height: 24px;
-	justify-content: center;
-	left: 2px;
-	outline: solid 2px transparent;
-	position: absolute;
-	transition: 0.25s;
-	width: 24px;
+    background: var(--colorAzul);
+    border-radius: 24px;
+    bottom: 2px;
+    px;
+    display: flex;
+    height: 14px;
+    left: 5px;-
+    content: center;
+    left: 2px;
+    outline: solid 2px transparent;
+    position: absolute;
+    transition: 0.25s;
+    width: 14px;
 }
 
 .form__main__recordar--container__switch-input:checked + .form__main__recordar--container__switch-track .form__main__recordar--container__switch-indicator {
