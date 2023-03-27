@@ -10,7 +10,14 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
+.product_button{
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .section--imagenPrincipal img {
     width: 50%;
     display: block;
@@ -70,10 +77,7 @@
     text-align: right;
 }
 
-.section__div--info-btn button {
-    background-color: orangered;
-    text-transform: capitalize;
-}
+
 
 .section__div--info a {
     color: #FFF;
