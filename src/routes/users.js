@@ -13,7 +13,7 @@ router.get('/register', checkUser, register)
 router.get('/login', checkUser, login)
 router.post('/login', loginUserValidator, processLogin)
 router.post('/register', uploadPerfil.single('image') ,registerUserValidator, processRegister)
-router.get('/profile', checkUserLogin, profile)
+router.get('/profile', uploadPerfil.single('image'), checkUserLogin, profile)
 router.get('/logout', logout)
 
 

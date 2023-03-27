@@ -69,10 +69,14 @@ processLogin : (req,res) => {
     return res.redirect('/users/profile')
 },
 profile : (req,res) => {
+ console.log(req.file)
     return res.render('users/profile',{
+       
         title : "Perfil de usuario",
-        user : req.session.userLogin
-    })
+        user : req.session.userLogin,
+        image: req.file ? req.file.filename : null
+    }) 
+    
 },
 update : (req,res) => {
     return res.send(req.body)

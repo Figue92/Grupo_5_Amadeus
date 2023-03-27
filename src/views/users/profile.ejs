@@ -3,7 +3,15 @@
     <%- include('../partials/head.ejs')  %> 
 <body>
     <%- include('../partials/header.ejs')  %> 
-    <h1>PERFIL DE USUARIO</h1>
+    <h1 class="profile__titulo">PERFIL DE USUARIO</h1>
+    <div class="profile">
+  <img src="/images/users/<%= locals.userLogin.image %>" alt="User Avatar">
+  <h1><%= locals.userLogin.name %></h1>
+  <p><%= locals.userLogin.email %></p>
+  <p><%= locals.userLogin.tel %></p>
+  <h1>Tus Compras</h1>
+  <p>Aún no tenes compras realizadas</p>
+</div>
     <%- include('../partials/footer.ejs')  %>
 </body>
 </html>
