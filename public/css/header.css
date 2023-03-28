@@ -1,0 +1,134 @@
+/*Header*/
+
+.header{
+    background:linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
+    flex-wrap: wrap-reverse;
+    border-bottom: 5px solid #000;
+}
+
+.header__section {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header__section--logo {
+    width: 20%;
+    align-content: center;
+}
+
+.header__section--logo img {
+    width: 70%;
+    border-radius: 10%;
+}
+
+.header__section__nav--redes {
+    display: none;
+    font-size: 35px;
+    position: relative;
+    right: 20px;
+    font-family: var(--tipografiaPrincipal);
+    line-height: 1.5;
+}
+
+.header__section__armado-pc {
+    display: none;
+}
+
+.header__section__nav--registro {
+    width: 60%;
+    line-height: 1.5;
+    font-family: var(--tipografiaPrincipal);
+}
+
+.header__section__nav--registro ul {
+    display: flex;
+    font-size: 6vw;
+    justify-content: space-around;
+    margin-bottom: 16px;
+    margin-top: 0;
+    padding-left: 2rem;
+}
+
+.header__section__nav--registro--texto {
+    display: none;
+    padding: 10px;
+    font-family: var(--tipografiaPrincipal);
+    text-transform: uppercase;
+    font-size: 3vw;
+    color: var(--colorAzul);
+    text-decoration: none;
+}
+
+.header i {
+    color: #000;
+}
+
+@media (min-width: 426px) {
+    .header__section--logo {
+        width: 10%;
+    }
+
+    .header__section__nav--redes {
+        display: inline-block;
+        font-size: 25px;
+    }
+
+    .header__section__nav--registro {
+        width: 80%;
+    }
+
+    .header__section__nav--registro ul {
+    font-size: 1rem;
+    }
+
+    .header__section__nav--registro--texto {
+        display: inline-block;
+        font-size: 1rem;
+    }
+
+    .header__section__armado-pc {
+        display: none;
+    }
+
+    .fa-cart-shopping {
+        margin-top: 7px;
+    }
+}
+
+@media (min-width: 769px) {
+    .header__section--logo {
+        width: 10%;
+    }
+
+    .header__section__nav--registro {
+        width: 90%;
+    }
+
+    .header__section__nav--registro ul {
+        font-size: 3vw;
+    }
+
+    .header__section__nav--registro--texto {
+        font-size: 15px;
+    }
+
+    .header__section__armado-pc {
+        display: inline-block;
+    }
+
+    .fa-cart-shopping {
+        margin-top: 12px;
+    }
+}
+@media (min-width: 1024px) {
+    .header__section--logo {
+        width: 8%;
+    }
+    .header__section__nav--registro ul{
+        font-size: 20px;
+    }
+}
+

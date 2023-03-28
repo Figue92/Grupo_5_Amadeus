@@ -1,0 +1,49 @@
+[
+   {
+      "id": 1,
+      "name": "Matias",
+      "surname": "Nuñez",
+      "email": "matias@gmail.com",
+      "tel": "1123456789",
+      "password": "$2a$12$KvmwWiLbj5pz2RktLAcwM.poqoz5tPNoxLR7m53OM1oBSzYnJhn6O",
+      "rol": "admin"
+   },
+   {
+      "id": 2,
+      "name": "Sol",
+      "surname": "Lopez",
+      "email": "sol@gmail.com",
+      "tel": "1123456789",
+      "password": "$2a$12$V4viEq1XCdCpokPEomjtR.yzfaFr87sN3I3dSBUiTStaIo/.V0tl6",
+      "rol": "admin"
+   },
+   {
+      "id": 3,
+      "name": "Eric",
+      "surname": "Mena",
+      "email": "eric@gmail.com",
+      "tel": "12345678",
+      "password": "$2a$12$lYyLLzaY/92s/JpTSM.0uOl2PPjdha2gDzIpyGCdz86XAliEYfOQq",
+      "rol": "user"
+   },
+   {
+      "id": 4,
+      "name": "Emanuel",
+      "surname": "Programador",
+      "email": "ema@gmail.com",
+      "tel": "12365478",
+      "password": "$2a$12$OkRkpy6Qub1Z.iF9MEJdjuE53AaX2niG7IxsGrDdZUtO/.VKgJPf2",
+      "image": "1678374868659_products_.jpeg",
+      "rol": "user"
+   },
+   {
+      "id": 5,
+      "name": "Cosme",
+      "surname": "Fulanito",
+      "email": "cosme@gmail.com",
+      "tel": "15234569",
+      "password": "$2a$12$XJlnKjkyLOWlUMdnNe9LrOMF/ZPdmigzvjCacToxmuxiGv1JLV6pa",
+      "image": "1678713967317_products_.jpg",
+      "rol": "user"
+   }
+]

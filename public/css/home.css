@@ -1,0 +1,291 @@
+.main{
+    font-family: var(--tipografiaPrincipal);
+    }
+    .main__section{
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
+        justify-content: space-evenly;
+        height: 60px;
+        align-items: center;
+        border-radius: 15px;
+    }
+
+    .main__section--burguer-menu i{
+        color:#fff;
+        font-size: 2vh;
+    }
+    .main__section--search-box input{
+        display: none;
+    }
+    .main__section--search-box button{
+        border-radius: 50%;
+        width: 100%;
+    }
+    .main__section--search-box form {
+        display: flex;
+    }
+    .main__section__nav{
+        display: none;
+    }
+        
+    .home__main__section--banner{
+    display: none;
+    }
+    .main__section__productos{
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        font-size: 0.5rem;
+        border-radius: 10%;
+        gap: 10px;
+    }
+    .main__section__productos--article{
+       /*  display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: linear-gradient(45deg, var(--colorCeleste), #FFF);
+        border-radius: 10px; */
+       display: flex;
+       flex-direction: column;
+       width: 30%;
+       /* height: 350px; */
+       border: 1px solid #ccc;
+       border-radius: 5px;
+       padding: 10px;
+       transition: all 0.3s ease-in-out;
+       justify-content: space-around;
+       flex-wrap: wrap;
+    }
+    .main__section__productos--article:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .main__article_buton{
+        background-color: #4285F4;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .main__section__productos--article img{
+        width: 100%;
+        border-radius: 8px;
+        border: solid 3px darkturquoise;
+        object-fit: cover;
+    }
+    .main__section__productos--article h2{
+        font-size: 1rem;
+    }
+    .main__section__productos--article h3{
+        display: none;
+    }
+    .main__section__productos--article-ofertas{
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    .main__section__productos--article-ofertas img{
+        width: 40%;
+        margin: 20px 90px;
+        border-radius: 8px;
+        border: solid 3px darkturquoise;
+    }
+    .main__section__productos-ofertas{
+        background: linear-gradient(var(--colorCeleste),#fff);
+        font-size: 0.5rem;
+    }
+    .main__section__productos-ofertas h1{
+        width: 100%;
+        font-size: 5vh;
+    }
+    .main__section__productos--article-ofertas-desc h2{
+        font-size: 1rem;
+    }
+    .main__section__productos--article-ofertas-desc h3{
+        font-size: 1rem;
+    }
+    
+    .main__section__compra{
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        flex-direction: column;
+    }
+    .main__section__compra i{text-align: center;width: 30%;font-size: 30px;}
+    .main__section__marcas{
+        background: linear-gradient(var(--colorCeleste),#fff);
+        text-align: center;
+    }
+    .main__section__marcas h2{
+        font-size: 1rem;
+    }
+    
+    
+    
+    @media (min-width:768px) {
+        .main__section--burguer-menu{
+        /* padding: 0px; */
+        }
+        .main__section{
+        display: flex;
+        }
+        .main__section--search-box{
+            display: flex;
+            font-size: 1.5rem;
+        }
+        .main__section--search-box input{
+            display: flex;
+            border-radius: 20px;
+            font-size: 1rem;
+            width: 80vh;
+        }
+        .main__section--search-box button{
+            width: 10%;
+        }
+        .home__main__section--banner{
+            display: block;
+            }
+        .main__section__productos{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .main__section__productos--article{
+            /* width: 30%; */
+        }
+      
+        .main__section__productos--article h3{
+            margin: 10px auto;
+            font-size: 0.5rem;
+            display: block;
+            width: 50%;
+        }
+        .main__section__productos-ofertas .main__section__productos--article{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(90deg,var(--colorCeleste),#fff);
+            margin: 10px auto;
+            border-radius: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .main__section__productos-ofertas .main__section__productos--article a{
+            width: 90%;
+        }
+        .main__section__productos-ofertas .main__section__productos--article img{
+            width: 100%;
+        }
+        .main__section__productos-ofertas .main__section__productos--article div{
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .main__section__productos--article--vermas{
+            display: none;
+        }
+    
+        .main__section__productos h1{
+            width: 100%;
+            font-size: 5vh;
+        }
+        .main__section__productos--article img{
+        width: 100%;
+        }
+        .main__section__productos-ofertas{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            background-color: linear-gradient(var(--colorCeleste),#fff);
+            border-radius: 15%;
+        }
+        .main__section__productos--article-ofertas{
+            display: flex;
+            /* width: 30%; */
+            background-color: var(--colorCeleste);
+            border-radius: 15%;
+            flex-wrap: nowrap;
+        }
+        .main__section__productos--article-ofertas-desc{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+         }
+        .main__section__productos--article-ofertas img{
+            /* width: 20%; */
+        }
+        .main__section__productos--article-ofertas h3, h2{
+            /* font-size: 1rem; */
+            /* width: 100%; */
+        }
+        .main__section__compra h4{
+           font-size: 15px;
+        }
+        .main__section__compra{
+            display: flex;
+            flex-direction: row;
+        }
+    
+    }
+    @media (min-width:1024px) {
+       .main__section--burguer-menu{
+        display: none;
+       }
+       .main__section__nav{
+        float: left;
+        display: flex;
+    }
+    .main__section__nav-list{
+        float: left;
+    }
+    .main__section__nav ul {
+        overflow: hidden;
+        list-style: none;
+        display: flex;
+    }
+    .main__section__nav ul li{
+        float: left;
+    }
+    .main__section__nav ul li a{
+        display: block;
+        padding: 20px;
+    }
+    .main__section__productos-ofertas{
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* flex-direction: row; */
+    }
+       }
+       .main__section__productos-ofertas{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: linear-gradient(var(--colorCeleste),#fff);
+        border-radius: 2%;
+        align-content: space-around;
+        justify-content: space-around;
+    }
+    .main__section__productos--article-ofertas{
+        display: flex;
+        /* width: 30%; */
+        background-color: var(--colorCeleste);
+        border-radius: 15%;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+    }
+    .main__section__productos--article-ofertas-desc{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+     }
+    .main__section__productos--article-ofertas img{
+        /* width: 20%; */
+    }
+     
+    

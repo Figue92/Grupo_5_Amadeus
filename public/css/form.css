@@ -1,0 +1,191 @@
+.form__main {
+    padding: 0 2.5%;
+    font-family: var(--tipografiaForms);
+}
+
+.form__main h4 {
+    width: 95%;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+.form__main--titulo {
+    text-transform: uppercase;
+    font-family: var(--tipografiaPrincipal);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form__main .form__main--subtitulo {
+    color: var(--colorAzul);
+    text-align: center;
+    margin: 0 auto 30px;
+}
+
+.form__main--subtitulo::first-letter {
+    text-transform: uppercase;
+}
+
+.form__main--registro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__main--registro div {
+    width: 45%;
+    margin: 10px auto;
+}
+
+.form__main--registro .form__main--registro-email, .form__main--registro .form__main--registro-direccion, .form__main--registro .form__main--registro-contrato, .form__main--registro .form__main--registro-spam {
+    width: 95%;
+}
+
+.form__main--registro .form__main--registro-codarea, .form__main--registro .form__main--registro-codpostal {
+    width: 30%;
+}
+
+.form__main--registro .form__main--registro-tel, .form__main--registro .form__main--registro-ciudad {
+    width: 60%;
+}
+
+.form__main--registro div input {
+    width: 100%;
+    margin: 10px auto;
+    border-style: none;
+    border-bottom: 1px solid #000;
+    font-family: var(--tipografiaForms);
+    font-size: 0.8rem;
+}
+
+.form__main--registro div .checkbox {
+    width: 20px;
+    margin: 0;
+}
+
+.form__main--registro div select {
+    width: 100%;
+    margin: 10px auto;
+    border-style: none;
+    border-bottom: 1px solid #000;
+    font-family: var(--tipografiaForms);
+    font-size: 0.8rem;
+    color: grey ;
+}
+
+.form__main--registro div input:focus {
+    border-bottom: 1px solid var(--colorAzul);
+}
+
+.form__main--registro div label {
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.form__button--siguiente {
+    margin: 10px auto;
+    padding: 5px 2px;
+    font-size: 12px;
+    background: lightskyblue;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 85%;
+    letter-spacing: 1px;
+}
+
+.form__button--siguiente a {
+    color: #FFF;
+    align-self: center;
+}
+
+.form__button--siguiente:hover {
+    background: linear-gradient(#dee5ff,lightskyblue);
+}
+
+.form__main h2 {
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.form__main--registro h3 a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.form__button--google {
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 1rem;
+    background: #FFF;
+    border: 1px solid #000;
+    width: 70%;
+}
+
+.form__button--google a {
+    display: flex;
+    width: 100%;
+    color: grey;
+    font-size: 16px;
+    text-align: center;
+    align-content: center;
+}
+
+.form__button--google img {
+    width: 20px;
+}
+
+.form__button--google p {
+    margin: 0 auto;
+    align-self: center;
+}
+
+.passForget {
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 426px) {
+    .form__main--registro {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .form__button--google {
+        width: 50%;
+    }
+
+    .form__button--google img {
+        width: 30px;
+    }
+
+    .form__main--registro div label {
+        font-size: 10px;
+    }
+
+    .form__button--siguiente {
+        width: 60%;
+    }
+}
+
+@media (min-width: 769px) {
+    .form__main {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .form__main--titulo {
+      font-size: 2rem;
+    }
+    
+    .form__main .form__main--subtitulo {
+        font-size: 1.2rem;
+    }
+}

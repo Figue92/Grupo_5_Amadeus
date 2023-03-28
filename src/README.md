@@ -40,3 +40,7 @@ Amante del deporte , la música y todo lo referido a la tecnología.
 
 - https://www.mercadolibre.com.ar : Elegí mercadolibre porque es una pagina líder , me gustó su diseño, su funcionalidad,
 todo muy bien explicado y bastante completo con variedad de opciones para navegar y lograr satifacción del cliente. (Ismael Ideme)
+
+#### Tablero de trabajo:
+
+Link de Trello: https://trello.com/b/F1xKMfgE/com18-grupo-5-amadeuspc

@@ -1,0 +1,159 @@
+[
+   {
+      "id": 1,
+      "name": "Motherboard Gigabyte",
+      "price": 19540,
+      "description": "Mother Gigabyte GA-A320M-H AM4",
+      "category": "Motherboard",
+      "marca": "Gigabyte",
+      "discount": 20,
+      "novedad": false,
+      "image": [
+         "1677082210121_products_.jpg",
+         "1677082210132_products_.jpg",
+         "1677082210138_products_.webp",
+         "1677082210138_products_.png"
+      ]
+   },
+   {
+      "id": 2,
+      "name": "Motherboard INTEL",
+      "price": 40000,
+      "description": "Mother Intel X670E Taichi Carrara AM5",
+      "category": "Motherboard",
+      "marca": "Intel",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "1678375914131_products_.png"
+      ]
+   },
+   {
+      "id": 3,
+      "name": "Memoria DDR5",
+      "price": 15170,
+      "description": "Memoria Adata DDR5 8GB 4800Mhz",
+      "category": "Memorias Ram",
+      "marca": "Adata",
+      "discount": 30,
+      "novedad": false,
+      "image": [
+         "1678826638024_products_.jpg"
+      ]
+   },
+   {
+      "id": 4,
+      "name": "Procesador Ryzen",
+      "price": 25300,
+      "description": "Procesador AMD Ryzen 3 4100 Sin cooler OEM",
+      "category": "Procesadores",
+      "marca": "AMD",
+      "discount": 20,
+      "novedad": false,
+      "image": [
+         "1678827340469_products_.jpg"
+      ]
+   },
+   {
+      "id": 5,
+      "name": "Auriculares HyperX",
+      "price": 15000,
+      "description": "Auriculares Inalámbricos Cat Ear Luz Led C/ Mic - Celeste",
+      "category": "Accesorios",
+      "marca": "Redragon",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "1678826894003_products_.jpg"
+      ]
+   },
+   {
+      "id": 6,
+      "name": "Auriculares",
+      "price": 3860,
+      "description": "Auriculares Redragon H120 Ares PC",
+      "category": "Accesorios",
+      "marca": "Redragon",
+      "discount": 40,
+      "novedad": true,
+      "image": [
+         "1678826958082_products_.jpg"
+      ]
+   },
+   {
+      "id": 7,
+      "name": "Auriculares Inalambricos",
+      "price": 2000,
+      "description": "Auriculares Inalambricos Logitech G733 Lightspeed RGB Blue",
+      "category": "Accesorios",
+      "marca": "Logitech",
+      "discount": 0,
+      "novedad": false,
+      "image": null
+   },
+   {
+      "id": 8,
+      "name": "Placa de Video GeForce",
+      "price": 13650,
+      "description": "Placa de Video GeForce MSI G210 1GB DDR3 Low Profile",
+      "category": "Placas de Video",
+      "marca": "GeForce",
+      "discount": 40,
+      "novedad": false,
+      "image": [
+         "1678827485714_products_.jpg"
+      ]
+   },
+   {
+      "id": 9,
+      "name": "Mother Asrock",
+      "price": 270450,
+      "description": "Mother Asrock X670E Taichi Carrara AM5",
+      "category": "Motherboard",
+      "marca": "AMD",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "1678827075449_products_.png"
+      ]
+   },
+   {
+      "id": 10,
+      "name": "Teclado",
+      "price": 22810,
+      "description": "Teclado Mecanico HP HyperX Alloy Origins Core RGB Switch Blue US",
+      "category": "Accesorios",
+      "marca": "HyperX",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "1678827173953_products_.jpg"
+      ]
+   },
+   {
+      "id": 11,
+      "name": "Procesador Intel",
+      "price": 21600,
+      "description": "Procesador Intel Pentium Gold G6400 4.0GHz Socket 1200",
+      "category": "Procesadores",
+      "marca": "Intel",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "1678827246923_products_.jpg"
+      ]
+   },
+   {
+      "id": 12,
+      "name": "Mouse Redragon",
+      "price": 2350,
+      "description": "Mouse Redragon Centrophorus M601-RGB",
+      "category": "Accesorios",
+      "marca": "Redragon",
+      "discount": 20,
+      "novedad": false,
+      "image": [
+         "1678827565387_products_.jpg"
+      ]
+   }
+]

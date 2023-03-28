@@ -1,0 +1,179 @@
+.footer{
+    font-family: var(--tipografiaPrincipal);
+    background:linear-gradient(var(--colorCeleste),#fff);
+    border-bottom: 5px solid #000;
+    border-top: 5px solid #000;
+    padding: 20px 0;
+    font-family: var(--tipografiaPrincipal);
+    line-height: 1.5;
+}
+
+.footer * {
+    margin: 0;
+}
+
+.footer__section{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.footer__section--titulo{
+    text-transform: uppercase;
+    margin: 0 auto;
+    align-content: center;
+    font-weight: bold;
+    line-height: 1.15;
+    font-size: 1.5em;
+    text-align: center;
+    /* display: none; */
+}
+
+.footer__section__nav--redes{
+    margin: 20px auto;
+    width: 100%;
+    padding: 0 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__section--qr {
+    width: 20%;
+    order: 1;
+    margin-top: 10px;
+}
+.footer__section--article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.15;
+}
+
+.footer__section--article nav {
+    text-align: center;
+}
+
+.footer__section--article a {
+    display: block;
+    margin: 5px auto;
+    color: #000;
+    text-decoration: none;
+}
+
+.footer__section--article h3 {
+    text-transform: uppercase;
+    color: var(--colorAzul);
+    margin: 10px auto;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.footer__section--article p {
+    margin: 3px auto;
+}
+
+.footer__section--nav {
+    display: none;
+}
+
+.article--informacion:hover .footer__section--nav {
+    display: block;
+}
+
+.article--contactanos p {
+    display: none;
+}
+
+.article--contactanos:hover p {
+    display: block;
+}
+
+.article--ventatel h3 + p {
+    font-weight: bold;
+}
+
+/* iconos de redes sociales */
+.fa-square-facebook {
+    color: #3b5998;
+}
+
+.fa-twitter {
+    color: #55acee;
+}
+
+.fa-instagram {
+    color: #bc2a8d;
+}
+
+.fa-whatsapp {
+    color: #4dc247;
+}
+
+.fa-discord {
+    color: #7289da;
+}
+
+.fa-twitch {
+    color: #6441a5;
+}
+
+@media (min-width: 426px) {
+    .footer__section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer__section--qr {
+        order: 0;
+    }
+
+    .footer__section--article {
+        width: 40%;
+    }
+
+    .article--horarios {
+        margin-left: 20%;
+    }
+
+    .footer__section--nav {
+        display: block;
+    }
+
+    .article--contactanos p {
+        display: block;
+    }
+
+    .footer__section__nav--redes i {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer__section {
+        width: 95%;
+        line-height: 1.5;
+    }
+
+    .footer__section--qr {
+        width: 10%;
+    }
+
+    .footer__section--article {
+        width: 20%;
+    }
+
+    .article--horarios {
+        margin-left: 0;
+    }
+}
+@media (min-width: 768px) {
+    .footer__section--qr {
+        width:5%;
+    }
+}
