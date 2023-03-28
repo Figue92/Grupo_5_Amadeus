@@ -47,15 +47,16 @@
         text-align: center;
         background: linear-gradient(45deg, var(--colorCeleste), #FFF);
         border-radius: 10px; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 250px;
-        height: 350px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-        transition: all 0.3s ease-in-out;
+       display: flex;
+       flex-direction: column;
+       width: 30%;
+       /* height: 350px; */
+       border: 1px solid #ccc;
+       border-radius: 5px;
+       padding: 10px;
+       transition: all 0.3s ease-in-out;
+       justify-content: space-around;
+       flex-wrap: wrap;
     }
     .main__section__productos--article:hover{
         transform: scale(1.05);
@@ -154,7 +155,7 @@
             flex-wrap: wrap;
         }
         .main__section__productos--article{
-            width: 30%;
+            /* width: 30%; */
         }
       
         .main__section__productos--article h3{
@@ -166,14 +167,15 @@
         .main__section__productos-ofertas .main__section__productos--article{
             width: 30%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             background: linear-gradient(90deg,var(--colorCeleste),#fff);
             margin: 10px auto;
             border-radius: 10px;
             flex-wrap: wrap;
+            align-items: center;
         }
         .main__section__productos-ofertas .main__section__productos--article a{
-            width: 40%;
+            width: 90%;
         }
         .main__section__productos-ofertas .main__section__productos--article img{
             width: 100%;
@@ -193,7 +195,7 @@
             font-size: 5vh;
         }
         .main__section__productos--article img{
-        width: 30%;
+        width: 100%;
         }
         .main__section__productos-ofertas{
             display: flex;
@@ -266,6 +268,7 @@
         background-color: linear-gradient(var(--colorCeleste),#fff);
         border-radius: 2%;
         align-content: space-around;
+        justify-content: space-around;
     }
     .main__section__productos--article-ofertas{
         display: flex;
