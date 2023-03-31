@@ -19,7 +19,7 @@ module.exports = {
 
        if(errors.isEmpty()){
         const users = readJSON('users.json')
-        const {name, surname, email, tel, password}  = req.body;
+        const {name, surname, email, tel, password, image}  = req.body;
 
         const newUser = {
             id: users.length ? users[users.length - 1].id + 1 : 1,
