@@ -42,6 +42,20 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
+-- Table `amadeuspc`.`addresses`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `amadeuspc`.`addresses` (
+  `idAddress` INT NOT NULL AUTO_INCREMENT,
+  `address` VARCHAR(45) NULL,
+  `city` VARCHAR(45) NULL,
+  `province` VARCHAR(45) NULL,
+  `country` VARCHAR(45) NULL,
+  `zipCode` INT NULL,
+  PRIMARY KEY (`idAddress`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `amadeuspc`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `amadeuspc`.`users` (
@@ -52,11 +66,18 @@ CREATE TABLE IF NOT EXISTS `amadeuspc`.`users` (
   `phone` INT NOT NULL,
   `rol_id` INT NOT NULL,
   `avatar` VARCHAR(100) NULL,
+  `Idaddress` INT NULL,
   PRIMARY KEY (`idUser`),
   INDEX `Rol_idx` (`rol_id` ASC) VISIBLE,
+  INDEX `address_idx` (`Idaddress` ASC) VISIBLE,
   CONSTRAINT `Rol`
     FOREIGN KEY (`rol_id`)
-    REFERENCES `amadeuspc`.`rols` (`idRol`))
+    REFERENCES `amadeuspc`.`rols` (`idRol`),
+  CONSTRAINT `address`
+    FOREIGN KEY (`Idaddress`)
+    REFERENCES `amadeuspc`.`addresses` (`idAddress`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -65,14 +86,13 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- Table `amadeuspc`.`cart`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `amadeuspc`.`cart` (
-  `idCart` INT NOT NULL,
+  `id` INT NOT NULL,
   `id_user` INT NOT NULL,
-  INDEX `Users_idx` (`id_user` ASC) VISIBLE,
-  CONSTRAINT `Users`
+  INDEX `usuarios_idx` (`id_user` ASC) VISIBLE,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `usuarios`
     FOREIGN KEY (`id_user`)
-    REFERENCES `amadeuspc`.`users` (`idUser`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `amadeuspc`.`users` (`idUser`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -133,22 +153,19 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `amadeuspc`.`products_cart` (
   `idProducts_cart` INT NOT NULL AUTO_INCREMENT,
-  `idProduct` INT NOT NULL,
-  `idCart` INT NOT NULL,
+  `productId` INT NOT NULL,
+  `cartId` INT NOT NULL,
   PRIMARY KEY (`idProducts_cart`),
-  INDEX `Products_idx` (`idProduct` ASC) VISIBLE,
-  INDEX `Cart_idx` (`idCart` ASC) VISIBLE,
-  CONSTRAINT `Products`
-    FOREIGN KEY (`idProduct`)
-    REFERENCES `amadeuspc`.`products` (`idProduct`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `Products_idx` (`productId` ASC) VISIBLE,
+  INDEX `Cart_idx` (`cartId` ASC) VISIBLE,
   CONSTRAINT `Cart`
-    FOREIGN KEY (`idCart`)
-    REFERENCES `amadeuspc`.`cart` (`idCart`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    FOREIGN KEY (`cartId`)
+    REFERENCES `amadeuspc`.`cart` (`id`),
+  CONSTRAINT `Products`
+    FOREIGN KEY (`productId`)
+    REFERENCES `amadeuspc`.`products` (`idProduct`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
