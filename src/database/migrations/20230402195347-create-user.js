@@ -10,25 +10,45 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       surname: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       phone: {
         type: Sequelize.INTEGER
       },
       idRol: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Rols'
+          },
+          key : 'id'
+        },
+        defaultValue : 2
       },
       avatar: {
         type: Sequelize.STRING
       },
       idAddress: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Addresses'
+          },
+          key : 'id'
+        }
       },
       createdAt: {
         allowNull: false,

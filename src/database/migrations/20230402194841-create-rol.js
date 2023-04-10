@@ -9,11 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      admin: {
-        type: Sequelize.INTEGER
-      },
-      user: {
-        type: Sequelize.INTEGER
+      nameRol: {
+        type: Sequelize.STRING,
+        allowNull : false
       },
       createdAt: {
         allowNull: false,
