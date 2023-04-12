@@ -1,13 +1,24 @@
 'use strict';
+const productsJSON = require('../../data/productos.json')
+const products = productsJSON.map(({name, price, description, discount, novedad}) => {
+  return {
+    name : name.trim(),
+    price,
+    description,
+    idCategory: 1,
+    idBrand: 1,
+    discount,
+    novelty: novedad,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  }
+})
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('Products', [{
-      name: 'John Doe',
-      isBetaMember: false
-    }], {});
+    await queryInterface.bulkInsert('Products', products, {});
 
   },
 
