@@ -26,7 +26,7 @@ module.exports = {
         allowNull: false
       },
       phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       idRol: {
         type: Sequelize.INTEGER,
