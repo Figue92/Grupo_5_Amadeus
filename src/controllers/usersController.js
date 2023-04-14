@@ -1,94 +1,156 @@
-const {validationResult} = require('express-validator');
-const {readJSON, writeJSON} = require("../data");
-const {hashSync} = require('bcryptjs');
+const { validationResult } = require('express-validator');
+const { readJSON, writeJSON } = require("../data");
+const { hashSync } = require('bcryptjs');
+const db = require('../database/models')
 
 module.exports = {
     register: (req, res) => {
-        return res.render('users/register',{
+        return res.render('users/register', {
             title: "Registro"
         })
     },
     login: (req, res) => {
-        return res.render('users/login',{
+        return res.render('users/login', {
             title: "Ingresá"
         })
     },
 
-    processRegister : (req,res) => {
-       const errors = validationResult(req);
+    processRegister: (req, res) => {
+        const errors = validationResult(req);
 
-       if(errors.isEmpty()){
-        const users = readJSON('users.json')
-        const {name, surname, email, tel, password, image}  = req.body;
+        if (errors.isEmpty()) {
+            const { name, surname, email, tel, password, codarea, image } = req.body;
 
-        const newUser = {
-            id: users.length ? users[users.length - 1].id + 1 : 1,
-            name : name.trim(),
-            surname : surname.trim(),
-            email : email.trim(),
-            tel : tel,
-            password : hashSync(password,12),
-            image: req.file ? req.file.filename : null,
-            rol : 'user'
+            db.Address.create()
+                .then(address => {
+                    db.User.create({
+                        name: name.trim(),
+                        surname: surname.trim(),
+                        email: email.trim(),
+                        password: hashSync(password, 10),
+                        phone: codarea + tel,
+                        idRol: 2,
+                        avatar: image,
+                        idAddress: address.id
+                    })
+                        .then(() => {
+                            return res.redirect('/users/login');
+                        })
+                })
+                .catch(error => console.log(error));
+
+
+
+        } else {
+            return res.render('users/register', {
+                title: "Registro de usuario",
+                errors: errors.mapped(),
+                old: req.body
+            })
         }
 
-        users.push(newUser);
+    },
+    processLogin: (req, res) => {
+        const errors = validationResult(req);
 
-        writeJSON('users.json', users);
-        return res.redirect('/users/login');
+        if (!errors.isEmpty()) {
+            return res.render('users/login', {
+                title: "Inicio de sesión",
+                errors: errors.mapped(),
+                old: req.body
+            });
+        }
 
-    }else{
-        return res.render('users/register',{
-            title : "Registro de usuario",
-            errors : errors.mapped(),
-            old : req.body
+        db.User.findOne({
+            where : {
+                email : req.body.email
+            }
         })
-    }
+        .then(({id, name, idRol,}) => {
+            req.session.userLogin = {
+                id,
+                name,
+                rol : idRol
+            }
 
-},
-processLogin : (req,res) => {
-    const errors = validationResult(req);
+            if (req.body.remember) {
+                res.cookie('userAmadeusPC', req.session.userLogin, { maxAge: 1000 * 60 * 5 })
+            }
 
-    if(!errors.isEmpty()){
-        return res.render('users/login',{
-            title : "Inicio de sesión",
-            errors : errors.mapped(),
-            old : req.body
-        });
-    }
-
-    const userLogin = readJSON('users.json').find(user => user.email === req.body.email);
-    delete userLogin.password;
+            return res.redirect('/users/profile')
+        })
+        .catch(error => console.log(error));
     
-    req.session.userLogin = userLogin;
+    },
+    profile: (req, res) => {
+        db.User.findByPk(req.session.userLogin.id, {
+            include : ['address']
+        })
+        .then(user => {
+            return res.render('users/profile', {
+                title: "Perfil de usuario",
+                user,
+            })
+        })
 
-    if(req.body.remember){
-        res.cookie('userAmadeusPC', req.session.userLogin, {maxAge: 1000*60*5} )
-    }
+    },
+    update: (req, res) => {
+        const {name, surname, phone, address, city, province, zipCode} = req.body 
+        const {id} = req.session.userLogin;
 
-    return res.redirect('/users/profile')
-},
-profile : (req,res) => {
- console.log(req.file)
-    return res.render('users/profile',{
-       
-        title : "Perfil de usuario",
-        user : req.session.userLogin,
-        image: req.file ? req.file.filename : null
-    }) 
-    
-},
-update : (req,res) => {
-    return res.send(req.body)
-},
-logout : (req,res) => {
-    res.clearCookie('userAmadeusPC');
-    req.session.destroy();
-    return res.redirect('/');
-},
-list : (req,res) => {
-    return res.render('users/users',{
-        users : readJSON('users.json')
-    })
-}
+       db.User.findByPk(id)
+            .then(user => {
+                const addressUpdate = db.Address.update(
+                    {
+                        address : address ? address.trim() : null,
+                        city : city ? city.trim() : null,
+                        province: province ? province.trim() : null,
+                        zipCode : zipCode ? zipCode : null
+                    },
+                    {
+                        where : {
+                            id : user.idAddress
+                        }
+                    }
+                )
+                const userUpdate = db.User.update(
+                    {
+                        name : name.trim(),
+                        surname : surname.trim(),
+                        phone,
+                        avatar : req.file ? req.file.filename : user.avatar
+                    },
+                    {
+                        where : {
+                            id
+                        }
+                    }
+                )
+
+                Promise.all(([addressUpdate, userUpdate]))
+                    .then( ()=> {
+
+                        (req.file && fs.existsSync('public/images/users/' + user.avatar)) && fs.unlinkSync('public/images/users/' + user.avatar)
+
+                        req.session.message = "Datos actualizados"
+                        return res.redirect('/users/profile')
+                    })
+            }).catch(error => console.log(error))
+    },
+    logout: (req, res) => {
+        res.clearCookie('userAmadeusPC');
+        req.session.destroy();
+        return res.redirect('/');
+    }/* ,
+    list: (req, res) => {
+        db.User.findAll({
+            include: ['address','rol']
+        })
+            .then(users => {
+                return res.render('dashboard',{
+                    users
+                })
+            })
+            .catch(error => console.log(error))
+    } */
 }
