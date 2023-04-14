@@ -7,51 +7,62 @@
     <%- include('../partials/header') %>
     <main class="form__main">
         <h1 class="form__main--titulo">agregar producto</h1>
-        <form action="/productos" method="POST" class="formAdd" enctype="multipart/form-data">
+        <form action="" method="POST" class="formAdd" enctype="multipart/form-data">
             <div class="formAdd__name">
-                <label for=""></label>
+                <label for="name"></label>
                 <input type="text" name="name" placeholder="Nombre del producto">
+                <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %>
+                </small>
             </div>
             <div class="formAdd__description">
                 <label for="productDescription">Descripción del producto</label>
                 <textarea name="description" id="productDescription" cols="50" rows="5"></textarea>
+                <small class="text-danger ms-2">
+                    <%= locals.errors && errors.description ? errors.description.msg : null %>
+                </small>
             </div>
             <div class="formAdd__category">
                 <select name="category" id="category">
                     <option value="" selected hidden>Categoría</option>
-                    <option value="">Accesorios</option>
-                    <option value="">Motherboard</option>
-                    <option value="">Placas de video</option>
-                    <option value="">Procesadores</option>
-                    <option value="">Memorias Ram</option>
+                    <% categories.forEach(({nameCategory, id})=> { %>
+                        <option value="<%= id %>" <%=id===categories.id && 'selected' %> ><%= nameCategory %></option>
+                        <% }) %>
                 </select>
+                <small class="text-danger ms-2"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
             </div>
             <div class="formAdd__category">
                 <select name="marca" id="marca">
                     <option value="" selected hidden>Marca</option>
-                    <option value="">AMD</option>
-                    <option value="">INTEL</option>
-                    <option value="">Gigabyte</option>
-                    <option value="">Redragon</option>
-                    <option value="">HyperX</option>
-                    <option value="">GeForce</option>
+                        <% brands.forEach(({name, id})=> { %>
+                            <option value="<%= id %>" <%=id===brands.id && 'selected' %> ><%= name %>
+                            </option>
+                            <% }) %>
                 </select>
+                <small class="text-danger ms-2"><%= locals.errors && errors.brand ? errors.brand.msg : null %></small>
             </div>
             <div class="formAdd__price">
                 <label for=""></label>
                 <input type="number" name="price" placeholder="Precio">
+                <small class="text-danger ms-2">
+                    <%= locals.errors && errors.price ? errors.price.msg : null %>
+                </small>
             </div>
             <div class="formAdd__novedad">
-                <input type="checkbox" name="novedad" id="novedad">
-                <label for="novedad">Es un producto recién salido al mercado.</label>
+                <input type="checkbox" name="novelty" id="novelty">
+                <label for="novelty">Es un producto recién salido al mercado.</label>
             </div>
             <div class="formAdd__price">
                 <label for=""></label>
                 <input type="number" name="discount" placeholder="Descuento">
+                <small class="text-danger ms-2">
+                    <%= locals.errors && errors.discount ? errors.discount.msg : null %>
+                </small>
             </div>
             <div class="formAdd__image">
                 <label for=""></label>
-                <input type="file" name="images" multiple>
+                <input type="file" name="images" multiple><small class="text-danger ms-2">
+                    <%= locals.errors && errors.images ? errors.images.msg : null %>
+                </small>
             </div>
             <div class="formAdd__button">
                 <button class="formAdd__button--agregar" type="submit">agregar</button>
