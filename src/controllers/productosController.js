@@ -86,7 +86,7 @@ module.exports = {
       attributes: ['name', 'id']
     });
     const categories = db.Category.findAll({
-      order: [['name']],
+      order: [['nameCategory']],
       attributes: ['nameCategory', 'id']
     });
     Promise.all([brands, categories])
