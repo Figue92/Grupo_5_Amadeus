@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs')  %> 
+
+<body>
+    <%- include('../partials/header.ejs')  %> 
+
+    <main class="form__main">
+        <h1 class="form__main--titulo">editar perfil</h1>
+        <h4 class="form__main--subtitulo">ingresá tus datos para editar tu perfil</h4>
+        <form action="/users/edit?_method=PUT" method="POST" class="form__main--registro" enctype="multipart/form-data">
+            <div class="form__main--registro-nombre">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>" id="name" name="name" value="<%= locals.userLogin?.name %>">
+                <small class=""><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+            </div>
+            <div class="form__main--registro-apellido">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.surname) && 'is-invalid'%>" id="surname" name="surname" value="<%= locals.userLogin?.surname %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
+            </div>
+            <h4>Teléfono de Contacto</h4>
+            <div class="form__main--registro-codarea">
+                <label for="codarea">Código de área</label>
+                <input type="number" class="form-control  <%= (locals.errors && errors.codarea) && 'is-invalid'%>" id="codarea" name="codarea" value="<%= (locals.old && old.codarea) && old.codarea  %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.codarea ? errors.codarea.msg : null %></small>
+            </div>
+            <div class="form__main--registro-tel">
+                <label for="tel">Teléfono</label>
+                <input type="number" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="tel" value="<%= (locals.old && old.tel) && old.tel  %>">
+                <small><%= locals.errors && errors.tel ? errors.tel.msg : null %></small>
+            </div>
+            <div class="form__main--registro-nombre">
+                <label for="tel">Provincia</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="province" value="<%= (locals.old && old.tel) && old.tel  %>">
+            </div>
+            <div class="form__main--registro-nombre">
+                <label for="tel">Ciudad</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="city" value="<%= (locals.old && old.tel) && old.tel  %>">
+            </div>
+            <div class="form__main--registro-codarea">
+                <label for="codarea">Código postal</label>
+                <input type="number" class="form-control  <%= (locals.errors && errors.codarea) && 'is-invalid'%>" id="codarea" name="zipCode" value="<%= (locals.old && old.codarea) && old.codarea  %>">
+            </div>
+            <div class="form__main--registro-tel">
+                <label for="tel">Dirección</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="address" value="<%= (locals.old && old.tel) && old.tel  %>">
+            </div>
+            <!-- subir img -->
+
+            <div class="formAdd__image">
+                <label for="">Inserte foto de perfil</label>
+                <input type="file" name="image">
+            </div>
+
+            <button type="submit" class="form__button--siguiente">guardar cambios</button>
+        </form>
+        <form action="/users/delete?_method=DELETE" method="POST">
+        <button type="submit" class="formAdd__button--cancelar">eliminar perfil</button>
+    </form>
+</main>
+
+    <%- include('../partials/footer.ejs')  %>
+</body>
+
+</html>

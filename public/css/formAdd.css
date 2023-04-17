@@ -89,8 +89,9 @@
 }
 
 .formAdd__button--cancelar {
+    margin: 0 auto;
     padding: 10px 5px;
-    font-size: 20px;
+    font-size: 10px;
     background: rgb(255, 76, 76);
     border: none;
     border-radius: 5px;
