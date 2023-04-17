@@ -3,18 +3,19 @@ const router = express.Router();
 
 
 const{detail, filter, cart, add, edit, store, update, list, remove}= require('../controllers/productosController')
-const checkUserLogin = require('../middlewares/checkUserLogin');
+const checkUser = require('../middlewares/checkUser');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 const {uploadImage}= require('../middlewares/upload')
+const {productosValidator, loginUserValidator} = require('../validations')
 
 router
-    .get('/carrito', cart)
+    .get('/carrito',checkUser, cart)
     .get('/productDetail/:id', detail )
     .get('/filtrarProductos', filter)
     .get('/add', checkUserAdmin, add)
-    .post('/', uploadImage.array('images'), checkUserAdmin, store)
+    .post('/add', uploadImage.array('images'), productosValidator, store)
     .get('/edit/:id', checkUserAdmin, edit)
-    .put('/edit/:id', uploadImage.array('images'), checkUserAdmin, update)
+    .put('/edit/:id', uploadImage.array('images'),productosValidator, update)
     .get('/productos', list)
     .delete('/delete/:id', checkUserAdmin, remove)
    

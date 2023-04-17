@@ -11,7 +11,7 @@ function eliminar() {
         if (result.isConfirmed) {
             Swal.fire(
                 'Eliminado!',
-                'El producto ha sido eliminado.',
+                'El producto se elimino.',
                 'success'
             ).then((result) => {
                 document.formEliminar.submit();

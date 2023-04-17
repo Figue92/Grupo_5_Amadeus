@@ -13,7 +13,7 @@
                         <% productos.forEach(({id, title, price, description, image})=> { %>
                             <article class="main__section__productos--article">
                                 <a href="/productos/productDetail/<%= id %> "><img
-                                        src="/images/productos/<%= image ? image[0] : 'imageNull.jpeg'%>" alt=""></a>
+                                        src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%>" alt=""></a>
                                 <div>
                                     <h2>$ <%= price%>
                                     </h2>
