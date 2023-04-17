@@ -16,7 +16,7 @@
                 <% if (locals.userLogin) { %>
                     <li><a class="header__section__nav--registro--icono" href="/users/profile"><i class="fa-solid fa-user"></i></a><a
                             class="header__section__nav--registro--texto" href="/users/profile">Hola, <%= locals.userLogin.name %></a></li>
-<% if (locals.userLogin.rol === 'admin') { %>
+<% if (locals.userLogin.rol === 1) { %>
     <li><a class="header__section__nav--registro--icono" href="/productos/add"><i
         class="fa-solid fa-hand-holding-dollar"></i></a><a
     class="header__section__nav--registro--texto" href="/productos/add">vender</a></li>

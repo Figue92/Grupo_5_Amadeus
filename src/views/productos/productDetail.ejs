@@ -7,13 +7,15 @@
         <%- include('../partials/burguermenu-search') %>
             <main class="productDetail__main">
                 <section class="productDetail__main__section section--imagenPrincipal">
-                    <img src="/images/productos/<%= image ? image[0] : 'imageNull.jpeg'%> " alt="">
+                    <img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="">
                 </section>
 
                 <section class="productDetail__main__section section--info">
                     <h1><%= name %></h1>
                     <div class="section__div--info">
                         <div class="section__div--info-sku">
+                            <a href=""><%= category %></a>
+                            <a href=""><%= brand %></a>
                             <h4>sku: <%= id %></h4>
                         </div>
                         <div class="section__div--info-precio">
@@ -28,10 +30,10 @@
                     <section class="productDetail__main__section section--vistasImages">
                       <% if (image) { %>
                          <% image.forEach(image => { %>
-                            <img src="/images/productos/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                            <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> " alt="">
                         <% }) %>
                      <% }else{ %>
-                        <img src="/images/productos/<%= image ? image : 'imageNull.jpeg'%> " alt="">
+                        <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> " alt="">
                       <% } %>
                        
                        
@@ -49,11 +51,11 @@
                     </p>
 
                 </section>
-<!-- 
+ <!-- 
                 <section class="formAdd__button productDetail__section--buttons">
                     <button class="formAdd__button--agregar"><a href="/productos/edit/<%= id %>">editar</a></button>
                     <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar">
-                        <button onclick="eliminar()" type="button" class="formAdd__button--cancelar">eliminar</button> -->
+                        <button onclick="eliminar()" type="button" class="formAdd__button--cancelar">eliminar</button>  -->
                     </form>                    
                 </section>
             </main>

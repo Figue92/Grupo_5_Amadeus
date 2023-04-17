@@ -13,10 +13,10 @@
        
         <section class="main__section__productos">
             <h1>Productos de Última Generación</h1>
-            <% productoFiltrado.forEach(({id, name, price, description,image}) => { %>
+            <% productos.forEach(({id, name, price, description,image}) => { %>
                 <article class="main__section__productos--article">
                      <a
-                     href= "/productos/productDetail/<%= id %> "><img src="/images/<%= image ? image : 'imageNull.jpeg'%> " alt=""></a>
+                     href= "/productos/productDetail/<%= id %> "><img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt=""></a>
                         <h2>$ <%= price%></h2>
                         <a class= "main__section__productos--article--vermas" href="/productos/productDetail/<%= id %> ">Ver más...</a>
                         <h3><%= name %></h3>

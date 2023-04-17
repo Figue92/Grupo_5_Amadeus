@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{
+    title : 'Dashboard'
+}) %>
+
+  <body class="home">
+    <!-- encabezado -->
+    <%- include('./partials/header.ejs') %>
+
+      <!-- principal -->
+      <main class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Provincia</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Rol</th>
+                                <th scope="col">Acciones</th>
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <% users.forEach(({id, name, surname, address, phone, email,rol }) => { %>
+                                    <tr>
+                                        <th scope="row"><%= id %></th>
+                                        <td><%= name %></td>
+                                        <td><%= surname %></td>
+                                        <td><%= address.address %></td>
+                                        <td><%= address.province %></td>
+                                        <td><%= phone %></td>
+                                        <td><%= email %></td>
+                                        <td><%= rol.nameRol %></td>
+                                        <td>
+                                           <div class="d-flex gap-2">
+                                            <a class="btn btn-sm btn-primary" href="/users/profile/<%= id %>"><i class="far fa-eye"></i></a>
+                                            <a class="btn btn-sm btn-success" href="/users/edit/<%= id %>"><i class="far fa-edit"></i></a>
+                                            
+
+                                            <form class="formAdd__form--eliminar" action="/users/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar">
+                                              <button type="submit">Eliminar</button>
+                                             <!--  <button onclick="eliminar()" type="button"><i class="fas fa-trash"></i></button> -->
+                                          </form>
+                                          </div> 
+                                        </td>
+                                      </tr>
+                                <% }) %>
+                            
+                           
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+     
+
+      </main>
+      <!-- pie de pagina -->
+
+
+      <%- include('./partials/scripts.ejs',{view:'detail'})  %>
+  </body>
+
+</html>
