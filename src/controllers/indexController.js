@@ -70,6 +70,18 @@ module.exports = {
       })
     })
       .catch((error) => console.log(error));
+  },
+  about: (req,res) => {
+    return res.render('nosotros')
+  },
+  question: (req,res) => {
+    return res.render('preguntas')
+  },
+  buys: (req,res) => {
+    return res.render('comoComprar')
   }
+  
+  
+  
 
 }

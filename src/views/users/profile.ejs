@@ -5,10 +5,9 @@
     <%- include('../partials/header.ejs')  %> 
 
     <main class="profile">
-        <div class="row mb-5">
-            <div class="col-12 col-md-12 col-lg-12">
+      <div class="container">
+        <div class="row">
                 <div class="card shadow">
-                    <div class="card-header">
     <h1 class="profile__titulo">PERFIL DE USUARIO</h1>
    
    
@@ -30,25 +29,25 @@
          -->
          <div class="col-12 col-md-10 col-lg-10">
               <label for="address" class="form-label">Domicilio</label>
-              <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%= user.address.address%>">
+              <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%= user.address%>">
               <small class="text-danger ms-2"><%= locals.errors && errors.address ? errors.address.msg : null %></small>
 
             </div>
             <div class="col-12 col-md-10 col-lg-10">
               <label for="address" class="form-label">Ciudad</label>
-              <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" name="city" value="<%= user.address.city%>">
+              <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city" name="city" value="<%= user.city%>">
               <small class="text-danger ms-2"><%= locals.errors && errors.city ? errors.city.msg : null %></small>
 
             </div>
             <div class="col-12 col-md-10 col-lg-10">
               <label for="address" class="form-label">Provincia</label>
-              <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" name="province" value="<%= user.address.province%>">
+              <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province" name="province" value="<%= user.province%>">
               <small class="text-danger ms-2"><%= locals.errors && errors.province ? errors.province.msg : null %></small>
 
             </div>
             <div class="col-12 col-md-10 col-lg-10">
               <label for="address" class="form-label">Código Postal</label>
-              <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" name="zipCode" value="<%= user.address.zipCode%>">
+              <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode" name="zipCode" value="<%= user.zipCode%>">
               <small class="text-danger ms-2"><%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %></small>
 
             </div>

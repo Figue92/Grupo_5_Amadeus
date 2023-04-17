@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs',{otherScript: include('./partials/scripts.ejs',{view:'Home'})})  %>
+</head>
+<%- include('./partials/header.ejs') %>
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+                <div class="card shadow">
+            <section class="comprar-section">
+                <div class="container">
+                  <h2 class="section-title">¿Cómo comprar en Amadeus PC?</h2>
+                  <ol class="steps-list">
+                    <li class="step">
+                      <h3 class="step-title">1. Explora nuestro catálogo</h3>
+                      <p class="step-description">Navega por nuestro sitio web para descubrir una amplia variedad de insumos para PC, desde componentes de hardware hasta periféricos. Puedes utilizar nuestra barra de búsqueda o explorar por categorías para encontrar los productos que necesitas.</p>
+                    </li>
+                    <li class="step">
+                      <h3 class="step-title">2. Añade productos al carrito</h3>
+                      <p class="step-description">Una vez que encuentres un producto que te interese, selecciona la cantidad y haz clic en el botón "Agregar al carrito". Puedes seguir explorando y añadiendo más productos a tu carrito de compras.</p>
+                    </li>
+                    <li class="step">
+                      <h3 class="step-title">3. Revisa tu carrito de compras</h3>
+                      <p class="step-description">Cuando hayas terminado de añadir productos, dirígete a tu carrito de compras para revisar los productos seleccionados, verificar los precios y la cantidad, y realizar cualquier ajuste necesario.</p>
+                    </li>
+                    <li class="step">
+                      <h3 class="step-title">4. Procede a la compra</h3>
+                      <p class="step-description">Una vez que estés satisfecho con los productos en tu carrito de compras, puedes proceder a la compra. Puedes proporcionar tus datos de envío y facturación, seleccionar una opción de envío y elegir un método de pago seguro para completar tu compra.</p>
+                    </li>
+                    <li class="step">
+                      <h3 class="step-title">5. ¡Disfruta de tus productos!</h3>
+                      <p class="step-description">Una vez que hayas completado el proceso de compra, recibirás una confirmación de pedido y tus productos serán enviados a la dirección que proporcionaste. ¡Ahora puedes disfrutar de tus insumos para PC de Amadeus PC!</p>
+                    </li>
+                    <li class="step">
+                      <h3 class="step-title">6. Servicio postventa</h3>
+                      <p class="step-description">Si tienes alguna pregunta o necesitas asistencia después de realizar tu compra, nuestro equipo de soporte estará encantado de ayudarte. Puedes ponerte en contacto con nosotros a través de nuestros canales de atención al cliente.</p>
+                    </li>
+                  </ol>
+                </div>
+              </section>
+        </div>
+    </div>
+    </div>
+    
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>
