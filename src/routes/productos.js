@@ -6,7 +6,7 @@ const{detail, filter, cart, add, edit, store, update, list, remove}= require('..
 const checkUser = require('../middlewares/checkUser');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 const {uploadImage}= require('../middlewares/upload')
-const {productosValidator, loginUserValidator} = require('../validations')
+const {productosValidator, validatorUserLogin} = require('../validations')
 
 router
     .get('/carrito',checkUser, cart)
