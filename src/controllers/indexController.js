@@ -1,7 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-const productosFilePath = path.join(__dirname, '../data/productos.json');
-const productos = JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
+
 
 const db = require('../database/models')
 const { Op } = require('sequelize');
@@ -44,8 +41,14 @@ module.exports = {
  db.Product.findAll({
   include: ['image'],
       where : {
-        name : {[Op.like]: `%${keywords}%` }
+        [Op.or]:[
+          {
+        name : {[Op.substring]: `%${keywords}%` }
+      },{
+        description : {[Op.substring]: `%${keywords}%` }
       }
+    ]
+  }
     }).then((productos)=>{
       return res.render('productos/resultadoSearch', {
         productos,
