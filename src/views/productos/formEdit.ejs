@@ -6,12 +6,9 @@
     <!-- Header -->
     <%- include('../partials/header') %>
     <main class="form__main">
+        <div class="container-form">
         <h1 class="form__main--titulo">editar producto</h1>
-        <div class="row">
-            <div class="col-10 col-md-10 col-lg-12 mx-auto">
-                <div class="card shadow-lg">
-                    <div class="card-body">
-                        <form action="/productos/edit/<%= id %>?_method=PUT" method="POST" class="row"
+                        <form class="form--edit" action="/productos/edit/<%= id %>?_method=PUT" method="POST" class="row"
                             enctype="multipart/form-data">
                             <div class="col-10 col-md-8 mb-3">
                                 <label for="name" class="form-label">Nombre del Producto</label>
@@ -86,9 +83,6 @@
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
-        </div>
     </main>
     <!-- Footer -->
     <%- include('../partials/footer') %> 

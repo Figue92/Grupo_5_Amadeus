@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs',{otherScript: include('./partials/scripts.ejs',{view:'Home'})})  %>
+</head>
+<%- include('./partials/header.ejs') %>
+<body>
+    <div class="container">
+            <div class="row">
+                    <div class="card shadow">
+            <section class="preguntas-frecuentes-section">
+                <div class="container">
+                  <h2 class="section-title">Preguntas Frecuentes</h2>
+                  <ul class="faq-list">
+                    <li class="faq">
+                      <h3 class="faq-question">¿Cuáles son los métodos de pago aceptados?</h3>
+                      <p class="faq-answer">Aceptamos varias formas de pago, incluyendo tarjetas de crédito, tarjetas de débito, transferencias bancarias y PayPal. Puedes seleccionar el método de pago de tu preferencia durante el proceso de compra.</p>
+                    </li>
+                    <li class="faq">
+                      <h3 class="faq-question">¿Cuánto tiempo tarda en llegar mi pedido?</h3>
+                      <p class="faq-answer">El tiempo de envío depende de tu ubicación y el método de envío seleccionado. Por lo general, los pedidos se procesan y se envían dentro de 1-2 días hábiles, y el tiempo de envío varía entre 2-7 días hábiles, según tu ubicación.</p>
+                    </li>
+                    <li class="faq">
+                      <h3 class="faq-question">¿Cómo puedo realizar un seguimiento de mi pedido?</h3>
+                      <p class="faq-answer">Una vez que tu pedido haya sido enviado, recibirás un correo electrónico de confirmación de envío con un número de seguimiento. Puedes utilizar este número para rastrear el estado de tu pedido en nuestro sitio web o en el sitio web del transportista.</p>
+                    </li>
+                    <li class="faq">
+                      <h3 class="faq-question">¿Puedo devolver o cambiar un producto?</h3>
+                      <p class="faq-answer">Sí, aceptamos devoluciones y cambios en productos no utilizados y en su empaque original dentro de los 15 días posteriores a la recepción del pedido. Por favor, revisa nuestra política de devoluciones y cambios en nuestro sitio web para obtener más información.</p>
+                    </li>
+                    <li class="faq">
+                      <h3 class="faq-question">¿Cómo puedo ponerme en contacto con el servicio al cliente?</h3>
+                      <p class="faq-answer">Puedes ponerte en contacto con nuestro equipo de servicio al cliente a través de nuestro formulario de contacto en nuestro sitio web, por correo electrónico o a través de nuestros perfiles de redes sociales. Estamos disponibles para ayudarte con cualquier pregunta o consulta que puedas tener.</p>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+        </div>
+        </div>
+    </div>
+    
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>
