@@ -111,7 +111,7 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
       }
       
       .carrete img {
-        width: 1000px; /* Ajusta el ancho de las imágenes al tamaño deseado */
+        width: 200px; /* Ajusta el ancho de las imágenes al tamaño deseado */
         height: 100px; /* Ajusta el alto de las imágenes al tamaño deseado */
         object-fit: cover;
         /* Agrega estilos adicionales a las imágenes como margen, borde, etc. */
