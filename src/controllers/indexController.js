@@ -28,7 +28,7 @@ module.exports = {
           return res.render('index',
             {
               title: 'Amadeus PC | HOME',
-              productos,
+              
               oferta,
               nuevos
             }
