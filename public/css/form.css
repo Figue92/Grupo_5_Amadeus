@@ -1,6 +1,7 @@
 .form__main {
     padding: 0 2.5%;
     font-family: var(--tipografiaForms);
+    text-align: center;
 }
 
 .form__main h4 {
@@ -9,7 +10,13 @@
     margin-bottom: 10px;
     font-size: 0.8rem;
 }
-
+.form--edit{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 .form__main--titulo {
     text-transform: uppercase;
     font-family: var(--tipografiaPrincipal);
@@ -58,6 +65,7 @@
     border-bottom: 1px solid #000;
     font-family: var(--tipografiaForms);
     font-size: 0.8rem;
+    
 }
 
 .form__main--registro div .checkbox {
@@ -151,6 +159,14 @@
     width: 100%;
     text-align: center;
 }
+.container-form{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+    align-items: baseline;
+    justify-content: space-around;
+}
 
 @media (min-width: 426px) {
     .form__main--registro {
@@ -177,7 +193,7 @@
 
 @media (min-width: 769px) {
     .form__main {
-        width: 70%;
+        width: 100%;
         margin: 0 auto;
     }
 
