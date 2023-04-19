@@ -1,7 +1,8 @@
 /*Header*/
 
 .header{
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);    display: flex;
+    background:linear-gradient(var(--colorCeleste),#fff);
+    display: flex;
     flex-wrap: wrap-reverse;
     border-bottom: 5px solid #000;
 }
@@ -40,7 +41,6 @@
     width: 60%;
     line-height: 1.5;
     font-family: var(--tipografiaPrincipal);
-    
 }
 
 .header__section__nav--registro ul {
@@ -58,7 +58,7 @@
     font-family: var(--tipografiaPrincipal);
     text-transform: uppercase;
     font-size: 3vw;
-    color: #000;
+    color: var(--colorAzul);
     text-decoration: none;
 }
 

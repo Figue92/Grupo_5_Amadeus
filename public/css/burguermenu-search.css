@@ -1,7 +1,6 @@
 .main__section--burguer-menu{
-    width: 3%;
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        display: flex;
-border: solid black;
+    width: 10%;
+    background-color: var(--colorAzul);
     border-radius: 10px;
     padding: 10px 20px;
     display: flex;

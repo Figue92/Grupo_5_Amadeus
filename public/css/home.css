@@ -1,13 +1,13 @@
 .main{
     font-family: var(--tipografiaPrincipal);
-    
     }
     .main__section{
-background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        display: flex;
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
         justify-content: space-evenly;
         height: 60px;
         align-items: center;
-      
+        border-radius: 15px;
     }
 
     .main__section--burguer-menu i{
@@ -15,12 +15,9 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         font-size: 2vh;
     }
     .main__section--search-box input{
-   
         display: none;
     }
     .main__section--search-box button{
-        background-color: transparent;
-        border: none;
         border-radius: 50%;
         width: 100%;
     }
@@ -34,88 +31,15 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     .home__main__section--banner{
     display: none;
     }
-    .card {
-        width: 100%; 
-        height: 100vh; 
-        animation: fondoAnimado 10s infinite; /* 5s es la duración de la animación*/
-        background-image: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
-        background-size: 200% 100%;
-        width: 100%;
-        max-width: 300px; 
-        margin-bottom: 20px; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-        border: none; 
-        transition: transform 0.1s ease-in-out; /* Transición suave al hacer hover */
-   
-    }
-    @keyframes fondoAnimado {
-        0% {
-          background-position: 0% 50%; 
-        }
-        50% {
-          background-position: 100% 50%; 
-        }
-        100% {
-          background-position: 0% 50%;}
-      }
-    
-    .card:hover {
-        transform: scale(1.05); /* Efecto de escala al hacer hover */
-    }
-    .card a{
-        text-decoration: none;
-        text-align: center;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    
-    .card img {
-        height: 200px; /* Altura de la imagen de la card */
-        object-fit: contain; /* Ajuste de la imagen al contenedor */
-        margin-top: 15px ;
-    }
-    
-    .card-title {
-        font-size: 18px; /* Tamaño de fuente del título */
-        font-weight: bold; /* Peso de fuente del título */
-    }
-    
-    .card-text {
-        font-size: 14px; /* Tamaño de fuente del texto */
-        color:black; /* Color del texto */
-    }
-    
-    .card-subtitle {
-        font-size: 20px; /* Tamaño de fuente del subtitulo */
-        color: black; /* Color del subtitulo */
-        font-weight: bold;
-    }
-    
-    .btn-primary {
-        color: rgba(90,194,187,1);
-        margin-top: 10px; /* Margen superior del botón */
-    }
     .main__section__productos{
-        background-image: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         font-size: 0.5rem;
+        border-radius: 10%;
         gap: 10px;
     }
-    .carrete {
-        display: flex;
-        overflow-x: auto;
-        /* Agrega estilos adicionales al carrete como ancho, altura, margen, etc. */
-      }
-      
-      .carrete img {
-        width: 200px; /* Ajusta el ancho de las imágenes al tamaño deseado */
-        height: 100px; /* Ajusta el alto de las imágenes al tamaño deseado */
-        object-fit: cover;
-        /* Agrega estilos adicionales a las imágenes como margen, borde, etc. */
-      }
     .main__section__productos--article{
        /*  display: flex;
         justify-content: center;
@@ -131,7 +55,7 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
        border-radius: 5px;
        padding: 10px;
        transition: all 0.3s ease-in-out;
-       justify-content: center;
+       justify-content: space-around;
        flex-wrap: wrap;
     }
     .main__section__productos--article:hover{
@@ -139,45 +63,42 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
     .main__article_buton{
-        background-color:rgba(90,194,187,1);
+        background-color: #4285F4;
         color: #fff;
         border: none;
         padding: 10px 20px;
-        border-radius: 15px;
+        border-radius: 5px;
         cursor: pointer;
-        width: 40%;
-        margin-left: 160px;
-        margin-bottom: 10px;
     }
     .main__section__productos--article img{
         width: 100%;
-       
+        border-radius: 8px;
         border: solid 3px darkturquoise;
         object-fit: cover;
     }
     .main__section__productos--article h2{
-        
         font-size: 1rem;
     }
     .main__section__productos--article h3{
         display: none;
     }
     .main__section__productos--article-ofertas{
-background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        display: flex;
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
         text-align: center;
         flex-wrap: wrap;
     }
     .main__section__productos--article-ofertas img{
         width: 40%;
         margin: 20px 90px;
-     
+        border-radius: 8px;
         border: solid 3px darkturquoise;
     }
     .main__section__productos-ofertas{
-background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        font-size: 0.5rem;
+        background: linear-gradient(var(--colorCeleste),#fff);
+        font-size: 0.5rem;
     }
     .main__section__productos-ofertas h1{
-      
         width: 100%;
         font-size: 5vh;
     }
@@ -189,22 +110,22 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     }
     
     .main__section__compra{
-        background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        display: flex;
+        background: linear-gradient(var(--colorCeleste),#fff);
+        display: flex;
         align-items: center;
         padding: 30px;
         flex-direction: column;
     }
     .main__section__compra i{text-align: center;width: 30%;font-size: 30px;}
     .main__section__marcas{
-background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        text-align: center;
+        background: linear-gradient(var(--colorCeleste),#fff);
+        text-align: center;
     }
     .main__section__marcas h2{
         font-size: 1rem;
     }
     
-    .main__section__productos h1{
-        color: black;
-    }
+    
     
     @media (min-width:768px) {
         .main__section--burguer-menu{

@@ -1,7 +1,6 @@
-
 .footer{
     font-family: var(--tipografiaPrincipal);
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+    background:linear-gradient(var(--colorCeleste),#fff);
     border-bottom: 5px solid #000;
     border-top: 5px solid #000;
     padding: 20px 0;
@@ -69,7 +68,7 @@
 
 .footer__section--article h3 {
     text-transform: uppercase;
-    color: #000;
+    color: var(--colorAzul);
     margin: 10px auto;
     font-size: 1.17em;
     font-weight: bold;

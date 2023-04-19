@@ -31,18 +31,3 @@
     font-size: 16px;
     margin-bottom: 5px;
   }
-  .form-label{
-    font-family: var(--tipografiaPrincipal);
-  }
-  .buttons__primary{
-    font-family: var(--tipografiaPrincipal);
-    padding: 10px 5px;
-    font-size: 10px;
-    background: lightskyblue;
-    border: none;
-    border-radius: 5px;
-    transition: 1s all;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
