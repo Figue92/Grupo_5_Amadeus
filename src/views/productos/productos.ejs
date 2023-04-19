@@ -11,22 +11,14 @@
                     <section class="main__section__productos-ofertas">
                         <h1>Todos los productos</h1>
                         <% productos.forEach(({id, title, price, description, image})=> { %>
-                            <article class="main__section__productos--article">
-                                <a href="/productos/productDetail/<%= id %> "><img
-                                        src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%>" alt=""></a>
-                                <div>
-                                    <h2>$ <%= price%>
-                                    </h2>
-                                    <a class="main__section__productos--article--vermas"
-                                        href="/productos/productDetail/<%= id %> ">Ver más...</a>
-                                    <h3>
-                                        <%= title %>
-                                    </h3>
-                                    <h3>
-                                        <%= description %>
-                                    </h3>
-                                </div>
-                            </article>
+                            <%- include('../partials/articleProduct',{
+                                id,
+                        title,
+                        price,
+                        description,
+                        image
+                          }
+                          ) %>
                             <% }) %>
 
                     </section>
@@ -37,6 +29,13 @@
                         <h4>Recibí tu producto</h4>
                         <i class="fa-solid fa-shield-halved"></i>
                         <h4>Compra 100% Segura</h4>
+                    </section>
+                    <section class="main__section__marcas">
+                        <h2>Las Mejores Marcas están en AMADEUS</h2>
+            
+                <%- include('../partials/carreteMarcas.ejs') %>
+                        
+            
                     </section>
             </main>
             <%- include('../partials/footer.ejs') %>
