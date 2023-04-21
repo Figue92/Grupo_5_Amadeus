@@ -6,10 +6,11 @@ const{detail, filter, cart, add, edit, store, update, list, remove}= require('..
 const checkUser = require('../middlewares/checkUser');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 const {uploadImage}= require('../middlewares/upload')
-const {productosValidator, validatorUserLogin} = require('../validations')
+const {productosValidator, validatorUserLogin} = require('../validations');
+const checkUserLogin = require('../middlewares/checkUserLogin');
 
 router
-    .get('/carrito',checkUser, cart)
+    .get('/carrito',checkUserLogin, cart)
     .get('/productDetail/:id', detail )
     .get('/filtrarProductos', filter)
     .get('/add', checkUserAdmin, add)

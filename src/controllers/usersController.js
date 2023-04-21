@@ -33,8 +33,13 @@ module.exports = {
                         avatar: req.file.filename,
                         idAddress: address.id
                     })
-                        .then(() => {
-                            return res.redirect('/users/login');
+
+                        .then((user) => {
+                            db.Cart.create({
+                                idUser: user.id
+                            }).then(() => {
+                                return res.redirect('/users/login');
+                            })
                         })
                 })
                 .catch(error => console.log(error));

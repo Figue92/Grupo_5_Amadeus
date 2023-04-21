@@ -19,6 +19,7 @@ module.exports = {
         },
         allowNull: false
       },
+     /*  quantity:{}, */
       idCart: {
         type: Sequelize.INTEGER,
         references : {
