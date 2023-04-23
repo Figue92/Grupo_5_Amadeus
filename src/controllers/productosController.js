@@ -61,33 +61,41 @@ module.exports = {
     })
       .catch(error => console.log(error));
   },
-  cart: (req,res) => {
-    return res.render('productos/carrito')
-  },
-  /*cart: async (req, res) => {
+
+  cart: async (req, res) => {
     try {
-       if (!req.session.userLogin || !req.session.userLogin.id) {
+     /*   if (!req.session.userLogin || !req.session.userLogin.id) {
         return res.render('users/login')
         
-      }
+      } */
   
       const cart = await db.Cart.findOne({
         where: { idUser: req.session.userLogin.id },
         include: ['user'],
       });
-  
+      const productos =  db.Product.findAll({
+
+        include: ['image'],
+      })
+      
+  //console.log(cart)
       if (!cart) {
         return res.status(404).send('No se encontró el carrito');
-      } 
-  
-      return res.render('productos/carrito', {
-        title: 'Carrito',
-        cart,
-      });
-    } catch (error) {
-      console.log(error);
+      }
+      Promise.all([cart,productos])
+      .then(([cart,productos])=>{
+        return res.render('productos/carrito', {
+          title: 'Carrito',
+          cart,
+          productos
+        });
+      })
+     
+    }catch{
+      ((error) => console.log(error))
     }
-  },*/
+  },
+   
   add: (req, res) => {
     const brands = db.Brand.findAll({
       order: [['name']],

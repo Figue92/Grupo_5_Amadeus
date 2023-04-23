@@ -9,6 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      date: {
+        type: Sequelize.DATE,
+      },
       idUser: {
         type: Sequelize.INTEGER,
         references : {
@@ -18,6 +21,13 @@ module.exports = {
           key : 'id'
         },
         allowNull: false
+      },
+       total:{
+        type: Sequelize.INTEGER,
+
+       },
+      status:{
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

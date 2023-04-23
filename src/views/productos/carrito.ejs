@@ -27,8 +27,7 @@
                 <table class="">
                   <tr class="main__carrito-producto">
                     <td><input type="checkbox" name="producto" id="producto"></td>
-                    <td class="main__carrito-producto-imagen"><img src="/images/imgCarrito/cpu.jpg" alt="" width="50%">
-                    </td>
+                                        </td><!-- 
                     <td class="main__carrito-producto-titulo">Gabinete Gamer Thermaltake</td>
                     <td class="main__carrito-producto-precio">$78.532</td>
                     <td class="main__carrito-producto-icono"><i class="fa-solid fa-trash-can"></i></td>
@@ -73,7 +72,28 @@
                   </tr>
                 </table>
               </section>
-            </section>
+            </section> -->
+           
+            <table>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre del producto</th>
+                <th>Cantidad</th>
+                <th>Precio unitario</th>
+                <th>Subtotal</th>
+              </tr>
+              <% productos.forEach(({id,image,name,quantity,price,discount})=> { %>
+                <tr>
+<td><img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="Image" width="50"></td>
+                  <td><%= name %></td>
+                  <td><%= quantity %></td>
+                  <td><h3>$<%= price*((100-discount)/100) %></h3></td>
+                  <td><%= quantity * price %></td>
+                </tr>
+              <% }); %>
+            </table>
+            
+           
             <!--Detalle de envío-->
             <section class="main__carrito--envío">
               <div class="main__carrito--envío-titulo">
