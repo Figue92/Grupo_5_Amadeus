@@ -73,17 +73,26 @@ module.exports = {
         where: { idUser: req.session.userLogin.id },
         include: ['user'],
       });
-  console.log(cart)
+      const productos =  db.Product.findAll({
+
+        include: ['image'],
+      })
+      
+  //console.log(cart)
       if (!cart) {
         return res.status(404).send('No se encontró el carrito');
-      } 
-  
-      return res.render('productos/carrito', {
-        title: 'Carrito',
-        cart,
-      });
-    } catch (error) {
-      console.log(error);
+      }
+      Promise.all([cart,productos])
+      .then(([cart,productos])=>{
+        return res.render('productos/carrito', {
+          title: 'Carrito',
+          cart,
+          productos
+        });
+      })
+     
+    }catch{
+      ((error) => console.log(error))
     }
   },
    

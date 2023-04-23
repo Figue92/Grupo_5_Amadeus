@@ -19,12 +19,16 @@
                             <h4>sku: <%= id %></h4>
                         </div>
                         <div class="section__div--info-precio">
+                            <h3><%= price %></h3>
                             <h3>$<%= price*((100-discount)/100) %></h3>
                             <p>precio en un pago</p>
                         </div>
                         <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %></p>
                         <div class="section__div--info-btn">
-                            <button class="product_button"><a href="">Agregar al Carrito</a></button>
+                            <form  class="product_button" action="../carrito<%= name.id %>" method="post">
+                                <input type="submit" value="Agregar al carrito">
+                              </form>
+                           
                         </div>
                     </div>
                     <section class="productDetail__main__section section--vistasImages">
