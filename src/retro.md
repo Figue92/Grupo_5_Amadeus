@@ -65,5 +65,36 @@ Planificar antes de comenzar el sprint, para optimizar el tiempo. Fluir la comun
 ### Dejar de hacer:
 --
 
+# RETROSPECTIVA SPRINT 5
+### Comenzar a hacer: 
+Mejorar las vistas de las páginas que ya hicimos.
 
+### Hacer más:
+Realizar Dailys de 15 minutos.
 
+### Continuar haciendo:
+Planificar antes de comenzar el sprint, para optimizar el tiempo. Fluir la comunicación.
+
+### Hacer Menos:
+--
+
+### Dejar de hacer:
+--
+
+# RETROSPECTIVA SPRINT 6
+### Comenzar a hacer: 
+Adelantar tareas para llegar con más tiempo.
+
+### Hacer más:
+Realizar Dailys de 15 minutos.
+Agregar nuevas funcionalidades para mejorar la UI/UX.
+
+### Continuar haciendo:
+Revisar las correcciones antes de comenzar el siguiente sprint.
+Planificar antes de comenzar el sprint, para optimizar el tiempo. Fluir la comunicación.
+
+### Hacer Menos:
+--
+
+### Dejar de hacer:
+--
