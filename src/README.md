@@ -20,13 +20,7 @@ Le gusta la lógica, las matemáticas, el fútbol, la música y la computación.
 Nacida en Avellaneda, actualmente habitante de Lanús.
 Estudiante de Desarrollo Web, emprendedora y mamá.
 
-- Leila Silva: Sumada recientemente al grupo, nos ayuda en la mejor elección para tus próximo proyecto. Oriunda de la zona sur de la provincia. Especializada  el arte visual.
 
-- Diego Figueredo: Estudiante de Programación Web Full Stack. Nacido en el partido de Lanús . Egresado del colegio Martin Miguel de Guemes (Lanús) en la carrera de Tecnico Electromecánico.
-
-- Ismael Ideme, 31 años. Miembro del equipo desde Octubre 2022.
-Nacido en Mendoza, estudiante en Curso de Programador Web Full Stack.
-Amante del deporte , la música y todo lo referido a la tecnología.
 
 #### Sitios de referencia: 
 
