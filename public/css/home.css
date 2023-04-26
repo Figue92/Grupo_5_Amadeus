@@ -1,6 +1,11 @@
 .main{
     font-family: var(--tipografiaPrincipal);
+ 
     
+    }
+    .main__productos{
+        background-color: black;
+        
     }
     .main__section{
 background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        display: flex;
@@ -47,6 +52,9 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         border: none; 
         transition: transform 0.1s ease-in-out; /* Transición suave al hacer hover */
    
+    }
+    .main__section__productos h1{
+        color: aqua;
     }
     @keyframes fondoAnimado {
         0% {
@@ -98,7 +106,7 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         margin-top: 10px; /* Margen superior del botón */
     }
     .main__section__productos{
-        background-image: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+        background-color: black;
         flex-wrap: wrap;
         justify-content: space-around;
         font-size: 0.5rem;
@@ -174,17 +182,26 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         border: solid 3px darkturquoise;
     }
     .main__section__productos-ofertas{
-background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        font-size: 0.5rem;
+background-color: black;
+font-size: 0.5rem;
+    }
+    .title__todosProductos{
+    color: rgba(153,59,241,1);  
+    font-family:  var(--tipografiaPrincipal);
+    text-transform: uppercase;
+
     }
     .main__section__productos-ofertas h1{
-      
+    
         width: 100%;
         font-size: 5vh;
     }
     .main__section__productos--article-ofertas-desc h2{
+  
         font-size: 1rem;
     }
     .main__section__productos--article-ofertas-desc h3{
+      
         font-size: 1rem;
     }
     
@@ -202,9 +219,7 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         font-size: 1rem;
     }
     
-    .main__section__productos h1{
-        color: black;
-    }
+
     
     @media (min-width:768px) {
         .main__section--burguer-menu{
