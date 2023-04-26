@@ -155,5 +155,155 @@
       "image": [
          "1678827565387_products_.jpg"
       ]
+   },
+   {
+      "id": 13,
+      "name": "Memoria DDR4",
+      "price": 39550,
+      "description": "Memoria GeiL DDR4 16GB 3000MHz Super Luce RGB Black",
+      "category": "Memorias Ram",
+      "marca": "Asus",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "Memoria_GeiL_DDR4_16GB_3000MHz_Super_Luce_RGB_Black_646b61f7-grn.jpg",
+         "Memoria2_GeiL_DDR4_16GB_3000MHz_Super_Luce_RGB_Black_981aafa9-grn.jpg" 
+           ]
+   },
+   {
+      "id": 14,
+      "name": "Mouse Logitech",
+      "price": 2090,
+      "description": "Mouse Logitech M90 Black ",
+      "category": "Accesorios",
+      "marca": "Logitech",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "Mouse_Logitech_M90_Black_12e6a9a6-grn.jpg" ,
+         "Mouse2_Logitech_M90_Black_39490f19-grn.jpg" ,
+         "Mouse3_Logitech_M90_Black_a024691d-grn.jpg" 
+           ]
+   },
+   {
+      "id": 15,
+      "name": "Mouse Adata",
+      "price": 5420,
+      "description": "Mouse ADATA XPG Infarex M20 RGB Ergonomic",
+      "category": "Accesorios",
+      "marca": "Adata",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+        "Mouse_ADATA_XPG_Infarex_M20_RGB_Ergonomic_5a0c179c-grn.jpg",
+        "Mouse2_ADATA_XPG_Infarex_M20_RGB_Ergonomic_703817ca-grn.jpg"
+           ]
+   },
+   {
+      "id": 16,
+      "name": "Teclado Redragon",
+      "price": 10360,
+      "description": "Teclado Redragon Harpe PRO K503 RGB ESP",
+      "category": "Accesorios",
+      "marca": "Redragon",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+       "Teclado_Redragon_Harpe_PRO_K503_RGB_ESP_96243639-grn.jpg",
+       "Teclado2_Redragon_Harpe_PRO_K503_RGB_ESP_7e706869-grn.jpg",
+       "Teclado3_Redragon_Harpe_PRO_K503_RGB_ESP_067c00e5-grn.jpg",
+       "Teclado4_Redragon_Harpe_PRO_K503_RGB_ESP_df85eb0c-grn.jpg"
+           ]
+   },
+   {
+      "id": 17,
+      "name": "Procesador AMD",
+      "price": 47300,
+      "description": "Procesador AMD Ryzen 3 4100 + Wraith Stealth Cooler AM4",
+      "category": "Procesadores",
+      "marca": "AMD",
+      "discount": 0,
+      "novedad": false,
+      "image": [
+       "Procesador_AMD_Ryzen_3_4100___Wraith_Stealth_Cooler_AM4_5b8b5ef2-grn.jpg",
+       "Procesador2_AMD_Ryzen_3_4100___Wraith_Stealth_Cooler_AM4_52a768ad-grn.jpg"
+           ]
+   },
+   {
+      "id": 18,
+      "name": "Procesador INTEL",
+      "price": 86490,
+      "description": "Procesador Intel Core i5 10400 4.3GHz Turbo Socket 1200 Comet Lake",
+      "category": "Procesadores",
+      "marca": "Intel",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+       "Procesador2_Intel_Core_i5_10400_4.3GHz_Turbo_Socket_1200_Comet_Lake_3a8c9807-grn.jpg",
+     "Procesador_Intel_Core_i5_10400_4.3GHz_Turbo_Socket_1200_Comet_Lake_7f69efff-grn.jpg"
+           ]
+   },
+   {
+      "id": 19,
+      "name": "Placa de Video Zotac",
+      "price": 278900,
+      "description": "Placa de Video Zotac GeForce RTX 3070 Ti 8GB GDDR6X Trinity",
+      "category": "Placas de Video",
+      "marca": "GeForce",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+       "Placa_de_Video_Zotac_GeForce.jpg",
+       "Placa2_de_Video_Zotac_GeForce.jpg",
+       "Placa3_de_Video_Zotac_GeForce.jpg",
+       "Placa4_de_Video_Zotac_GeForce.jpg"
+           ]
+   },
+   {
+      "id": 20,
+      "name": "Placa de Video XFX",
+      "price": 107700,
+      "description": "Placa de Video XFX Radeon RX 6500 XT Black 4GB GDDR6 Speedster QICK210",
+      "category": "Placas de Video",
+      "marca": "AMD",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+       "Placa_de_Video_XFX_Radeon_RX.jpg",
+       "Placa2_de_Video_XFX_Radeon_RX.jpg",
+       "Placa3_de_Video_XFX_Radeon_RX.jpg",
+       "Placa4_de_Video_XFX_Radeon_RX.jpg"
+           ]
+   },
+   {
+      "id": 21,
+      "name": "Gabinete Corsair",
+      "price": 69450,
+      "description": "Gabinete Corsair iCUE 4000X TG ATX Black",
+      "category": "Gabinetes",
+      "marca": "Corsair",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+       "Gabinete_Corsair_iCUE_4000X.jpg",
+       "Gabinete2_Corsair_iCUE_4000X.jpg",
+       "Gabinete3_Corsair_iCUE_4000X.jpg"
+           ]
+   },
+   {
+      "id": 22,
+      "name": "Gabinete Asus",
+      "price": 46800,
+      "description": "Gabinete ASUS TUF GT301 ARGB Vidrio Templado",
+      "category": "Gabinetes",
+      "marca": "Asus",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+       "Gabinete_ASUS_TUF.jpg",
+       "Gabinete2_ASUS_TUF.jpg",
+       "Gabinete3_ASUS_TUF.jpg",
+       "Gabinete4_ASUS_TUF.jpg"
+           ]
    }
 ]

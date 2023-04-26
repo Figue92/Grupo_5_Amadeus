@@ -1,6 +1,6 @@
 'use strict';
 
-const categoriesJSON = ['Motherboards', 'Memorias RAM', 'Procesadores', 'Accesorios', 'Placas de video']
+const categoriesJSON = ['Motherboard', 'Memorias Ram', 'Procesadores', 'Accesorios', 'Placas de Video','Gabinetes']
 const categories = categoriesJSON.map(category => {
   return {
     nameCategory: category,
