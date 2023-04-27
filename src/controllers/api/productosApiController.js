@@ -6,7 +6,8 @@ const moment = require('moment');
 
 const { getAllProductos, getOneProducto, createProducto, updateProducto, destroyProducto } = require('../../services/productosServices')
 const createResponseError = ('../helpers/createResponseError.js')
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
+const { getAllCategories } = require('../../services/categoryServices');
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 
 const API = 'http://www.omdbapi.com/?apikey=7c7f3cb2';
@@ -16,12 +17,27 @@ module.exports = {
     list: async (req, res) => {
         try {
             const productos = await getAllProductos();
+            const categories = await getAllCategories()
+
+            /* 
+            
+            {
+                pc: 3,
+                monitor: 9,
+            }
+                */
+
+            const countByCategory = categories.reduce((obj,category)=>{
+                obj[category.nameCategory] = category.products.length
+                return obj
+            },{})
 
             return res.status(200).json({
                 ok: true,
                 meta: {
                     status: 200,
                     total: productos.length,
+                    countByCategory,
                     url: '/api/productos'
                 },
                 data: productos

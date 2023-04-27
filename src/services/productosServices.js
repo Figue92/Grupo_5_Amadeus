@@ -11,6 +11,7 @@ module.exports = {
         }
     }
 },
+
 getOneProducto : async(id) => {
     try {
         const producto = await db.Product.findByPk(id);

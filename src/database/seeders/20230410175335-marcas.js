@@ -1,6 +1,6 @@
 'use strict';
 
-const brandsJSON = ["Gigabyte", "Intel", "Adata", "AMD", "Redragon", "Logitech", "GeForce", "HyperX"]
+const brandsJSON = ["Gigabyte", "Intel", "Adata", "AMD", "Redragon", "Logitech", "GeForce", "HyperX","Corsair","Asus"]
 const brands = brandsJSON.map(brand => {
   return {
     name: brand,
