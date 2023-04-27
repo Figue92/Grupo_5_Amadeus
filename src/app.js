@@ -11,7 +11,8 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productosRouter = require('./routes/productos');
 
-const productosApiRouter = require('./routes/v1/apiProductos')
+const productosApiRouter = require('./routes/v1/apiProductos');
+const usersApiRouter = require('./routes/v1/apiUsers');
 
 const localUserCheck = require('./middlewares/localsUserCheck');
 const cookieCheck = require('./middlewares/cookieCheck');
@@ -40,6 +41,7 @@ app.use('/productos', productosRouter);
 
 //Api Routes
 app.use('/api/productos',productosApiRouter)
+app.use('/api/users', usersApiRouter);
 
 
 // catch 404 and forward to error handler
