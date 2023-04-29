@@ -106,11 +106,13 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         margin-top: 10px; /* Margen superior del botón */
     }
     .main__section__productos{
-        background-color: black;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        font-size: 0.5rem;
-        gap: 10px;
+        display: flex;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 0.5rem;
+    gap: 10px;
+    flex-direction: row;
     }
     .carrete {
         display: flex;
@@ -218,15 +220,47 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     .main__section__marcas h2{
         font-size: 1rem;
     }
+    .button-burguer{
+        width: 20%; 
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    .busqueda-menu{
+        display: flex;
+  
+        
+        background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%); 
+    }
+    .main__section{
+     width: 80%;    
+    }
+    .mobile-hidden {
+        display: none;
+      }
     
-
+      .buscador-movil {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        padding: 10px;
+      }
     
+      .busqueda-menu.active .buscador-movil {
+        display: block;
+      }
     @media (min-width:768px) {
-        .main__section--burguer-menu{
-        /* padding: 0px; */
+        .button-burguer{
+            display: none; 
         }
         .main__section{
-        display: flex;
+         width: 100%;
         }
         .main__section--search-box{
             display: flex;
@@ -247,6 +281,9 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         .main__section__productos{
             display: flex;
             flex-wrap: wrap;
+            
+            align-content: space-around;
+            justify-content: space-around;
         }
         .main__section__productos--article{
             /* width: 30%; */
