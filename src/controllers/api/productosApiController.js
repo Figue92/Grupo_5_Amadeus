@@ -8,7 +8,7 @@ const { getAllProductos, getOneProducto, createProducto, updateProducto, destroy
 const createResponseError = ('../helpers/createResponseError.js')
 const { validationResult } = require('express-validator');
 const { getAllCategories } = require('../../services/categoryServices');
-//Aqui tienen otra forma de llamar a cada uno de los modelos
+
 
 const API = 'http://www.omdbapi.com/?apikey=7c7f3cb2';
 
@@ -21,7 +21,7 @@ module.exports = {
 
             //la consulta por thunder es localhost:3000/api/productos?limit=10&offset=1
             const productos = await getAllProductos(limit,offset);
-            const categories = await getAllCategories()
+           const categories = await getAllCategories()
 
             /* 
             

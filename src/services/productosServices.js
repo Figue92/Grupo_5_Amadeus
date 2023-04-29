@@ -5,7 +5,8 @@ module.exports = {
          const productos = await db.Product.findAndCountAll({
             limit,
             offset
-         });
+         }
+         );
      return productos 
     } catch (error){
         throw {
