@@ -16,7 +16,11 @@ const API = 'http://www.omdbapi.com/?apikey=7c7f3cb2';
 module.exports = {
     list: async (req, res) => {
         try {
-            const productos = await getAllProductos();
+            const limit = req.query.limit ? parseInt(req.query.limit) : 10;
+            const offset = req.query.offset ? parseInt(req.query.offset) : 0;
+
+            //la consulta por thunder es localhost:3000/api/productos?limit=10&offset=1
+            const productos = await getAllProductos(limit,offset);
             const categories = await getAllCategories()
 
             /* 

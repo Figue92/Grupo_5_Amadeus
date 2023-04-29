@@ -1,8 +1,11 @@
 const db = require('../database/models');
 module.exports = {
-    getAllProductos : async () => {
+    getAllProductos : async (limit = 10, offset = 0) => {
        try {
-         const productos = await db.Product.findAll();
+         const productos = await db.Product.findAndCountAll({
+            limit,
+            offset
+         });
      return productos 
     } catch (error){
         throw {
