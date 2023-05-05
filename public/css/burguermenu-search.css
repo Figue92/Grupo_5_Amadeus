@@ -25,11 +25,19 @@
   display: none;
   position: absolute;
   top: 50px;
-  left: 0;
-  width: 100%;
   background-color: #fff;
   padding: 10px;
   z-index: 1;
+}
+
+.navbar-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu ul li a {
+  color: aqua;
+  text-decoration: none;
 }
 
 /* Mostramos el menú desplegable cuando el input está seleccionado */

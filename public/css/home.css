@@ -106,6 +106,7 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         margin-top: 10px; /* Margen superior del botón */
     }
     .main__section__productos{
+        display: flex;
         background-color: black;
         flex-wrap: wrap;
         justify-content: space-around;
