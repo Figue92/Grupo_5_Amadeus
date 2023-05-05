@@ -1,44 +1,38 @@
-.navbar{
-    width: 35px;
-   /* height: 40px; */
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);        display: flex;
-border: solid black;
-    border-radius: 10px;
-   position: relative;
-    display: flex;
-    justify-content: center;
-    position: relative;
-
+.navbar {
+  width: 35px;
+  height: 40px;
+  border: solid black;
+  border-radius: 10px;
+  padding: 0 !important; /* para pisar el padding de bootstrap */
 }
 
-  /* Escondemos el input checkbox */
+/* Escondemos el input checkbox */
 #navbar-toggle {
-    display: none;
-  }
-  
-  /* Estilizamos el botón hamburguesa */
-  .navbar-toggle-label {
-    color: black;
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-    padding: 0px 3px 8px 3px;
-  }
-  
-  /* Estilizamos el menú desplegable */
-  .navbar-menu {
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    padding: 10px;
-    z-index: 1;
-  }
-  
-  /* Mostramos el menú desplegable cuando el input está seleccionado */
-  #navbar-toggle:checked + .navbar-toggle-label + .navbar-menu {
-    display: block;
-  }
+  display: none;
+}
+
+/* Estilizamos el botón hamburguesa */
+.navbar-toggle-label {
+  color: black;
+  cursor: pointer;
+  font-size: 24px;
+  margin: auto;
+}
+
+/* Estilizamos el menú desplegable */
+.navbar-menu {
+  background: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 1;
+}
+
+/* Mostramos el menú desplegable cuando el input está seleccionado */
+#navbar-toggle:checked+.navbar-toggle-label+.navbar-menu {
+  display: block;
+}
