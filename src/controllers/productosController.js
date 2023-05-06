@@ -117,6 +117,7 @@ module.exports = {
 
   store: async (req, res) => {
     const errors = validationResult(req);
+    console.log(errors);
     if (!req.files.length && !req.fileValidationError) {
       errors.errors.push({
         value: "",
@@ -194,6 +195,7 @@ module.exports = {
     }catch(error){ console.log(error) }
     }
   },
+  
   edit: (req, res) => {
 
     const { id } = req.params;

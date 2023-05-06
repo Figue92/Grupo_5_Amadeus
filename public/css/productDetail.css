@@ -18,6 +18,12 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.product_button input {
+    background-color: transparent;
+    border: none;
+}
+
 .section--imagenPrincipal img {
     width: 50%;
     display: block;
