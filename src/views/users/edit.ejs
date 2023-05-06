@@ -31,22 +31,25 @@
                 <input type="number" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="tel" value="<%= (locals.old && old.tel) && old.tel  %>">
                 <small><%= locals.errors && errors.tel ? errors.tel.msg : null %></small>
             </div>
-            <div class="form__main--registro-nombre">
-                <label for="tel">Provincia</label>
-                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="province" value="<%= (locals.old && old.tel) && old.tel  %>">
-            </div>
-            <div class="form__main--registro-nombre">
-                <label for="tel">Ciudad</label>
-                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="city" value="<%= (locals.old && old.tel) && old.tel  %>">
+            <div class="form__main--registro-tel">
+                <label for="tel">Dirección</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="address" value="<%= (locals.old && old.tel) && old.tel  %>">
             </div>
             <div class="form__main--registro-codarea">
                 <label for="codarea">Código postal</label>
                 <input type="number" class="form-control  <%= (locals.errors && errors.codarea) && 'is-invalid'%>" id="codarea" name="zipCode" value="<%= (locals.old && old.codarea) && old.codarea  %>">
             </div>
-            <div class="form__main--registro-tel">
-                <label for="tel">Dirección</label>
-                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="address" value="<%= (locals.old && old.tel) && old.tel  %>">
+            <div class="form__main--registro-nombre">
+                <label for="tel">Ciudad</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="city" value="<%= (locals.old && old.tel) && old.tel  %>">
             </div>
+            <div class="form__main--registro-nombre">
+                <label for="tel">Provincia</label>
+                <input type="text" class="form-control  <%= (locals.errors && errors.tel) && 'is-invalid'%>" id="tel" name="province" value="<%= (locals.old && old.tel) && old.tel  %>">
+            </div>
+         
+          
+          
             <!-- subir img -->
 
             <div class="formAdd__image">

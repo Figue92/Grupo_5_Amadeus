@@ -19,7 +19,7 @@
   <p><%= user.phone %></p>
   <h1>Tus Compras</h1>
   <p>Aún no tenes compras realizadas</p>
-  <a href="/users/edit"><button type="submit" class="form__button--siguiente d-flex justify-content-end">editar perfil</button></a>
+  
 
 <!-- 
   <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
@@ -29,7 +29,7 @@
          -->
          <div class="col-12 col-md-10 col-lg-10">
               <label for="address" class="form-label">Domicilio</label>
-              <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%= user.address%>">
+              <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address" name="address" value="<%=  %>">
               <small class="text-danger ms-2"><%= locals.errors && errors.address ? errors.address.msg : null %></small>
 
             </div>
@@ -52,7 +52,7 @@
 
             </div>
             <div class="d-flex justify-content-end">
-              <button type="submit" class="buttons buttons__primary">Actualizar domicilio</button>
+              <a href="/users/edit"><button type="submit" class="form__button--siguiente d-flex justify-content-end">editar perfil</button></a>
             </div>
         <!--     </div>
           </div>
