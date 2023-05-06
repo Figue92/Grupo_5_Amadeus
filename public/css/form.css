@@ -163,7 +163,6 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
     align-items: baseline;
     justify-content: space-around;
 }
@@ -199,6 +198,7 @@
 
     .form__main--titulo {
       font-size: 2rem;
+      width: 100%;
     }
     
     .form__main .form__main--subtitulo {

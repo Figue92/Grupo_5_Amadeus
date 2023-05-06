@@ -11,7 +11,7 @@ const checkUserLogin = require('../middlewares/checkUserLogin');
 
 router
     .get('/carrito',checkUserLogin, cart)
-    .post('/:id', cart)
+    .post('/carrito/:id', cart)
     .get('/productDetail/:id', detail )
     .get('/filtrarProductos', filter)
     .get('/add', checkUserAdmin, add)
