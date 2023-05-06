@@ -5,7 +5,68 @@
   border-radius: 10px;
   padding: 0 !important; /* para pisar el padding de bootstrap */
 }
+#menu {
+ display: none;
+  position: absolute;
+   top:12%; 
+  left: 15px;
+  width: 50%;
+  background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1; 
 
+}
+
+#menu-toggle {
+  font-size: 2em;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+  border-radius: 10px;
+}
+
+#menu-toggle:focus {
+  outline: none;
+}
+
+#menu-toggle.active {
+  transform: rotate(90deg);
+}
+
+#menu-toggle.active + #menu {
+  display: block;
+}
+
+  
+/* #navbar-toggle {
+    display: none;
+  }
+  
+
+  .navbar-toggle-label {
+    color: black;
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 0px 3px 8px 3px;
+  }
+  
+  .navbar-menu {
+    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  
+  #navbar-toggle:checked + .navbar-toggle-label + .navbar-menu {
+    display: block;
+  } */
 /* Escondemos el input checkbox */
 #navbar-toggle {
   display: none;

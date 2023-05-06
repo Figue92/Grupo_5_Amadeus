@@ -38,13 +38,14 @@
                                         <td><%= discount %></td>
                                         <td><%= novelty %></td>
                                         <td>
-                                           <div class="d-flex gap-2">
-                                            <a class="btn btn-sm btn-primary" href="/productos/productDetail/<%= id %>"><i class="far fa-eye"></i></a>
-                                            <a class="btn btn-sm btn-success" href="/productos/edit/<%= id %>"><i class="far fa-edit"></i></a>
+                                           <div class="containerButons">
+                                            <a class="butonVerProd" href="/productos/productDetail/<%= id %>"><i class="far fa-eye"></i></a>
+                                            <a class="butonEditarProd" href="/productos/edit/<%= id %>"><i class="far fa-edit"></i></a>
                                             
 
                                             <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar">
-                                              <button type="submit">Eliminar</button>
+                                              <button class="butonEliminarProd" type="submit"><i class="fa-solid fa-trash"></i>
+                                              </button>
                                              <!--  <button onclick="eliminar()" type="button"><i class="fas fa-trash"></i></button> -->
                                           </form>
                                           </div> 

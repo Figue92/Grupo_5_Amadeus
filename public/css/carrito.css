@@ -1,178 +1,29 @@
 
 .main__carrito{
-   
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    font-family: var(--tipografiaPrincipal);
-   
+    font-family: var(--tipografiaPrincipal);  
 }
-.banner{
-    display: none;
-
-}
-.conteiner-titulo--principal{
-    text-align: center;
-    font-size: 44px;
-    
-}
-
-/*   MENU    */
-.search {
-    display: flex;
-    align-items: center;
-    width: 70%;
-    margin-right: 6%;
-    
-    
-}
-.search input {
-    display: flex;
-    background-color: whitesmoke;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    padding-right: 15px;
+.main__carrito-subtitulo{
     width: 100%;
 }
-.fa-search {
-    color: black;
-    position: relative;
-    right: 21px;
-    background-color: #8aced5 ;
-    font-size: 18px;
-}
-
-.conteiner--menu{
+.tabla_cart{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+   flex-direction: column;
+   flex-wrap: wrap;
+    font-size: 10px;
+    width: 30px;
+    width: 40px;
+    margin: 40px;
+    gap: 20px;
 }
-
-.hamburguesaasd{
-    padding-left: 20px;
-    margin: 10px;
-    padding: 5px;
-   
-}
-
-.main__section--burguer-menu{
-    width: 10%;
-    background-color: var(--colorAzul);
-    border-radius: 10px;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-}
-.carrito__main p {
-    font-family: var(--tipografiaPrincipal);
-}
-
-.carrito__main div i{
-    color: white;
-    font-size: 30px;
-}
-
-/*Titulo*/
-
-/* hr{
-    display: none;
-} */
-.conteiner-titulo{
-    display: flex;
-    justify-content: center;
-    border-top: 3px solid #000;
-    border-bottom:3px solid #000 ;
-    background-color: #599399;
-    color: black
-}
-.conteiner-titulo--div{
-    margin: auto;
-}
-.conteiner-titulo--div--datos .logo--ubicacion{
-    width: 10%;
-}
-.conteiner-titulo--div--subtitulo .logo--mp {
-    width: 10%;
-}
-.conteiner-cuadro1--pago .logo--mp{
-    width: 10%;
-}
-.footer__section .footer__section--qr{
-    width: 10%;
-}
-
-
-/* Productos */
-
-
-.conteiner--producto{
-    display: flex;
-    justify-content:space-around;
-    padding: 5px;
-}
-
-
-.imagen-producto{
-    width: 40%;
-    margin: 5px;
-    padding: 5px;
-    background-color: black;
-}
-.carrito__main img{
-    width: 100%;
-}
-
-.carrito__main h5{
-    font-size: 19px;
-    color: white;
-
-}
-
-.carrito__main a{
-    color: blue;
-    text-decoration: none;
-    padding: 4px;
-    font-size: 20px;
-}
-
-.precio {
-    top: 45px;  
-    position: relative;  
-    padding-right: 15px;
-
-}
-
-
-
 .precio--num{
 color: #000;
 position: absolute;
 top: 30%;
 right: 1px;
-
 }
-.carrito__main span{
-    text-decoration: double;
-    color: black;
-    font-size: x-large;
-}
-
-.linea--separadora{
-    border: solid 5px silver;
-}
-
-/*Detalle de envio */
-.conteiner-titulo--div{
-    border-top: 8px solid silver;
-}
-
-
-.conteiner-titulo--div--texto{
-    text-align: center;
-    font-size: 22px;
-}
-
 .logo--ubicacion{
     width: 6%;
 }
@@ -194,7 +45,7 @@ right: 1px;
 
 .bonificacion{
     text-align: center;
-    font-size: 22px;
+    font-size: 15px;
 }
 
 .precio--p1{
@@ -211,15 +62,15 @@ right: 1px;
 }
 .precio--p3{
 
-    font-size: 25px;
+    font-size: 15px;
 }
 .conteiner-titulo--div--subtitulo{
+    
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
-.contenedor--boton--agregar{
-   
-}
+
 .boton--agregar{
     background-color: #3846BE;
     color: white;
@@ -274,112 +125,22 @@ right: 1px;
     border-radius: 3%;
     
 }
-.carrito__main label{
-    border-bottom: solid 1px black ;   
-    flex-direction: row-reverse;
-}
-.carrito__main i{
-    color: black; 
-
-}
-
-/* Display none*/
-
-
-.subtitulo--principal{
-    display: none;
-
-}
-
-.contenedor--tabla--productos{
-    display: none;
-    
-}
-                                    
+                                
                                 /* TABLET  */ 
 
 
 
 @media (min-width: 426px) {
+
     
-    .banner{
-        display: block;
-    }
-    .conteiner-titulo{
-       background-color: silver;
-       border:none;
-       text-decoration: underline;
-       font-size: 2222px;
-    }
-   
-    .subtitulo--principal{
-        display: flex;
-        justify-content: center;
-        margin: -10px;
-
-    }
-    .subtitulo--principal h4 {
-      font-size: 30px;
-      text-decoration: none;
-    
-    }
-    
-    .subtitulo--principal{
-       /* border-bottom: 1px solid black;*/
-
-        
-    }
-    .carrito__main hr{
-        height: 3px;
-        width: 80%;
-        background-color:#599399 ;
-    }
-    .cuadro--de--productos{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-left:10% ;
-        padding-right: 10%;
-        background-color: silver;
-        align-items: center    
-    }
-    .imagen-producto {
-        width: 14%;
-       
-    }
-    .descripcion--de--compra{
-        display: none;
-    }
-
-    .carrito__main td{
-        text-align: center;
-            font-size: 25px;
-            border: solid 1px white;
-    }
-    .carrito__main th{
-        padding: 29px
-    };
-    
-    .carrito__main img {
-        width: 50%;
-    }
-    .carrito__main td th tr{
-        width: 100%;
-        
-    }
-    .contenedor--tabla--productos {
-            display: block;
-        }
-
-
-        .direccion {
+.direccion {
             font-size: 26px;
             text-align: center;
         }
 
     .conteiner-titulo--div--texto {
         text-align: center;
-        font-size: 28px;
+        font-size: 15px;
     }
 
     
@@ -392,11 +153,11 @@ right: 1px;
 
 .bonificacion {
     text-align: center;
-    font-size: 26px;
+    font-size: 15px;
 }
 
 .conteiner-titulo--div--texto2 {
-    font-size: 21px;
+    font-size: 15px;
     padding-left: 15px;
 }
 
@@ -423,19 +184,7 @@ right: 1px;
   
 }
 
-.formulario--metodo--pago {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid black;
-    padding: 0px;
-    margin: 5px;
-    background-color: rgb(192, 192, 192);
-    color: black;
-    font-size: 19px;
-    border-radius: 3%;
-    width: 40%;
-    justify-content: center;
-}
+
 
 .boton--agregar {
     background-color: #3846BE;
@@ -443,23 +192,25 @@ right: 1px;
     margin-bottom: 15px;
     padding: 6px;
     width: 40%;
-    font-size: 22px;
+    font-size: 15px;
 }
 
 .logo--ubicacion {
     width: 3%;
 }
+.conteiner-otrosPagos{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+}
 
 
-};
 
 
 
 
 
-
-@media (min-width: 769px) {
-
-
-
-};

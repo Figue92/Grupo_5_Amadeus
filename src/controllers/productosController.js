@@ -115,7 +115,7 @@ module.exports = {
       .catch((error) => console.log(error));
   },
 
-  store: (req, res) => {
+  store: async (req, res) => {
     const errors = validationResult(req);
     console.log(errors);
     if (!req.files.length && !req.fileValidationError) {
@@ -146,55 +146,53 @@ module.exports = {
         discount,
         novelty
       } = req.body;
-
-      db.Product.create({
-        name: name.trim(),
-        price,
-        description: description.trim(),
-        idCategory: category,
-        idBrand: marca,
-        discount,
-        novelty: novelty ? 1 : 0
-      })
-        .then((producto) => {
-
-          req.files.forEach((image, index) => {
-            db.ProductImage.create({
-              name: image.filename,
-              idProduct: producto.id
-            })
-          })
-          return res.redirect('/productos/productos')
+      try {
+       const producto = await db.Product.create({
+          name: name.trim(),
+          price,
+          description: description.trim(),
+          idCategory: category,
+          idBrand: marca,
+          discount,
+          novelty: novelty ? 1 : 0
         })
-        .catch((error) => console.error(error));
-    } else {
-      const brands = db.Brand.findAll({
-        order: [['name']],
-        attributes: ['name', 'id']
-      })
-      const categories = db.Category.findAll({
-        order: [['nameCategory']],
-        attributes: ['nameCategory', 'id']
-      })
-
-
-      if (req.files.length) {
-        req.files.forEach((file) => {
-          fs.existsSync(`./public/images/productos/${file.filename}`) &&
-            fs.unlinkSync(`./public/images/productos/${file.filename}`);
-        });
+        req.files.forEach((image, index) => {
+          db.ProductImage.create({
+            name: image.filename,
+            idProduct: producto.id
+          })
+        })
+        return res.redirect('/productos/productos')
+      
+      } catch (error) {
+        console.log(error)
       }
-
-      Promise.all([brands, categories])
-        .then(([brands, categories])=>{
+    } else {
+      try {
+        const brands = await db.Brand.findAll({
+          order: [['name']],
+          attributes: ['name', 'id']
+        })
+        const categories = await db.Category.findAll({
+          order: [['nameCategory']],
+          attributes: ['nameCategory', 'id']
+        })
+  
+  
+        if (req.files.length) {
+          req.files.forEach((file) => {
+            fs.existsSync(`./public/images/productos/${file.filename}`) &&
+              fs.unlinkSync(`./public/images/productos/${file.filename}`);
+          });
+        }
       return res.render('productos/formAdd', {
         brands,
         categories,
         errors: errors.mapped(),
         old: req.body,
       })
-    })
-      .catch((error) => console.log(error))  
+    
+    }catch(error){ console.log(error) }
     }
   },
   

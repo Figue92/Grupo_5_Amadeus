@@ -166,7 +166,83 @@
     align-items: baseline;
     justify-content: space-around;
 }
+.containerButons{
+    display: flex;
+    gap: 1px;
 
+}
+.butonEliminarProd{
+    background-color: #e60000;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.butonEliminarProd:hover{
+    background-color: #c40000;
+}
+.butonEditarProd{
+    background-color: #5a1891;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+} 
+.butonVerProd{
+    background-color: #2659c9;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.table {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 10px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 6px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table thead th {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .table tbody tr:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  #agregar-carrito {
+    background-color: #2659c9;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 @media (min-width: 426px) {
     .form__main--registro {
         width: 70%;
