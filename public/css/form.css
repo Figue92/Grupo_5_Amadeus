@@ -244,6 +244,7 @@
     margin: 4px 2px;
     cursor: pointer;
   }
+ 
 @media (min-width: 426px) {
     .form__main--registro {
         width: 70%;
