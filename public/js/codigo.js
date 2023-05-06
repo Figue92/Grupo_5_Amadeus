@@ -14,7 +14,7 @@ function eliminar() {
                 'El producto se elimino.',
                 'success'
             ).then((result) => {
-                document.formEliminar.submit();
+                document.getElemenyById('formEliminar').submit();
             })
         }
     })

@@ -43,10 +43,10 @@
                                             <a class="butonEditarProd" href="/productos/edit/<%= id %>"><i class="far fa-edit"></i></a>
                                             
 
-                                            <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar">
-                                              <button class="butonEliminarProd" type="submit"><i class="fa-solid fa-trash"></i>
-                                              </button>
-                                             <!--  <button onclick="eliminar()" type="button"><i class="fas fa-trash"></i></button> -->
+                                            <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar" id="formEliminar">
+                                        <!--       <button class="butonEliminarProd" type="submit"><i class="fa-solid fa-trash"></i>   </button>-->
+                                            
+                                              <button class="butonEliminarProd" onclick="eliminar()" type="button"><i class="fas fa-trash"></i></button>
                                           </form>
                                           </div> 
                                         </td>
