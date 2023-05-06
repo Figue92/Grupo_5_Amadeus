@@ -3,97 +3,49 @@
 <%- include('../partials/head.ejs') %>
 
   <body>
+    <main>
     <%- include('../partials/header.ejs') %>
-      <main>
-
-        <!--MENU-->
-
-        <%- include('../partials/burguermenu-search.ejs') %>
-
-
-          <!--Titulo-->
-          <section class="main__carrito">
-            <div class="main__carrito-titulo">
-              <p>Carrito de compras</p>
-            </div>
-
-
-            <section class="main__carrito-subtitulo">
-              <div>
-                <h4>Detalle de la compra</h4>
-              </div>
-              <!--TABLA DE PRODUCTOS tablet-->
-              <section class="main__carrito-tabla">
-                <table class="">
-                  <tr class="main__carrito-producto">
-                    <td><input type="checkbox" name="producto" id="producto"></td>
-                                        </td><!-- 
-                    <td class="main__carrito-producto-titulo">Gabinete Gamer Thermaltake</td>
-                    <td class="main__carrito-producto-precio">$78.532</td>
-                    <td class="main__carrito-producto-icono"><i class="fa-solid fa-trash-can"></i></td>
-
-                  </tr>
-
-                  <tr class="main__carrito-producto">
-                    <td><input type="checkbox" name="producto" id="producto"></td>
-                    <td class="main__carrito-producto-imagen"><img src="/images/imgCarrito/monitor.jpg" alt=""
-                        width="50%"></td>
-                    <td class="main__carrito-producto-titulo">Monitor Gaming 27” Gygabyte G27FC</td>
-                    <td class="main__carrito-producto-precio">$119.378</td>
-                    <td class="main__carrito-producto-icono"><i class="fa-solid fa-trash-can"></i></td>
-
-                  </tr>
-
-                  <tr class="main__carrito-producto">
-                    <td><input type="checkbox" name="producto" id="producto"></td>
-                    <td class="main__carrito-producto-imagen"><img src="/images/imgCarrito/cpu.jpg" alt="" width="50%">
-                    </td>
-                    <td class="main__carrito-producto-titulo">Gabinete Gamer Thermaltake</td>
-                    <td class="main__carrito-producto-precio">$78.532</td>
-                    <td class="main__carrito-producto-icono"><i class="fa-solid fa-trash-can"></i></td>
-
-                  </tr>
-                  <tr class="main__carrito-producto">
-                    <td><input type="checkbox" name="producto" id="producto"></td>
-                    <td class="main__carrito-producto-imagen"><img src="/images/imgCarrito/monitor.jpg" alt=""
-                        width="50%"></td>
-                    <td class="main__carrito-producto-titulo">Monitor Gaming 27” Gygabyte G27FC</td>
-                    <td class="main__carrito-producto-precio">$119.378</td>
-                    <td class="main__carrito-producto-icono"><i class="fa-solid fa-trash-can"></i></td>
-
-                  </tr>
-                  <tr class="main__carrito-producto">
-                    <td></td>
-                    <td class="main__carrito-producto-imagen"></td>
-                    <td class="main__carrito-producto-titulo">Total</td>
-                    <td class="main__carrito-producto-precio">$100.000</td>
-                    <td class="main__carrito-producto-icono"></td>
-
-                  </tr>
-                </table>
-              </section>
-            </section> -->
-           
-            <table>
+    <%- include('../partials/burguermenu-search.ejs') %>
+      <section class="main__carrito">
+        <div class="main__carrito-titulo">
+          <p>Carrito de compras</p></div>
+      <section class="main__carrito-subtitulo">
+        <div>
+         <h4>Detalle de la compra</h4>
+        </div>
+        </section>
+      <!--TABLA DE PRODUCTOS tablet-->
+      <section class="main__carrito-tabla">     
+        <table class="tabla_cart">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre del producto</th>
+              <th>Cantidad</th>
+              <th>Precio unitario</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% productos.forEach(({id,image,name,quantity,price,discount})=> { %>
               <tr>
-                <th>Imagen</th>
-                <th>Nombre del producto</th>
-                <th>Cantidad</th>
-                <th>Precio unitario</th>
-                <th>Subtotal</th>
+                <td class="product-image"><img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="Image" width="50"></td>
+                <td class="product-name"><%= name %></td>
+                <td class="product-quantity"><%= quantity %></td>
+                <td class="product-price"><h3>$<%= price*((100-discount)/100) %></h3></td>
+                <td class="product-subtotal"><%= quantity * price %></td>
               </tr>
-              <% productos.forEach(({id,image,name,quantity,price,discount})=> { %>
-                <tr>
-<td><img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="Image" width="50"></td>
-                  <td><%= name %></td>
-                  <td><%= quantity %></td>
-                  <td><h3>$<%= price*((100-discount)/100) %></h3></td>
-                  <td><%= quantity * price %></td>
-                </tr>
-              <% }); %>
-            </table>
-            
-           
+            <% }); %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="text-end"><strong>Total:</strong></td>
+              <td><%=  %></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </div>    
             <!--Detalle de envío-->
             <section class="main__carrito--envío">
               <div class="main__carrito--envío-titulo">
@@ -125,7 +77,7 @@
 
               </div>
 
-              <div class="conteiner-titulo--div--subtitulo">
+              <div class="conteiner-otrosPagos">
                 <p>Otras opciones de pago </p>
                 <form class="formulario--metodo--pago" action="/index.html">
                   <label for="debito">
@@ -147,13 +99,8 @@
             </section>
             </div>
           </section>
-          <section class="main__section__marcas">
-            <h2>Las Mejores Marcas están en AMADEUS</h2>
-
-    <%- include('../partials/carreteMarcas.ejs') %>
-            
-
-        </section>
+     </section>
+     </section>
       </main>
       <!--FOOTER-->
 

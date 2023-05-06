@@ -43,7 +43,7 @@ app.use('/productos', productosRouter);
 //Api Routes
 app.use('/api/productos',productosApiRouter)
 app.use('/api/users', usersApiRouter);
-app.use('/api/carrito', cartApiRouter);
+/* app.use('/api/carrito/productos', cartApiRouter); */
 
 
 // catch 404 and forward to error handler

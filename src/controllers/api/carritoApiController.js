@@ -1,13 +1,6 @@
-const express = require('express');
-const session = require('express-session');
-const app = express();
+const db = require('../../database/models');
 
-// Configuración de la sesión
-app.use(session({
-  secret: 'secreto',
-  resave: false,
-  saveUninitialized: true
-}));
+
 
 module.exports = {
     crearCarrito: async (req, res) => {
@@ -68,14 +61,15 @@ module.exports = {
 
 
 // Endpoint para guardar un producto en el carrito
-app.post('/carrito/productos', (req, res) => {
+/* const router = require('express').Router();
+router.post('/carrito/productos', (req, res) => {
   const { idProduct, quantity } = req.body;
-  const idCart = req.session.idCart;
+  const idCart = req.session.idCart; */
   // Guardar el producto en la base de datos o en una variable en memoria
-  guardarProductoEnCarrito(idCart, idProduct, quantity);
+/*   guardarProductoEnCarrito(idCart, idProduct, quantity);
   // Devolver una respuesta al cliente
   res.json({ success: true });
-});
+}); */
 
 // Función para generar un ID de carrito 
 const { v2: uuidv2 } = require('uuid');
