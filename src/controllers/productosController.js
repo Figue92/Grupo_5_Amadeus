@@ -1,6 +1,8 @@
-
+const fs = require('fs');
+const path = require('path');
 const { validationResult } = require('express-validator');
-const db = require('../database/models')
+const db = require('../database/models');
+const {Op} = require('sequelize');
 
 module.exports = {
 
@@ -25,6 +27,7 @@ module.exports = {
     })
       .then((productos) => {
         console.log(req.body)
+
         return res.render("productos/productos", {
           title: "Lista de productos",
           productos,
@@ -162,7 +165,7 @@ module.exports = {
             idProduct: producto.id
           })
         })
-        return res.redirect('/productos/productos')
+        return res.redirect('/dashboard')
       
       } catch (error) {
         console.log(error)
@@ -227,94 +230,94 @@ module.exports = {
   },
 
  
-update:  async (req, res) => {
-  const errors = validationResult(req);
+update:  (req, res) => {
 
-  if (!errors.isEmpty()) {
-    return res.render('productos/formEdit', {
-      errors: errors.mapped(),
-      old: req.body,
-    });
-  }
+const errors = validationResult(req);
 
-  const { name, price, description, category, marca, discount, novedad } = req.body;
+    if (errors.isEmpty()) {
+      const { name, price, description, category, marca, discount, novedad } = req.body;
   const id = +req.params.id;
 
-  try {
-    const producto = await db.Product.findByPk(id, {
+  db.Product.findByPk(id, {
       include: [
         {
           association: 'image',
           attributes: ['name', 'id']
         }
       ]
-    });
+    }).then(producto=>{
+      let imageUpdate;
 
-    let imageUpdate;
-
-    if (req.files) {
-      const images = req.files.map((image) => ({
-        name: image.filename,
-        idProduct: id,
-      }));
-
-      imageUpdate = await db.ProductImage.bulkCreate(images);
-    } else {
-      imageUpdate = await db.ProductImage.findAll({
-        where: { id },
-      });
-    }
-
-    await db.Product.update(
-      {
-        name: name.trim(),
-        price,
-        description: description.trim(),
-        idCategory: category,
-        idBrand: marca,
-        discount,
-        novedad: !!novedad,
-      },
-      {
-        where: { id },
+      if (req.files) {
+        const images = req.files.map((image) => ({
+          name: image.filename,
+          idProduct: id,
+        }));
+  
+        imageUpdate = db.ProductImage.bulkCreate(images);
+      } else {
+        imageUpdate = db.ProductImage.findAll({
+          where: { id },
+        });
       }
-    );
-
-    if (req.files.length) {
-      req.files.forEach((file) => {
-        fs.existsSync(`./public/images/productos/${file.filename}`) &&
-          fs.unlinkSync(`./public/images/productos/${file.filename}`);
-      });
-    }
-
-    const brands = await db.Brand.findAll({
-      order: [['name']],
-      attributes: ['name', 'id'],
-    });
-
-    const categories = await db.Category.findAll({
-      order: [['name']],
-      attributes: ['name', 'id'],
-    });
-
-    return res.render('productos/formEdit', {
-      brands,
-      categories,
-      ...producto.dataValues,
-      errors: {},
-      old: {},
-    });
-  } catch (error) {
-    console.log(error);
-    return res.render('productos/formEdit', {
-      errors: {
-        general: {
-          msg: 'Error al actualizar el producto. Intente nuevamente.',
+  
+    db.Product.update(
+        {
+          name: name.trim(),
+          price,
+          description: description.trim(),
+          idCategory: category,
+          idBrand: marca,
+          discount,
+          novedad: !!novedad,
         },
-      },
-      old: req.body,
-    });
-  }
+        {
+          where: { id },
+        }
+      ).then(producto=>{
+        if (req.files.length) {
+          req.files.forEach((file) => {
+            fs.existsSync(`./public/images/productos/${file.filename}`) &&
+              fs.unlinkSync(`./public/images/productos/${file.filename}`);
+          });
+        }
+   
+        return res.redirect('/dashboard')
+      
+        })
+  
+    
+      }
+    )}else{
+      const { id } = req.params;
+
+      const producto = db.Product.findByPk(id, {
+        include: ['image']
+      })
+  
+      const brands = db.Brand.findAll({
+        order: [['name']],
+        attributes: ['name', 'id']
+      })
+      const categories = db.Category.findAll({
+  
+        attributes: ['nameCategory', 'id']
+      })
+  
+  
+      Promise.all([brands, categories, producto])
+        .then(([brands, categories, producto]) => {
+          //return res.send(producto)
+          return res.render('productos/formEdit', {
+            brands,
+            categories,
+            ...producto.dataValues,
+            errors: errors.mapped(),
+            old: req.body
+          })
+        })
+        .catch((error) => console.log(error))
+    }
 },
   remove: (req,res) => {
    

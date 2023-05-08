@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head',{
-    title : 'Dashboard'
-}) %>
+<%- include('./partials/head.ejs')  %>
 
   <body class="home">
     <!-- encabezado -->
@@ -43,10 +41,8 @@
                                             <a class="butonEditarProd" href="/productos/edit/<%= id %>"><i class="far fa-edit"></i></a>
                                             
 
-                                            <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar" id="formEliminar">
-                                        <!--       <button class="butonEliminarProd" type="submit"><i class="fa-solid fa-trash"></i>   </button>-->
-                                            
-                                              <button class="butonEliminarProd" onclick="eliminar()" type="button"><i class="fas fa-trash"></i></button>
+                                            <form id="formE"class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formE" >
+                                            <button class="butonEliminarProd" type="submit"><i class="fas fa-trash"></i></button> 
                                           </form>
                                           </div> 
                                         </td>
@@ -67,7 +63,8 @@
       <!-- pie de pagina -->
 
 
-      <%- include('./partials/scripts.ejs',{view:'detail'})  %>
+      <%- include('./partials/scripts.ejs',{view:'dashboard'})  %>
+<script src="/js/dashboard.js"></script>  
   </body>
 
 </html>
