@@ -55,6 +55,7 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     }
     .main__section__productos h1{
         color: aqua;
+        margin: 15px;
     }
     @keyframes fondoAnimado {
         0% {
@@ -193,7 +194,7 @@ font-size: 0.5rem;
 
     }
     .main__section__productos-ofertas h1{
-    
+    margin: 15px;
         width: 100%;
         font-size: 5vh;
     }
@@ -253,6 +254,9 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     
       .busqueda-menu.active .buscador-movil {
         display: block;
+      }
+    .title__todosProductos{
+margin: 15px;
       }
     @media (min-width:768px) {
         .button-burguer{

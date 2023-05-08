@@ -22,6 +22,7 @@
     font-family: var(--tipografiaPrincipal);
     font-size: 1.5rem;
     text-align: center;
+    margin: 15px;
 }
 
 .form__main .form__main--subtitulo {
@@ -163,8 +164,9 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-around;
+    align-items: center;
+  
+    justify-content:center;
 }
 .containerButons{
     display: flex;
@@ -243,7 +245,13 @@
     margin: 4px 2px;
     cursor: pointer;
   }
- 
+  
+ .is-valid{
+    color:green;
+ }
+ .is-invalid{
+    color: red;
+ }
 @media (min-width: 426px) {
     .form__main--registro {
         width: 70%;

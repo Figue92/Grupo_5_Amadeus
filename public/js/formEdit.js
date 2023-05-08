@@ -28,7 +28,7 @@ break;
         break;
 }
     })
-    $('name').addEventListener('focus', function(e){
+$('name').addEventListener('focus', function(e){
     cleanError('error-name', e)
 })
 $('description').addEventListener('blur', function(e){
@@ -129,6 +129,9 @@ msgError('error-discount', "Este campo no puede estar vacío. Si no hay descuent
 case this.value > 100:
     msgError('error-discount', "El descuento del producto no puede ser superior a 100%", e)
 break;
+case this.value < 0:
+    msgError('error-discount', "El descuento del producto no puede ser un número negativo", e)
+break;
     default:
         this.classList.add('is-valid')
         break;
@@ -137,14 +140,13 @@ break;
 $('discount').addEventListener('focus', function(e){
 cleanError('error-discount', e)
 })
-/* $('form--edit').addEventListener('submit', function (e){
+$('form--edit').addEventListener('submit', function (e){
     e.preventDefault()
     let error = false;
       for (let i = 0; i < this.elements.length - 4; i++) {
 
         if (!this.elements[i].value || this.elements[i].classList.contains('is-invalid')) {
           error = true
-          console.log(error);
         }
 
       }
@@ -152,10 +154,14 @@ cleanError('error-discount', e)
       if (!error) {
         this.submit()
       } else {
-        $('formError').innerHTML = "Los campos señalados son obligatorios."
-      }
+        for (let i = 0; i < this.elements.length -4; i++) {
+            !this.elements[i].value && this.elements[i].classList.add('is-invalid') 
+                
+            }
+            $('form-error').innerHTML = "Debes completar los campos"
+        }
 })
- */
+ 
 } catch (error) {
     console.log(error);
 }

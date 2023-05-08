@@ -1,71 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
-<%- include('../partials/head') %> 
+<%- include('../partials/head',{otherScript: include('../partials/scripts.ejs',{view:'formEdit'})}) %> 
 <body>
     <!-- Header -->
     <%- include('../partials/header') %>
     <main class="form__main">
         <div class="container-form">
         <h1 class="form__main--titulo">agregar producto</h1>
-        <form action="/productos/add" method="POST" class="formAdd" enctype="multipart/form-data">
-            <div class="formAdd__name">
-                <label for="name"></label>
-                <input type="text" name="name" placeholder="Nombre del producto">
-                <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %>
+        <form id="formAdd" action="/productos/add" class="form--edit" method="POST" class="row" enctype="multipart/form-data">
+            <div class="col-lg-10 col-8 col-md-10 mb-3">
+                <label for="name" class="form-label"></label>
+                <input id="name" type="text" name="name" placeholder="Nombre del producto" class="form-control">
+                <small id="error-name" class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %>
                 </small>
             </div>
-            <div class="formAdd__description">
-                <label for="productDescription">Descripción del producto</label>
-                <textarea name="description" id="productDescription" cols="50" rows="5"></textarea>
-                <small class="text-danger ms-2">
+            <div class="col-lg-4 col-8 col-md-8 mb-3">
+                <label for="description">Descripción del producto</label>
+                <small id="descriptionInfo" hidden>(<span id="cantCaracteres"></span> caracteres disponibles)</small>
+                <textarea name="description" id="description" cols="50" rows="5" class="form-control"></textarea>
+                <small id="error-description" class="text-danger ms-2">
                     <%= locals.errors && errors.description ? errors.description.msg : null %>
                 </small>
             </div>
-            <div class="formAdd__category">
-                <select name="category" id="category">
+            <div class="col-lg-10 col-10 col-md-8 mb-3">
+                <select name="category" id="category" class="form-control">
                     <option value="" selected hidden>Categoría</option>
                     <% categories.forEach(({nameCategory, id})=> { %>
                         <option value="<%= id %>" <%=id===categories.id && 'selected' %> ><%= nameCategory %></option>
                         <% }) %>
                 </select>
-                <small class="text-danger ms-2"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+                <small id="error-category" class="text-danger ms-2"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
             </div>
-            <div class="formAdd__category">
-                <select name="marca" id="marca">
+            <div class="col-lg-10 col-10 col-md-8 mb-3">
+                <select name="marca" id="marca" class="form-control">
                     <option value="" selected hidden>Marca</option>
                         <% brands.forEach(({name, id})=> { %>
                             <option value="<%= id %>" <%=id===brands.id && 'selected' %> ><%= name %>
                             </option>
                             <% }) %>
                 </select>
-                <small class="text-danger ms-2"><%= locals.errors && errors.brand ? errors.brand.msg : null %></small>
+                <small id="error-marca" class="text-danger ms-2"><%= locals.errors && errors.brand ? errors.brand.msg : null %></small>
             </div>
-            <div class="formAdd__price">
+            <div class="col-lg-10 col-10 col-md-8 mb-3">
                 <label for=""></label>
-                <input type="number" name="price" placeholder="Precio">
-                <small class="text-danger ms-2">
+                <input id="price" type="number" name="price" placeholder="Precio" class="form-control">
+                <small id="error-price" class="text-danger ms-2">
                     <%= locals.errors && errors.price ? errors.price.msg : null %>
                 </small>
             </div>
-            <div class="formAdd__novedad">
-                <input type="checkbox" name="novelty" id="novelty">
-                <label for="novelty">Es un producto recién salido al mercado.</label>
-            </div>
-            <div class="formAdd__price">
+            <div class="col-lg-10 col-10 col-md-8 mb-3">
                 <label for=""></label>
-                <input type="number" name="discount" placeholder="Descuento">
-                <small class="text-danger ms-2">
+                <input id="discount" type="number" name="discount" placeholder="Descuento" class="form-control">
+                <small id="error-discount" class="text-danger ms-2">
                     <%= locals.errors && errors.discount ? errors.discount.msg : null %>
                 </small>
             </div>
-            <div class="formAdd__image">
-                <label for=""></label>
-                <input type="file" name="images" multiple><small class="text-danger ms-2">
+            <div class="col-lg-10 col-10 col-md-8 mb-3">
+                <input type="checkbox" name="novelty" id="novelty">
+                <label for="novelty">Es un producto recién salido al mercado.</label>
+            </div>
+           
+            <div class="col-10 col-md-8 mb-3">
+                <label for="images" class="btn btn-primary">Subir Imágenes</label>
+                <input hidden id="images" type="file" name="images" multiple>
+                <small id="error-images" class="text-danger ms-2" class="form-control">
                     <%= locals.errors && errors.images ? errors.images.msg : null %>
                 </small>
             </div>
+            <div class="col-6 col-md-4 d-flex justify-content" id="boxImagesPreview">
+                              
+            </div>
+     
             <div class="formAdd__button">
+                <small class="text-danger" id="form-error"></small>
                 <button class="formAdd__button--agregar" type="submit">agregar</button>
                 <button class="formAdd__button--cancelar"><a href="/">cancelar</a></button>
             </div>
@@ -74,5 +82,6 @@
     </main>
     <!-- Footer -->
     <%- include('../partials/footer') %> 
+    <script src="/js/formAdd.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const formE = document.getElementById('formE');
+const formE = document.querySelector('#formE');
 console.log(formE);
 
 formE.addEventListener('submit', (event) => {
@@ -15,9 +15,8 @@ formE.addEventListener('submit', (event) => {
     }).then((result) => {
         if (result.isConfirmed) {
             fetch(action, {
-                method: {
                   method: "POST",
-                },
+                
             }).then(()=>{
                 Swal.fire(
                     'Eliminado!',
