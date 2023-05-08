@@ -41,9 +41,9 @@
                                             <a class="butonEditarProd" href="/productos/edit/<%= id %>"><i class="far fa-edit"></i></a>
                                             
 
-                                            <form id="formE"class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formE" >
-                                            <button class="butonEliminarProd" type="submit"><i class="fas fa-trash"></i></button> 
-                                          </form>
+                                            <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST">
+                                              <button type="button" class="eliminar-btn" data-producto-id="<%= id %>"><i class="fas fa-trash"></i></button>
+                                            </form>                                            
                                           </div> 
                                         </td>
                                       </tr>
@@ -62,8 +62,9 @@
       </main>
       <!-- pie de pagina -->
 
-      <script src="/js/dashboard.js"></script>  
+      <script src="/js/dashboard.js"></script>
       <%- include('./partials/scripts.ejs',{view:'dashboard'})  %>
+      
 
   </body>
 
