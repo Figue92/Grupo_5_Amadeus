@@ -98,3 +98,23 @@ Planificar antes de comenzar el sprint, para optimizar el tiempo. Fluir la comun
 
 ### Dejar de hacer:
 --
+# RETROSPECTIVA SPRINT 7
+### Comenzar a hacer: 
+Implementar en el proyecto los contenidos vistos en clases sincrónicamente.
+
+### Hacer más:
+Adelantar tareas para llegar con más tiempo.
+
+
+
+### Continuar haciendo:
+Agregar nueva funcionalidad para mejorar la UI/UX.
+
+Revisar las correcciones antes de comenzar el siguiente sprint.
+Planificar antes de comenzar el sprint, para optimizar el tiempo. Fluir la comunicación.
+
+### Hacer Menos:
+--No estar preparado, con la documentación vista antes del sprint.
+
+### Dejar de hacer:
+--
