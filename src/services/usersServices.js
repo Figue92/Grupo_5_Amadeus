@@ -25,6 +25,20 @@ module.exports = {
             }
         }
     },
+    getAllEmails: async () => {
+        try {
+            const users = await db.User.findAll({
+                attributes : ['email']
+            });
+            const emails = users.map(user => user.email);
+            return emails;
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+    },
     registerUser: async (data, image) => {
         try {
             const newAddress = await db.Address.create();

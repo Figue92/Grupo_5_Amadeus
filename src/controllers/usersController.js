@@ -2,13 +2,22 @@ const { validationResult } = require('express-validator');
 const { readJSON, writeJSON } = require("../data");
 const { hashSync } = require('bcryptjs');
 const fs = require('fs');
-const db = require('../database/models')
+const db = require('../database/models');
+const { getAllEmails } = require('../services/usersServices');
+const createResponseError = require('../helpers/createResponseError');
 
 module.exports = {
-    register: (req, res) => {
-        return res.render('users/register', {
-            title: "Registro"
-        })
+    register: async (req, res) => {
+        try {
+            const emails = await getAllEmails();
+            return res.render('users/register', {
+                title: "Registro",
+                emails
+            })
+        } catch (error) {
+            return createResponseError(res, error);
+        }
+        
     },
     login: (req, res) => {
         return res.render('users/login', {
@@ -48,9 +57,10 @@ module.exports = {
 
         } else {
             return res.render('users/register', {
-                title: "Registro de usuario",
+                title: "Registro",
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                emails : []
             })
         }
 

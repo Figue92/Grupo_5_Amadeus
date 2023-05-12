@@ -1,3 +1,132 @@
+.login__main {
+    padding: 1% 2.5%;
+    font-family: var(--tipografiaForms);
+    text-align: center;
+}
+
+.login--titulo {
+    text-transform: uppercase;
+    font-family: var(--tipografiaForms);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 15px;
+}
+
+.login--subtitulo {
+    color: var(--colorAzul);
+    text-align: center;
+    margin: 0 auto 30px;
+}
+
+.login--subtitulo::first-letter {
+    text-transform: uppercase;
+}
+
+.login__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.login__form div {
+    position: relative;
+    margin: 10px auto;
+}
+
+.login__form--email, .login__form--password {
+    width: 95%;
+}
+
+.login__form div input {
+    width: 100%;
+    margin: 10px auto;
+    border-style: none;
+    border-bottom: 1px solid #000;
+    font-family: var(--tipografiaForms);
+    font-size: 1rem
+}
+
+.login__form div input:focus {
+    outline : none;
+    border-bottom: 2px solid var(--colorAzul);
+}
+
+.login__form__button--entrar {
+    margin: 10px 25%;
+    padding: 5px 2px;
+    font-size: 14px;
+    color: white;
+    background: lightskyblue;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 50%;
+    letter-spacing: 1px;
+}
+
+.login__form__button--entrar:hover {
+    background: linear-gradient(#dee5ff,lightskyblue);
+}
+
+.login__form--forgetPass {
+    margin: 0 auto 5px;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.login__form--registrarse {
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.login__form div label:not(.form__main__recordar--container__switch) {
+    color: #AAA;
+    position: absolute;
+    top: 14px;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.login__form div label:hover {
+    cursor: text;
+}
+
+.login__form div .divFocus {
+    top: 0px !important;
+    font-size: 12px !important;
+    color: var(--colorAzul) !important;
+}
+
+.login__form div .errors {
+    position: absolute;
+    color: red;
+    font-size: 12px;
+    left: 0;
+    top: 32px;
+    margin-top: 0;
+}
+
+.buttonLogin-submit {
+    margin: 10px 25%;
+    padding: 5px 2px;
+    font-size: 14px;
+    color: #CCC;
+    background: #BBB;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 50%;
+    letter-spacing: 1px;
+}
+
 .form__main__recordar--container__switch {
     align-items: center;
     border-radius: 100px;
@@ -67,4 +196,16 @@
 .form__main__recordar--container__switch-input:checked + .form__main__recordar--container__switch-track .form__main__recordar--container__switch-checkMark {
     opacity: 1;
 	transition: opacity 0.25s ease-in-out;
+}
+
+@media (min-width: 426px) {
+    .login__form {
+        width: 70%;
+    }
+}
+
+@media (min-width: 769px) {
+    .login__form {
+        width: 40%;
+    }
 }

@@ -4,18 +4,20 @@
 <body>
     <%- include('../partials/header.ejs')  %> 
 
-    <main class="form__main">
-        <h1 class="form__main--titulo">amadeus pc</h1>
-        <h4 class="form__main--subtitulo">mi cuenta</h4>
-        <form action="" method="POST" class="form__main--registro">
-            <div class="form__main--registro-email">
+    <main class="login__main">
+        <h1 class="login--titulo">amadeus pc</h1>
+        <h4 class="login--subtitulo">mi cuenta</h4>
+        <form action="" method="POST" class="login__form">
+            <div class="login__form--email">
                 <label for="email"></label>
                 <input name="email" type="email" id="email" placeholder="Correo electrónico" value="<%= locals.old && old.email && !locals.errors.email ? old.email : null %>">
+                <ul class="errors errorsEmail"></ul>
                 <small class="error"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
             </div>
-            <div class="form__main--registro-email">
+            <div class="login__form--password">
                 <label for="pass"></label>
-                <input name="password" type="password" id="pass" placeholder="Contraseña" >
+                <input name="password" type="password" id="password" placeholder="Contraseña" >
+                <ul class="errors errorsPassword"></ul>
                 <small class="error"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
             </div>
 
@@ -35,13 +37,14 @@
                 </label>
             </div>
 
-            <button type="submit" class="form__button--siguiente">entrar</button>
-            <h3 class="passForget"><a href="">¿Olvidaste tu contraseña?</a></h3>
-            <h2>¿No tenés cuenta? <a href="/users/register">Registrate</a></h2>
+            <button id="submitBtn" type="submit" class="buttonLogin-submit login__form__button--entrar" disabled>entrar</button>
+            <h3 class="login__form--forgetPass"><a href="">¿Olvidaste tu contraseña?</a></h3>
+            <h2 class="login__form--registrarse">¿No tenés cuenta? <a href="/users/register">Registrate</a></h2>
             <button class="form__button--google"><a href=""><img src="/images/logo-google.png" alt=""><p>Continuar con Google</p></a></button>
         </form>
     </main>
 
+    <script type="module" src="/js/login.js"></script>
     <%- include('../partials/footer.ejs')  %>
 </body>
 </html>
