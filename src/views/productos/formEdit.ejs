@@ -84,7 +84,7 @@
                                 <% image.forEach(image=> { %>
                                     <div class="d-flex flex-column gap-2"><label style="cursor: pointer;"
                                             for="image<%= image.id %>">
-                                   
+                                            <input type="checkbox" name="selectedImages" value="<%=image.id %>" class="form-check-input">    
                                             <img src="/images/productos/<%= image.name %>" width="100px" alt=""></label>
                                     </div>
                                     <% }) %>

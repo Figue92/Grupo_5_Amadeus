@@ -14,7 +14,41 @@ const API = 'http://www.omdbapi.com/?apikey=7c7f3cb2';
 
 
 module.exports = {
-    list: async (req, res) => {
+    list: async (req,res) =>{
+        try{
+const {withPagination = "true", page = 1, limit = 6} = req.query;
+const { count, productos, pages} = await getAllProductos(req,{
+    withPagination,
+    page,
+    limit : +limit
+});
+let data = {
+    count, 
+    
+}
+if(withPagination === "true"){
+    data = {
+        ...data,
+        pages,
+        currentPage: +page
+    }
+}
+return res.status(200).json({
+    ok: true,
+    data,
+});
+        } catch(error){
+            console.log(error)
+            return res.status(error.status || 500).json({
+                ok: false,
+                error: {
+                    status: error.status ||500,
+                    message: error.message || "Ha ocurrido un error"
+                }
+            })
+        }
+    },
+otro: async (req, res) => {
         try {
             const limit = req.query.limit ? parseInt(req.query.limit) : 10;
             const offset = req.query.offset ? parseInt(req.query.offset) : 0;

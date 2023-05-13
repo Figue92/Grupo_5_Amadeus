@@ -5,14 +5,16 @@
 
     <body>
         <%- include('../partials/header.ejs') %>
-
+       
             <main class="main__productos">
                 <%- include('../partials/burguermenu-search') %>
-                    <section class="main__section__productos-ofertas">
+                    <section class="main__section__productos-ofertas" >
                         <h1 class="title__todosProductos">Todos los productos</h1>
+                       <div> <%- include('../partials/paginator.ejs') %></div>
+                       <div id="container-productos-card">
                         <% productos.forEach(({id, title, price, description, image})=> { %>
                             <%- include('../partials/articleProduct',{
-                                id,
+                        id,
                         title,
                         price,
                         description,
@@ -20,7 +22,7 @@
                           }
                           ) %>
                             <% }) %>
-
+</div>
                     </section>
                     <section class="main__section__compra">
                         <i class="fa-regular fa-credit-card"></i>
@@ -38,6 +40,7 @@
             
                     </section>
             </main>
+            <script src="/js/paginator.js"></script>
             <%- include('../partials/footer.ejs') %>
     </body>
 
