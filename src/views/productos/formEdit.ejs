@@ -80,16 +80,17 @@
                         </div>
                         <div class="col-10 col-md-8 mb-3">
                             <label for="images" class="form-label">Imágenes</label>
-                            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+                            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2"id="current-images-section">
                                 <% image.forEach(image=> { %>
                                     <div class="d-flex flex-column gap-2"><label style="cursor: pointer;"
                                             for="image<%= image.id %>">
-                                            <input type="checkbox" name="selectedImages" value="<%=image.id %>" class="form-check-input">    
+                                            <input type="checkbox" name="image" value="<%=image.id %>" class="form-check-input"> <!-- checkbox para las imagenes -->
                                             <img src="/images/productos/<%= image.name %>" width="100px" alt=""></label>
                                     </div>
                                     <% }) %>
                             </div>
-                            <input type="file" class="form-control" id="images" name="images" multiple>
+                            <label for="images" class="btn btn-primary">Agregar Imágenes Nuevas</label>
+                            <input type="file" class="form-control" id="images" name="images" hidden multiple>
                             <small class="text-danger ms-2">
                                 <%= locals.errors && errors.images ? errors.images.msg : null %>
                             </small>

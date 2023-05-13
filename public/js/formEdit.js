@@ -140,8 +140,17 @@ break;
 $('discount').addEventListener('focus', function(e){
 cleanError('error-discount', e)
 })
-$('form--edit').addEventListener('submit', function (e){
+
+/* Aca intento interrumpir el evento del formulario, que me junte las imagenes que estan chequeadas y las guardo en selectedImages. 
+Hice todo en el mismo evento que recorro los errores no sé si eso esta bien! No borra las imagenes que no estan chequeadas :( */
+
+$(document).ready(function() {
+$('form--edit').submit(function (e){
     e.preventDefault()
+    var selectedImages = $("input[name='image']:checked").map(function() {
+        return $(this).val();
+      }).get();
+      $("#form--edit").append("<input type='hidden' name='selected-images' value='" + selectedImages.join(",") + "'>");
     let error = false;
       for (let i = 0; i < this.elements.length - 4; i++) {
 
@@ -152,15 +161,15 @@ $('form--edit').addEventListener('submit', function (e){
       }
 
       if (!error) {
-        this.submit()
+        $(this).unbind("submit").submit();
       } else {
         for (let i = 0; i < this.elements.length -4; i++) {
             !this.elements[i].value && this.elements[i].classList.add('is-invalid') 
                 
             }
-            $('form-error').innerHTML = "Debes completar los campos"
+            $('#form-error').innerHTML("Debes completar los campos")
         }
-})
+})})
  
 } catch (error) {
     console.log(error);
