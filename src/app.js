@@ -7,9 +7,37 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+const passport = require("passport");
+const OAuth2Strategy = require("passport-google-oauth").OAuth2Strategy;
+
+const clientID = process.env.GOOGLE_CLIENT_ID;
+const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+const callbackURL = process.env.GOOGLE_CLIENT_CALLBACK;
+
+const strategyConfig = new OAuth2Strategy(
+  {
+    clientID,
+    clientSecret,
+    callbackURL,
+    scope: ["profile"],
+  },
+  (accessToken, refreshToken, profile, done) => {
+    console.log("profile");
+    done(null,profile)
+  }
+);
+
+module.exports = () => passport.use(strategyConfig);
+
+
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productosRouter = require('./routes/productos');
+const authRouter = require('./routes/auth');
+
 
 const productosApiRouter = require('./routes/v1/apiProductos');
 const usersApiRouter = require('./routes/v1/apiUsers');
@@ -39,11 +67,13 @@ app.use(localUserCheck)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter);
+app.use('/auth', authRouter);
 
 //Api Routes
 app.use('/api/productos',productosApiRouter)
 app.use('/api/users', usersApiRouter);
 /* app.use('/api/carrito/productos', cartApiRouter); */
+
 
 
 // catch 404 and forward to error handler
