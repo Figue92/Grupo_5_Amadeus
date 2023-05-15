@@ -28,7 +28,7 @@ module.exports = {
       const { count, productos, pages } = await getAllProductos(req, {
         withPagination,
         page,
-        limit
+        limit: +limit
       });
       let data = {
         count,
@@ -43,6 +43,10 @@ module.exports = {
         return res.render("productos/productos", {
           title: "Lista de productos",
           productos,
+          count,
+          pages,
+          data,
+   
           
         });
 

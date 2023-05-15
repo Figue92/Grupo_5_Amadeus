@@ -1,4 +1,4 @@
-console.log('paginator vinculado' );
+console.log('paginator vinculado');
 const $ = (el) => document.querySelector(el);
 const btnPrev = $("#btn-prev");
 const btnNext = $("#btn-next");
@@ -8,26 +8,25 @@ console.log(containerProductosCard);
 let pageActive = 1;
 const apiGetProductos = "http://localhost:3000/api/productos";
 
-const getProductos = ({ page = 1} = {}) =>
-  fetch(`${'http://localhost:3000/productos/productos'}?page=${page}`).then((res) =>
-    res.json()
-  );
+const getProductos = ({ page = 1 } = {}) =>
+  fetch(`${apiGetProductos}?page=${page}`).then((res) => res.json());
 
 const paintProductos = (productos) => {
-
   containerProductosCard.innerHTML = "";
   productos.forEach(({ id, image, title, description, price }) => {
-    const template =`<div class="card">
-    <a href="/productos/productDetail/${id}">
-    <img src="/images/productos/${image || 'imageNull.jpeg'}" class="card-img-top">
-    <a href="" class="card-body"><h5 class="card-title">${title}</h5>
+    const template = 
+    `<div class="card col-md-8">
+    <a href=/productos/productDetail/${id}>
+    <img src="/images/productos/${image.name || 'imageNull.jpeg'}" alt="Imagen del producto" class="card-img-top">
+        <h5 class="card-title">${title}</h5>
         <p class="card-text">${description}</p>
-        <h6 class="card-subtitle mb-2 text-muted">$ ${price}</h6></a>
-        <a href="/productos/productDetail/${id} " class="main__article_buton">Ver detalles</a>
-</div>`;
+        <h6 class="card-subtitle mb-2 text-muted">$ ${price}</h6>
+        <button href="/productos/productDetail/${id} " class="main__article_buton">Ver detalles</button>
+        </a>
+</div>`
     containerProductosCard.innerHTML += template;
-    
-  
+
+
   });
 };
 
@@ -35,8 +34,8 @@ const getPage = async (page) => {
   pageActive = page;
   const { data: pages, currentPage, productos } = await getProductos({ page });
   paintProductos(productos);
-  paintItemsPage({numberPages: pages, itemActive: currentPage});
-  statusPrevAndNext({currentPage, pages})
+  paintItemsPage({ numberPages: pages, itemActive: currentPage });
+  statusPrevAndNext({ currentPage, pages })
 };
 
 const paintItemsPage = ({ numberPages, itemActive }) => {
@@ -64,15 +63,15 @@ const statusPrevAndNext = ({ currentPage, pages }) => {
 
 window.addEventListener("load", async () => {
   try {
-    const { data: {pages, currentPage, productos} } = await getProductos();
+    const { data: { pages, currentPage, productos } } = await getProductos();
     paintProductos(productos);
-    paintItemsPage({numberPages: pages, itemActive: currentPage});
-    statusPrevAndNext({currentPage, pages});
-  }catch (error) {
+    paintItemsPage({ numberPages: pages, itemActive: currentPage });
+    statusPrevAndNext({ currentPage, pages });
+  } catch (error) {
     console.log(error);
   }
 });
-   
+
 /* const handleEventPrevNext = (btnElement, { isNext = false } = {}) => {
   btnElement.addEventListener("click", async () => {
     try {
@@ -103,9 +102,9 @@ btnNext.addEventListener("click", async () => {
   } catch (error) {
     console.log(error);
   }
-}); 
+});
 
- btnPrev.addEventListener("click", async () => {
+btnPrev.addEventListener("click", async () => {
   try {
     const {
       data: { pages, currentPage, productos },

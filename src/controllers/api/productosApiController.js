@@ -24,7 +24,7 @@ const { count, productos, pages} = await getAllProductos(req,{
 });
 let data = {
     count, 
-    
+    productos
 }
 if(withPagination === "true"){
     data = {

@@ -7,29 +7,10 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const passport = require('passport');
+const initializePassport = require('./database/config/passport');
+initializePassport();
 
-const passport = require("passport");
-const OAuth2Strategy = require("passport-google-oauth").OAuth2Strategy;
-
-const clientID = process.env.GOOGLE_CLIENT_ID;
-const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-const callbackURL = process.env.GOOGLE_CLIENT_CALLBACK;
-
-const strategyConfig = new OAuth2Strategy(
-  {
-    clientID,
-    clientSecret,
-    callbackURL,
-    scope: ["profile"],
-  },
-  (accessToken, refreshToken, profile, done) => {
-    console.log("profile");
-    done(null,profile)
-  }
-);
-
-module.exports = () => passport.use(strategyConfig);
 
 
 
@@ -62,6 +43,9 @@ app.use(methodOverride('_method'));
 app.use(session({secret : "amdGrupo5", resave : true, saveUninitialized : true}))
 app.use(cookieCheck)
 app.use(localUserCheck)
+app.use(passport.initialize())
+app.use(passport.session());
+
 
 
 app.use('/', indexRouter);

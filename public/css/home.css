@@ -40,7 +40,7 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     display: none;
     }
     .card {
-        width: 100%; 
+        width: 20%; 
         height: 100vh; 
         animation: fondoAnimado 10s infinite; /* 5s es la duración de la animación*/
         background-image: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
@@ -52,6 +52,12 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         border: none; 
         transition: transform 0.1s ease-in-out; /* Transición suave al hacer hover */
    
+    }
+    .container-productos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .main__section__productos h1{
         color: aqua;
@@ -397,12 +403,9 @@ margin: 15px;
        }
        .main__section__productos-ofertas{
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
         background-color: linear-gradient(var(--colorCeleste),#fff);
         border-radius: 2%;
-        align-content: space-around;
-        justify-content: space-around;
+        flex-direction: column;
     }
     .main__section__productos--article-ofertas{
         display: flex;
