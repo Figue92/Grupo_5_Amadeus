@@ -38,6 +38,7 @@ module.exports = {
     name,
     surname,
     email,
+    avatar: picture,
     rol:rolId,
     socialId: googleId
   }

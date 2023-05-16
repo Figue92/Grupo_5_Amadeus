@@ -363,13 +363,17 @@ window.onload = function () {
 
     let formulario = document.querySelector('.register__form');
     formulario.addEventListener('submit', (e) => {
-        campoVacio(inputName, errorsName);
-        campoVacio(inputSurname, errorsSurname);
+        pocosCaracteres(inputName, errorsName, 2);
+        pocosCaracteres(inputName, errorsName, 2);
         campoVacio(inputCodarea, errorsCodarea);
         campoVacio(inputTel, errorsTel);
-        campoVacio(inputEmail, errorsEmail);
-        campoVacio(inputPassword, errorsPassword);
-        campoVacio(inputRepeatPass, errorsRepeatPass);
+        notNumbers(inputCodarea, errorsCodarea);
+        notNumbers(inputTel, errorsTel);
+        muchNumbers(inputCodarea, errorsCodarea, 5);
+        muchNumbers(inputTel, errorsTel, 10);
+        invalidEmail(inputEmail, errorsEmail);
+        invalidPassword(inputPassword, errorsPassword);
+        notMatchPass();
 
         totalErrors = errorsName.length + errorsSurname.length + errorsEmail.length + errorsCodarea.length + errorsTel.length + errorsPassword.length + errorsRepeatPass.length;
         console.log(totalErrors);

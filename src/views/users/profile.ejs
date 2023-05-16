@@ -61,7 +61,7 @@
                 <div class="col-12 col-md-6">
                   <label for="address" class="form-label">Domicilio</label>
                   <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>"
-                    id="address" name="address" value="<%=userLogin.address%>">
+                    id="address" name="address" value="<%=address?.address%>">
                   <small class="text-danger ms-2">
                     <%= locals.errors && errors.address ? errors.address.msg : null %>
                   </small>
@@ -70,7 +70,7 @@
                 <div class="col-12 col-md-6">
                   <label for="address" class="form-label">Ciudad</label>
                   <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>"
-                    id="city" name="city" value="<%= userLogin.city%>">
+                    id="city" name="city" value="<%= address?.city%>">
                   <small class="text-danger ms-2">
                     <%= locals.errors && errors.city ? errors.city.msg : null %>
                   </small>
@@ -79,7 +79,7 @@
                 <div class="col-12 col-md-6">
                   <label for="address" class="form-label">Provincia</label>
                   <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>"
-                    id="province" name="province" value="<%= userLogin.province%>">
+                    id="province" name="province" value="<%= address?.province%>">
                   <small class="text-danger ms-2">
                     <%= locals.errors && errors.province ? errors.province.msg : null %>
                   </small>
@@ -88,7 +88,7 @@
                 <div class="col-12 col-md-6">
                   <label for="address" class="form-label">Código Postal</label>
                   <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>"
-                    id="zipCode" name="zipCode" value="<%= userLogin.zipCode%>">
+                    id="zipCode" name="zipCode" value="<%= address?.zipCode%>">
                   <small class="text-danger ms-2">
                     <%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %>
                   </small>
