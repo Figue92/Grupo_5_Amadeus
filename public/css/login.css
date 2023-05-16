@@ -28,6 +28,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    flex-direction: column;
 }
 
 .login__form div {

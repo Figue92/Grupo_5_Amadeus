@@ -4,12 +4,13 @@ module.exports = {
   loginGoogle: async (req,res)=>{
     const {
       provider,
+      photos: [{value:image}],
       emails: [{value:email}],
       _json: {
         sub : googleId, 
         family_name: surname,
         given_name: name,
-        picture}
+        }
     }=req.session.passport.user;
  try {
   const address= await   db.Address.create()
@@ -21,7 +22,7 @@ module.exports = {
       name,
       surname,
       email,
-     avatar: picture,
+     avatar: image,
      addressId: address.id,
      socialId: googleId,
      socialProvider: provider

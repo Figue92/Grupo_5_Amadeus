@@ -17,7 +17,7 @@ module.exports = {
         } catch (error) {
             return createResponseError(res, error);
         }
-        
+
     },
     login: (req, res) => {
         return res.render('users/login', {
@@ -60,7 +60,7 @@ module.exports = {
                 title: "Registro",
                 errors: errors.mapped(),
                 old: req.body,
-                emails : []
+                emails: []
             })
         }
 
@@ -101,15 +101,22 @@ module.exports = {
     },
     profile: (req, res) => {
         db.User.findByPk(req.session.userLogin.id, {
-            include: ['address']
+            attributes: ["name", "surname", "email", "avatar"],
+            include: [
+                {
+                    association: 'address',
+                    attributes: ["address", "city", "province", "zipCode"],
+                }]
         })
             .then(user => {
                 return res.render('users/profile', {
                     title: "Perfil de usuario",
-                    user,
+                    ...user,
+                    
+
                 })
             })
-
+            .catch((error) => console.log(error));
     },
     edit: (req, res) => {
         db.User.findByPk(req.session.userLogin.id, {
@@ -162,7 +169,8 @@ module.exports = {
                     Promise.all(([addressUpdate, userUpdate]))
                         .then(([addressUpdate, userUpdate]) => {
 
-                            (req.file && fs.existsSync('public/images/users/' + user.avatar)) && fs.unlinkSync('public/images/users/' + user.avatar)
+                            req.file && fs.existsSync('public/images/users/' + user.avatar) && 
+                             fs.unlinkSync('public/images/users/' + user.avatar)
 
                             req.session.message = "Datos actualizados"
                             const { id, name, surname, idRol, phone } = userUpdate;
@@ -200,17 +208,17 @@ module.exports = {
             })
             .catch(error => console.log(error))
     } */
-    destroy : (req,res) => {
+    destroy: (req, res) => {
         db.User.destroy({
-            where : {
-                id : req.session.userLogin.id
+            where: {
+                id: req.session.userLogin.id
             }
         })
-        .then(() => {
-            res.clearCookie('userAmadeusPC');
-            req.session.destroy();
-            return res.redirect('/')
-        })
-        .catch(error => console.log(error))
+            .then(() => {
+                res.clearCookie('userAmadeusPC');
+                req.session.destroy();
+                return res.redirect('/')
+            })
+            .catch(error => console.log(error))
     }
 }
