@@ -4,7 +4,7 @@ module.exports = {
   loginGoogle: async (req,res)=>{
     const {
       provider,
-      photos: [{value:image}],
+      photos: [{value:picture}],
       emails: [{value:email}],
       _json: {
         sub : googleId, 
@@ -22,7 +22,7 @@ module.exports = {
       name,
       surname,
       email,
-     avatar: image,
+     avatar: picture,
      addressId: address.id,
      socialId: googleId,
      socialProvider: provider
@@ -36,6 +36,7 @@ module.exports = {
   req.session.userLogin={
     id,
     name,
+    surname,
     email,
     rol:rolId,
     socialId: googleId
