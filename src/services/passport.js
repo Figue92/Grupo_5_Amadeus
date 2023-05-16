@@ -10,7 +10,7 @@ const strategyConfig = new OAuth2Strategy(
     clientID,
     clientSecret,
     callbackURL,
-    scope: ["profile"],
+    scope: ["profile","email"],
   },
   (accessToken, refreshToken, profile, done) => {
     console.log("profile");
@@ -18,4 +18,6 @@ const strategyConfig = new OAuth2Strategy(
   }
 );
 
-module.exports = () => passport.use(strategyConfig);
+module.exports ={
+  loginGoogleInitialize : () =>passport.use(strategyConfig)
+} 

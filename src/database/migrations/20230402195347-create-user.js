@@ -19,11 +19,11 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       password: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       phone: {
         type: Sequelize.STRING
@@ -39,6 +39,12 @@ module.exports = {
         defaultValue : 2
       },
       avatar: {
+        type: Sequelize.STRING
+      },
+      socialId:{
+        type: Sequelize.STRING
+      },
+      socialProvider:{
         type: Sequelize.STRING
       },
       idAddress: {

@@ -7,7 +7,6 @@ module.exports = {
   index:
     (req, res) => {
 
-
       const nuevos = db.Product.findAll(
         {
           include: ['image'],
@@ -82,6 +81,12 @@ module.exports = {
   },
   buys: (req,res) => {
     return res.render('comoComprar')
+  },
+  politica: (req,res) => {
+    return res.render('politica')
+  },
+  condiciones: (req,res) => {
+    return res.render('condiciones')
   }
   
   

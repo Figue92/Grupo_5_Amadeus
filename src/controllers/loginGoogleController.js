@@ -1,62 +1,49 @@
 const db = require('../database/models')
-const passport = require('passport');
-const OAuth2Strategy = require("passport-google-oauth").OAuth2Strategy;
-
 
 module.exports = {
-    initialize: () => { 
-        passport.use(strategyConfig);
-    passport.serializeUser((user, done) => {
-      done(null, user.id);
-    });
-    passport.deserializeUser(async(id, done) => {
-      try {
-        const user = await db.User.findOne({
-          where: {
-            id
-          }
-
-        });
-        return done(null, user);
-        
-      } catch (error) {
-       return done(error,null);
-      }
-    })
-  },
-session: (req, res) =>{
-const { socialId, socialProvider } = req.session.passport.user;
+  loginGoogle: async (req,res)=>{
+    const {
+      provider,
+      emails: [{value:email}],
+      _json: {
+        sub : googleId, 
+        family_name: surname,
+        given_name: name,
+        picture}
+    }=req.session.passport.user;
  try {
- db.User.findOne({
-  wher:{
-    socialId
-  }
- }).then((user)=>{
-  if (!user) {
-    db.User.create({
-      socialId,
-      socialProvider
-    }).then((newUser)=>{
-      req.login(newUser, (error) =>{
-        if(error){
-          return res.redirect('/users/login')
-        }
-        return res.redirect('/')
-      })
-    })
-  }else{
-    req.login(user, (error)=>{
-      if(error){
-        return res.redirect('/users/login')
-      } 
-      return res.redirect('/')
-    })
-  }
- })
-
- } catch (error) {
+  const address= await   db.Address.create()
+  const [{id,rolId}, isCreate]= await db.User.findOrCreate({
+    where: {
+  socialId: googleId
+    },
+    defaults:{
+      name,
+      surname,
+      email,
+     avatar: picture,
+     addressId: address.id,
+     socialId: googleId,
+     socialProvider: provider
   
-console.log(error);
-}
-}
+    }
+  })
+  if(!isCreate){
+    await address.destroy()
+  }
+
+  req.session.userLogin={
+    id,
+    name,
+    email,
+    rol:rolId,
+    socialId: googleId
+  }
+  res.cookie('userAmadeusPC', req.session.userLogin, { maxAge: 1000 * 60 * 5 })
+  res.redirect('/users/profile')
+ } catch (error) {
+  console.log(error);
+ }
+
+  }
 }

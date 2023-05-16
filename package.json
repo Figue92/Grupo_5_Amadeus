@@ -6,15 +6,10 @@
     "start": "node ./src/bin/www",
     "db:create": "sequelize db:drop & sequelize db:create & sequelize db:migrate",
     "db:reset": "sequelize db:migrate:undo:all & sequelize db:migrate & sequelize db:seed:all",
-    "start:react": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "nodemon ./src/bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "chalk": "^5.2.0",
-    "colors": "^1.4.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
@@ -29,26 +24,9 @@
     "mysql2": "^3.2.0",
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0",
-    "passport-google-oidc": "^0.1.0",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
     "sequelize": "^6.30.0",
     "sequelize-paginate": "^1.1.6",
     "sweetalert2": "^11.7.5",
     "uuid": "^9.0.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }

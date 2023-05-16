@@ -1,11 +1,9 @@
-import React from 'react'
 import Header from './Header'
-import Menu from './Menu'
-import CountProduct from './CountProduct'
 import Footer from './Footer'
 import logo from '../assets/images/Amadeus PC.jpg'
 
 import TablaProductos from './TablaProductos'
+import { CountProduct } from './CountProduct'
 
 
 
@@ -69,7 +67,7 @@ export const Productos = () => {
                     </div>
                     <div className='d-flex flex-column w-100'>
                         <div className>
-                        <CountProduct />
+                        <CountProduct/>
                         </div>
                        <TablaProductos/>
                       
