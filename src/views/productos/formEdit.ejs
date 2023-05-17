@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-6 col-md-8 mb-3">
                             <label for="category" class="form-label">Categoria</label>
-                            <select class="form-control" name="category" id="category"
+                            <select class="form-control" name="category" id="category" 
                                 <%= locals.errors && errors.category ? 'is-invalid' : null%>>
                                 <option value="" selected hidden>Seleccione...</option>
                                 <% categories.forEach(({nameCategory, id})=> { %>
@@ -59,8 +59,7 @@
                         </div>
                         <div class="col-10 col-md-8 mb-3">
                             <label for="price" class="form-label">Precio</label>
-                            <input id="price" class="form-control" type="number" name="price" placeholder="Precio"
-                                value="<%= price %>">
+                            <input id="price" class="form-control" type="number" name="price" placeholder="Precio" value="<%= price %>">
                             <small id="error-price" class="text-danger ms-2">
                                 <%= locals.errors && errors.price ? errors.price.msg : null %>
                             </small>
@@ -98,7 +97,7 @@
                         <div class="formAdd__button">
                             <small id="form-error" class="text-danger"></small>
                             <button class="formAdd__button--agregar" class="btn btn-dark" type="submit">editar</button>
-                            <button class="formAdd__button--cancelar">cancelar</button>
+                            <a href="/dashboard"><button class="formAdd__button--cancelar">cancelar</button></a>
                         </div>
                     </form>
                 </div>

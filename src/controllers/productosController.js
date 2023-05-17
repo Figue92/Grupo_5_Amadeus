@@ -240,6 +240,7 @@ module.exports = {
                   return res.render('productos/formEdit', {
                     brands,
                     categories,
+                    old: req.body,
                     ...producto.dataValues
                   })
                 })
