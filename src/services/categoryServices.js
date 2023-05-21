@@ -11,4 +11,15 @@ module.exports = {
          message : error.message
      }
  }
+},
+getFindAndCountAllCategories : async () => {
+    try {
+      const {count, rows : categories} = await db.Category.findAndCountAll();
+  return {categories, count} 
+ } catch (error){
+     throw {
+         status : 500,
+         message : error.message
+     }
+ }
 }}

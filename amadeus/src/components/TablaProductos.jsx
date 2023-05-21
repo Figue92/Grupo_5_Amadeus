@@ -1,8 +1,27 @@
 import React from 'react'
 import NuevosProductos from './NuevosProductos'
 import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react'
+import { UseFetch } from '../hooks/UseFetch'
 
-export default function TablaProductos({ id, name, price, category, brand, discount, novelty }) {
+export const TablaProductos = () => {
+    
+    const [state, setState] = useState({
+        loading: true,
+        productos: []
+    })
+    useEffect(() => {
+        UseFetch('/productos')
+            .then(({ ok, data }) => {
+                console.log(data);
+                const { productos } = data;
+                setState({
+                    loading: false,
+                    productos
+                })
+            })
+            .catch(error => console.error)
+    }, []);
     return (
         <table className="table">
             <thead>
@@ -18,39 +37,20 @@ export default function TablaProductos({ id, name, price, category, brand, disco
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td scope="row">{id}</td>
-                    <td>{name}</td>
-                    <td>{price}</td>
-                    <td>{category}</td>
-                    <td>{brand}</td>
-                    <td>{discount}</td>
-                    <td>{novelty}</td>
-
-                    <td>
-                        <div className="containerButons">
-                            <a className="butonVerProd" href="/productos/productDetail/${id}"><i className="far fa-eye"></i></a>
-                            <a className="butonEditarProd" href="/productos/edit/${id}"><i className="far fa-edit"></i></a>
-
-
-                            <form className="formAdd__form--eliminar" action="/productos/delete/${id}?_method=DELETE" method="POST">
-                                <button type="button" className="butonEliminarProd" data-producto-id="${id}"><i className="fas fa-trash"></i></button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
+            
+             {
+            state.loading ?
+            <p>Cargando...</p> :
+            (state.productos.map(producto=> <NuevosProductos key={producto.id}{...producto} />))
+              }
+                      
+                
             </tbody>
         </table>
 
     )
 }
-NuevosProductos.propTypes = {
-    id: PropTypes.number,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    category: PropTypes.string,
-    brand: PropTypes.string,
-    discount: PropTypes.number,
-    novelty: PropTypes.bool,
-}
+
+   
+
 

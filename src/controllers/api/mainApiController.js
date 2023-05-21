@@ -12,8 +12,7 @@ return res.status(200).json({
     ok:true,
     meta: {
         status: 200,
-        total,
-        url: '/api/metrics'
+        url: '/api/apiMain/metrics'
     },
     data: {
         totalProducts,

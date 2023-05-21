@@ -1,33 +1,31 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 
 const sequelizePaginate = require('sequelize-paginate')
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
-Product.hasMany(models.ProductImage,{
-  as : 'image',
-  foreignKey : 'IdProduct',
-  onDelete : 'cascade'
-})
 
+      Product.hasMany(models.ProductImage, {
+        as: 'image',
+        foreignKey: 'IdProduct',
+        onDelete: 'cascade'
+      })
       Product.belongsTo(models.Category, {
-        foreignKey : 'IdCategory',
-        as : 'category'
+        foreignKey: 'IdCategory',
+        as: 'category'
       });
 
       Product.belongsTo(models.Brand, {
-        foreignKey : 'IdBrand',
-        as : 'brand'
+        foreignKey: 'IdBrand',
+        as: 'brand'
       });
+      Product.belongsToMany(models.Order, {
+        through: 'Cart',
+        foreignKey: "idProduct",
+        otherKey: "idOrder",
+        as: "cart"
+      })
     }
   }
   Product.init({

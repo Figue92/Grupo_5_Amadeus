@@ -1,45 +1,29 @@
-function agregarProductoAlCarrito(producto) {
-    const idProduct = producto.id;
-    const cantidad = 1;
-    fetch('/api/carrito')
-    .then(response => response.json())
-    .then(data => {
-      const idCart = data.idCart;
-      return fetch('/api/carrito/productos', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ idCart, idProduct, cantidad })
-      });
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error al guardar el producto en el carrito.');
-      }
-      actualizarInterfazDeUsuario();
-    })
-    .catch(error => {
-      console.error('Error al guardar el producto en el carrito:', error);
-    });
-  }
-  
-  const botonAgregar = document.getElementById('agregar-carrito');
-  botonAgregar.addEventListener('click', function() {
-    const id = '1'; 
-    fetch(`/api/productos/${id}`)
-      .then(response => response.json())
-      .then(data => {
-        agregarProductoAlCarrito(data);
+const btnAddCart = document.querySelector('#btn-addCart')
+const URL_API_SERVER = 'http://localhost:3000'
+
+btnAddCart.addEventListener('click', async () =>{
+    const id = btnAddCart.getAttribute('data-id')
+        try {
+          const objProductId = { idProduct: id }
+          const { ok } = await fetch(`${URL_API_SERVER}/api/cart/addProduct`, {
+            method: "POST",
+            body: JSON.stringify(objProductId),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }).then((res)=>res.json());
+      
+         await Swal.fire({
+            title: ok ? "Producto agregado a tu Carrito!" : "Lo sentimos, debes iniciar sesión",
+            icon: ok ? 'success' : 'warning',
+        showConfirmButton: false,
+        timer: 900
+          })
+          !ok && (location.href = "/users/login")
+        } catch (error) {
+          console.log(error)
+        }
+      
       })
-      .catch(error => {
-        console.error('Error al obtener el producto:', error);
-      });
-  });
-   
-  
-  
-  
-  
-  
-  
+
+

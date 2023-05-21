@@ -10,8 +10,8 @@ const {productosValidator, validatorUserLogin} = require('../validations');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 
 router
-    .get('/carrito',checkUserLogin, cart)
-    .post('/carrito/:id', cart)
+    .get('/cart',checkUserLogin, cart)
+    .post('/cart/:id', cart)
     .get('/productDetail/:id', detail )
     .get('/filtrarProductos', filter)
     .get('/add', checkUserAdmin, add)

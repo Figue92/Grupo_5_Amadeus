@@ -27,13 +27,14 @@ export const CountProduct = () => {
     })
     useEffect(() => {
 
-        fetch('http://localhost:3000/api/metrics')
+fetch('http://localhost:3000/api/apiMain/metrics')
             .then(response => {
-                return response.json
+               
+                return response.json()
                
             })
-            .then((ok,data) =>{
-               
+            .then(({ok,data}) =>{
+            
                if(ok){
                 const {totalProducts,totalUsers,totalCategories} = data;
                 setState({
@@ -42,22 +43,22 @@ export const CountProduct = () => {
                         ...state.productos,
                         value : totalProducts
                     },
-                    ...state,
+                  
                     usuarios: {
                         ...state.usuarios,
                         value : totalUsers
                     },
-                    ...state,
+                    
                     categorias: {
                         ...state.categorias,
                         value : totalCategories
                     }
                 })
-               }
+               } 
             } )
         
             .catch(error => console.log(error))
-    }, [state]);
+    }, []);
 
 
     return (

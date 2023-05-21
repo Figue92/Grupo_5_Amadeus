@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
-
+const cors = require('cors')
 
 const passport = require('passport');
 
@@ -24,8 +24,9 @@ const authRouter = require('./routes/auth');
 
 const productosApiRouter = require('./routes/v1/apiProductos');
 const usersApiRouter = require('./routes/v1/apiUsers');
-const apiMainRouter = require('./routes/v1/apiMain')
-/* const cartApiRouter = require('./routes/v1/apiCart'); */
+const apiMainRouter = require('./routes/v1/apiMain');
+const apiCategoryRouter = require('./routes/v1/apiCategory')
+const cartApiRouter = require('./routes/v1/cartApi');
 
 
 const localUserCheck = require('./middlewares/localsUserCheck');
@@ -46,6 +47,7 @@ app
 .use(session({secret : "amdGrupo5", resave : true, saveUninitialized : true}))
 .use(cookieCheck)
 .use(localUserCheck)
+.use(cors())
 .use(passport.initialize())
 .use(passport.session())
 
@@ -58,9 +60,9 @@ app
 .use('/auth', authRouter)
 .use('/api/productos',productosApiRouter)
 .use('/api/users', usersApiRouter)
-/* .use('/api/apiMain', apiMainRouter) */
-
-/* app.use('/api/carrito/productos', cartApiRouter); */
+.use('/api/apiMain', apiMainRouter)
+.use('/api/categorias', apiCategoryRouter)
+.use('/api/cart', cartApiRouter);
 
 
 

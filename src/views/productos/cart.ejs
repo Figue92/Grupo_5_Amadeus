@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs',{otherScript: include('../partials/scripts.ejs',{view:'Home'})}) %>
+
+  <body class="cart">
+
+    <%- include('../partials/header.ejs') %>
+      <%- include('../partials/burguermenu-search.ejs') %>
+        <main class="container">
+          <div class="row position-relative">
+
+            <div id="card-box-container" class="col-8">
+</div>
+
+            <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:20px">
+              <div class="card-body my-2 d-flex flex-column gap-2">
+                <button class="btn w-100 btn-danger" id="clear-cart">Vaciar Carrito</button>
+                <button class="btn w-100 btn-success" id="btn-buy">Comprar</button>
+                <a href="/productos/productos" class="btn w-100 btn-dark">Seguir mirando</a>
+                <div class="text-end fs-3">
+                  <span>
+                    Total:
+                  </span>
+                  <output id="output-total">
+                    0
+                  </output>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+<script src="/js/cart.js"></script>
+
+  </body>
+
+</html>

@@ -1,14 +1,14 @@
 import './App.css'
-import { Productos } from './components/Productos';
+
+import { AppRouter } from './routes/AppRouter';
 
 function App() {
   
 
   return (
-    <div>
-       <Productos/>
-      </div>
-       
+   
+    <AppRouter/>
+ 
   )
 }
 

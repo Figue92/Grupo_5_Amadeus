@@ -3,7 +3,7 @@ const db = require('../database/models')
 module.exports = {
     getAllProducts : async () => {
     try {
-      const totalProducts = await db.Products.count();
+      const totalProducts = await db.Product.count();
   return totalProducts 
  } catch (error){
      throw {
@@ -14,7 +14,7 @@ module.exports = {
 },
 getAllUsers : async () => {
     try {
-      const totalUsers = await db.Users.count();
+      const totalUsers = await db.User.count();
   return totalUsers 
  } catch (error){
      throw {

@@ -8,15 +8,12 @@
 .main__carrito-subtitulo{
     width: 100%;
 }
-.tabla_cart{
-    display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-    font-size: 10px;
-    width: 30px;
-    width: 40px;
-    margin: 40px;
-    gap: 20px;
+.btn-clear{
+    transition: background-color 200ms, color 200ms;
+}
+.btn-clear:hover{
+    background-color: rgb(240,184,184);
+    color: white;
 }
 .precio--num{
 color: #000;

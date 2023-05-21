@@ -36,6 +36,10 @@ if(withPagination === "true"){
 return res.status(200).json({
     ok: true,
     data,
+    meta: {
+        status: 200,
+        url: '/api/productos'
+    },
 });
         } catch(error){
             console.log(error)

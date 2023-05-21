@@ -84,12 +84,7 @@ module.exports = {
 
       cart: async (req, res) => {
         try {
-          /*   if (!req.session.userLogin || !req.session.userLogin.id) {
-             return res.render('users/login')
-             
-           } */
-
-          const cart = await db.Cart.findOne({
+          const cart = await db.Order.findOne({
             where: { idUser: req.session.userLogin.id },
             include: ['user'],
           });
@@ -98,13 +93,11 @@ module.exports = {
             include: ['image'],
           })
 
-          //console.log(cart)
-          if (!cart) {
-            return res.status(404).send('No se encontró el carrito');
-          }
+          console.log(cart)
+        
           Promise.all([cart, productos])
             .then(([cart, productos]) => {
-              return res.render('productos/carrito', {
+              return res.render('productos/cart', {
                 title: 'Carrito',
                 cart,
                 productos

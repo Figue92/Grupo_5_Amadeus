@@ -9,25 +9,27 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      date: {
-        type: Sequelize.DATE,
-      },
-      idUser: {
+      quantity:{
+        type: Sequelize.INTEGER
+       },
+      idProduct: {
         type: Sequelize.INTEGER,
         references : {
           model : {
-            tableName : 'Users'
+            tableName : 'Products'
           },
           key : 'id'
         },
         allowNull: false
       },
-       total:{
+      idOrder: {
         type: Sequelize.INTEGER,
-
-       },
-      status:{
-        type: Sequelize.STRING
+        references : {
+          model : {
+            tableName : 'Orders'
+          },
+          key : 'id'
+        }
       },
       createdAt: {
         allowNull: false,
