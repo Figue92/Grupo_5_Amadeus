@@ -23,10 +23,21 @@ getAllUsers : async () => {
      }
  }
 },
-getAllCategories : async () => {
+getAllBrands : async () => {
     try {
-      const totalCategories = await db.Category.count();
-  return totalCategories 
+      const totalBrands = await db.Brand.findAll({include:['products']});
+  return totalBrands 
+ } catch (error){
+     throw {
+         status : 500,
+         message : error.message
+     }
+ }
+},
+getFindAndCountAllBrands : async () => {
+    try {
+      const {count, rows : brands} = await db.Brand.findAndCountAll();
+  return {brands, count} 
  } catch (error){
      throw {
          status : 500,

@@ -8,6 +8,7 @@ const { getAllProductos, getOneProducto, createProducto, updateProducto, destroy
 const createResponseError = ('../helpers/createResponseError.js')
 const { validationResult } = require('express-validator');
 const { getAllCategories } = require('../../services/categoryServices');
+const { getAllBrands } = require('../../services/countServices');
 
 
 const API = 'http://www.omdbapi.com/?apikey=7c7f3cb2';
@@ -52,49 +53,7 @@ return res.status(200).json({
             })
         }
     },
-otro: async (req, res) => {
-        try {
-            const limit = req.query.limit ? parseInt(req.query.limit) : 10;
-            const offset = req.query.offset ? parseInt(req.query.offset) : 0;
 
-            //la consulta por thunder es localhost:3000/api/productos?limit=10&offset=1
-            const productos = await getAllProductos(limit,offset);
-           const categories = await getAllCategories()
-
-            /* 
-            
-            {
-                pc: 3,
-                monitor: 9,
-            }
-                */
-
-            const countByCategory = categories.reduce((obj,category)=>{
-                obj[category.nameCategory] = category.products.length
-                return obj
-            },{})
-
-            return res.status(200).json({
-                ok: true,
-                meta: {
-                    status: 200,
-                    total: productos.length,
-                    countByCategory,
-                    url: '/api/productos'
-                },
-                data: productos
-            })
-        } catch (error) {
-
-            return res.status(error.status || 500).json({
-                ok : false,
-                error : {
-                    status : error.status || 500,
-                    message : error.message || 'Ocurrió un error'
-                }
-            })
-        }
-    },
     detail: async (req, res) => {
         try {
             const { id } = req.params;
@@ -132,6 +91,8 @@ otro: async (req, res) => {
             }
 
             const newProducto = await createProducto(req.body);
+            const categories = await getAllCategories()
+            const brands = await getAllBrands()
 
             return res.status(200).json({
                 ok: true,
@@ -140,7 +101,8 @@ otro: async (req, res) => {
                     total: 1,
                     url: `/api/productos/${newProducto.id}`
                 },
-                data: newProducto
+                data: newProducto,
+                categories, brands
             })
         } catch (error) {
 

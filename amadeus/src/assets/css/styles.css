@@ -1,0 +1,49 @@
+td{
+    font-size: 12px;
+}
+th{
+    font-size: 12px; 
+}
+h4{
+    font-size: 20px;
+}
+.containerButons{
+    display: flex;
+    gap: 2px;
+    font-size: 8px;
+
+}
+
+.butonEliminarProd{
+    background-color: red;
+    border: 1px solid #000;
+    font-size: 12px;
+    color: #fff;
+    padding: 2px 4px 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.butonEliminarProd:hover{
+    background-color: #c40000;
+}
+.butonEditarProd{
+    background-color: #5a1891;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 12px;
+    padding:2px 4px 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+} 
+.butonVerProd{
+    background-color: #2659c9;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 4px 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
