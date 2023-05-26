@@ -1,0 +1,51 @@
+.cardsContainerFavs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.cardsFav{
+    width: 25%;
+    animation: fondoAnimado 10s infinite;
+    background-image: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+    background-size: 200% 100%;
+    text-align: center;
+    /* max-width: 300px; */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.1s ease-in-out;
+    font-family: var(--tipografiaPrincipal);
+}
+.cardsFav img{
+    width: 180px;
+    border-radius: 15px;
+}
+.cardsFav i{
+    margin-top: 10px;
+    margin-right: 180px;
+    margin-bottom: 15px;
+
+}
+.fav_containerbutons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.fav_buton{
+    width: 90%;
+    background-color:rgba(90,194,187,1);
+    color: #fff;
+    border: none;  
+    font-size: 15px;                     
+    padding: 20px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    
+    /* margin-left: 160px; */
+    margin-bottom: 10px;
+}

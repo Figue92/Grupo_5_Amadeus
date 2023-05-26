@@ -220,5 +220,10 @@ module.exports = {
                 return res.redirect('/')
             })
             .catch(error => console.log(error))
+    },
+    favorites: (req,res)=> {
+        return res.render("users/favorites",{
+            title: "Tus Productos Favoritos"
+        })
     }
 }

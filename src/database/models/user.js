@@ -17,6 +17,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "idUser",
         as:"orders"
       })
+      User.belongsToMany(models.Product,{
+        foreignKey: "idUser",
+        otherKey: "idProduct",
+        through: "Favorites",
+        as: "productsFavorites"
+      })
     }
   }
   User.init({

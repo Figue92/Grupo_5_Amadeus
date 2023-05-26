@@ -17,7 +17,7 @@ btnAddCart.addEventListener('click', async () =>{
             title: ok ? "Producto agregado a tu Carrito!" : "Lo sentimos, debes iniciar sesión",
             icon: ok ? 'success' : 'warning',
         showConfirmButton: false,
-        timer: 900
+        timer: 1200
           })
           !ok && (location.href = "/users/login")
         } catch (error) {

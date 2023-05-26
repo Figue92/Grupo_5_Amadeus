@@ -28,6 +28,7 @@ const apiMainRouter = require('./routes/v1/apiMain');
 const apiCategoryRouter = require('./routes/v1/apiCategory')
 const apiBrandRouter = require('./routes/v1/apiBrands')
 const cartApiRouter = require('./routes/v1/cartApi');
+const apiFavoritesRouter = require('./routes/v1/apiFavorites')
 
 
 const localUserCheck = require('./middlewares/localsUserCheck');
@@ -63,8 +64,10 @@ app
 .use('/api/users', usersApiRouter)
 .use('/api/apiMain', apiMainRouter)
 .use('/api/categorias', apiCategoryRouter)
+.use('/api/cart', cartApiRouter)
+.use('/api/favorites', apiFavoritesRouter)
 .use('/api/marcas', apiBrandRouter)
-.use('/api/cart', cartApiRouter);
+
 
 
 

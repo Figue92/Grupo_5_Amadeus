@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const{destroy, register,login, processRegister ,profile, logout,list, processLogin, edit, update}= require('../controllers/usersController');
+const{destroy, register,login, processRegister ,profile, logout,list, processLogin, edit, update, favorites}= require('../controllers/usersController');
 const checkUser = require('../middlewares/checkUser');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 const checkUserLogin = require('../middlewares/checkUserLogin');
@@ -11,6 +11,7 @@ const { registerUserValidator, validatorUserLogin } = require('../validations/in
 
 router.get('/register', checkUser, register)
 router.get('/login', checkUser, login)
+router.get('/favorites', favorites)
 router.post('/login', validatorUserLogin, processLogin)
 router.post('/register', uploadPerfil.single('image') ,registerUserValidator, processRegister)
 router.get('/profile', uploadPerfil.single('image'), checkUserLogin, profile)
