@@ -3,7 +3,7 @@
 
 <%- include('../partials/head.ejs', {otherScript: include('../partials/scripts.ejs',{view:'Home'})}) %>
 
-    <body>
+    <body data-idUser="<%= locals.userLogin?.id %>">
         <%- include('../partials/header.ejs') %>
        
             <main class="main__productos">

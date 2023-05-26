@@ -9,38 +9,37 @@ module.exports ={
                 message: "Debes ingresar id de usuario"
             }
         }
-      const config ={
+        return db.User.findByPk(idUser,{
             include:[
                 {
                     association: "productsFavorites",
                     include : [
                         {
-                            association: "images"
+                            association: "image"
                         }
                     ]
                 }
             ]
-        }
-        return db.User.findByPk(idUser,config)
+        })
     },
-    addOrRemoveFavorite: async ({idUser, idProduct}) =>{
+    addOrRemoveToFavorite: async ({idUser, idProduct}) =>{
         if(!idUser || !idProduct){
             throw {
              status: 400,
                 message: "Debes ingresar id de usuario y un id de producto"
             }
         }
-        const config ={
+        
+        const [favorite, isCreated] = await db.Favorite.findOrCreate({
             where:{
                 [Op.and]:[
                     {idUser},{idProduct},
                     
                 ],
+            },
                 defaults: {idUser,idProduct}
-            }
-        }
-
-        const [favorite, isCreated] = await db.Favorite.findOrCreate(config)
+            
+    })
          
             if(!isCreated){
                 await favorite.destroy()

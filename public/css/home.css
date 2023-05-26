@@ -46,10 +46,12 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
         background-image: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
         background-size: 200% 100%;
         width: 100%;
+        text-align: center;
         max-width: 300px; 
         margin-bottom: 20px; 
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
         border: none; 
+        border-radius: 15px;
         transition: transform 0.1s ease-in-out; /* Transición suave al hacer hover */
    
     }
@@ -89,28 +91,29 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     .card img {
         height: 200px; /* Altura de la imagen de la card */
         object-fit: contain; /* Ajuste de la imagen al contenedor */
-        margin-top: 15px ;
+        margin-top: 15px;
+        border-radius: 15px;
     }
     
     .card-title {
-        font-size: 18px; /* Tamaño de fuente del título */
-        font-weight: bold; /* Peso de fuente del título */
+        font-size: 23px;
+        font-weight: bold; 
     }
     
     .card-text {
-        font-size: 14px; /* Tamaño de fuente del texto */
-        color:black; /* Color del texto */
+        font-size: 15px; 
+        color:black; 
     }
     
     .card-subtitle {
-        font-size: 20px; /* Tamaño de fuente del subtitulo */
-        color: black; /* Color del subtitulo */
+        font-size: 20px; 
+        color: black; 
         font-weight: bold;
     }
     
     .btn-primary {
         color: rgba(90,194,187,1);
-        margin-top: 10px; /* Margen superior del botón */
+        margin-top: 10px; 
     }
     .main__section__productos{
         display: flex;
@@ -123,14 +126,14 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     .carrete {
         display: flex;
         overflow-x: auto;
-        /* Agrega estilos adicionales al carrete como ancho, altura, margen, etc. */
+        
       }
       
       .carrete img {
-        width: 200px; /* Ajusta el ancho de las imágenes al tamaño deseado */
-        height: 100px; /* Ajusta el alto de las imágenes al tamaño deseado */
+        width: 200px; 
+        height: 100px; 
         object-fit: cover;
-        /* Agrega estilos adicionales a las imágenes como margen, borde, etc. */
+        
       }
     .main__section__productos--article{
        /*  display: flex;
@@ -157,12 +160,13 @@ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%
     .main__article_buton{
         background-color:rgba(90,194,187,1);
         color: #fff;
-        border: none;
-        padding: 10px 20px;
+        border: none;  
+        font-size: 15px;                     
+        padding: 20px 20px;
         border-radius: 15px;
         cursor: pointer;
         width: 40%;
-        margin-left: 160px;
+        /* margin-left: 160px; */
         margin-bottom: 10px;
     }
     .main__section__productos--article img{

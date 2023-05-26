@@ -16,11 +16,15 @@ module.exports = {
                             ]
                         }, 
                     },
+                    {
+                    association : "usersFavorites"
+                    }
                 ],
                 attributes: {
                     include: [literalQueryUrl(req, "productos", "Product.id")],
                     exclude: ["idBrand","idCategory"]
                 },
+
             };
 
         if (withPagination === "true") {

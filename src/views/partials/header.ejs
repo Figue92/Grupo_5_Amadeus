@@ -11,14 +11,14 @@
         <nav class="header__section__nav--registro">
             <ul>
                 <li><a class="header__section__armado-pc header__section__nav--registro--texto"
-                        href="/productos/productos">arma tu
-                        pc</a></li>
+                        href="/productos/productos">Productos</a></li>
                 <% if (locals.userLogin) { %>
                     <li><a class="header__section__nav--registro--icono" href="/users/profile"><i
                                 class="fa-solid fa-user"></i></a><a class="header__section__nav--registro--texto"
                             href="/users/profile">Hola, <%= locals.userLogin.name %></a></li>
                             <li>
-                                <a href="/users/favorites">Favoritos</a>
+                                <a class="header__section__nav--registro--texto" href="/users/favorites"><i
+                                    class="fa-solid fa-heart"></i> Favoritos</a>
                               </li>
                     <% if (locals.userLogin.rol===1) { %>
                         <li><a class="header__section__nav--registro--icono" href="/productos/add"><i
