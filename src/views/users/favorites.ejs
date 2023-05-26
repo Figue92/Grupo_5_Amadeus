@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+  <body class="favorites d-flex flex-column justify-content-between h-100">
+    <%- include('../partials/header') %>
+    <h1 class="text-center fw-bold">Tus Productos Favoritos</h1>
+
+      <main class="container">
+        <div id="cards-container" class="row justify-content-start align-items-start my-5">
+
+          <div class="d-flex justify-content-center align-items-center" style="height:200px">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden m-auto">Loading...</span>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <%- include('../partials/footer') %>
+
+
+        <%- include('../partials/scripts') %>
+
+          <script src="/javascripts/home.js"></script>
+          <script src="/javascripts/favorites.js"></script>
+
+  </body>
+
+</html>
