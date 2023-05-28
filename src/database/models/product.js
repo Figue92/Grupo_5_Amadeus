@@ -8,16 +8,16 @@ module.exports = (sequelize, DataTypes) => {
 
       Product.hasMany(models.ProductImage, {
         as: 'image',
-        foreignKey: 'IdProduct',
+        foreignKey: 'idProduct',
         onDelete: 'cascade'
       })
       Product.belongsTo(models.Category, {
-        foreignKey: 'IdCategory',
+        foreignKey: 'idCategory',
         as: 'category'
       });
 
       Product.belongsTo(models.Brand, {
-        foreignKey: 'IdBrand',
+        foreignKey: 'idBrand',
         as: 'brand'
       });
       Product.belongsToMany(models.Order, {

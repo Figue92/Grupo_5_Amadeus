@@ -17,6 +17,16 @@ module.exports = {
                         },
                     },
                     {
+                        model: db.Brand,
+                        association: "brand",
+                        attributes:  ["name"]
+                    },
+                    {
+                        model: db.Category,
+                        association: "category",
+                        attributes: ["nameCategory"]
+                    },
+                    {
                     association : "usersFavorites"
                     }
                 ],
@@ -24,19 +34,8 @@ module.exports = {
                     include: [literalQueryUrl(req, "productos", "Product.id")],
                     exclude: ["idBrand","idCategory"]
            
-                },
-                include: [
-                    {
-                        model: db.Brand,
-                        association: "brand",
-                        attributes:  ["id","name"]
-                    },
-                    {
-                        model: db.Category,
-                        association: "category",
-                        attributes: ["id","nameCategory"]
-                    },
-                ]
+                }
+             
         };
 
         if (withPagination === "true") {
