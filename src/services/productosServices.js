@@ -21,7 +21,8 @@ module.exports = {
                     }
                 ],
                 attributes: {
-                    include: [literalQueryUrl(req, "productos", "Product.id")]
+                    include: [literalQueryUrl(req, "productos", "Product.id")],
+                    exclude: ["idBrand","idCategory"]
            
                 },
                 include: [
@@ -30,8 +31,6 @@ module.exports = {
                         association: "brand",
                         attributes:  ["id","name"]
                     },
-                ],
-                include: [
                     {
                         model: db.Category,
                         association: "category",
