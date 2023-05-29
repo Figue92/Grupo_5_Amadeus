@@ -248,7 +248,7 @@ module.exports = {
 
     offer: async (req, res) => {
         try {
-            const { withPagination = "true", page = 1, limit = 6 } = req.query;
+            const { withPagination = "true", page = 1, limit = 3 } = req.query;
             const { count, productos, pages } = await getOfferProductos(req, {
                 withPagination,
                 page,
