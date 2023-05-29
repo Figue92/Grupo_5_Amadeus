@@ -3,7 +3,7 @@ const {literalQueryUrl, literalQueryUrlImage} = require('../helpers')
 module.exports = {
     getAllProductos: async (req, { withPagination = "false", page = 1, limit = 6 }) => {
         try {
-      
+
             let options = {
                 include: [
                     {
@@ -62,11 +62,11 @@ module.exports = {
             const producto = await db.Product.findByPk(id, {
                 include: [
                     {
-                        assotiation: "image",
+                        association: "image",
                         attributes: {
                             exclude: ["createdAt", "updatedAt", "id", "idProduct", "name"],
                             include: [
-                                literalQueryImage(req, "productos", "name", "urlImage")
+                                literalQueryUrlImage(req, "productos", "image.name", "urlImage")
                             ]
                         }
                     }
@@ -134,5 +134,121 @@ module.exports = {
                 message: error.message
             }
         }
+    },
+
+    getNewestProductos: async (req, { withPagination = "false", page = 1, limit = 6 }) => {
+        try {
+            console.log(req.protocol);
+            let options = {
+                include: [
+                    {
+                        model: db.ProductImage,
+                        association: "image",
+                        attributes: {
+                            exclude: ["createdAt", "updatedAt", "id", "idProduct"],
+                            include: [
+                                literalQueryUrlImage(req, "productos", "image.name", "urlImage"),
+                            ]
+                        }, 
+                    },
+                    {
+                    association : "usersFavorites"
+                    }
+                ],
+                attributes: {
+                    include: [literalQueryUrl(req, "productos", "Product.id")],
+                    exclude: ["idBrand","idCategory"]
+                },
+                where : {
+                    novelty : 1
+                }
+            };
+
+        if (withPagination === "true") {
+                options = {
+                    ...options,
+                    page,
+                    paginate: limit,
+                };
+            
+            const { docs, pages, total } = await db.Product.paginate(options);
+
+            return {
+                productos: docs,
+                pages,
+                count: total
+            };
+        }
+
+            const { count, rows: productos } = await db.Product.findAndCountAll(options);
+            return {
+                count,
+                productos
+            };
+         } catch (error) {
+                console.log(error);
+                throw {
+                    status: 500,
+                    message: error.message
+                }
+            }
+    },
+
+    getOfferProductos: async (req, { withPagination = "false", page = 1, limit = 6 }) => {
+        try {
+            console.log(req.protocol);
+            let options = {
+                include: [
+                    {
+                        model: db.ProductImage,
+                        association: "image",
+                        attributes: {
+                            exclude: ["createdAt", "updatedAt", "id", "idProduct"],
+                            include: [
+                                literalQueryUrlImage(req, "productos", "image.name", "urlImage"),
+                            ]
+                        }, 
+                    },
+                    {
+                    association : "usersFavorites"
+                    }
+                ],
+                attributes: {
+                    include: [literalQueryUrl(req, "productos", "Product.id")],
+                    exclude: ["idBrand","idCategory"]
+                },
+                where : {
+                    discount : {[db.Sequelize.Op.gt] : 0}
+                }
+            };
+
+        if (withPagination === "true") {
+                options = {
+                    ...options,
+                    page,
+                    paginate: limit,
+                };
+            
+            const { docs, pages, total } = await db.Product.paginate(options);
+
+            return {
+                productos: docs,
+                pages,
+                count: total
+            };
+        }
+
+            const { count, rows: productos } = await db.Product.findAndCountAll(options);
+            return {
+                count,
+                productos
+            };
+         } catch (error) {
+                console.log(error);
+                throw {
+                    status: 500,
+                    message: error.message
+                }
+            }
     }
 }

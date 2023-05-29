@@ -4,7 +4,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
 
-const { getAllProductos, getOneProducto, createProducto, updateProducto, destroyProducto } = require('../../services/productosServices')
+const { getAllProductos, getOneProducto, createProducto, updateProducto, destroyProducto, getNewestProductos, getOfferProductos } = require('../../services/productosServices')
 const createResponseError = ('../helpers/createResponseError.js')
 const { validationResult } = require('express-validator');
 const { getAllCategories } = require('../../services/categoryServices');
@@ -14,52 +14,52 @@ const API = 'http://www.omdbapi.com/?apikey=7c7f3cb2';
 
 
 module.exports = {
-    list: async (req,res) =>{
-        try{
-const {withPagination = "true", page = 1, limit = 6} = req.query;
-const { count, productos, pages} = await getAllProductos(req,{
-    withPagination,
-    page,
-    limit : +limit
-});
-let data = {
-    count, 
-    productos
-}
-if(withPagination === "true"){
-    data = {
-        ...data,
-        pages,
-        currentPage: +page
-    }
-}
-return res.status(200).json({
-    ok: true,
-    data,
-    meta: {
-        status: 200,
-        url: '/api/productos'
-    },
-});
-        } catch(error){
+    list: async (req, res) => {
+        try {
+            const { withPagination = "true", page = 1, limit = 6 } = req.query;
+            const { count, productos, pages } = await getAllProductos(req, {
+                withPagination,
+                page,
+                limit: +limit
+            });
+            let data = {
+                count,
+                productos
+            }
+            if (withPagination === "true") {
+                data = {
+                    ...data,
+                    pages,
+                    currentPage: +page
+                }
+            }
+            return res.status(200).json({
+                ok: true,
+                data,
+                meta: {
+                    status: 200,
+                    url: '/api/productos'
+                },
+            });
+        } catch (error) {
             console.log(error)
             return res.status(error.status || 500).json({
                 ok: false,
                 error: {
-                    status: error.status ||500,
+                    status: error.status || 500,
                     message: error.message || "Ha ocurrido un error"
                 }
             })
         }
     },
-otro: async (req, res) => {
+    otro: async (req, res) => {
         try {
             const limit = req.query.limit ? parseInt(req.query.limit) : 10;
             const offset = req.query.offset ? parseInt(req.query.offset) : 0;
 
             //la consulta por thunder es localhost:3000/api/productos?limit=10&offset=1
-            const productos = await getAllProductos(limit,offset);
-           const categories = await getAllCategories()
+            const productos = await getAllProductos(limit, offset);
+            const categories = await getAllCategories()
 
             /* 
             
@@ -69,10 +69,10 @@ otro: async (req, res) => {
             }
                 */
 
-            const countByCategory = categories.reduce((obj,category)=>{
+            const countByCategory = categories.reduce((obj, category) => {
                 obj[category.nameCategory] = category.products.length
                 return obj
-            },{})
+            }, {})
 
             return res.status(200).json({
                 ok: true,
@@ -87,10 +87,10 @@ otro: async (req, res) => {
         } catch (error) {
 
             return res.status(error.status || 500).json({
-                ok : false,
-                error : {
-                    status : error.status || 500,
-                    message : error.message || 'Ocurrió un error'
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || 'Ocurrió un error'
                 }
             })
         }
@@ -98,7 +98,7 @@ otro: async (req, res) => {
     detail: async (req, res) => {
         try {
             const { id } = req.params;
-            const producto = await getOneProducto(id);
+            const producto = await getOneProducto(req, id);
 
             return res.status(200).json({
                 ok: true,
@@ -112,14 +112,14 @@ otro: async (req, res) => {
         } catch (error) {
 
             return res.status(error.status || 500).json({
-                ok : false,
-                error : {
-                    status : error.status || 500,
-                    message : error.message || 'Ocurrió un error'
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || 'Ocurrió un error'
                 }
             })
         }
-    
+
     },
     store: async (req, res) => {
         try {
@@ -144,11 +144,11 @@ otro: async (req, res) => {
             })
         } catch (error) {
 
-             return res.status(error.status || 500).json({
-                ok : false,
-                error : {
-                    status : error.status || 500,
-                    message : error.message || 'Ocurrió un error'
+            return res.status(error.status || 500).json({
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || 'Ocurrió un error'
                 }
             })
         }
@@ -163,7 +163,7 @@ otro: async (req, res) => {
                 status: 400,
                 message: errors.mapped()
             }
-            const updProducto = await updateProducto(req.params.id,req.body)
+            const updProducto = await updateProducto(req.params.id, req.body)
             return res.status(200).json({
                 ok: true,
                 meta: {
@@ -176,21 +176,21 @@ otro: async (req, res) => {
         } catch (error) {
 
             return res.status(error.status || 500).json({
-                ok : false,
-                error : {
-                    status : error.status || 500,
-                    message : error.message || 'Ocurrió un error'
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || 'Ocurrió un error'
                 }
             })
         }
 
     },
     destroy: async (req, res) => {
- 
+
         try {
-            
+
             const {
-                params : {id}
+                params: { id }
             } = req;
 
             const dstProducto = await destroyProducto(id);
@@ -205,7 +205,82 @@ otro: async (req, res) => {
             });
 
         } catch (error) {
-            return createResponseError(res,error);
+            return createResponseError(res, error);
+        }
+    },
+    newest: async (req, res) => {
+        try {
+            const { withPagination = "true", page = 1, limit = 6 } = req.query;
+            const { count, productos, pages } = await getNewestProductos(req, {
+                withPagination,
+                page,
+                limit: +limit
+            });
+            let data = {
+                count,
+                productos
+            }
+            if (withPagination === "true") {
+                data = {
+                    ...data,
+                    pages,
+                    currentPage: +page
+                }
+            }
+            return res.status(200).json({
+                ok: true,
+                data,
+                meta: {
+                    status: 200,
+                    url: '/api/productos/newest'
+                },
+            });
+        } catch (error) {
+            return res.status(error.status || 500).json({
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || "Ha ocurrido un error"
+                }
+            });
+        }
+    },
+
+    offer: async (req, res) => {
+        try {
+            const { withPagination = "true", page = 1, limit = 6 } = req.query;
+            const { count, productos, pages } = await getOfferProductos(req, {
+                withPagination,
+                page,
+                limit: +limit
+            });
+            let data = {
+                count,
+                productos
+            }
+            if (withPagination === "true") {
+                data = {
+                    ...data,
+                    pages,
+                    currentPage: +page
+                }
+            }
+            return res.status(200).json({
+                ok: true,
+                data,
+                meta: {
+                    status: 200,
+                    url: '/api/productos/newest'
+                },
+            });
+        } catch (error) {
+            return res.status(error.status || 500).json({
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || "Ha ocurrido un error"
+                }
+            });
         }
     }
 
