@@ -34,6 +34,18 @@ getAllBrands : async () => {
      }
  }
 },
+getAllCategories : async () => {
+    try {
+      const totalCategories = await db.Category.count();
+  return totalCategories 
+ } catch (error){
+     throw {
+         status : 500,
+         message : error.message
+     }
+ }
+},
+
 getFindAndCountAllBrands : async () => {
     try {
       const {count, rows : brands} = await db.Brand.findAndCountAll();
