@@ -6,9 +6,28 @@
     <body>
         <!-- Header -->
         <%- include('../partials/header') %>
+        <div class="content-buttons">
+            <button type="button" class="butonVerProd"><a class="header__section__nav--registro--icono" href="/dashboard"><i class="fa-solid fa-table-columns"></i></a> Volver a dashboard</button>
+           <div><img src="/images/productos/<%= image  ? image[0].name : 'imageNull.jpeg'%>" class="imagen-edit" alt=""></div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Editar <%= name %>
+            </button>
+        </div>
+       
+    
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                    <!-- Contenido del modal -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Editar Producto</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
             <main class="form__main">
                 <div class="container-form">
-                    <h1 class="form__main--titulo">editar producto</h1>
                     <form id="form--edit" class="form--edit" action="/productos/edit/<%= id %>?_method=PUT" method="POST" class="row"
                         enctype="multipart/form-data">
                         <div class="col-10 col-md-8 mb-3">
@@ -81,10 +100,8 @@
                             <label for="images" class="form-label">Imágenes</label>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mb-2"id="current-images-section">
                                 <% image.forEach(image=> { %>
-                                    <div class="d-flex flex-column gap-2"><label style="cursor: pointer;"
-                                            for="image<%= image.id %>">
-                                            <input type="checkbox" name="image" value="<%=image.id %>" class="form-check-input"> <!-- checkbox para las imagenes -->
-                                            <img src="/images/productos/<%= image.name %>" width="100px" alt=""></label>
+                                    <div class="d-flex flex-column gap-2"><label style="cursor: pointer;">
+                                           <img src="/images/productos/<%= image.name %>" width="100px" alt=""></label>
                                     </div>
                                     <% }) %>
                             </div>
@@ -102,9 +119,17 @@
                     </form>
                 </div>
             </main>
+        </div>
+                
+    </div>
+</div>
+</div>
             <!-- Footer -->
             <%- include('../partials/footer') %>
                 <script src="/js/formEdit.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
     </body>
 
 </html>

@@ -41,7 +41,8 @@ module.exports = (sequelize, DataTypes) => {
     idCategory: DataTypes.INTEGER,
     idBrand: DataTypes.INTEGER,
     discount: DataTypes.INTEGER,
-    novelty: DataTypes.BOOLEAN
+    novelty: DataTypes.BOOLEAN,
+    linkVideo: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Product',

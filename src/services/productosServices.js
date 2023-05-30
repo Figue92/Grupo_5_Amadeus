@@ -78,12 +78,15 @@ module.exports = {
                             exclude: ["createdAt", "updatedAt", "id", "idProduct", "name"],
                             include: [
                                 literalQueryUrlImage(req, "productos", "image.name", "urlImage")
+                        
                             ]
                         }
                     }
                 ],
                 attributes: {
-                    include: [literalQueryUrl(req, "productos", "Product.id")]
+                    include: [literalQueryUrl(req, "productos", "Product.id"),["linkVideo"]], 
+                    
+               
                 }
             });
             return producto

@@ -101,15 +101,25 @@ module.exports = {
             const { id } = req.params;
             const producto = await getOneProducto(req, id);
 
-            return res.status(200).json({
+            const response = {
                 ok: true,
                 meta: {
                     status: 200,
                     total: 1,
                     url: `/api/productos/${id}`
                 },
-                data: producto
-            })
+                data:{
+                    id: producto.id,
+                    name: producto.name,
+                    description: producto.description,
+                    price: producto.price,
+                    discount: producto.discount,
+                    linkVideo: producto.linkVideo
+
+                }
+            }
+
+            return res.status(200).json(response)
         } catch (error) {
 
             return res.status(error.status || 500).json({

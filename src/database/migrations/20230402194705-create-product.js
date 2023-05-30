@@ -45,6 +45,9 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: 1
       },
+      linkVideo: {
+        type: Sequelize.STRING 
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

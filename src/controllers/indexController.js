@@ -57,6 +57,7 @@ module.exports = {
    
   },
   admin: (req, res) => {
+    
     db.Product.findAll({
       include: [{
         association: 'category',

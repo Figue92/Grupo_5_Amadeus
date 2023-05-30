@@ -51,7 +51,9 @@
                     <p class="productDetail__main__section__description">
                         <%= description %>
                     </p>
-
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= linkVideo ? linkVideo.slice(17) : 'UIwtqkMgELo'%>" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  
                 </section>
  <!-- 
                 <section class="formAdd__button productDetail__section--buttons">
@@ -60,13 +62,7 @@
                         <button onclick="eliminar()" type="button" class="formAdd__button--cancelar">eliminar</button>  -->
                     </form>                    
                 </section>
-                <section class="main__section__marcas">
-                    <h2>Las Mejores Marcas están en AMADEUS</h2>
-        
-            <%- include('../partials/carreteMarcas.ejs') %>
-                    
-        
-                </section>
+             
             </main>
 
             <%- include('../partials/footer.ejs') %>
