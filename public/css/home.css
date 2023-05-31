@@ -368,6 +368,11 @@
     pointer-events: none;
 }
 
+#container-productos-card{
+    display: flex;
+    justify-content: center;
+}
+
 
 @media (min-width:768px) {
     .button-burguer {
@@ -457,6 +462,7 @@
 
     .main__section__productos-ofertas {
         display: flex;
+        align-items: center;
         flex-wrap: nowrap;
         flex-direction: row;
         background-color: linear-gradient(var(--colorCeleste), #fff);

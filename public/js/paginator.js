@@ -2,6 +2,7 @@ console.log('paginator vinculado');
 const $ = (el) => document.querySelector(el);
 const btnPrev = $("#btn-prev");
 const btnNext = $("#btn-next");
+const titulo = $("#titulo");
 const containerItemsPage = $("#container-items-page");
 const containerProductosCard = document.getElementById("container-productos-card");
 const idUser = document.body.getAttribute("data-idUser");
@@ -35,17 +36,18 @@ const paintProductos = (productos) => {
 
 const getPage = async (page) => {
   pageActive = page;
-  const { data: pages, currentPage, productos } = await getProductos({ page });
+  const { data: { pages, currentPage, productos } } = await getProductos({ page });
   paintProductos(productos);
   paintItemsPage({ numberPages: pages, itemActive: currentPage });
-  statusPrevAndNext({ currentPage, pages })
+  statusPrevAndNext({ currentPage, pages });
+  titulo.scrollIntoView({ behavior: "smooth" });
 };
 
 const paintItemsPage = ({ numberPages, itemActive }) => {
   containerItemsPage.innerHTML = "";
   for (let i = 1; i <= numberPages; i++) {
     containerItemsPage.innerHTML += `<li class="page-item ${itemActive === i && "active"}">
-    <button class="page-link" onclick="getPage(${i})">${i}</button></li>
+    <button href="#titulo" class="page-link" onclick="getPage(${i})">${i}</button></li>
     `;
   }
 };
@@ -83,6 +85,7 @@ btnNext.addEventListener("click", async () => {
     paintProductos(productos);
     paintItemsPage({ numberPages: pages, itemActive: currentPage });
     statusPrevAndNext({ currentPage, pages });
+    titulo.scrollIntoView({ behavior: "smooth" });
   } catch (error) {
     console.log(error);
   }
@@ -96,10 +99,12 @@ btnPrev.addEventListener("click", async () => {
     paintProductos(productos);
     paintItemsPage({ numberPages: pages, itemActive: currentPage });
     statusPrevAndNext({ currentPage, pages });
+    titulo.scrollIntoView({ behavior: "smooth" });
   } catch (error) {
     console.log(error);
   }
 })
+
 const addProductToCart = async (id) => {
   try {
     const objProductId = {
