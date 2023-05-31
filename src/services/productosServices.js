@@ -209,9 +209,8 @@ module.exports = {
         }
     },
 
-    getOfferProductos: async (req, { withPagination = "false", page = 1, limit = 6 }) => {
+    getOfferProductos: async (req/* , { withPagination = "false", page = 1, limit = 4 } */) => {
         try {
-            console.log(req.protocol);
             let options = {
                 include: [
                     {
@@ -237,7 +236,7 @@ module.exports = {
                 }
             };
 
-            if (withPagination === "true") {
+            /* if (withPagination === "true") {
                 options = {
                     ...options,
                     page,
@@ -251,11 +250,11 @@ module.exports = {
                     pages,
                     count: total
                 };
-            }
+            } */
 
             const { count, rows: productos } = await db.Product.findAndCountAll(options);
             return {
-                count,
+                count : productos.length,
                 productos
             };
         } catch (error) {

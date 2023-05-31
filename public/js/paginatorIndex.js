@@ -4,7 +4,7 @@ const btnNext = $("#btn-next");
 const containerItemsPage = $("#container-items-page");
 const containerNewestCard = document.querySelector("#container-newest-card");
 const idUser = document.body.getAttribute("data-idUser");
-const URL_API_SERVER = "http://localhost:3000/api"
+/* const URL_API_SERVER = "http://localhost:3000/api" */
 
 
 let pageActive = 1;
@@ -135,13 +135,13 @@ btnPrev.forEach((btn) => {
   } catch (error) {
     console.log(error);
   }
-};
+};*/
 
-const getFavorites = () => {
+getFavorites = () => {
   return fetch('http://localhost:3000/api/favorites').then((res) => res.json());
 };
 
-const toggleFavorite = async (id,{target}) => {
+toggleFavorite = async (id,{target}) => {
   try {
     if (!idUser) { await Swal.fire({
       title: "Debes iniciar sesión para continuar!",
@@ -172,4 +172,4 @@ const toggleFavorite = async (id,{target}) => {
   } catch (error) {
     console.log(error);
   }
-}; */
+}; 

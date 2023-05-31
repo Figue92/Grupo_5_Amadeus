@@ -262,29 +262,29 @@ module.exports = {
 
     offer: async (req, res) => {
         try {
-            const { withPagination = "true", page = 1, limit = 3 } = req.query;
-            const { count, productos, pages } = await getOfferProductos(req, {
+            /* const { withPagination = "true", page = 1, limit = 4 } = req.query; */
+            const { count, productos/* , pages */ } = await getOfferProductos(req/* , {
                 withPagination,
                 page,
                 limit: +limit
-            });
+            } */);
             let data = {
                 count,
                 productos
             }
-            if (withPagination === "true") {
+            /* if (withPagination === "true") {
                 data = {
                     ...data,
                     pages,
                     currentPage: +page
                 }
-            }
+            } */
             return res.status(200).json({
                 ok: true,
                 data,
                 meta: {
                     status: 200,
-                    url: '/api/productos/newest'
+                    url: '/api/productos/offer'
                 },
             });
         } catch (error) {

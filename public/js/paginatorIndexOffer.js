@@ -1,16 +1,15 @@
-const bttnPrev = document.querySelectorAll("#bttn-prev");
-const bttnNext = document.querySelectorAll("#bttn-next");
-const containerItemsOfferPage = document.querySelectorAll("#container-itemsOffer-page");
+const bttnPrev = document.querySelector(".control-prev");
+const bttnNext = document.querySelector(".control-next");
 const containerOfferCard = document.querySelector("#container-offer-card");
 /* const idUser = document.body.getAttribute("data-idUser");
 const URL_API_SERVER = "http://localhost:3000/api" */
 
-
-let activePage = 1;
+let firstProducto = 0;
+let lastProducto = 4;
 const apiGetOfferProductos = "http://localhost:3000/api/productos/offer";
 
-const getOfferProductos = ({ page = 1 } = {}) =>
-  fetch(`${apiGetOfferProductos}?page=${page}`).then((res) => res.json());
+const getOfferProductos = () =>
+  fetch(apiGetOfferProductos).then((res) => res.json());
 
 const paintOfferProductos = (productos) => {
   containerOfferCard.innerHTML = "";
@@ -31,83 +30,71 @@ const paintOfferProductos = (productos) => {
   });
 };
 
-const getOfferPage = async (page) => {
-  activePage = page;
-  const { data: { pages, currentPage, productos } } = await getOfferProductos({ page });
-  paintOfferProductos(productos);
-  paintOfferItemsPage({ numberPages: pages, itemActive: currentPage });
-  statusPrevAndNextOffer({ currentPage, pages });
-};
+const mostrarSiguiente = (productos) => {
+  firstProducto++;
+  lastProducto++;
+  const siguientes = productos.slice(firstProducto, lastProducto);
+  return siguientes;
+}
 
-const paintOfferItemsPage = ({ numberPages, itemActive }) => {
-  containerItemsOfferPage.forEach((container) => {
-    container.innerHTML = "";
-    for (let i = 1; i <= numberPages; i++) {
-      container.innerHTML += `<li class="page-item ${itemActive === i && "active"}"><a class="page-link" onclick="getOfferPage(${i})">${i}</a></li>`;
-    }
-  })
+const mostrarAnterior = (productos) => {
+  firstProducto--;
+  lastProducto--;
+  const siguientes = productos.slice(firstProducto, lastProducto);
+  return siguientes;
+}
 
-};
+const statusPrevAndNextOffer = (count) => {
+  if (lastProducto === count) {
+    bttnNext.disabled = true;
+  } else {
+    bttnNext.disabled = false;
+  }
 
-const statusPrevAndNextOffer = ({ currentPage, pages }) => {
-  bttnNext.forEach((btn) => {
-    if (currentPage === pages) {
-      btn.hidden = true;
-    } else {
-      btn.hidden = false;
-    }
-  })
-
-  bttnPrev.forEach((btn) => {
-    if (currentPage === 1) {
-      btn.hidden = true;
-    } else {
-      btn.hidden = false;
-    }
-  })
+  if (firstProducto === 0) {
+    bttnPrev.disabled = true;
+  } else {
+    bttnPrev.disabled = false;
+  }
 };
 
 window.addEventListener("load", async () => {
   try {
-    const { data: { pages, currentPage, productos } } = await getOfferProductos();
-    paintOfferProductos(productos);
-    paintOfferItemsPage({ numberPages: pages, itemActive: currentPage });
-    statusPrevAndNextOffer({ currentPage, pages });
+    const { data: { count, productos } } = await getOfferProductos();
+    productos.sort((a, b) => a.id - b.id);
+    paintOfferProductos(productos.slice(firstProducto, lastProducto));
+    statusPrevAndNextOffer(count);
   } catch (error) {
     console.log(error);
   }
 });
 
-bttnNext.forEach((btn) => {
-  btn.addEventListener("click", async () => {
-    try {
-      const {
-        data: { pages, currentPage, productos },
-      } = await getOfferProductos({ page: ++activePage });
-      paintOfferProductos(productos);
-      paintOfferItemsPage({ numberPages: pages, itemActive: currentPage });
-      statusPrevAndNextOffer({ currentPage, pages });
-    } catch (error) {
-      console.log(error);
-    }
-  });
-})
+
+bttnNext.addEventListener("click", async () => {
+  try {
+    const { data : {count, productos}} = await getOfferProductos();
+    const siguientes = mostrarSiguiente(productos);
+    paintOfferProductos(siguientes);
+    statusPrevAndNextOffer(count);
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 
-bttnPrev.forEach((btn) => {
-  btn.addEventListener("click", async () => {
-    try {
-      const {
-        data: { pages, currentPage, productos },
-      } = await getOfferProductos({ page: --activePage });
-      paintOfferProductos(productos);
-      paintOfferItemsPage({ numberPages: pages, itemActive: currentPage });
-      statusPrevAndNextOffer({ currentPage, pages });
-    } catch (error) {
-      console.log(error);
-    }
-  });
-})
+
+
+bttnPrev.addEventListener("click", async () => {
+  try {
+    const { data : {count, productos}} = await getOfferProductos();
+    const anteriores = mostrarAnterior(productos);
+    paintOfferProductos(anteriores);
+    statusPrevAndNextOffer(count);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 
 /* const addProductToCart = async (id) => {
