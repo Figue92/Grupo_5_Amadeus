@@ -7,12 +7,10 @@
     <%- include('../partials/header.ejs') %>
       <%- include('../partials/burguermenu-search.ejs') %>
         <main class="container">
-          <div class="row position-relative">
-
-            <div id="card-box-container" class="col-8">
-</div>
-
-            <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:20px">
+         
+            <div id="card-box-container"></div>
+            <div class="row column position-relative">
+            <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:30px;right: 0;bottom: 0;">
               <div class="card-body my-2 d-flex flex-column gap-2">
                 <button class="btn w-100 btn-danger" id="clear-cart">Vaciar Carrito</button>
                 <button class="btn w-100 btn-success" id="btn-buy">Comprar</button>
@@ -27,12 +25,12 @@
                 </div>
               </div>
             </div>
-
           </div>
+
         </main>
 
         <%- include('../partials/footer.ejs') %>
-<script src="/js/cart.js"></script>
+          <script src="/js/cart.js"></script>
 
   </body>
 

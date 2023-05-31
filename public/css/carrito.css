@@ -1,12 +1,6 @@
-
-.main__carrito{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+.container{
+  
     font-family: var(--tipografiaPrincipal);  
-}
-.main__carrito-subtitulo{
-    width: 100%;
 }
 .btn-clear{
     transition: background-color 200ms, color 200ms;
@@ -15,66 +9,34 @@
     background-color: rgb(240,184,184);
     color: white;
 }
-.precio--num{
-color: #000;
-position: absolute;
-top: 30%;
-right: 1px;
+.card-box-container{
+display: flex;
+    }
+.card-cart{
+width: 30%;
+gap: 5px;
+animation: fondoAnimado 10s infinite;
+background-image: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border: none;
+border-radius: 15px;
 }
-.logo--ubicacion{
-    width: 6%;
+.info-card-cart{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
-
-.direccion{
-    font-size: 18px;
-    color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-
+.boton-remove-cart{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    position: relative;
+    color: red;
+    font-size: 1.25rem;
+    top: -230px;
+    right: -90px;
+    margin: 10px;
 }
-
-.precio--envio{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.bonificacion{
-    text-align: center;
-    font-size: 15px;
-}
-
-.precio--p1{
-    font-size: 18px;
-    padding-right: 28px;
-    text-decoration:line-through;
-    color: silver;
-
-}
-.precio--p2{
-    font-size: 18px;
-    padding-left: 5px;
-    padding-right: 15px;
-}
-.precio--p3{
-
-    font-size: 15px;
-}
-.conteiner-titulo--div--subtitulo{
-    
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.boton--agregar{
-    background-color: #3846BE;
-    color: white;
-    margin-bottom: 15px;
-    padding: 6px
-}
-
 
 /* COMO QUERES PAGAR */
 
@@ -140,12 +102,7 @@ right: 1px;
         font-size: 15px;
     }
 
-    
-    .carrito__main th {
-            font-size: 24px;
-            padding: 29px;
-            background-color: silver;
-        }
+ 
 
 
 .bonificacion {

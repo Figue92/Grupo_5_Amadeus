@@ -6,31 +6,42 @@
     <%- include('../partials/header.ejs') %>
 
       <main class="profile">
-        <div class="container">
-          <div class="row">
-            <div class="card shadow">
-              <h1 class="profile__titulo">PERFIL DE USUARIO</h1>
-
-              <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
-
-                <div class="profile">
-
-                  <img
-                    src="<%= /http/.test(userLogin.avatar) ? userLogin.avatar?.toString().trim() : `/images/users/${userLogin.avatar || '1678374868659_products_.jpeg'}` %>"
-                    alt="User Avatar">
-                  <div class="mt-3 text-center">
-                    <label for="formFile" class="buttons buttons__primary">Cambiar imagen</label>
-                    <input class="form-control" name="image" type="file" id="formFile" hidden>
+        <div class="card-info-profile">
+          <div class="card-header">
+            <h1 class="profile__titulo">PERFIL DE USUARIO</h1>
+          </div>
+          <div class="card-body" style="width:100%">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tu Perfil</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="">Dirección</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-shop-tab" data-bs-toggle="pill" data-bs-target="#pills-shop" type="button" role="tab" aria-controls="pills-shop" aria-selected="">Tus Compras</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data">
+                  <div class="col-12 col-md-4">
+                    <img
+                      src="<%= /http/.test(userLogin.avatar) ? userLogin.avatar?.toString().trim() : `/images/users/${userLogin.avatar || '1678374868659_products_.jpeg'}` %>"
+                      alt="User Avatar">
+                    <div class="mt-3 text-center">
+                      <label for="formFile" class="buttons buttons__primary">Cambiar imagen</label>
+                      <input class="form-control" name="image" type="file" id="formFile" hidden>
+                    </div>
                   </div>
                   <div class="col-12 col-md-8">
                     <div>
                       <label for="name" class="form-label">Nombre</label>
-                      <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>"
-                        id="name" name="name" value="<%= userLogin.name %>">
+                      <input type="text" class="form-control  <%= (locals.errors && errors.name) && 'is-invalid'%>" id="name"
+                        name="name" value="<%= userLogin.name %>">
                       <small class="text-danger ms-2">
                         <%= locals.errors && errors.name ? errors.name.msg : null %>
                       </small>
-
                     </div>
                     <div>
                       <label for="surname" class="form-label">Apellido</label>
@@ -39,78 +50,76 @@
                       <small class="text-danger ms-2">
                         <%= locals.errors && errors.surname ? errors.surname.msg : null %>
                       </small>
-
                     </div>
                     <div>
                       <label for="email" class="form-label">Correo electrónico</label>
-                      <input type="email" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>"
-                        id="email" name="email" value="<%= userLogin.email %>" disabled>
+                      <input type="email" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email"
+                        name="email" value="<%= userLogin.email %>" disabled>
                       <small class="text-danger ms-2">
                         <%= locals.errors && errors.email ? errors.email.msg : null %>
                       </small>
-
                     </div>
                   </div>
                   <div class="d-flex justify-content-end">
                     <button type="submit" class="buttons buttons__primary">Guardar cambios</button>
                   </div>
-
-
-                
-
-                <div class="col-12 col-md-6">
-                  <label for="address" class="form-label">Domicilio</label>
-                  <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>"
-                    id="address" name="address" value="<%=address?.address%>">
-                  <small class="text-danger ms-2">
-                    <%= locals.errors && errors.address ? errors.address.msg : null %>
-                  </small>
-
+                </form>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <label for="address" class="form-label">Domicilio</label>
+                    <input type="text" class="form-control <%= (locals.errors && errors.address) && 'is-invalid'%>" id="address"
+                      name="address" value="<%= userLogin.address%>">
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && errors.address ? errors.address.msg : null %>
+                    </small>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="address" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city"
+                      name="city" value="<%= userLogin.city%>">
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && errors.city ? errors.city.msg : null %>
+                    </small>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="address" class="form-label">Provincia</label>
+                    <input type="text" class="form-control <%= (locals.errors && errors.province) && 'is-invalid'%>"
+                      id="province" name="province" value="<%= userLogin.province %>">
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && errors.province ? errors.province.msg : null %>
+                    </small>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="address" class="form-label">Código Postal</label>
+                    <input type="number" class="form-control <%= (locals.errors && errors.zipCode) && 'is-invalid'%>"
+                      id="zipCode" name="zipCode" value="<%= userLogin.zipCode %>">
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %>
+                    </small>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <button type="submit" class="buttons buttons__primary d-flex justify-content-end">editar direccion</button>
+                  </div>
                 </div>
-                <div class="col-12 col-md-6">
-                  <label for="address" class="form-label">Ciudad</label>
-                  <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>"
-                    id="city" name="city" value="<%= address?.city%>">
-                  <small class="text-danger ms-2">
-                    <%= locals.errors && errors.city ? errors.city.msg : null %>
-                  </small>
-
-                </div>
-                <div class="col-12 col-md-6">
-                  <label for="address" class="form-label">Provincia</label>
-                  <input type="text" class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>"
-                    id="province" name="province" value="<%= address?.province%>">
-                  <small class="text-danger ms-2">
-                    <%= locals.errors && errors.province ? errors.province.msg : null %>
-                  </small>
-
-                </div>
-                <div class="col-12 col-md-6">
-                  <label for="address" class="form-label">Código Postal</label>
-                  <input type="number" class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>"
-                    id="zipCode" name="zipCode" value="<%= address?.zipCode%>">
-                  <small class="text-danger ms-2">
-                    <%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %>
-                  </small>
-
-                </div>
-                <div class="d-flex justify-content-end">
-                  <button type="submit" class="buttons buttons__primary d-flex justify-content-end">editar
-                    direccion</button></a>
-                </div>
-              </form>
-
-
-              <h1>Tus Compras</h1>
-              <p>Aún no tenes compras realizadas</p>
+              </div>
+              <div class="tab-pane fade" id="pills-shop" role="tabpanel" aria-labelledby="pills-shop-tab" tabindex="0">
+<p>Tus Compras</p>
+              </div>           
             </div>
-          </div>
-          </div>
-        </div>
-
-
+            </div>
       </main>
       <%- include('../partials/footer.ejs') %>
+      <script>
+        $(document).ready(function() {
+          // Activa las pestañas al cargar el documento
+          $('.nav-link').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+          });
+        });
+      </script>
   </body>
 
 </html>
