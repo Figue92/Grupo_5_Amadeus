@@ -147,16 +147,31 @@
 
 .carrete {
     display: flex;
-    overflow-x: auto;
-
-}
-
-.carrete img {
-    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     height: 100px;
-    object-fit: cover;
-
+    overflow: hidden;
+    gap: 70px;
 }
+
+.carrete-logo {
+    width: 200px;
+    display: inline-block;
+    vertical-align: middle;
+    animation: slideAnimation 7s linear infinite;
+}
+
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
 
 .main__section__productos--article {
     /*  display: flex;
