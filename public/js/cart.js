@@ -32,11 +32,11 @@ const pintarProducts = ({ products }) => {
       const priceARG = convertFormatPeso(priceCalc)
       const template = `
   <div class="card-cart">
-   <div class="">
-    <img class="col-lg-12 col-4 w-100px" style="object-fit: contain;" src="/images/productos/${image[0].name}"alt="Imagen Producto">
-        <div class="info-card-cart">
-          <button onclick="removeProductFromCart(${id})"class="boton-remove-cart">
-            <i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+   <div class="card-body row" style="display:flex;justify-content:space-around">
+   <img class="col-4" style="width:150px" style="object-fit: contain;" src="/images/productos/${image[0].name}"alt="Imagen Producto">
+   <div class="col-8 position-relative">
+   <button onclick="removeProductFromCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:10px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+    
 
           <h5 class="card-title">${name}</h5>
           <p class="card-text col-lg-10 text-truncate">${description}</p>
