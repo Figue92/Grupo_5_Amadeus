@@ -1,10 +1,11 @@
 const $ = (el) => document.querySelectorAll(el);
 const btnPrev = $("#btn-prev");
 const btnNext = $("#btn-next");
+const titulo = document.querySelector("#titulo");
 const containerItemsPage = $("#container-items-page");
 const containerNewestCard = document.querySelector("#container-newest-card");
 const idUser = document.body.getAttribute("data-idUser");
-/* const URL_API_SERVER = "http://localhost:3000/api" */
+const URL_API_SERVER = "http://localhost:3000/api"
 
 
 let pageActive = 1;
@@ -38,6 +39,7 @@ const getPage = async (page) => {
   paintProductos(productos);
   paintItemsPage({ numberPages: pages, itemActive: currentPage });
   statusPrevAndNext({ currentPage, pages });
+  titulo.scrollIntoView({ behavior: "smooth" });
 };
 
 const paintItemsPage = ({ numberPages, itemActive }) => {
@@ -88,6 +90,7 @@ btnNext.forEach((btn) => {
       paintProductos(productos);
       paintItemsPage({ numberPages: pages, itemActive: currentPage });
       statusPrevAndNext({ currentPage, pages });
+      titulo.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
       console.log(error);
     }
@@ -104,6 +107,7 @@ btnPrev.forEach((btn) => {
       paintProductos(productos);
       paintItemsPage({ numberPages: pages, itemActive: currentPage });
       statusPrevAndNext({ currentPage, pages });
+      titulo.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
       console.log(error);
     }
@@ -111,7 +115,7 @@ btnPrev.forEach((btn) => {
 })
 
 
-/* const addProductToCart = async (id) => {
+const addProductToCart = async (id) => {
   try {
     const objProductId = {
       idProduct: id,
@@ -135,13 +139,14 @@ btnPrev.forEach((btn) => {
   } catch (error) {
     console.log(error);
   }
-};*/
+};
 
-getFavorites = () => {
+const getFavorites = () => {
   return fetch('http://localhost:3000/api/favorites').then((res) => res.json());
 };
 
-toggleFavorite = async (id,{target}) => {
+const toggleFavorite = async (id,{target}) => {
+  console.log(idUser);
   try {
     if (!idUser) { await Swal.fire({
       title: "Debes iniciar sesión para continuar!",

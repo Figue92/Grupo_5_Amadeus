@@ -3,7 +3,7 @@
 
 <%- include('./partials/head.ejs',{otherScript: include('./partials/scripts.ejs',{view:'Home'})}) %>
 
-    <body>
+    <body data-idUser="<%= locals.userLogin?.id %>">
         <%- include('./partials/header.ejs') %>
 
             <main class="main">
@@ -45,7 +45,7 @@
                     </section>
                     <section class="main__section__productos">
 
-                        <h1>Productos de Última Generación</h1>
+                        <h1 id="titulo">Productos de Última Generación</h1>
                         <div class="paginator">
                             <%- include('./partials/paginator.ejs') %>
                         </div>
