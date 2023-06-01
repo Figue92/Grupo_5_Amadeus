@@ -10,6 +10,8 @@ window.onload = function () {
     let inputTel = document.getElementById('tel');
     let inputPassword = document.getElementById('password');
     let inputRepeatPass = document.getElementById('password2');
+    let inputCondiciones = document.querySelector('.checkCondiciones input');
+    let inputPolitica = document.querySelector('.checkPolitica input');
 
     let labelName = document.querySelector('.register__form--name label');
     let labelSurname = document.querySelector('.register__form--surname label');
@@ -18,6 +20,15 @@ window.onload = function () {
     let labelTel = document.querySelector('.register__form--tel label');
     let labelPassword = document.querySelector('.register__form--pass label');
     let labelRepeatPass = document.querySelector('.register__form--repeatPass label');
+
+    let smallName = document.querySelector('.register__form--name small');
+    let smallSurname = document.querySelector('.register__form--surname small');
+    let smallEmail = document.querySelector('.register__form--email small');
+    let smallCodarea = document.querySelector('.register__form--codarea small');
+    let smallTel = document.querySelector('.register__form--tel small');
+    let smallPassword = document.querySelector('.register__form--pass small');
+    let smallCondiciones = document.querySelector('.checkCondiciones small');
+    let smallPolitica = document.querySelector('.checkPolitica small');
 
     let errorsName = [];
     let errorsSurname = [];
@@ -37,6 +48,10 @@ window.onload = function () {
 
     function moverLabel(label) {
         label.classList.add('divFocus');
+    }
+
+    function esconderSmallError(small) {
+        small.hidden = true;
     }
 
     function sacarFocus(label, input) {
@@ -164,9 +179,25 @@ window.onload = function () {
         }
     }
 
+    if (/[a-zA-Z]/.test(inputName.value)) {
+        moverLabel(labelName);
+    }
+    if (/[a-zA-Z]/.test(inputSurname.value)) {
+        moverLabel(labelSurname);
+    }
+    if (/[a-zA-Z]/.test(inputEmail.value)) {
+        moverLabel(labelEmail);
+    }
+    if (/\d/.test(inputCodarea.value)) {
+        moverLabel(labelCodarea);
+    }
+    if (/\d/.test(inputTel.value)) {
+        moverLabel(labelTel);
+    }
 
     inputName.addEventListener('focus', () => {
         moverLabel(labelName);
+        esconderSmallError(smallName);
     })
     inputName.addEventListener('blur', () => {
         if (campoVacio(inputName, errorsName)) {
@@ -188,9 +219,9 @@ window.onload = function () {
         colocarError(errorsName, '.errorsName');
     })
 
-
     inputSurname.addEventListener('focus', () => {
         moverLabel(labelSurname);
+        esconderSmallError(smallSurname);
     })
     inputSurname.addEventListener('blur', () => {
         if (campoVacio(inputSurname, errorsSurname)) {
@@ -214,6 +245,7 @@ window.onload = function () {
 
     inputEmail.addEventListener('focus', () => {
         moverLabel(labelEmail);
+        esconderSmallError(smallEmail);
     })
     inputEmail.addEventListener('blur', () => {
         if (campoVacio(inputEmail, errorsEmail)) {
@@ -242,6 +274,7 @@ window.onload = function () {
 
     inputCodarea.addEventListener('focus', () => {
         moverLabel(labelCodarea);
+        esconderSmallError(smallCodarea);
     })
     inputCodarea.addEventListener('blur', () => {
         if (campoVacio(inputCodarea, errorsCodarea)) {
@@ -270,6 +303,7 @@ window.onload = function () {
 
     inputTel.addEventListener('focus', () => {
         moverLabel(labelTel);
+        esconderSmallError(smallTel);
     })
     inputTel.addEventListener('blur', () => {
         if (campoVacio(inputTel, errorsTel)) {
@@ -298,6 +332,7 @@ window.onload = function () {
 
     inputPassword.addEventListener('focus', () => {
         moverLabel(labelPassword);
+        esconderSmallError(smallPassword);
     })
     inputPassword.addEventListener('blur', () => {
         if (campoVacio(inputPassword, errorsPassword)) {
@@ -342,6 +377,22 @@ window.onload = function () {
         }
         colocarError(errorsRepeatPass, '.errorsRepeatPass');
     })
+
+    inputCondiciones.addEventListener('change', () => {
+        if (inputCondiciones.checked) {
+            smallCondiciones.hidden = true;
+        } else {
+            smallCondiciones.hidden = false;
+        }
+    });
+
+    inputPolitica.addEventListener('change', () => {
+        if (inputPolitica.checked) {
+            smallPolitica.hidden = true;
+        } else {
+            smallPolitica.hidden = false;
+        }
+    });
 
     const inputs = document.querySelectorAll('input');
 

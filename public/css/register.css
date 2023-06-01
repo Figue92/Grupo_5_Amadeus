@@ -74,6 +74,10 @@
     border-bottom: 2px solid var(--colorAzul);
 }
 
+.register__form .register__form--spam { 
+    margin: 10px 0;
+}
+
 .register__form--spam .checkbox {
     width: 20px;
     margin: 0;
@@ -135,6 +139,15 @@
     font-size: 12px;
     left: 0;
     top: 32px;
+    margin-top: 0;
+}
+
+.register__form .register__form--spam .errors {
+    position: absolute;
+    color: red;
+    font-size: 12px;
+    left: 18px;
+    top: 18px;
     margin-top: 0;
 }
 

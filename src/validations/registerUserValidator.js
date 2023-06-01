@@ -1,4 +1,4 @@
-const {check, body} = require('express-validator');
+const { check, body } = require('express-validator');
 const db = require('../database/models');
 
 module.exports = [
@@ -7,8 +7,8 @@ module.exports = [
         .isLength({
             min: 2
         }).withMessage('Mínimo dos letras').bail()
-        .isAlpha('es-ES',{
-            ignore : " "
+        .isAlpha('es-ES', {
+            ignore: " "
         }).withMessage('Solo caracteres alfabéticos'),
 
     check('surname')
@@ -16,20 +16,20 @@ module.exports = [
         .isLength({
             min: 2
         }).withMessage('Mínimo dos letras').bail()
-        .isAlpha('es-ES',{
-            ignore : " "
+        .isAlpha('es-ES', {
+            ignore: " "
         }).withMessage('Solo caracteres alfabéticos'),
 
     body('email')
         .notEmpty().withMessage('El email es obligatorio').bail()
         .isEmail().withMessage('Debe ser un email con formato válido')
-        .custom((value, {req}) => {
+        .custom((value, { req }) => {
             return db.User.findOne({
-                where : {
-                    email : value
+                where: {
+                    email: value
                 }
             }).then(user => {
-                if(user){
+                if (user) {
                     return Promise.reject()
                 }
             }).catch((error) => {
@@ -37,7 +37,7 @@ module.exports = [
                 return Promise.reject('El email ya se encuentra registrado')
             })
         }),
-        
+
     check('codarea')
         .notEmpty().withMessage('Debe ingresar código de área'),
 
@@ -48,17 +48,22 @@ module.exports = [
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .isLength({
             min: 6,
-            max : 12
-        }).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
-    
+            max: 15
+        }).withMessage('Debe tener entre 6 y 15 caracteres'),
+
     body('password2')
         .notEmpty().withMessage('Debes confirmar tu contraseña').bail()
-        .custom((value,{req})=> {
-            if(value !== req.body.password ){
+        .custom((value, { req }) => {
+            if (value !== req.body.password) {
                 return false
             }
             return true
-        }).withMessage('Las contraseñas no coinciden')
-        
-    
-    ]
+        }).withMessage('Las contraseñas no coinciden'),
+
+    body('checkCondiciones')
+        .notEmpty().withMessage('Debes aceptar las condiciones del servicio'),
+
+    body('checkPolitica')
+        .notEmpty().withMessage('Debes aceptar la política de privacidad'),
+
+]
