@@ -9,7 +9,8 @@ module.exports = [
         phone: "11 23456789",
         idRol: 1,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        idAddress:1
     },
     {
         id: 2,
@@ -20,6 +21,7 @@ module.exports = [
         phone: "11 98765432",
         idRol: 2,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        idAddress:2
     }
 ]

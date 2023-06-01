@@ -5,18 +5,17 @@
 
     <body data-idUser="<%= locals.userLogin?.id %>">
         <%- include('../partials/header.ejs') %>
-       
+
             <main class="main__productos">
                 <%- include('../partials/burguermenu-search') %>
-                    <section class="main__section__productos-ofertas" >
-                        <h1 class="title__todosProductos" id="titulo">Todos los productos</h1>
-                    
-                       <div class="container" class="container-productos">
-                       <div id="container-productos-card" class="container-productos-card">
-                    
-</div>
-</div>
-<div class="paginator"> <%- include('../partials/paginator.ejs') %></div>
+                    <section class="main__section__productos-ofertas">
+                        <h1 class="title__todosProductos my-5" id="titulo">Todos los productos</h1>
+
+                        <div class="container" class="container-productos">
+                            <div id="container-productos-card" class="container-productos-card container row justify-content-center justify-content-md-between">
+                            </div>
+                        </div>
+                        <div class="paginator"> <%- include('../partials/paginator.ejs') %></div>
                     </section>
                     <section class="main__section__compra">
                         <i class="fa-regular fa-credit-card"></i>
@@ -28,10 +27,10 @@
                     </section>
                     <section class="main__section__marcas">
                         <h2>Las Mejores Marcas están en AMADEUS</h2>
-            
-                <%- include('../partials/carreteMarcas.ejs') %>
-                        
-            
+
+                        <%- include('../partials/carreteMarcas.ejs') %>
+
+
                     </section>
             </main>
             <script src="/js/paginator.js"></script>

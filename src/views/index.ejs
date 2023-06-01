@@ -49,7 +49,8 @@
                         <div class="paginator">
                             <%- include('./partials/paginator.ejs') %>
                         </div>
-                        <div class="container-productos-card" id="container-newest-card">
+                        <div class="container-productos-card container row justify-content-center justify-content-md-between"
+                            id="container-newest-card">
                             <%# nuevos.forEach(({id, title, price, description,image})=> { %>
                                 <%#- include('./partials/articleProduct',{ id, title, price, description, image } ) %>
                                     <%# }) %>
@@ -59,19 +60,20 @@
                         </div>
 
                     </section>
-                    <section class="main__section__productos offer">
+                    <section class="main__section__productos offer py-5">
                         <h1>Ofertas Imperdibles</h1>
                         <button class="btn control-prev" role="button" data-slide="prev">
                             <i class="fa-solid fa-circle-chevron-left"></i>
-                          </button>
-                        <div class="container-productos-card" id="container-offer-card">
+                        </button>
+                        <div class="container-productos-card d-flex flex-column flex-lg-row gap-2 justify-content-center aling-items-center"
+                            id="container-offer-card">
                             <%# oferta.forEach(({id, title, price, description, image})=> { %>
                                 <%#- include('./partials/articleProduct',{ id, title, price, description, image } ) %>
                                     <%# }) %>
                         </div>
                         <button class="btn control-next" role="button" data-slide="next">
                             <i class="fa-solid fa-circle-chevron-right"></i>
-                          </button>
+                        </button>
                     </section>
 
                     <section class="main__section__compra">

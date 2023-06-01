@@ -161,13 +161,8 @@
     vertical-align: middle;
     animation: slideAnimation 7s linear infinite;
 }
-.container-productos-card{
-    position: relative;
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
-}
-.container-productos-card:hover .main__article_buton_cart{
+
+.card-item-product:hover .main__article_buton_cart{
     display: block;
 }
 .main__article_buton_cart{

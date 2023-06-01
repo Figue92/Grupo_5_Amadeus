@@ -1,11 +1,7 @@
-.container-productos-card{
-    position: relative;
-    display: flex;
-    gap: 2px;
-}
-.container-productos-card:hover .main__article_buton_cart{
+.card-item-product:hover .main__article_buton_cart{
     display: block;
 }
+
 .main__article_buton_cart{
     display: none;
     position: absolute;
