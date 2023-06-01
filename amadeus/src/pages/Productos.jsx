@@ -2,28 +2,48 @@ import React from 'react'
 import { TablaProductos } from '../components/TablaProductos'
 import { useState, useEffect } from 'react'
 import { UseFetch } from '../hooks/UseFetch'
-import PropTypes from 'prop-types'
-import { AddProduct } from '../components/AddProduct'
+
 
 
 
 export const Productos = () => {
   const [productState, setProductState] = useState({
     loading: true,
-    productos: []
+    productos: [],
+    pages: null,
+    currentPage: null
+
   });
     useEffect(() => {
-      UseFetch('/productos?limit=100')
+      UseFetch('/productos?withPagination=true')
         .then(({ ok, data }) => {
          
           const { productos } = data;
           setProductState({
             loading: false,
-            productos
+            productos,
+            pages : data.pages,
+            currentPage : data.currentPage
           })
         })
         .catch(error => console.error)
     }, []);
+
+    const handleGetPage = (page) => {
+      UseFetch(`/productos?withPagination=true&page=${page}`)
+      .then(({ ok, data }) => {
+       ok &&
+        setProductState({
+          loading: false,
+          productos: data.productos,
+          pages : data.pages,
+          currentPage : data.currentPage,
+         
+        })
+      })
+      .catch(error => console.error)
+  }
+
 
   const [categoryState, setCategoryState] = useState({
     loading: true,
@@ -32,7 +52,6 @@ export const Productos = () => {
   useEffect(() => {
       UseFetch('/categorias')
           .then(({ ok, data }) => {
-          
               const {categories} = data;
               setCategoryState({
                   loading: false,
@@ -48,7 +67,7 @@ export const Productos = () => {
   useEffect(() => {
     UseFetch('/marcas')
         .then(({ ok, data }) => {
-          console.log(data);
+  
             const { brands } = data;
             setBrandState({
                 loading: false,
@@ -64,7 +83,7 @@ export const Productos = () => {
           <div className="row">
             <div className="col-12">
               <TablaProductos productos={productState.productos}categories={categoryState.categories}brands={brandState.brands}
-                loading={productState.loading} />
+                loading={productState.loading}pages={productState.pages}currentPage={productState.currentPage}handleGetPage={handleGetPage} />
             </div>
             </div>
       </div>

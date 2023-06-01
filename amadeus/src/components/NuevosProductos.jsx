@@ -4,7 +4,7 @@ import {  } from "../assets/css/styles.css";
 
 
 export default function NuevosProductos({ id, name, price, category,brand, discount, novelty }) {
-    console.log(brand)
+ 
     return (
  
             <tr>
