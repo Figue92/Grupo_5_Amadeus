@@ -6,130 +6,150 @@
     <body>
         <!-- Header -->
         <%- include('../partials/header') %>
-        <div class="content-buttons">
-            <button type="button" class="butonVerProd"><a class="header__section__nav--registro--icono" href="/dashboard"><i class="fa-solid fa-table-columns"></i></a> Volver a dashboard</button>
-           <div><img src="/images/productos/<%= image  ? image[0].name : 'imageNull.jpeg'%>" class="imagen-edit" alt=""></div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Editar <%= name %>
-            </button>
-        </div>
-       
-    
-
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                
-                    <!-- Contenido del modal -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Editar Producto</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
             <main class="form__main">
-                <div class="container-form">
-                    <form id="form--edit" class="form--edit" action="/productos/edit/<%= id %>?_method=PUT" method="POST" class="row"
-                        enctype="multipart/form-data">
-                        <div class="col-10 col-md-8 mb-3">
-                            <label for="name" class="form-label">Nombre del Producto</label>
-                            <input id="name" type="text" name="name" class="form-control"
-                                placeholder="Nombre del producto" value="<%= name %>">
-                            <small id='error-name' class="text-danger ms-2">
-                                <%= locals.errors && errors.name ? errors.name.msg : null %>
-                            </small>
-                        </div>
-                        <div class="col-10 col-md-8 mb-3">
-                            <label for="description" class="form-label">Descripción del producto</label>
-                            <small id="descriptionInfo" hidden>(<span id="cantCaracteres"></span> caracteres
-                                disponibles)</small>
-                            <textarea class="form-control" name="description" id="description"
-                                rows="5"><%= description %></textarea>
-                            <small id="error-description" class="text-danger ms-2">
-                                <%= locals.errors && errors.description ? errors.description.msg : null %>
-                            </small>
-                        </div>
-                        <div class="col-6 col-md-8 mb-3">
-                            <label for="category" class="form-label">Categoria</label>
-                            <select class="form-control" name="category" id="category" 
-                                <%= locals.errors && errors.category ? 'is-invalid' : null%>>
-                                <option value="" selected hidden>Seleccione...</option>
-                                <% categories.forEach(({nameCategory, id})=> { %>
-                                    <option value="<%= id %>" <%=id===categories.id && 'selected' %> ><%= nameCategory
-                                            %>
-                                    </option>
-                                    <% }) %>
-                            </select>
-                            <small id="error-category" class="text-danger ms-2">
-                                <%= locals.errors && errors.category ? errors.category.msg : null %>
-                            </small>
-                        </div>
-                        <div class="col-10 col-md-8 mb-3">
-                            <label class="form-label">Marca</label>
-                            <select name="marca" id="marca" class="form-control">
-                                <option value="" selected hidden>Seleccione...</option>
-                                <% brands.forEach(({name, id})=> { %>
-                                    <option value="<%= id %>" <%=id===brands.id && 'selected' %> ><%= name %>
-                                    </option>
-                                    <% }) %>
-                            </select>
-                            <small id="error-marca" class="text-danger ms-2">
-                                <%= locals.errors && errors.brand ? errors.brand.msg : null %>
-                            </small>
-                        </div>
-                        <div class="col-10 col-md-8 mb-3">
-                            <label for="price" class="form-label">Precio</label>
-                            <input id="price" class="form-control" type="number" name="price" placeholder="Precio" value="<%= price %>">
-                            <small id="error-price" class="text-danger ms-2">
-                                <%= locals.errors && errors.price ? errors.price.msg : null %>
-                            </small>
-                        </div>
-                        <div class="col-10 col-md-8 mb-3">
-                            <label for="discount" class="form-label">Descuento (%)</label>
-                            <input id="discount" class="form-control form-control-sm" type="number" name="discount"
-                                placeholder="Descuento" value="<%= discount %>">
-                            <small id="error-discount" class="text-danger ms-2">
-                                <%= locals.errors && errors.discount ? errors.discount.msg : null %>
-                            </small>
-                        </div>
-                        <div class="col-10 col-md-8 mb-3">
-                            <input type="checkbox" name="novedad" id="novedad" <%=novelty && 'checked' %>
-                            class="form-check-input">
-                            <label for="novedad" class="form-label">Es un producto recién salido al mercado.</label>
-                        </div>
-                        <div class="col-10 col-md-8 mb-3">
-                            <label for="images" class="form-label">Imágenes</label>
-                            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2"id="current-images-section">
-                                <% image.forEach(image=> { %>
-                                    <div class="d-flex flex-column gap-2"><label style="cursor: pointer;">
-                                           <img src="/images/productos/<%= image.name %>" width="100px" alt=""></label>
-                                    </div>
-                                    <% }) %>
+                <div class="content-buttons">
+                    <button type="button" class="butonVerProd"><a class="header__section__nav--registro--icono"
+                            href="/dashboard"><i class="fa-solid fa-table-columns"></i></a> Volver a dashboard</button>
+                    <div><img src="/images/productos/<%= image  ? image[0].name : 'imageNull.jpeg'%>"
+                            class="imagen-edit" alt=""></div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Editar <%= name %>
+                    </button>
+                </div>
+
+
+
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Contenido del modal -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Editar Producto</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            <label for="images" class="btn btn-primary">Agregar Imágenes Nuevas</label>
-                            <input type="file" class="form-control" id="images" name="images" hidden multiple>
-                            <small class="text-danger ms-2">
-                                <%= locals.errors && errors.images ? errors.images.msg : null %>
-                            </small>
+                            <div class="modal-body">
+
+                                <div class="container-form">
+                                    <form id="form--edit" class="form--edit"
+                                        action="/productos/edit/<%= id %>?_method=PUT" method="POST" class="row"
+                                        enctype="multipart/form-data">
+                                        <div class="col-10 col-md-8 mb-3">
+                                            <label for="name" class="form-label">Nombre del Producto</label>
+                                            <input id="name" type="text" name="name" class="form-control"
+                                                placeholder="Nombre del producto" value="<%= name %>">
+                                            <small id='error-name' class="text-danger ms-2">
+                                                <%= locals.errors && errors.name ? errors.name.msg : null %>
+                                            </small>
+                                        </div>
+                                        <div class="col-10 col-md-8 mb-3">
+                                            <label for="description" class="form-label">Descripción del producto</label>
+                                            <small id="descriptionInfo" hidden>(<span id="cantCaracteres"></span>
+                                                caracteres
+                                                disponibles)</small>
+                                            <textarea class="form-control" name="description" id="description"
+                                                rows="5"><%= description %></textarea>
+                                            <small id="error-description" class="text-danger ms-2">
+                                                <%= locals.errors && errors.description ? errors.description.msg : null
+                                                    %>
+                                            </small>
+                                        </div>
+                                        <div class="col-6 col-md-8 mb-3">
+                                            <label for="category" class="form-label">Categoria</label>
+                                            <select class="form-control" name="category" id="category" <%=locals.errors
+                                                && errors.category ? 'is-invalid' : null%>>
+                                                <option value="" selected hidden>Seleccione...</option>
+                                                <% categories.forEach(({nameCategory, id})=> { %>
+                                                    <option value="<%= id %>" <%=id===categories.id && 'selected' %> >
+                                                        <%= nameCategory %>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                            <small id="error-category" class="text-danger ms-2">
+                                                <%= locals.errors && errors.category ? errors.category.msg : null %>
+                                            </small>
+                                        </div>
+                                        <div class="col-10 col-md-8 mb-3">
+                                            <label class="form-label">Marca</label>
+                                            <select name="marca" id="marca" class="form-control">
+                                                <option value="" selected hidden>Seleccione...</option>
+                                                <% brands.forEach(({name, id})=> { %>
+                                                    <option value="<%= id %>" <%=id===brands.id && 'selected' %> ><%=
+                                                            name %>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                            <small id="error-marca" class="text-danger ms-2">
+                                                <%= locals.errors && errors.brand ? errors.brand.msg : null %>
+                                            </small>
+                                        </div>
+                                        <div class="col-10 col-md-8 mb-3">
+                                            <label for="price" class="form-label">Precio</label>
+                                            <input id="price" class="form-control" type="number" name="price"
+                                                placeholder="Precio" value="<%= price %>">
+                                            <small id="error-price" class="text-danger ms-2">
+                                                <%= locals.errors && errors.price ? errors.price.msg : null %>
+                                            </small>
+                                        </div>
+                                        <div class="col-10 col-md-8 mb-3">
+                                            <label for="discount" class="form-label">Descuento (%)</label>
+                                            <input id="discount" class="form-control form-control-sm" type="number"
+                                                name="discount" placeholder="Descuento" value="<%= discount %>">
+                                            <small id="error-discount" class="text-danger ms-2">
+                                                <%= locals.errors && errors.discount ? errors.discount.msg : null %>
+                                            </small>
+                                        </div>
+                                        <div class="col-10 col-md-8 mb-3">
+                                            <input type="checkbox" name="novedad" id="novedad" <%=novelty && 'checked'
+                                                %>
+                                            class="form-check-input">
+                                            <label for="novedad" class="form-label">Es un producto recién salido al
+                                                mercado.</label>
+                                        </div>
+                                        <div class="col-10 col-md-8 mb-3">
+                                            <label for="images" class="form-label">Imágenes</label>
+                                            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2"
+                                                id="current-images-section">
+                                                <% image.forEach(image=> { %>
+                                                    <div class="d-flex flex-column gap-2"><label
+                                                            style="cursor: pointer;">
+                                                            <img src="/images/productos/<%= image.name %>" width="100px"
+                                                                alt=""></label>
+                                                    </div>
+                                                    <% }) %>
+                                            </div>
+                                            <label for="images" class="btn btn-primary">Agregar Imágenes Nuevas</label>
+                                            <input type="file" class="form-control" id="images" name="images" hidden
+                                                multiple>
+                                            <small class="text-danger ms-2">
+                                                <%= locals.errors && errors.images ? errors.images.msg : null %>
+                                            </small>
+                                        </div>
+                                        <div class="formAdd__button">
+                                            <small id="form-error" class="text-danger"></small>
+                                            <button class="formAdd__button--agregar" class="btn btn-dark"
+                                                type="submit">editar</button>
+                                            <a href="/dashboard"><button
+                                                    class="formAdd__button--cancelar">cancelar</button></a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="formAdd__button">
-                            <small id="form-error" class="text-danger"></small>
-                            <button class="formAdd__button--agregar" class="btn btn-dark" type="submit">editar</button>
-                            <a href="/dashboard"><button class="formAdd__button--cancelar">cancelar</button></a>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </main>
-        </div>
-                
-    </div>
-</div>
-</div>
+
+
+
+
+
             <!-- Footer -->
             <%- include('../partials/footer') %>
                 <script src="/js/formEdit.js"></script>
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </body>
+
 
 </html>

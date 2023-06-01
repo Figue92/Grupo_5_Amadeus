@@ -20,7 +20,7 @@ const getOrders = () => {
 const pintarProductosComprados = ({data}) => {
     console.log({data});
     cardsCompra.innerHTML = "";
-    if(data) {
+    if(data.length) {
     data.forEach((order) =>{
       order.cart.forEach(({id,price,name,image,discount}) =>{
         const priceCalc = discount ? price - (price * discount) / 100 : price;
@@ -37,8 +37,9 @@ const pintarProductosComprados = ({data}) => {
     </div>`;
       cardsCompra.innerHTML += template;
     })
+    
   })
-    return
+  return   
 }
  cardsCompra.innerHTML = "<h1> Aún no tenés compras realizadas! </h1>"
 }
