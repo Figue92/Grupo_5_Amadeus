@@ -1,6 +1,7 @@
 .main {
     font-family: var(--tipografiaPrincipal);
-
+padding: 5px;
+padding-top: 100px;
 
 }
 
@@ -15,7 +16,6 @@
     justify-content: space-evenly;
     height: 60px;
     align-items: center;
-
 }
 
 .main__section--burguer-menu i {
@@ -309,7 +309,7 @@
 }
 
 .button-burguer {
-    width: 20%;
+    width: 50%;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -323,7 +323,7 @@
 }
 
 .main__section {
-    width: 80%;
+    /* width: 50%; */
 }
 
 .mobile-hidden {
@@ -389,15 +389,25 @@
     display: flex;
     justify-content: center;
 }
-
+@media (min-width:426px) {
+   .main{
+        padding-top: 80px;
+    }
+    
+    .home__main__section--banner {
+        display: block;
+        height: 150px;
+    }
+}
 
 @media (min-width:768px) {
+  
     .button-burguer {
         display: none;
     }
 
     .main__section {
-        width: 100%;
+        /* width: 100%; */
     }
 
     .main__section--search-box {
@@ -416,9 +426,6 @@
         width: 10%;
     }
 
-    .home__main__section--banner {
-        display: block;
-    }
 
     .main__section__productos {
         display: flex;
@@ -488,7 +495,7 @@
 
     .main__section__productos--article-ofertas {
         display: flex;
-        /* width: 30%; */
+
         background-color: var(--colorCeleste);
         border-radius: 15%;
         flex-wrap: nowrap;
@@ -499,17 +506,6 @@
         flex-direction: column;
         justify-content: space-around;
     }
-
-    .main__section__productos--article-ofertas img {
-        /* width: 20%; */
-    }
-
-    .main__section__productos--article-ofertas h3,
-    h2 {
-        /* font-size: 1rem; */
-        /* width: 100%; */
-    }
-
     .main__section__compra h4 {
         font-size: 15px;
     }
@@ -522,6 +518,17 @@
 }
 
 @media (min-width:1024px) {
+      .main{
+        padding-top: 50px;
+    }
+       
+    .home__main__section--banner {
+        display: block;
+        height: 160px;
+    }
+ .imagenes-carrusel{
+    height: 300px;
+ }
     .main__section--burguer-menu {
         display: none;
     }
@@ -548,6 +555,9 @@
     .main__section__nav ul li a {
         display: block;
         padding: 20px;
+    }
+    .main__section__productos{
+        margin-top: 110px;
     }
 
     .main__section__productos-ofertas {

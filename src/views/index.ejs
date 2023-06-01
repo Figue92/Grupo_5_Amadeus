@@ -4,13 +4,13 @@
 <%- include('./partials/head.ejs',{otherScript: include('./partials/scripts.ejs',{view:'Home'})}) %>
 
     <body data-idUser="<%= locals.userLogin?.id %>">
+      <main>
         <%- include('./partials/header.ejs') %>
-
-            <main class="main">
-
-                <%- include('./partials/burguermenu-search.ejs') %>
-
-                    <section class="home__main__section--banner">
+    
+     
+            <div class="main">
+             
+                    <section class="home__main__section--banner" style="height: 200px;">
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -20,7 +20,7 @@
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                                     aria-label="Slide 3"></button>
                             </div>
-                            <div class="carousel-inner" style="height: 500px;">
+                            <div class="carousel-inner imagenes-carrusel" >
                                 <div class="carousel-item active">
                                     <img src="/images/home/BANNER-OFICIAL-INTEL.png" class="d-block w-100" alt="...">
                                 </div>
@@ -65,7 +65,7 @@
                         <button class="btn control-prev" role="button" data-slide="prev">
                             <i class="fa-solid fa-circle-chevron-left"></i>
                         </button>
-                        <div class="container-productos-card d-flex flex-column flex-lg-row gap-2 justify-content-center aling-items-center"
+                        <div class="container-productos-card d-flex flex-column flex-lg-row flex-md-row flex-wrap justify-content-md-between align-items-md-around justify-content-center align-items-center"
                             id="container-offer-card">
                             <%# oferta.forEach(({id, title, price, description, image})=> { %>
                                 <%#- include('./partials/articleProduct',{ id, title, price, description, image } ) %>
@@ -91,8 +91,8 @@
 
 
                     </section>
-            </main>
-
+                </div>
+        </main>
             <%- include('./partials/footer.ejs') %>
 
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
