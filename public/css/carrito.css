@@ -1,116 +1,83 @@
+.container-cart {
 
-.main__carrito{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    font-family: var(--tipografiaPrincipal);  
+    font-family: var(--tipografiaPrincipal);
 }
-.main__carrito-subtitulo{
-    width: 100%;
-}
-.btn-clear{
+
+.btn-clear {
     transition: background-color 200ms, color 200ms;
 }
-.btn-clear:hover{
-    background-color: rgb(240,184,184);
+
+.btn-clear:hover {
+    background-color: rgb(240, 184, 184);
     color: white;
 }
-.precio--num{
-color: #000;
-position: absolute;
-top: 30%;
-right: 1px;
-}
-.logo--ubicacion{
-    width: 6%;
-}
 
-.direccion{
-    font-size: 18px;
-    color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-
-}
-
-.precio--envio{
+/* .card-box-container{
     display: flex;
+    gap: 5px;
+    padding-top: 5%;
+    margin: 15px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} */
+.card-cart {
+    width: 50%;
+    display: flex;
+    gap: 15px;
+    animation: fondoAnimado 10s infinite;
+    background-image: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    
-}
-
-.bonificacion{
-    text-align: center;
-    font-size: 15px;
-}
-
-.precio--p1{
-    font-size: 18px;
-    padding-right: 28px;
-    text-decoration:line-through;
-    color: silver;
+    margin-right: 10px;
 
 }
-.precio--p2{
-    font-size: 18px;
-    padding-left: 5px;
-    padding-right: 15px;
-}
-.precio--p3{
 
-    font-size: 15px;
-}
-.conteiner-titulo--div--subtitulo{
-    
+.info-card-cart {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: flex-end;
 }
-
-.boton--agregar{
-    background-color: #3846BE;
-    color: white;
-    margin-bottom: 15px;
-    padding: 6px
-}
-
 
 /* COMO QUERES PAGAR */
 
-.conteiner-titulo--div--texto2{
+.conteiner-titulo--div--texto2 {
     font-size: 17px;
     padding-left: 15px;
-    
+
 }
-.conteiner-titulo--div--subtitulo{
-    display:flex;
-    justify-content:center;
+
+.conteiner-titulo--div--subtitulo {
+    display: flex;
+    justify-content: center;
 }
 
 .logo--mp {
     width: 13%;
-    
+
 }
 
-.conteiner-cuadro1--pago{
-    background-color:  rgb(192, 192, 192) ;
+.conteiner-cuadro1--pago {
+    background-color: rgb(192, 192, 192);
     display: flex;
     padding: 10px;
     margin: 20px;
 }
 
-.boton--pago{
- align-items: center;
- background-color: #3846BE;
- color: white;
- padding: 5px;
- margin: 15px;
- font-size: 16px;
+.boton--pago {
+    align-items: center;
+    background-color: #3846BE;
+    color: white;
+    padding: 5px;
+    margin: 15px;
+    font-size: 16px;
 
 }
 
-.formulario--metodo--pago{
+.formulario--metodo--pago {
     display: flex;
     flex-direction: column;
     border: 2px solid black;
@@ -120,57 +87,53 @@ right: 1px;
     color: black;
     font-size: 19px;
     border-radius: 3%;
-    
+
 }
-                                
-                                /* TABLET  */ 
+
+/* TABLET  */
 
 
 
 @media (min-width: 426px) {
 
-    
-.direccion {
-            font-size: 26px;
-            text-align: center;
-        }
+
+    .direccion {
+        font-size: 26px;
+        text-align: center;
+    }
 
     .conteiner-titulo--div--texto {
         text-align: center;
         font-size: 15px;
     }
 
-    
-    .carrito__main th {
-            font-size: 24px;
-            padding: 29px;
-            background-color: silver;
-        }
 
 
-.bonificacion {
-    text-align: center;
-    font-size: 15px;
-}
 
-.conteiner-titulo--div--texto2 {
-    font-size: 15px;
-    padding-left: 15px;
-}
+    .bonificacion {
+        text-align: center;
+        font-size: 15px;
+    }
 
-.logo--mp {
-    width: 10%;
-}
-.boton--agregar {
-    background-color: #3846BE;
-    color: white;
-    margin-bottom: 15px;
-    padding: 6px;
-    width: 40%;
-}
+    .conteiner-titulo--div--texto2 {
+        font-size: 15px;
+        padding-left: 15px;
+    }
 
-.conteiner-cuadro1--pago {
-    background-color: rgb(192, 192, 192);
+    .logo--mp {
+        width: 10%;
+    }
+
+    .boton--agregar {
+        background-color: #3846BE;
+        color: white;
+        margin-bottom: 15px;
+        padding: 6px;
+        width: 40%;
+    }
+
+    .conteiner-cuadro1--pago {
+        background-color: rgb(192, 192, 192);
         display: flex;
         padding: 10px;
         margin: 20px;
@@ -178,36 +141,29 @@ right: 1px;
         align-items: center;
         margin-left: 175px;
         margin-right: 175px
-  
+    }
+
+
+
+    .boton--agregar {
+        background-color: #3846BE;
+        color: white;
+        margin-bottom: 15px;
+        padding: 6px;
+        width: 40%;
+        font-size: 15px;
+    }
+
+    .logo--ubicacion {
+        width: 3%;
+    }
+
+    .conteiner-otrosPagos {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+
+    }
 }
-
-
-
-.boton--agregar {
-    background-color: #3846BE;
-    color: white;
-    margin-bottom: 15px;
-    padding: 6px;
-    width: 40%;
-    font-size: 15px;
-}
-
-.logo--ubicacion {
-    width: 3%;
-}
-.conteiner-otrosPagos{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-
-}
-}
-
-
-
-
-
-
-

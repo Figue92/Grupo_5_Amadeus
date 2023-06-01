@@ -1,15 +1,9 @@
-.profile {
-    font-family: var(--tipografiaPrincipal);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  .profile__titulo{
+.profile {/* width: 60%; */font-family: var(--tipografiaPrincipal);font-family: Arial, sans-serif;padding: 20px;border: 1px solid #ccc;border-radius: 5px;background-color: #fff;}
+  
+.card-info-profile{
+  width: 100%;
+}
+.profile__titulo{
     font-family: var(--tipografiaPrincipal);
   }
   .profile img {

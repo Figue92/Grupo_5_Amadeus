@@ -20,7 +20,7 @@
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                                     aria-label="Slide 3"></button>
                             </div>
-                            <div class="carousel-inner">
+                            <div class="carousel-inner" style="height: 500px;">
                                 <div class="carousel-item active">
                                     <img src="/images/home/BANNER-OFICIAL-INTEL.png" class="d-block w-100" alt="...">
                                 </div>
@@ -49,7 +49,7 @@
                         <div class="paginator">
                             <%- include('./partials/paginator.ejs') %>
                         </div>
-                        <div class="main__section__productos" id="container-newest-card">
+                        <div class="container-productos-card" id="container-newest-card">
                             <%# nuevos.forEach(({id, title, price, description,image})=> { %>
                                 <%#- include('./partials/articleProduct',{ id, title, price, description, image } ) %>
                                     <%# }) %>
@@ -64,7 +64,7 @@
                         <button class="btn control-prev" role="button" data-slide="prev">
                             <i class="fa-solid fa-circle-chevron-left"></i>
                           </button>
-                        <div class="main__section__productos" id="container-offer-card">
+                        <div class="container-productos-card" id="container-offer-card">
                             <%# oferta.forEach(({id, title, price, description, image})=> { %>
                                 <%#- include('./partials/articleProduct',{ id, title, price, description, image } ) %>
                                     <%# }) %>

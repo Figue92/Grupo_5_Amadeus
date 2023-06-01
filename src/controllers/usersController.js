@@ -109,13 +109,16 @@ module.exports = {
                 }]
         })
             .then(user => {
+           
                 return res.render('users/profile', {
+              
                     title: "Perfil de usuario",
                     ...user,
                     
 
-                })
+                }) 
             })
+            
             .catch((error) => console.log(error));
     },
     edit: (req, res) => {

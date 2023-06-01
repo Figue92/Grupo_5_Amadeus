@@ -22,7 +22,7 @@ const paintOfferProductos = (productos) => {
         <p class="card-text">${description}</p>
         <h6 class="card-subtitle mb-2 text-muted">$ ${price}</h6></a>
         <i class="text-primary p-1 my-2 fs-4 ${usersFavorites.some(({ id }) => id === +idUser) ? 'fas' : 'far'} fa-heart" style="cursor:pointer" onclick="toggleFavorite(${id}, event)"></i>       
-        <button class="main__article_buton" onclick="addProductToCart(${id})">Agregar a carrito</button>
+        <button class="main__article_buton_cart" onclick="addProductToCart(${id})">Agregar a carrito</button>
 </div>`
     containerOfferCard.innerHTML += template;
 
