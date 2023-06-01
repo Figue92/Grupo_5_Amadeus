@@ -7,19 +7,20 @@
 }
 #menu {
  display: none;
-  position: absolute;
-   top:12%; 
-  left: 15px;
-  width: 50%;
-  background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 1; 
-
+ flex-direction: column;
+ position: absolute;
+ top:12%;
+ left: 15px;
+ width: 50%;
+ background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+ border: 1px solid #ccc;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+ z-index: 1;
 }
 
 #menu-toggle {
-  font-size: 2em;
+  width: 100%;
+  font-size: 12px;
   cursor: pointer;
   background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
   border-radius: 10px;
@@ -36,7 +37,12 @@
 #menu-toggle.active + #menu {
   display: block;
 }
-
+.busqueda-menu{
+  display: flex;
+  /* flex-direction: row; */
+  gap: 5px;
+  width: 40%;
+}
   
 /* #navbar-toggle {
     display: none;
@@ -91,15 +97,19 @@
   z-index: 1;
 }
 
-.navbar-menu ul {
+.menu-burguer-ul{
+  background: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
+
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 0;
+  padding: 15px;
 }
 
-.navbar-menu ul li a {
+/* .navbar-menu ul li a {
   color: aqua;
   text-decoration: none;
-}
+} */
 
 /* Mostramos el menú desplegable cuando el input está seleccionado */
 #navbar-toggle:checked+.navbar-toggle-label+.navbar-menu {

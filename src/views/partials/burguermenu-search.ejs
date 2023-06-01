@@ -1,21 +1,27 @@
 <section class="busqueda-menu">
-<section class="button-burguer">
-  <button id="menu-toggle">☰</button>
-  <nav id="menu">
-    <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="productos/productos">Productos</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
-</section>
-<section class="main__section">
+  <section class="button-burguer">
+    <button id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+    <nav id="menu">
+      <ul class="menu-burguer-ul">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/productos/productos">Productos</a></li>
+        <li><a href="/comoComprar">Cómo Comprar</a></li>
+        <li><a href="/preguntas">Preguntas Frecuentes</a></li>
+      </ul>
+    </nav>
+  </section>
+  <section class="main__section">
     <div class="main__section--search-box">
-       <form action="" method="GET">
+      <form action="" method="GET">
         <input id="buscador" type="text" name="keywords" placeholder="¿Qué estas buscando?" class="mobile-hidden">
         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i>
-        </button></form> 
+        </button>
+      </form>
     </div>
   </section>
-<script src="/js/burguer-search.js"></script>
+  <script src="/js/burguer-search.js"></script>
 </section>

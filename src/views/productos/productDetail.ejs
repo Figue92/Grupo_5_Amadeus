@@ -1,73 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head.ejs') %>
-
-    <body>
-        <%- include('../partials/header.ejs') %>
-        <%- include('../partials/burguermenu-search') %>
-            <main class="productDetail__main">
-                <section class="productDetail__main__section section--imagenPrincipal">
-                    <img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="">
-                </section>
-
-                <section class="productDetail__main__section section--info">
-                    <h1><%= name %></h1>
-                    <div class="section__div--info">
-                        <div class="section__div--info-sku">
-                            <a href=""><%= category %></a>
-                            <a href=""><%= brand %></a>
-                            <h4>sku: <%= id %></h4>
-                        </div>
-                        <div class="section__div--info-precio">
-                            <h3><%= price %></h3>
-                            <h3>$<%= price*((100-discount)/100) %></h3>
-                            <p>precio en un pago</p>
-                        </div>
-                        <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %></p>
-                        <div class="section__div--info-btn">
-                <button data-id="<%= id %>" id="btn-addCart" class="main__article_buton">Agregar al carrito</button>
-                           
-                        </div>
-                    </div>
-                    <section class="productDetail__main__section section--vistasImages">
-                      <% if (image) { %>
-                         <% image.forEach(image => { %>
-                            <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> " alt="">
-                        <% }) %>
-                     <% }else{ %>
-                        <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> " alt="">
-                      <% } %>
-                       
-                       
-               
+<%- include('../partials/header.ejs') %>
+        <body>
+                <main class="productDetail__main">
+                    <section class="productDetail__main__section-imagenPrincipal">
+                        <img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="">
                     </section>
-                </section>
-            
-                
-                <section class="productDetail__main__section section--caracteristicas">
-                    <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
-                    <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:
-                    </h2>
-                    <p class="productDetail__main__section__description">
-                        <%= description %>
-                    </p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= linkVideo ? linkVideo.slice(17) : 'UIwtqkMgELo'%>" 
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  
-                </section>
- <!-- 
-                <section class="formAdd__button productDetail__section--buttons">
-                    <button class="formAdd__button--agregar"><a href="/productos/edit/<%= id %>">editar</a></button>
-                    <form class="formAdd__form--eliminar" action="/productos/delete/<%= id %>?_method=DELETE" method="POST" name="formEliminar">
-                        <button onclick="eliminar()" type="button" class="formAdd__button--cancelar">eliminar</button>  -->
-                    </form>                    
-                </section>
-             
-            </main>
 
-            <%- include('../partials/footer.ejs') %>
-            <%- include('../partials/scripts.ejs',{view:'detail'})  %>
-            <script src="/js/productDetail.js"></script>
+
+                    <section class="">
+                        <h1 class="section--info-name">
+                            <%= name %>
+                        </h1>
+                        <div class="section__div--info">
+                            <div class="section__div--info-precio">
+                        
+                            <div class="productDetail--descuento">
+                                $<%= price %>
+                            </div>
+                        
+                                        <h3>$<%= price*((100-discount)/100) %></h3>
+
+                                   
+                                    
+                                    <p>precio en un pago</p>
+                              
+                                <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %>
+                                </p>
+                            </div>
+                        </div>
+                            <div class="section__div--info-btn">
+                                <button data-id="<%= id %>" id="btn-addCart" class="main__article_buton">Agregar al
+                                    carrito</button>
+
+                            </div>
+                       
+                        <section class="productDetail__main__images">
+                            <% if (image) { %>
+                                <% image.forEach(image=> { %>
+                                    <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> " alt="">
+                                    <% }) %>
+                                        <% }else{ %>
+                                            <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> "
+                                                alt="">
+                                            <% } %>
+
+
+
+                        </section>
+                    </section>
+
+
+                    <section class="productDetail__main__section section--caracteristicas">
+                        <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
+                        <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este
+                            producto:
+                        </h2>
+
+                        <p class="productDetail__main__section__description">
+
+                            <%= description %>
+                        </p>
+                        <div class="productDetail--review"><iframe src="https://www.youtube.com/embed/<%= linkVideo ? linkVideo.slice(17) : 'UIwtqkMgELo'%>"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe></div>
+                    </section>
+
+
+
+                </main>
+
+                <%- include('../partials/footer.ejs') %>
+                    <%- include('../partials/scripts.ejs',{view:'detail'}) %>
+                        <script src="/js/productDetail.js"></script>
+
+                      
     </body>
 
 </html>

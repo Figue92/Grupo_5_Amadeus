@@ -34,8 +34,9 @@ if(productos){
         `
         cardContainer.innerHTML += template;
     })
-return
+    return
 }
+
 cardContainer.innerHTML = "<h1>Aún no tenes productos favoritos</h1>"
 }
 

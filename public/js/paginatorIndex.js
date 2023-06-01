@@ -18,7 +18,7 @@ const paintProductos = (productos) => {
   containerNewestCard.innerHTML = "";
   productos.forEach(({ id, image, name, description, price, usersFavorites }) => {
     const template =
-      `<div class="card col-md-4" style="width:300px; display: flex; justify-content:center">
+      `<div class="card col-12 col-md-4 card-item-product" style="width:300px; display: flex; justify-content: center">
     <a href=/productos/productDetail/${id}>
     <img src="/images/productos/${image[0].name || 'imageNull.jpeg'}" alt="Imagen del producto" class="card-img-top">
         <h5 class="card-title">${name}</h5>
