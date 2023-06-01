@@ -1,9 +1,11 @@
 /*Header*/
 
 .header{
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);    display: flex;
+    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+    display: flex;
     flex-wrap: wrap-reverse;
     border-bottom: 5px solid #000;
+    justify-content: center;
 }
 
 .header__section {
