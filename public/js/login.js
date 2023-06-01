@@ -4,6 +4,9 @@ window.onload = function () {
     
     let labelEmail = document.querySelector('.login__form--email label');
     let labelPassword = document.querySelector('.login__form--password label');
+
+    let smallEmail = document.querySelector('.login__form--email small');
+    let smallPassword = document.querySelector('.login__form--password small');
     
     let errorsEmail = [];
     let errorsPassword = [];
@@ -12,10 +15,11 @@ window.onload = function () {
     campoVacio(inputPassword, errorsPassword);
 
     function moverLabel(label) {
-        console.log('estamos?');
         label.classList.add('divFocus');
-        let test = document.querySelector('.divFocus');
-        console.log(test);
+    }
+
+    function esconderSmallError(small) {
+        small.hidden = true;
     }
 
     function sacarFocus(label, input) {
@@ -81,8 +85,12 @@ window.onload = function () {
         }
     } */
 
+    if (/[a-zA-Z]/.test(inputEmail.value)) {
+        moverLabel(labelEmail);
+    }
     inputEmail.addEventListener('focus', () => {
         moverLabel(labelEmail);
+        esconderSmallError(smallEmail);
     })
     inputEmail.addEventListener('blur', () => {
         if (campoVacio(inputEmail, errorsEmail)) {
@@ -100,9 +108,9 @@ window.onload = function () {
     })
     inputEmail.addEventListener('input', () => {
         if (campoVacio(inputEmail, errorsEmail) || invalidEmail(inputEmail, errorsEmail) /* || registeredEmail(inputEmail, errorsEmail) */) {
+            addStyleError(inputEmail, labelEmail);
             invalidEmail(inputEmail, errorsEmail);
             /* registeredEmail(inputEmail, errorsEmail); */
-            addStyleError(inputEmail, labelEmail);
         } else {
             addStyleCorrect(inputEmail, labelEmail);
         }
@@ -112,6 +120,7 @@ window.onload = function () {
 
     inputPassword.addEventListener('focus', () => {
         moverLabel(labelPassword);
+        esconderSmallError(smallPassword);
     })
     inputPassword.addEventListener('blur', () => {
         if (campoVacio(inputPassword, errorsPassword)) {
