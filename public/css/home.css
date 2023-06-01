@@ -161,15 +161,7 @@
     vertical-align: middle;
     animation: slideAnimation 7s linear infinite;
 }
-.container-productos-card{
-    position: relative;
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
-}
-.container-productos-card:hover .main__article_buton_cart{
-    display: block;
-}
+
 .main__article_buton_cart{
     display: none;
     position: absolute;
@@ -390,10 +382,10 @@
     pointer-events: none;
 }
 
-#container-productos-card{
+/* #container-productos-card{
     display: flex;
     justify-content: center;
-}
+} */
 
 
 @media (min-width:768px) {
