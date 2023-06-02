@@ -1,5 +1,5 @@
 
-import { CategoryInDb } from '../components/CategoryInDb'
+import { CategoryInDb } from '../components/Categories/CategoryInDb'
 
 
 export const Categorias = () => {

@@ -19,6 +19,15 @@ export const UseFetch = async (endpoint, method = 'GET', data, token= "") => {
                 }
             })
         }
+        if (method === 'DELETE') {
+            response = await fetch(url, {
+                method: 'DELETE',
+                body: data,
+                headers: {
+                    Athorization: token
+                }
+            })
+        }
         let result = await response.json();
         return result;
     } catch (error) { console.error }

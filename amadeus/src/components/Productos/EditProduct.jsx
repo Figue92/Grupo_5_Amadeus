@@ -1,84 +1,107 @@
 import { useState, useEffect } from "react";
-import PropTypes from 'prop-types'
-import { UseFetch } from '../hooks/UseFetch'
+import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import { useFormik } from "formik";
-import validate from "../validations/addProductValidator";
-import { AddImageProduct } from "./AddImageProduct";
+import validate from "../../validations/addProductValidator";
+import { UseFetch } from '../../hooks/UseFetch'
 
-export const AddProduct = ({handleAdd}) => {
 
-  const [productState, setProductState] = useState([]);
-  useEffect(() => {
-    UseFetch('/productos?withPagination=false')
-      .then(({ ok, data }) => {
-        const { productos } = data;
-        setProductState({
-          productos
+
+export const EditProduct = () => {
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true)
+
+    const [productState, setProductState] = useState([]);
+    useEffect(() => {
+      UseFetch('/productos?withPagination=false')
+        .then(({ ok, data }) => {
+          const { productos } = data;
+          setProductState({
+            productos
+          })
         })
-      })
-      .catch(error => console.error)
-  }, []);
-
-  const [categoryState, setCategoryState] = useState({
-    loading: true,
-    categories: []
-  });
-  useEffect(() => {
-    UseFetch('/categorias')
-      .then(({ ok, data }) => {
-
-        const { categories } = data;
-        setCategoryState({
-          loading: false,
-          categories
+        .catch(error => console.error)
+    }, []);
+  
+    const [categoryState, setCategoryState] = useState({
+      loading: true,
+      categories: []
+    });
+    useEffect(() => {
+      UseFetch('/categorias')
+        .then(({ ok, data }) => {
+  
+          const { categories } = data;
+          setCategoryState({
+            loading: false,
+            categories
+          })
         })
-      })
-      .catch(error => console.error)
-  }, []);
-  const [brandState, setBrandState] = useState({
-    loading: true,
-    brands: []
-  });
-  useEffect(() => {
-    UseFetch('/marcas')
-      .then(({ ok, data }) => {
-
-        const { brands } = data;
-        setBrandState({
-          loading: false,
-          brands
+        .catch(error => console.error)
+    }, []);
+    const [brandState, setBrandState] = useState({
+      loading: true,
+      brands: []
+    });
+    useEffect(() => {
+      UseFetch('/marcas')
+        .then(({ ok, data }) => {
+  
+          const { brands } = data;
+          setBrandState({
+            loading: false,
+            brands
+          })
         })
-      })
-      .catch(error => console.error)
-  }, []);
-
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      idBrand: '',
-      idCategory: '',
-      price: '',
-      discount: 0,
-      description: '',
-      linkVideo: '',
-      novelty: false,
-      image_1: null,
-      image_2: null,
-      image_3: null
-
-    },
-    validate,
-    onSubmit: (values) => {
-      let data = new FormData();
-      for (const key in values) {
-        data.append(key, values[key])
+        .catch(error => console.error)
+    }, []);
+  
+    const formik = useFormik({
+      initialValues: {
+        name: '',
+        idBrand: '',
+        idCategory: '',
+        price: '',
+        discount: 0,
+        description: '',
+        linkVideo: '',
+        novelty: false,
+        image_1: null,
+        image_2: null,
+        image_3: null
+  
+      },
+      validate,
+      onSubmit: (values,{resetForm}) => {
+        let data = new FormData();
+        for (const key in values) {
+          data.append(key, values[key])
+          resetForm()
+          handleClose()
+        }
+        handleAdd(data)
+  
       }
-      handleAdd(data)
-    }
-  })
-  return (
-    <>
-      <form className="row" onSubmit={formik.handleSubmit}>
+    })
+
+    return (
+        <>
+            <div className='d-flex justify-content-between'>
+        <Button variant="success" onClick={handleShow}>
+          <i className="fa-solid fa-edit"></i>
+        </Button>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+
+            <Modal.Title>Editar Producto</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+
+          <form className="row" onSubmit={formik.handleSubmit}>
         <div className="col-12 mb-3">
           <label htmlFor="name" className="form-label">
             Nombre *
@@ -205,10 +228,7 @@ export const AddProduct = ({handleAdd}) => {
             <div className="d-flex justify-content-between gap-5">
              
 
-              <AddImageProduct file={formik.values.image_1} setFieldValue={formik.setFieldValue} name={"image_1"} main={false} />
-              <AddImageProduct file={formik.values.image_2} setFieldValue={formik.setFieldValue} name={"image_2"} main={false} />
-              <AddImageProduct file={formik.values.image_3} setFieldValue={formik.setFieldValue} name={"image_3"} main={false} />
-
+           
             </div>
           </div>
         </div>
@@ -219,15 +239,16 @@ export const AddProduct = ({handleAdd}) => {
 
       </form>
 
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
 
-    </>
-  );
+          </Modal.Footer>
+        </Modal>
+
+      </div >
+        </>
+    )
 }
-AddProduct.propTypes = {
-  productos: PropTypes.array,
-  handleAdd: PropTypes.func
-
-
-
-}
-export default AddProduct;

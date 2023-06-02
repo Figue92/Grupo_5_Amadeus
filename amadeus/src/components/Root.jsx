@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from "./Header";
-import Menu from "./Menu";
+import Header from "./Home/Header";
+import Menu from "./Home/Menu";
 
-import Footer from "./Footer";
+import Footer from "./Home/Footer";
 import { Outlet } from "react-router-dom";
 
 

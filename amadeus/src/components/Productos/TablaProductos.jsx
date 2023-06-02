@@ -1,12 +1,12 @@
 import { React, useState, useEffect } from 'react'
-import NuevosProductos from './NuevosProductos'
+import NuevosProductos from '../Productos/NuevosProductos'
 import PropTypes from 'prop-types'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import AddProduct from './AddProduct';
-import { UseFetch } from '../hooks/UseFetch'
+import { UseFetch } from '../../hooks/UseFetch'
 import { useFormik } from "formik";
-import validate from "../validations/addProductValidator";
+import validate from "../../validations/addProductValidator";
 
 
 
@@ -94,6 +94,7 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
               categories={categoryState.categories}
               brands={brandState.brands}
               loading={categoryState.loading}
+              handleClose={handleClose}
               handleAdd={handleAdd} />
 
 

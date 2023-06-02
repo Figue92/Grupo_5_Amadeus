@@ -1,5 +1,5 @@
 import React from 'react'
-import { TablaProductos } from '../components/TablaProductos'
+import { TablaProductos } from '../components/Productos/TablaProductos'
 import { useState, useEffect } from 'react'
 import { UseFetch } from '../hooks/UseFetch'
 

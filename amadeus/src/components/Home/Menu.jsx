@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/Amadeus PC.jpg'
+import logo from '../../assets/images/Amadeus PC.jpg'
 import { Link } from 'react-router-dom'
 
 

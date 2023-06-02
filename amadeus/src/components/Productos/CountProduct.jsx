@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Metric from './Metric'
+import Metric from '../Home/Metric'
 
 export const CountProduct = () => {
 

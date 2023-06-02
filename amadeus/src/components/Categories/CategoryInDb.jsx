@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { UseFetch } from '../hooks/UseFetch'
+import { UseFetch } from '../../hooks/UseFetch'
 import { CategoryCard } from './CategoryCard';
 
 

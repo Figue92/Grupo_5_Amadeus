@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentAll } from "../components/ContentAll";
+import { ContentAll } from "../components/Productos/ContentAll";
 
 
 
