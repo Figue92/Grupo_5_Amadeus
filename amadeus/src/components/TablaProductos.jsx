@@ -10,7 +10,7 @@ import validate from "../validations/addProductValidator";
 
 
 
-export const TablaProductos = ({ productos, brands, categories, loading, pages, currentPage, handleGetPage }) => {
+export const TablaProductos = ({ productos,brands, loading, pages, currentPage, handleGetPage }) => {
   const paginator = [];
   for (let i = 1; i <= pages; i++) {
     paginator.push(i)
@@ -28,10 +28,9 @@ export const TablaProductos = ({ productos, brands, categories, loading, pages, 
     UseFetch('/categorias')
       .then(({ ok, data }) => {
 
-        const { categories } = data;
+        const {categories} = data;
         setCategoryState({
           loading: false,
-          productos: productState.productos,
           categories
         })
       })
@@ -44,11 +43,10 @@ export const TablaProductos = ({ productos, brands, categories, loading, pages, 
   useEffect(() => {
     UseFetch('/marcas')
       .then(({ ok, data }) => {
-        const { brands } = data;
+        console.log({data});
+        const brands = data.brands;
         setBrandState({
           loading: false,
-          productos: productState.productos,
-          categories: categoryState.categories,
           brands
         })
       })
@@ -164,7 +162,7 @@ export const TablaProductos = ({ productos, brands, categories, loading, pages, 
                     Cargando...
                   </td>
                 </tr> :
-                (productos.map(producto => (<NuevosProductos key={producto.id} {...producto} brand={brands.find(brand => brand.id === producto.idBrand)} />)))
+                (productos.map(producto => (<NuevosProductos key={producto.id} {...producto}/>)))
             }
 
 
@@ -176,7 +174,6 @@ export const TablaProductos = ({ productos, brands, categories, loading, pages, 
 }
 TablaProductos.propTypes = {
   productos: PropTypes.array,
-  brands: PropTypes.array,
   pages: PropTypes.number,
   currentPage: PropTypes.number,
   handleGetPage: PropTypes.func

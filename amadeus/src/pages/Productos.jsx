@@ -3,9 +3,6 @@ import { TablaProductos } from '../components/TablaProductos'
 import { useState, useEffect } from 'react'
 import { UseFetch } from '../hooks/UseFetch'
 
-
-
-
 export const Productos = () => {
   const [productState, setProductState] = useState({
     loading: true,

@@ -29,8 +29,7 @@ export const AddProduct = () => {
         const { categories } = data;
         setCategoryState({
           loading: false,
-          productos: productos,
-          categories: categoryState.categories
+          categories
         })
       })
       .catch(error => console.error)
@@ -46,9 +45,7 @@ export const AddProduct = () => {
         const { brands } = data;
         setBrandState({
           loading: false,
-          productos: productos,
-          categories: categoryState.categories,
-          brands: brandState.brands
+          brands
         })
       })
       .catch(error => console.error)
