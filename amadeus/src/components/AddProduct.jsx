@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import { UseFetch } from '../hooks/UseFetch'
 import { useFormik } from "formik";
 import validate from "../validations/addProductValidator";
+import { AddImageProduct } from "./AddImageProduct";
 
-export const AddProduct = () => {
+export const AddProduct = ({handleAdd}) => {
 
   const [productState, setProductState] = useState([]);
   useEffect(() => {
@@ -54,24 +55,30 @@ export const AddProduct = () => {
   const formik = useFormik({
     initialValues: {
       name: '',
-      brand: '',
-      category: '',
+      idBrand: '',
+      idCategory: '',
       price: '',
       discount: 0,
       description: '',
-      onSale: false,
-      isNew: false
+      linkVideo: '',
+      novelty: false,
+      image_1: null,
+      image_2: null,
+      image_3: null
 
     },
     validate,
     onSubmit: (values) => {
-      console.log(values);
+      let data = new FormData();
+      for (const key in values) {
+        data.append(key, values[key])
+      }
+      handleAdd(data)
     }
   })
-
   return (
     <>
-   
+      <form className="row" onSubmit={formik.handleSubmit}>
         <div className="col-12 mb-3">
           <label htmlFor="name" className="form-label">
             Nombre *
@@ -80,22 +87,22 @@ export const AddProduct = () => {
             type="text"
             className={`form-control ${formik.errors.name ? "is-invalid" : !formik.errors.name && formik.values.name ? "is-valid" : null}`}
             name="name" value={formik.values.name}
-            onChange={formik.handleChange} 
+            onChange={formik.handleChange}
           />
           {
             <small className="text-danger">{formik.errors.name}</small>
           }
         </div>
         <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="brand" className="form-label">
+          <label htmlFor="idBrand" className="form-label">
             Marca *
           </label>
           <select
-            className="form-control"
-            name="brand"
-            value={formik.values.brand}
+            className={`form-control ${formik.errors.idBrand ? "is-invalid" : !formik.errors.idBrand && formik.values.idBrand ? "is-valid" : null}`}
+            name="idBrand"
+            value={formik.values.idBrand}
             onChange={formik.handleChange}
-           >
+          >
             <option hidden defaultValue value="">Seleccione...</option>
             {brandState.loading ? (
               <option disabled>Cargando marcas...</option>
@@ -107,12 +114,12 @@ export const AddProduct = () => {
           </select>
         </div>
         <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="category" className="form-label">
+          <label htmlFor="idCategory" className="form-label">
             Categoría *
           </label>
-          <select className="form-control" name="category" value={formik.values.category}
+          <select className={`form-control ${formik.errors.idCategory ? "is-invalid" : !formik.errors.nameCategory && formik.values.nameCategory ? "is-valid" : null}`} name="idCategory" value={formik.values.nameCategory}
             onChange={formik.handleChange}
-            >
+          >
             <option hidden defaultValue value="">Seleccione...</option>
             {categoryState.loading ? (
               <option disabled>Cargando categorías...</option>
@@ -130,10 +137,10 @@ export const AddProduct = () => {
           </label>
           <input
             type="number"
-            className="form-control"
+            className={`form-control ${formik.errors.price ? "is-invalid" : !formik.errors.price && formik.values.price ? "is-valid" : null}`}
             name="price" value={formik.values.price}
             onChange={formik.handleChange}
-         
+
           />
         </div>
         <div className="col-12 col-md-6 mb-3">
@@ -146,7 +153,7 @@ export const AddProduct = () => {
             name="discount"
             value={formik.values.discount}
             onChange={formik.handleChange}
-           
+
           />
         </div>
         <div className="col-12 mb-3">
@@ -154,12 +161,26 @@ export const AddProduct = () => {
             Descripción *
           </label>
           <textarea
-            className="form-control"
-            name="description" 
+            className={`form-control ${formik.errors.description ? "is-invalid" : !formik.errors.description && formik.values.description ? "is-valid" : null}`}
+            name="description"
             style={{ resize: "none" }}
             value={formik.values.description}
             onChange={formik.handleChange}
           ></textarea>
+        </div>
+        <div className="col-12 mb-3">
+          <label htmlFor="linkVideo" className="form-label">
+            Link Video Review
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            name="linkVideo" value={formik.values.linkVideo}
+            onChange={formik.handleChange}
+          />
+          {
+            <small className="text-danger">{formik.errors.name}</small>
+          }
         </div>
         <div className="col-12 mb-3">
           <div className="d-flex justify-content-around">
@@ -173,39 +194,38 @@ export const AddProduct = () => {
               <input className="form-check-input" name="isNew" type="checkbox" role="switch"
                 id="isNew" checked={formik.values.isNew}
                 onChange={formik.handleChange} />
-              <label htmlFor="isNew"className="form-check-label" >Nuevo</label>
+              <label htmlFor="isNew" className="form-check-label" >Nuevo</label>
             </div>
           </div>
 
         </div>
-        <div className="col-12 mb-3">
+        <div className="row">
+        <label htmlFor="">Imágenes</label>
+          <div className="col-4 mb-4">
+            <div className="d-flex justify-content-between gap-5">
+             
 
-          <input
-            className="form-control"
-            type="file"
-            name="image"
-            id="image"
-            hidden
-          />
-          <div className="d-flex align-items-center justify-content-around">
-            <label htmlFor="image" className="btn btn-success my-1"  >
-              Cargar imagenes *
-            </label>
+              <AddImageProduct file={formik.values.image_1} setFieldValue={formik.setFieldValue} name={"image_1"} main={false} />
+              <AddImageProduct file={formik.values.image_2} setFieldValue={formik.setFieldValue} name={"image_2"} main={false} />
+              <AddImageProduct file={formik.values.image_3} setFieldValue={formik.setFieldValue} name={"image_3"} main={false} />
 
+            </div>
           </div>
-
         </div>
 
-      
+        <button className="btn btn-primary my-1" type="submit">
+          Guardar
+        </button>
 
-
+      </form>
 
 
     </>
   );
 }
 AddProduct.propTypes = {
-  productos: PropTypes.array
+  productos: PropTypes.array,
+  handleAdd: PropTypes.func
 
 
 

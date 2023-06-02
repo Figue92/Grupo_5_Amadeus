@@ -4,7 +4,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
 
-const { getAllProductos, getOneProducto, createProducto, updateProducto, destroyProducto, getNewestProductos, getOfferProductos } = require('../../services/productosServices')
+const { getAllProductos, getOneProducto, createProducto, updateProducto, destroyProducto, getNewestProductos, getOfferProductos, storeProduct } = require('../../services/productosServices')
 const createResponseError = ('../helpers/createResponseError.js')
 const { validationResult } = require('express-validator');
 const { getAllCategories } = require('../../services/categoryServices');
@@ -108,7 +108,7 @@ module.exports = {
                     total: 1,
                     url: `/api/productos/${id}`
                 },
-                data:{
+                data: {
                     id: producto.id,
                     name: producto.name,
                     description: producto.description,
@@ -296,6 +296,26 @@ module.exports = {
                 }
             });
         }
-    }
+    },
+    storeImage: async (req, res) => {
+        try {
+            const product = await storeProduct(req)
+
+            return res.status(200).json({
+                ok: true,
+                data:{product}
+
+            })
+        } catch (error) {
+
+            return res.status(error.status || 500).json({
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || 'Ocurrió un error'
+                }
+            })
+        }
+    },
 
 }

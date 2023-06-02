@@ -1,6 +1,7 @@
 
 const router = require('express').Router();
-const {list,detail,store,update,destroy, newest, offer} = require('../../controllers/api/productosApiController');
+const {list,detail,store,update,destroy, newest, offer, storeImage} = require('../../controllers/api/productosApiController');
+const { uploadImages } = require('../../middlewares/upload');
 const productosValidator = require('../../validations/productosValidator')
 
 
@@ -13,6 +14,11 @@ router
 .post('/', productosValidator,store)
 .put('/:id',update)
 .delete('/:id',destroy)
+.post('/productos', uploadImages.fields([
+    {name: 'image_1'},
+    {name: 'image_2'},
+    {name: 'image_3'},
+]), storeImage)
 
 
 module.exports = router;

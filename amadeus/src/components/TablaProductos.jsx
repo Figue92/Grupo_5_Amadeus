@@ -10,7 +10,7 @@ import validate from "../validations/addProductValidator";
 
 
 
-export const TablaProductos = ({ productos,brands, loading, pages, currentPage, handleGetPage }) => {
+export const TablaProductos = ({ productos, loading, pages, currentPage, handleGetPage, handleAdd }) => {
   const paginator = [];
   for (let i = 1; i <= pages; i++) {
     paginator.push(i)
@@ -28,7 +28,7 @@ export const TablaProductos = ({ productos,brands, loading, pages, currentPage, 
     UseFetch('/categorias')
       .then(({ ok, data }) => {
 
-        const {categories} = data;
+        const { categories } = data;
         setCategoryState({
           loading: false,
           categories
@@ -43,7 +43,6 @@ export const TablaProductos = ({ productos,brands, loading, pages, currentPage, 
   useEffect(() => {
     UseFetch('/marcas')
       .then(({ ok, data }) => {
-        console.log({data});
         const brands = data.brands;
         setBrandState({
           loading: false,
@@ -61,13 +60,17 @@ export const TablaProductos = ({ productos,brands, loading, pages, currentPage, 
       price: '',
       discount: 0,
       description: '',
-      onSale: false,
-      isNew: false
+      linkVideo: '',
+      novelty: false
 
     },
     validate,
     onSubmit: (values) => {
-      console.log(values);
+      let data = new FormData();
+      for (const key in values) {
+        data.append(key, values[key])
+      }
+      handleAdd(data)
     }
   })
   return (
@@ -84,18 +87,17 @@ export const TablaProductos = ({ productos,brands, loading, pages, currentPage, 
           </Modal.Header>
 
           <Modal.Body>
-            <form className="row" onSubmit={formik.handleSubmit}>
 
-              <AddProduct
-                productos={categoryState.productos}
-                categories={categoryState.categories}
-                brands={brandState.brands}
-                loading={categoryState.loading} />
-              <button className="btn btn-primary my-1" type="submit">
-                Guardar
-              </button>
 
-            </form>
+            <AddProduct
+              productos={categoryState.productos}
+              categories={categoryState.categories}
+              brands={brandState.brands}
+              loading={categoryState.loading}
+              handleAdd={handleAdd} />
+
+
+
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
@@ -162,7 +164,7 @@ export const TablaProductos = ({ productos,brands, loading, pages, currentPage, 
                     Cargando...
                   </td>
                 </tr> :
-                (productos.map(producto => (<NuevosProductos key={producto.id} {...producto}/>)))
+                (productos.map(producto => (<NuevosProductos key={producto.id} {...producto} />)))
             }
 
 
@@ -176,7 +178,8 @@ TablaProductos.propTypes = {
   productos: PropTypes.array,
   pages: PropTypes.number,
   currentPage: PropTypes.number,
-  handleGetPage: PropTypes.func
+  handleGetPage: PropTypes.func,
+  handleAdd: PropTypes.func
 }
 
 

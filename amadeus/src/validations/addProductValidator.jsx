@@ -3,10 +3,10 @@ const validate = (values) => {
     if(!values.name) {
         errors.name = "Ingresar nombre del producto"
     }
-    if(!values.brands) {
+    if(!values.idBrand) {
         errors.brands = "Seleccionar marca"
     }
-    if(!values.category) {
+    if(!values.idCategory) {
         errors.category = "Seleccionar categoría"
     }
     if(!values.price) {

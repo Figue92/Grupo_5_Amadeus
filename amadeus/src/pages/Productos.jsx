@@ -41,6 +41,15 @@ export const Productos = () => {
       .catch(error => console.error)
   }
 
+const handleAdd = (formdata) => {
+  console.log(formdata);
+  UseFetch('/productos/productos', 'POST', formdata)
+  .then(({ok,data}) => {
+    ok && 
+    console.log(data);
+  })
+}
+
 
   const [categoryState, setCategoryState] = useState({
     loading: true,
@@ -86,7 +95,8 @@ export const Productos = () => {
                 loading={productState.loading}
                 pages={productState.pages}
                 currentPage={productState.currentPage}
-                handleGetPage={handleGetPage} />
+                handleGetPage={handleGetPage} 
+                handleAdd={handleAdd}/>
             </div>
             </div>
       </div>
