@@ -48,7 +48,9 @@ getAllCategories : async () => {
 
 getFindAndCountAllBrands : async () => {
     try {
-      const {count, rows : brands} = await db.Brand.findAndCountAll();
+      const {count, rows : brands} = await db.Brand.findAndCountAll({
+        order : [['name']]
+      });
   return {brands, count} 
  } catch (error){
      throw {
