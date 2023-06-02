@@ -14,7 +14,9 @@ module.exports = {
 },
 getFindAndCountAllCategories : async () => {
     try {
-      const {count, rows : categories} = await db.Category.findAndCountAll();
+      const {count, rows : categories} = await db.Category.findAndCountAll({
+        order : [['name']]
+      });
   return {categories, count} 
  } catch (error){
      throw {

@@ -21,7 +21,7 @@ export const Productos = () => {
           const { productos } = data;
           setProductState({
             loading: false,
-            productos,
+            productos: data.productos,
             pages : data.pages,
             currentPage : data.currentPage
           })
@@ -82,8 +82,14 @@ export const Productos = () => {
         <div className="card-body">
           <div className="row">
             <div className="col-12">
-              <TablaProductos productos={productState.productos}categories={categoryState.categories}brands={brandState.brands}
-                loading={productState.loading}pages={productState.pages}currentPage={productState.currentPage}handleGetPage={handleGetPage} />
+              <TablaProductos 
+              productos={productState.productos}
+              categories={categoryState.categories}
+              brands={brandState.brands}
+                loading={productState.loading}
+                pages={productState.pages}
+                currentPage={productState.currentPage}
+                handleGetPage={handleGetPage} />
             </div>
             </div>
       </div>

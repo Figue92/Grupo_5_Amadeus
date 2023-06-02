@@ -18,6 +18,41 @@ export const AddProduct = () => {
       .catch(error => console.error)
   }, []);
 
+  const [categoryState, setCategoryState] = useState({
+    loading: true,
+    categories: []
+  });
+  useEffect(() => {
+    UseFetch('/categorias')
+      .then(({ ok, data }) => {
+
+        const { categories } = data;
+        setCategoryState({
+          loading: false,
+          productos: productos,
+          categories: categoryState.categories
+        })
+      })
+      .catch(error => console.error)
+  }, []);
+  const [brandState, setBrandState] = useState({
+    loading: true,
+    brands: []
+  });
+  useEffect(() => {
+    UseFetch('/marcas')
+      .then(({ ok, data }) => {
+
+        const { brands } = data;
+        setBrandState({
+          loading: false,
+          productos: productos,
+          categories: categoryState.categories,
+          brands: brandState.brands
+        })
+      })
+      .catch(error => console.error)
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -37,44 +72,6 @@ export const AddProduct = () => {
     }
   })
 
-  const [categoryState, setCategoryState] = useState({
-    loading: true,
-    categories: []
-  });
-  useEffect(() => {
-    UseFetch('/categorias')
-      .then(({ ok, data }) => {
-
-        const { categories } = data;
-        setCategoryState({
-          loading: false,
-          productos: productos,
-          categories
-        })
-      })
-      .catch(error => console.error)
-  }, []);
-  const [brandState, setBrandState] = useState({
-    loading: true,
-    brands: []
-  });
-  useEffect(() => {
-    UseFetch('/marcas')
-      .then(({ ok, data }) => {
-
-        const { brands } = data;
-        setBrandState({
-          loading: false,
-          productos: productos,
-          categories: categoryState.categories,
-          brands
-        })
-      })
-      .catch(error => console.error)
-  }, []);
-
-
-
   return (
     <>
    
@@ -84,9 +81,9 @@ export const AddProduct = () => {
           </label>
           <input
             type="text"
-            className="form-control"
+            className={`form-control ${formik.errors.name ? "is-invalid" : !formik.errors.name && formik.values.name ? "is-valid" : null}`}
             name="name" value={formik.values.name}
-            onChange={formik.handleChange} required
+            onChange={formik.handleChange} 
           />
           {
             <small className="text-danger">{formik.errors.name}</small>
@@ -101,7 +98,7 @@ export const AddProduct = () => {
             name="brand"
             value={formik.values.brand}
             onChange={formik.handleChange}
-            required>
+           >
             <option hidden defaultValue value="">Seleccione...</option>
             {brandState.loading ? (
               <option disabled>Cargando marcas...</option>
@@ -118,7 +115,7 @@ export const AddProduct = () => {
           </label>
           <select className="form-control" name="category" value={formik.values.category}
             onChange={formik.handleChange}
-            required>
+            >
             <option hidden defaultValue value="">Seleccione...</option>
             {categoryState.loading ? (
               <option disabled>Cargando categorías...</option>
@@ -139,7 +136,7 @@ export const AddProduct = () => {
             className="form-control"
             name="price" value={formik.values.price}
             onChange={formik.handleChange}
-            required
+         
           />
         </div>
         <div className="col-12 col-md-6 mb-3">
@@ -152,7 +149,7 @@ export const AddProduct = () => {
             name="discount"
             value={formik.values.discount}
             onChange={formik.handleChange}
-            required
+           
           />
         </div>
         <div className="col-12 mb-3">
@@ -161,10 +158,10 @@ export const AddProduct = () => {
           </label>
           <textarea
             className="form-control"
-            name="description" value={formik.values.description}
-            onChange={formik.handleChange}
-            required
+            name="description" 
             style={{ resize: "none" }}
+            value={formik.values.description}
+            onChange={formik.handleChange}
           ></textarea>
         </div>
         <div className="col-12 mb-3">

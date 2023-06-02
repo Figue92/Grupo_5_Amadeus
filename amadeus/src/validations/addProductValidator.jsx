@@ -1,5 +1,5 @@
 const validate = (values) => {
-    const errors = {}
+    const errors = {};
     if(!values.name) {
         errors.name = "Ingresar nombre del producto"
     }

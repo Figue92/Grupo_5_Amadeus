@@ -6,12 +6,12 @@ import Modal from 'react-bootstrap/Modal';
 import AddProduct from './AddProduct';
 import { UseFetch } from '../hooks/UseFetch'
 import { useFormik } from "formik";
-import validate  from "../validations/addProductValidator";
+import validate from "../validations/addProductValidator";
 
 
 
 export const TablaProductos = ({ productos, brands, categories, loading, pages, currentPage, handleGetPage }) => {
-  const paginator = []
+  const paginator = [];
   for (let i = 1; i <= pages; i++) {
     paginator.push(i)
 
@@ -65,10 +65,10 @@ export const TablaProductos = ({ productos, brands, categories, loading, pages, 
       description: '',
       onSale: false,
       isNew: false
-  
+
     },
     validate,
-    onSubmit : (values) => {
+    onSubmit: (values) => {
       console.log(values);
     }
   })
@@ -81,46 +81,61 @@ export const TablaProductos = ({ productos, brands, categories, loading, pages, 
         </Button>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
+
             <Modal.Title>Agregar Producto</Modal.Title>
           </Modal.Header>
+
           <Modal.Body>
-          <form className="row" onSubmit={formik.handleSubmit}>
-            <AddProduct productos={categoryState.productos} categories={categoryState.categories} brands={brandState.brands} loading={categoryState.loading} />
+            <form className="row" onSubmit={formik.handleSubmit}>
+
+              <AddProduct
+                productos={categoryState.productos}
+                categories={categoryState.categories}
+                brands={brandState.brands}
+                loading={categoryState.loading} />
+              <button className="btn btn-primary my-1" type="submit">
+                Guardar
+              </button>
+
             </form>
           </Modal.Body>
-
           <Modal.Footer>
-            <Button variant="secondary" onClick={formik.handleReset}>
+            <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button type="submit" onClick={formik.handleSubmit}>
-             Submit
-           </Button>
+
           </Modal.Footer>
         </Modal>
 
       </div >
+
       <nav aria-label="Page navigation example">
         <ul className="pagination pagination-sm">
-          <li className="page-item">
-            <a className="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span className="sr-only">Previous</span>
-            </a>
-          </li>
+          {currentPage != 1 && (
+            <li className="page-item">
+              <a className="page-link" href="#" aria-label="Previous" onClick={() => handleGetPage(currentPage - 1)}>
 
+
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          )}
           {
             paginator.map(page => (
-              <li key={page} className={`page-item${page === currentPage && 'active'}`}><a className="page-link" href="#" onClick={() => handleGetPage(page)}>{page}</a></li>
+              <li key={page}
+                className={`page-item${page === currentPage && 'active'}`}>
+                <a className="page-link" href="#" onClick={() => handleGetPage(page)}>{page}</a></li>
             ))
           }
+          {currentPage != pages && (
+            <li className="page-item">
+              <a className="page-link" href="#" aria-label="Next" onClick={() => handleGetPage(currentPage + 1)}>
+                <span aria-hidden="true">&raquo;</span>
 
-          <li className="page-item">
-            <a className="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span className="sr-only">Next</span>
-            </a>
-          </li>
+              </a>
+            </li>
+          )}
+
         </ul>
       </nav>
       <hr />
@@ -164,7 +179,7 @@ TablaProductos.propTypes = {
   brands: PropTypes.array,
   pages: PropTypes.number,
   currentPage: PropTypes.number,
-  handleGetPage: PropTypes.func.isRequired
+  handleGetPage: PropTypes.func
 }
 
 
