@@ -1,5 +1,6 @@
 .register__main {
     padding: 1% 2.5%;
+    padding-top: 50px;
     font-family: var(--tipografiaForms);
     text-align: center;
 }
@@ -149,6 +150,10 @@
     left: 18px;
     top: 18px;
     margin-top: 0;
+}
+
+.register__form div ul li {
+    margin-left: 0px;
 }
 
 .button-submit {

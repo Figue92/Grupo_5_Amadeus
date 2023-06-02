@@ -1,42 +1,61 @@
-.profile {/* width: 60%; */font-family: var(--tipografiaPrincipal);font-family: Arial, sans-serif;padding: 20px;border: 1px solid #ccc;border-radius: 5px;background-color: #fff;}
-  
-.card-info-profile{
+.profile {
+  /* width: 60%; */
+  font-family: var(--tipografiaPrincipal);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  padding-top: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.card-info-profile {
   width: 100%;
 }
-.profile__titulo{
-    font-family: var(--tipografiaPrincipal);
+
+.profile__titulo {
+  font-family: var(--tipografiaPrincipal);
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.profile h1 {
+  font-family: var(--tipografiaPrincipal);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile p {
+  font-family: var(--tipografiaPrincipal);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-label {
+  font-family: var(--tipografiaPrincipal);
+}
+
+.buttons__primary {
+  font-family: var(--tipografiaPrincipal);
+  padding: 10px 5px;
+  font-size: 10px;
+  background: lightskyblue;
+  border: none;
+  border-radius: 5px;
+  transition: 1s all;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (min-width:769px) {
+  .profile {
+    padding-top: 50px;
   }
-  .profile img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  .profile h1 {
-    font-family: var(--tipografiaPrincipal);
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .profile p {
-    font-family: var(--tipografiaPrincipal);
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  .form-label{
-    font-family: var(--tipografiaPrincipal);
-  }
-  .buttons__primary{
-    font-family: var(--tipografiaPrincipal);
-    padding: 10px 5px;
-    font-size: 10px;
-    background: lightskyblue;
-    border: none;
-    border-radius: 5px;
-    transition: 1s all;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+}

@@ -18,3 +18,22 @@ font-size: 14px;
 .faq-answer{
     font-size: 10px;
 }
+
+.main__dashboard {
+    padding-top: 80px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+@media (min-width : 426px) {
+    .main__dashboard {
+        padding-top: 70px;
+    }
+}
+
+@media (min-width : 769px) {
+    .main__dashboard {
+        padding-top: 40px;
+    }
+}

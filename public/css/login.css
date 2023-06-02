@@ -1,5 +1,6 @@
 .login__main {
     padding: 1% 2.5%;
+    padding-top: 50px;
     font-family: var(--tipografiaForms);
     text-align: center;
 }
@@ -112,6 +113,10 @@
     left: 0;
     top: 32px;
     margin-top: 0;
+}
+
+.login__form div ul li {
+    margin-left: 0px;
 }
 
 .buttonLogin-submit {

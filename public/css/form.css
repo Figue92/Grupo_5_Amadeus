@@ -1,5 +1,6 @@
 .form__main {
     padding: 0 2.5%;
+    padding-top: 100px;
     font-family: var(--tipografiaForms);
     text-align: center;
 }
@@ -136,6 +137,8 @@
     background: #FFF;
     border: 1px solid #000;
     width: 70%;
+    display: flex;
+    justify-content: center;
 }
 
 .form__button--google a {
@@ -264,6 +267,10 @@ padding: 32px;
     width: 50vh
  }
 @media (min-width: 426px) {
+    .form__main {
+        padding-top: 70px;
+    }
+
     .form__main--registro {
         width: 70%;
         margin: 0 auto;
@@ -275,6 +282,7 @@ padding: 32px;
 
     .form__button--google img {
         width: 30px;
+        margin-left: 20px;
     }
 
     .form__main--registro div label {

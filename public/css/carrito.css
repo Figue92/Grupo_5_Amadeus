@@ -1,3 +1,7 @@
+.main__carrito {
+    padding-top: 100px;
+}
+
 .container-cart {
 
     font-family: var(--tipografiaPrincipal);
@@ -95,7 +99,9 @@
 
 
 @media (min-width: 426px) {
-
+    .main__carrito {
+        padding-top: 80px;
+    }
 
     .direccion {
         font-size: 26px;
@@ -165,5 +171,11 @@
         flex-wrap: nowrap;
         align-items: center;
 
+    }
+}
+
+@media (min-width : 769px) {
+    .main__carrito {
+        padding-top: 50px;
     }
 }
