@@ -2,9 +2,13 @@
     padding-top: 100px;
 }
 
-.container-cart {
+.container-cart-box {
+font-family: var(--tipografiaPrincipal);
+flex-direction: row;
+position: relative;
+justify-content: space-around;
 
-    font-family: var(--tipografiaPrincipal);
+
 }
 
 .btn-clear {
@@ -25,25 +29,33 @@
     justify-content: space-around;
 } */
 .card-cart {
-    width: 50%;
+width:300px;
     display: flex;
     gap: 15px;
     animation: fondoAnimado 10s infinite;
-    background-image: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: none;
     border-radius: 15px;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
-    margin-right: 10px;
+  
+    margin: 10px;
+
 
 }
+
+
 
 .info-card-cart {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    
+}
+.card-box-container{
+width: 100%;
+
 }
 
 /* COMO QUERES PAGAR */
@@ -102,7 +114,9 @@
     .main__carrito {
         padding-top: 80px;
     }
-
+.container-cart-box{
+    flex-direction: column;
+}
     .direccion {
         font-size: 26px;
         text-align: center;

@@ -14,8 +14,8 @@
     justify-content: center;
 }
 
-.section--imagenPrincipal img {
-    width: 60%;
+.productDetail__main__section-imagenPrincipal img {
+width: 200px;
     display: block;
     margin: 0 auto;
 }
@@ -158,8 +158,8 @@ a {
 }
 
 @media (min-width: 426px) {
-    .section--imagenPrincipal img {
-        width: 10%;
+    .productDetail__main__section-imagenPrincipal img  {
+        width: 50%;
     }
 }
 

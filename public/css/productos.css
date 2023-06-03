@@ -1,5 +1,5 @@
 
-.container-productos-card:hover .main__article_buton_cart{
+.card-item-product:hover .main__article_buton_cart{
     display: block;
 }
 

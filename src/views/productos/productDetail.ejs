@@ -1,82 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head.ejs') %>
-<%- include('../partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
+
         <body>
-                <main class="productDetail__main">
+            <main class="productDetail__main">
+                <h1 class="section--info-name">
+                    <%= name %>
+                </h1>
+                <section class="section__div--info">
                     <section class="productDetail__main__section-imagenPrincipal">
                         <img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="">
                     </section>
 
+                    <div>
+                        <div class="section__div--info-precio">
 
-                    <section class="">
-                        <h1 class="section--info-name">
-                            <%= name %>
-                        </h1>
-                        <div class="section__div--info">
-                            <div class="section__div--info-precio">
-                        
                             <div class="productDetail--descuento">
                                 $<%= price %>
                             </div>
-                        
-                                        <h3>$<%= price*((100-discount)/100) %></h3>
 
-                                   
-                                    
-                                    <p>precio en un pago</p>
-                              
-                                <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %>
-                                </p>
-                            </div>
+                            <h3>$<%= price*((100-discount)/100) %></h3>
+                               <p>precio en un pago</p>
+
+                            <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %></p>
                         </div>
-                            <div class="section__div--info-btn">
-                                <button data-id="<%= id %>" id="btn-addCart" class="main__article_buton">Agregar al
-                                    carrito</button>
+                    </div>
+                    <div class="section__div--info-btn">
+                        <button data-id="<%= id %>" id="btn-addCart" class="main__article_buton">Agregar al carrito</button>
+                    </div>
+                </section>
 
-                            </div>
-                       
-                        <section class="productDetail__main__images">
-                            <% if (image) { %>
-                                <% image.forEach(image=> { %>
+                <section class="productDetail__main__images">
+                    <% if (image) { %>
+                        <% image.forEach(image=> { %>
+                            <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> " alt="">
+                            <% }) %>
+                                <% }else{ %>
                                     <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> " alt="">
-                                    <% }) %>
-                                        <% }else{ %>
-                                            <img src="/images/productos/<%= image ? image.name : 'imageNull.jpeg'%> "
-                                                alt="">
-                                            <% } %>
+                                    <% } %>
 
 
 
-                        </section>
-                    </section>
+                </section>
 
 
-                    <section class="productDetail__main__section section--caracteristicas">
-                        <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
-                        <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este
-                            producto:
-                        </h2>
 
-                        <p class="productDetail__main__section__description">
+                <section class="productDetail__main__section section--caracteristicas row justify-content-center">
+                    <h2 class="productDetail__main__section--detallesMobile">ver más detalles del producto</h2>
+                    <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:
+                    </h2>
 
-                            <%= description %>
-                        </p>
-                        <div class="productDetail--review"><iframe src="https://www.youtube.com/embed/<%= linkVideo ? linkVideo.slice(17) : 'UIwtqkMgELo'%>"
+                    <p class="productDetail__main__section__description"><%= description %></p>
+
+                    <div class="productDetail--review pb-5"><iframe
+                            src="https://www.youtube.com/embed/<%= linkVideo ? linkVideo.slice(17) : 'UIwtqkMgELo'%>"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe></div>
-                    </section>
+                </section>
 
 
 
-                </main>
+            </main>
 
-                <%- include('../partials/footer.ejs') %>
-                    <%- include('../partials/scripts.ejs',{view:'detail'}) %>
-                        <script src="/js/productDetail.js"></script>
+            <%- include('../partials/footer.ejs') %>
+                <%- include('../partials/scripts.ejs',{view:'detail'}) %>
+                    <script src="/js/productDetail.js"></script>
 
-                      
-    </body>
+
+        </body>
 
 </html>

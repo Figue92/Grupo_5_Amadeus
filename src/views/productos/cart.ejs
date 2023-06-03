@@ -5,33 +5,36 @@
   <body class="cart">
 
     <%- include('../partials/header.ejs') %>
-      
-        <main class="container-cart main__carrito">
-          <div class="row column position-relative">
-            <div id="card-box-container" class="col-8"></div>
-            
-            <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:30px;right:-10px;bottom:10px;">
-              <div class="card-body my-2 d-flex flex-column gap-2">
-                <button class="btn w-100 btn-danger" id="clear-cart">Vaciar Carrito</button>
-                <button class="btn w-100 btn-success" id="btn-buy">Comprar</button>
-                <a href="/productos/productos" class="btn w-100 btn-dark">Seguir mirando</a>
-                <div class="text-end fs-3">
-                  <span>
-                    Total:
-                  </span>
-                  <output id="output-total">
-                    0
-                  </output>
-                </div>
+
+      <main class="container-cart main__carrito">
+        <div class="container-cart-box">
+          <div id="card-box-container" class="col-8 card-box-container"></div>
+
+          <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:30px;right:-10px;bottom:10px;">
+            <div class="card-body my-2 d-flex flex-column gap-2">
+              <button class="btn w-100 btn-danger" id="clear-cart">Vaciar Carrito</button>
+              <button class="btn w-100 btn-success" id="btn-buy">Comprar</button>
+              <a href="/productos/productos" class="btn w-100 btn-dark">Seguir mirando</a>
+              <div class="text-end fs-3">
+                <span>
+                  Total:
+                </span>
+                <output id="output-total">
+                  0
+                </output>
               </div>
             </div>
           </div>
+        </div>
 
-        </main>
+      </main>
 
-        <%- include('../partials/footer.ejs') %>
-          <script src="/js/cart.js"></script>
+      <%- include('../partials/footer.ejs') %>
+        <script src="/js/cart.js"></script>
 
   </body>
+
+
+
 
 </html>
