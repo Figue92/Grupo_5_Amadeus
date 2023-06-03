@@ -176,6 +176,6 @@
 
 @media (min-width : 769px) {
     .main__carrito {
-        padding-top: 50px;
+        /* padding-top: 50px; */
     }
 }

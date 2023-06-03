@@ -1,6 +1,6 @@
 .register__main {
     padding: 1% 2.5%;
-    padding-top: 50px;
+    padding-top: 70px;
     font-family: var(--tipografiaForms);
     text-align: center;
 }
@@ -76,7 +76,8 @@
 }
 
 .register__form .register__form--spam { 
-    margin: 10px 0;
+    margin: 10px 0px;
+    text-align: left;
 }
 
 .register__form--spam .checkbox {
@@ -198,5 +199,9 @@
 
     .register__form--tituloTel {
         margin-left: 14px;
+    }
+
+    .register__main {
+        padding-top: 80px;
     }
 }

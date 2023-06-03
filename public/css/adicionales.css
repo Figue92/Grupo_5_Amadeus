@@ -1,5 +1,5 @@
 .preguntas-frecuentes-section{
-    padding-top: 45px;
+    padding-top: 90px;
      font-family: var(--tipografiaPrincipal);
      display: flex;
      flex-direction: column;
@@ -34,6 +34,6 @@ font-size: 14px;
 
 @media (min-width : 769px) {
     .main__dashboard {
-        padding-top: 40px;
+        /* padding-top: 40px; */
     }
 }
