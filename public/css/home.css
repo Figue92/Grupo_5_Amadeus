@@ -7,15 +7,14 @@ padding-top: 100px;
 
 .main__productos {
     background-color: black;
-
+    padding-top: 50px;
 }
 
 .main__section {
-    background: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
     display: flex;
     justify-content: space-evenly;
-    height: 60px;
-    align-items: center;
+    height: 40px;
+    align-items: flex-end;
 }
 
 .main__section--burguer-menu i {
@@ -24,19 +23,20 @@ padding-top: 100px;
 }
 
 .main__section--search-box input {
-
-    display: none;
+    border-radius: 20px;
+    width: 70vw;
 }
 
 .main__section--search-box button {
     background-color: transparent;
     border: none;
     border-radius: 50%;
-    width: 100%;
+    width: 5%;
 }
 
 .main__section--search-box form {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .main__section__nav {
@@ -309,10 +309,10 @@ padding-top: 100px;
 }
 
 .button-burguer {
-    width: 50%;
+    width: 15%;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .busqueda-menu {
@@ -323,11 +323,11 @@ padding-top: 100px;
 }
 
 .main__section {
-    /* width: 50%; */
+    width: 85%;
 }
 
 .mobile-hidden {
-    display: none;
+
 }
 
 .buscador-movil {
@@ -425,7 +425,7 @@ padding-top: 100px;
     }
 
     .main__section--search-box button {
-        width: 10%;
+        width: 5%;
     }
 
 
@@ -521,7 +521,7 @@ padding-top: 100px;
 
 @media (min-width:1024px) {
       .main{
-        padding-top: 50px;
+        padding-top: 90px;
     }
        
     .home__main__section--banner {

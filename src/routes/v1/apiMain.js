@@ -1,8 +1,10 @@
 
 const router = require('express').Router();
-const { metrics } = require('../../controllers/api/mainApiController');
+const { metrics, search } = require('../../controllers/api/mainApiController');
 
 
-router.get('/metrics',metrics)
+router
+    .get('/metrics',metrics)
+    .get('/search', search)
 
 module.exports = router;

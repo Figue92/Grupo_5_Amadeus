@@ -5,15 +5,14 @@
   border-radius: 10px;
   padding: 0 !important; /* para pisar el padding de bootstrap */
 }
+
 #menu {
  display: none;
- flex-direction: column;
  position: absolute;
- top:12%;
- left: 15px;
- width: 50%;
- background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
- border: 1px solid #ccc;
+ top: 0px;
+ left: 0px;
+ width: 100%;
+ background: red; /* linear-gradient(90deg, rgba(153,59,241,0.5) 0%, rgba(90,194,187,0.5) 45%, rgba(205,24,104,0.5) 100%); */
  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
  z-index: 1;
 }
@@ -22,26 +21,29 @@
   width: 100%;
   font-size: 12px;
   cursor: pointer;
-  background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
-  border-radius: 10px;
+  background: transparent;
+  border: none;
 }
 
 #menu-toggle:focus {
   outline: none;
 }
 
-#menu-toggle.active {
+/* #menu-toggle.active {
   transform: rotate(90deg);
-}
+} */
 
 #menu-toggle.active + #menu {
   display: block;
 }
+
 .busqueda-menu{
   display: flex;
-  /* flex-direction: row; */
   gap: 5px;
-  width: 40%;
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  left: 0px;
 }
   
 /* #navbar-toggle {
@@ -94,16 +96,46 @@
   top: 50px;
   background-color: #fff;
   padding: 10px;
-  z-index: 1;
+  
 }
 
 .menu-burguer-ul{
-  background: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
-
-  display: flex;
-  flex-direction: column;
+  display: inherit;
+  width: 100%;
+  max-width: 200px;
+  height: 100vh;
+  background-image: linear-gradient(90deg, rgba(153, 59, 241, 0.9) 0%, rgba(90, 194, 187, 0.9) 45%, rgba(205, 24, 104, 0.9) 100%);
+  position: absolute;
+  top: 48px;
+  padding-left: 0px;
   margin: 0;
-  padding: 15px;
+}
+
+.menu-burguer-ul li {
+  width: 100%;
+  margin-left: 0;
+  padding: 10px;
+  padding-left: 0px;
+}
+
+.menu-burguer-ul li a {
+  width: 100%;
+  padding: 10px;
+  color: black;
+  border-left: 5px solid transparent;
+  font-family: var(--bs-body-font-family);
+}
+
+.menu-burguer-ul li:hover {
+  background-image: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
+}
+
+.menu-burguer-ul li:hover a {
+  border-left: 5px solid rgba(90, 194, 187, 1);
+}
+
+#menu-toggle .bar {
+  max-width: 25px;
 }
 
 /* .navbar-menu ul li a {
@@ -114,4 +146,11 @@
 /* Mostramos el menú desplegable cuando el input está seleccionado */
 #navbar-toggle:checked+.navbar-toggle-label+.navbar-menu {
   display: block;
+}
+
+@media (min-width : 426px) {
+  .busqueda-menu {
+    padding-bottom: 5px;
+    justify-content: center;
+  }
 }

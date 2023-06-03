@@ -16,8 +16,8 @@
   </section>
   <section class="main__section">
     <div class="main__section--search-box">
-      <form action="" method="GET">
-        <input id="buscador" type="text" name="keywords" placeholder="¿Qué estas buscando?" class="mobile-hidden">
+      <form action="/search" method="GET">
+        <input id="buscador" type="text" name="keywords" placeholder="¿Qué estas buscando?" class="mobile-hidden" value= "<%= keywords ? keywords : '' %>">
         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>

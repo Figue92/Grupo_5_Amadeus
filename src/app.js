@@ -53,6 +53,11 @@ app
 .use(cors())
 .use(passport.initialize())
 .use(passport.session())
+/* para pasarle keywords a todas las vistas ya que utilizan el buscador */
+.use((req, res, next) => {
+  res.locals.keywords = req.query.keywords || null;
+  next();
+});
 
 
 

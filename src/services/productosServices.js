@@ -84,7 +84,7 @@ const getOneProducto = async (req, id) => {
                 }
             ],
             attributes: {
-                include: [literalQueryUrl(req, "productos", "Product.id"), ["linkVideo"]],
+                include: [literalQueryUrl(req, "productos", "Product.id"), "linkVideo"],
 
 
             }
@@ -281,7 +281,7 @@ const storeProduct = async (req) => {
         const files = [];
         console.log(req.files);
         for (const key in req.files) {
-         files.push(req.files[key][0].filename)
+            files.push(req.files[key][0].filename)
         }
 
         const newProduct = await db.Product.create({
@@ -303,7 +303,7 @@ const storeProduct = async (req) => {
             })
         });
 
-        const product = await getOneProducto(req,newProduct.id);
+        const product = await getOneProducto(req, newProduct.id);
         return product
 
     } catch (error) {
