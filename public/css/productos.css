@@ -1,15 +1,3 @@
-.container-productos-card{
-    width: 90%;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    justify-content: center;
-    margin: 0 auto;
-}
-.container-productos-card:hover .main__article_buton_cart{
-    display: block;
-}
 
 .container-productos-card:hover .main__article_buton_cart{
     display: block;
