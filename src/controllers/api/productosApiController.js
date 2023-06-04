@@ -114,7 +114,10 @@ module.exports = {
                     description: producto.description,
                     price: producto.price,
                     discount: producto.discount,
-                    linkVideo: producto.linkVideo
+                    image: producto.image,
+                    linkVideo: producto.linkVideo,
+                    brand: producto.brand.name,
+                    category: producto.category.nameCategory
 
                 }
             }
@@ -219,7 +222,13 @@ module.exports = {
             });
 
         } catch (error) {
-            return createResponseError(res, error);
+            return res.status(error.status || 500).json({
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || 'Ocurrió un error'
+                }
+            })
         }
     },
     newest: async (req, res) => {
@@ -303,7 +312,7 @@ module.exports = {
 
             return res.status(200).json({
                 ok: true,
-                data:{product}
+                data: { product }
 
             })
         } catch (error) {

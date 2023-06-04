@@ -15,18 +15,19 @@ export const UseFetch = async (endpoint, method = 'GET', data, token= "") => {
                 method: 'POST',
                 body: data,
                 headers: {
-                    Athorization: token
+                    Authorization: token
                 }
             })
         }
         if (method === 'DELETE') {
             response = await fetch(url, {
                 method: 'DELETE',
-                body: data,
                 headers: {
-                    Athorization: token
-                }
-            })
+                    'Content-Type': 'application/json',
+                    Authorization: token
+                },
+                body: JSON.stringify(data)
+            });
         }
         let result = await response.json();
         return result;

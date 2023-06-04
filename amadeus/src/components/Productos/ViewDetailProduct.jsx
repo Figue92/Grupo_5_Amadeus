@@ -2,35 +2,43 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState, useEffect, React } from 'react'
 import { UseFetch } from '../../hooks/UseFetch'
+import { OneProduct } from './OneProduct';
+import PropTypes from 'prop-types'
 
 
 
-export const ViewDetailProduct = ({id}) => {
+export const ViewDetailProduct = () => {
+
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
 
-    const [productState, setProductState] = useState({
-        loading: true,
-        productos: [],
-        pages: null,
-        currentPage: null
     
-      });
-        useEffect(() => {
-          UseFetch(`/productos/${id}`)
-            .then(({ ok, data }) => {
-             
-              const { productos } = data;
-              setProductState({
-                loading: false,
-                productos: data.productos,
-             
-              })
+    
+      useEffect(() => {
+        fetch(`http://localhost:3000/api/productos/${id}`)
+            .then(response => {
+
+                return response.json()
+
             })
-            .catch(error => console.error)
-        }, []);
+            .then(({ ok, data }) => {
+
+                if (ok) {
+                    const { producto } = data;
+                    setState({
+                        ...state,
+                        producto: {
+                            ...state.producto
+                        },
+
+                    });
+                }
+            }).catch(error => console.log(error))
+
+
+    }, [])
 
     return (
         <>
@@ -46,7 +54,7 @@ export const ViewDetailProduct = ({id}) => {
 
           <Modal.Body>
 
-
+<OneProduct {...state.producto}/>
 
           </Modal.Body>
           <Modal.Footer>
@@ -61,3 +69,4 @@ export const ViewDetailProduct = ({id}) => {
         </>
     )
 }
+
