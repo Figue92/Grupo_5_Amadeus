@@ -6,6 +6,17 @@ const URL_API_SERVER = "http://localhost:3000/api" */
 
 let firstProducto = 0;
 let lastProducto = 4;
+
+let windowWidth = window.innerWidth || documentElement.clientWidth;
+
+if(windowWidth < 426){
+  lastProducto = 1;
+}
+
+if(windowWidth > 425 && windowWidth < 769){
+  lastProducto = 3;
+}
+
 const apiGetOfferProductos = "http://localhost:3000/api/productos/offer";
 
 const getOfferProductos = () =>
