@@ -176,9 +176,43 @@
     margin: 0;
 }
 
+.avatar__register{
+    width: 70%;
+    height: 120px;
+}
+
+.avatar__register label {
+    display: flex;
+    justify-content: center;
+}
+
+.avatar__register img {
+    width: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.avatar__register:hover img{
+    cursor: pointer;
+}
+
+.avatar__register>input {
+    display: none;
+}
+
+canvas {
+    /* background-color: aquamarine; */
+}
+
 @media (max-width: 425px){
     .register__form div label{ 
         font-size: 12px;
+    }
+}
+
+@media (min-width : 321px) {
+    .avatar__register{
+        height: 150px;
     }
 }
 
@@ -189,6 +223,17 @@
 
     .register__form--tituloTel {
         margin-left: 12px;
+    }
+
+    .avatar__register > label img {
+        display: block;
+        width: 250px;
+        height: 300px;
+        margin: 10px auto;
+    }
+
+    .avatar__register{
+        height: 200px;
     }
 }
 
