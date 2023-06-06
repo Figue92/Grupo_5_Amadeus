@@ -8,7 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 import { TrashDelete } from './TrashDelete';
 
 
-export default function NuevosProductos({ id, name, price, category, description, brand, discount, novelty, image }) {
+export default function NuevosProductos({ id, name, price, category, description, brand, discount, novelty, image, updProducto }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
@@ -27,7 +27,26 @@ export default function NuevosProductos({ id, name, price, category, description
 
 
     });
-
+    const [setProductoEditado, setEditProducto] = useState(null)
+    const handleEdit = (id) => {
+      id ? UseFetch(`/productos/${id}`)
+      .then(({ok, data}) =>{
+    ok && setEditProducto(data.producto)
+      })
+      .catch(()=> console.error)
+      : setEditProducto(null)
+    }
+    
+    const handleUpdate = (formdata) => {
+      UseFetch(`/productos/${updProducto.id}`, 'PATCH', formdata)
+      .then(({ok}) => {
+        if(ok){
+          setEditProducto(null)
+          
+        }
+      })
+    }
+    
 
     return (
 
@@ -72,7 +91,7 @@ export default function NuevosProductos({ id, name, price, category, description
                         </Modal>
 
                     </div >
-                    <EditProduct/>
+                 {/*    <EditProduct  {...state.producto} handleUpdate={handleUpdate} handleEdit={handleEdit} updProducto={updProducto}/> */}
                     <TrashDelete id={id} name={name}/>
 
                 </div>
@@ -91,5 +110,8 @@ NuevosProductos.propTypes = {
     brand: PropTypes.object,
     discount: PropTypes.number,
     novelty: PropTypes.bool,
-    productos: PropTypes.array
+    productos: PropTypes.array,
+    updProducto: PropTypes.object,
+    handleEdit: PropTypes.func
+
 }

@@ -7,7 +7,7 @@
       "category": "Motherboard",
       "marca": "Gigabyte",
       "discount": 20,
-      "novedad": false,
+      "novedad": true,
       "image": [
         "1000.png",
          "mother giga.png",
@@ -36,8 +36,9 @@
       "category": "Memorias Ram",
       "marca": "Adata",
       "discount": 30,
-      "novedad": false,
+      "novedad": true,
       "image": [
+         "memoriaAdata.png",
          "1678826638024_products_.jpg"
       ]
    },
@@ -49,7 +50,7 @@
       "category": "Procesadores",
       "marca": "AMD",
       "discount": 20,
-      "novedad": false,
+      "novedad": true,
       "image": [
          "1678827340469_products_.jpg"
       ]
@@ -64,6 +65,7 @@
       "discount": 0,
       "novedad": true,
       "image": [
+         "auricular_p33_4auricular_p331-2b64876e71d6199a0516796982575071-640-0.webp",
          "1678826894003_products_.jpg"
       ]
    },
@@ -77,6 +79,7 @@
       "discount": 40,
       "novedad": true,
       "image": [
+         "ARES.png",
          "1678826958082_products_.jpg"
       ]
    },
@@ -101,6 +104,7 @@
       "discount": 40,
       "novedad": false,
       "image": [
+         "placaMSI.png",
          "1678827485714_products_.jpg"
       ]
    },
@@ -209,6 +213,7 @@
       "discount": 0,
       "novedad": true,
       "image": [
+         "1683577369280_products_.png",
        "Teclado_Redragon_Harpe_PRO_K503_RGB_ESP_96243639-grn.jpg",
        "Teclado2_Redragon_Harpe_PRO_K503_RGB_ESP_7e706869-grn.jpg",
        "Teclado3_Redragon_Harpe_PRO_K503_RGB_ESP_067c00e5-grn.jpg",
@@ -225,6 +230,7 @@
       "discount": 0,
       "novedad": false,
       "image": [
+         "ddr5-4800_u-dimm_memory_module_8gb_retail.png",
        "Procesador_AMD_Ryzen_3_4100___Wraith_Stealth_Cooler_AM4_5b8b5ef2-grn.jpg",
        "Procesador2_AMD_Ryzen_3_4100___Wraith_Stealth_Cooler_AM4_52a768ad-grn.jpg"
            ]

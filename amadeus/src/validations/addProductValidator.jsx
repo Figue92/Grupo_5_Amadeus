@@ -4,19 +4,19 @@ const validate = (values) => {
         errors.name = "Ingresar nombre del producto"
     }
     if(!values.idBrand) {
-        errors.brands = "Seleccionar marca"
+        errors.idBrand = "Seleccionar marca"
     }
     if(!values.idCategory) {
-        errors.category = "Seleccionar categoría"
+        errors.idCategory = "Seleccionar categoría"
     }
-    if(!values.price) {
+    if(!values.price || values.price < 1) {
         errors.price = "Ingresar precio del producto"
-    }
-    if(!values.discount) {
-        errors.discount = "Ingresar descuento del producto"
     }
     if(!values.description) {
         errors.description = "Ingresar descripcion del producto"
+    }
+      if(!values.linkVideo) {
+        errors.linkVideo = "Ingresar link del video del producto"
     }
     return errors
 }

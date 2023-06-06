@@ -1,21 +1,23 @@
+import React from 'react'
 import { PropTypes } from "prop-types";
 import { useState, useEffect } from "react";
 
-export const AddImageProduct = ({file, setFieldValue, main, name}) => {
+export const EditImageProduct = ({file, setFieldValue, main, name})=> {
 
     const [preview,setPreview] = useState(null);
 
     useEffect(() => {
 const reader = new FileReader();
-if(file){
+if(typeof file === 'object' && file !== null){
     reader.readAsDataURL(file)
     reader.onload = () => {
         setPreview(reader.result)
     }
 }
     }, [file])
+
   return (
-<div className="d-flex flex-column align-items-center">
+    <div className="d-flex flex-column align-items-center">
     {file ? (
       <>
         <div className="position-relative">
@@ -23,7 +25,7 @@ if(file){
             className="mb-3"
             width={"100px"}
             height={"100px"}
-            src={preview}
+            src={preview || file}
             alt=""
           />
           <button
@@ -79,11 +81,10 @@ if(file){
   </div>
   )
 }
-AddImageProduct.propTypes = {
+EditImageProduct.propTypes = {
     file: PropTypes.object,
     setFieldValue: PropTypes.func,
     main: PropTypes.bool,
     name: PropTypes.string,
     values: PropTypes.object,
   };
-

@@ -33,4 +33,3 @@ export const UseFetch = async (endpoint, method = 'GET', data, token= "") => {
         return result;
     } catch (error) { console.error }
 }
-

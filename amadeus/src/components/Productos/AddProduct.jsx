@@ -115,6 +115,9 @@ export const AddProduct = ({handleAdd, handleClose}) => {
               ))
             )}
           </select>
+          {
+            <small className="text-danger">{formik.errors.idBrand}</small>
+          }
         </div>
         <div className="col-12 col-md-6 mb-3">
           <label htmlFor="idCategory" className="form-label">
@@ -133,6 +136,9 @@ export const AddProduct = ({handleAdd, handleClose}) => {
               ))
             )}
           </select>
+          {
+            <small className="text-danger">{formik.errors.idCategory}</small>
+          }
         </div>
         <div className="col-12 col-md-6 mb-3">
           <label htmlFor="price" className="form-label">
@@ -145,6 +151,9 @@ export const AddProduct = ({handleAdd, handleClose}) => {
             onChange={formik.handleChange}
 
           />
+            {
+            <small className="text-danger">{formik.errors.price}</small>
+          }
         </div>
         <div className="col-12 col-md-6 mb-3">
           <label htmlFor="discount" className="form-label">
@@ -158,6 +167,7 @@ export const AddProduct = ({handleAdd, handleClose}) => {
             onChange={formik.handleChange}
 
           />
+
         </div>
         <div className="col-12 mb-3">
           <label htmlFor="description" className="form-label">
@@ -171,6 +181,9 @@ export const AddProduct = ({handleAdd, handleClose}) => {
             onChange={formik.handleChange}
           ></textarea>
         </div>
+        {
+            <small className="text-danger">{formik.errors.description}</small>
+          }
         <div className="col-12 mb-3">
           <label htmlFor="linkVideo" className="form-label">
             Link Video Review
@@ -182,7 +195,7 @@ export const AddProduct = ({handleAdd, handleClose}) => {
             onChange={formik.handleChange}
           />
           {
-            <small className="text-danger">{formik.errors.name}</small>
+            <small className="text-danger">{formik.errors.linkVideo}</small>
           }
         </div>
         <div className="col-12 mb-3">

@@ -10,7 +10,7 @@ import validate from "../../validations/addProductValidator";
 
 
 
-export const TablaProductos = ({ productos, loading, pages, currentPage, handleGetPage, handleAdd }) => {
+export const TablaProductos = ({ productos, loading, pages, currentPage, handleGetPage, handleAdd, handleEdit}) => {
   const paginator = [];
   for (let i = 1; i <= pages; i++) {
     paginator.push(i)
@@ -165,7 +165,7 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
                     Cargando...
                   </td>
                 </tr> :
-                (productos.map(producto => (<NuevosProductos key={producto.id} {...producto} />)))
+                (productos.map(producto => (<NuevosProductos key={producto.id} {...producto} handleEdit={handleEdit}/>)))
             }
 
 
@@ -178,11 +178,11 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
 TablaProductos.propTypes = {
   productos: PropTypes.array,
   pages: PropTypes.number,
+  updProducto: PropTypes.object,
   currentPage: PropTypes.number,
   handleGetPage: PropTypes.func,
-  handleAdd: PropTypes.func
+  handleAdd: PropTypes.func,
+  handleEdit: PropTypes.func,
+  
 }
-
-
-
 

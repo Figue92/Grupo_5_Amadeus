@@ -12,13 +12,18 @@ router
 .get('/offer', offer)
 .get('/:id',detail)
 .post('/', productosValidator,store)
-.put('/:id',update)
+
 .delete('/:id',destroy)
 .post('/productos', uploadImages.fields([
     {name: 'image_1'},
     {name: 'image_2'},
     {name: 'image_3'},
 ]), storeImage)
+.patch('/:id', uploadImages.fields([
+    {name : 'image_1'},
+    {name : 'image_2'},
+    {name : 'image_3'},
+]), update)
 
 
 module.exports = router;
