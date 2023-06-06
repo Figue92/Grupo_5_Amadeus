@@ -81,6 +81,16 @@ const getOneProducto = async (req, id) => {
 
                         ]
                     }
+                },
+                {
+                    model: db.Brand,
+                    association: "brand",
+                    attributes: ["name"]
+                },
+                {
+                    model: db.Category,
+                    association: "category",
+                    attributes: ["nameCategory"]
                 }
             ],
             attributes: {

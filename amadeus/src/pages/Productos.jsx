@@ -49,6 +49,13 @@ const handleAdd = (formdata) => {
     console.log(data);
   })
 }
+const handleDelete = (producto) => {
+  UseFetch(`/productos/${id}`, 'DELETE', producto)
+  .then((ok) =>{
+    ok && 
+    console.log(producto)
+  })
+}
 
 
   const [categoryState, setCategoryState] = useState({
@@ -96,7 +103,8 @@ const handleAdd = (formdata) => {
                 pages={productState.pages}
                 currentPage={productState.currentPage}
                 handleGetPage={handleGetPage} 
-                handleAdd={handleAdd}/>
+                handleAdd={handleAdd}
+                handleDelete={handleDelete}/>
             </div>
             </div>
       </div>
