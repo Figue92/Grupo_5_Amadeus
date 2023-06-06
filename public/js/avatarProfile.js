@@ -5,14 +5,16 @@ const password = document.querySelectorAll('.password');
 const ctx = canvas.getContext('2d');
 const mousePosition = { x: - canvas.getBoundingClientRect().left, y: - canvas.getBoundingClientRect().top };
 let eyeRadius = 10;
-if (window.innerWidth < 321){
+if (window.innerWidth < 325){
     eyeRadius = 5
 } else if (window.innerWidth < 376){
-    eyeRadius = 8
+    eyeRadius = 5
 } else if (window.innerWidth < 430){
     eyeRadius = 7
 } else if (window.innerWidth < 1030 && window.innerWidth > 800){
     eyeRadius = 7
+}else{
+    eyeRadius = 10
 }
 
 const imgRobot = new Image();
@@ -56,15 +58,14 @@ function getTranslatedPosition(eyePosition) {
 
 function drawEyes() {
     if (window.innerWidth < 321) {
-        console.log('321');
         const eyeOriginPositions = [
             {
-                x: canvas.width / 2 + 30,
-                y: canvas.height / 2 + 25,
+                x: canvas.width / 2 - 18,
+                y: canvas.height / 2 - 20,
             },
             {
-                x: canvas.width / 2 + 55,
-                y: canvas.height / 2 + 25,
+                x: canvas.width / 2 + 10,
+                y: canvas.height / 2 - 20,
             }
         ];
     
@@ -75,14 +76,13 @@ function drawEyes() {
     
         eyePositions.forEach((eyePosition) => {
             ctx.drawImage(eyeRobot,
-                eyePosition.x - eyeRobot.width / 1.5,
-                eyePosition.y - eyeRobot.height / 1.5,
+                eyePosition.x,
+                eyePosition.y,
                 (canvas.width) / 25,
                 height);
         }); 
     }
     else if (window.innerWidth < 376) {
-        console.log('376');
         const eyeOriginPositions = [
             {
                 x: canvas.width / 2 + 27,
@@ -108,7 +108,6 @@ function drawEyes() {
         }); 
     }
     else if (window.innerWidth < 430) {
-        console.log('42666666');
         const eyeOriginPositions = [
             {
                 x: canvas.width / 2 + 25,
@@ -133,7 +132,6 @@ function drawEyes() {
                 height);
         }); 
     } else if (window.innerWidth < 769) {
-        console.log('769');
         const eyeOriginPositions = [
             {
                 x: canvas.width / 2 + 20,
@@ -158,7 +156,6 @@ function drawEyes() {
                 height);
         }); 
     } else if (window.innerWidth < 1030) {
-        console.log('1030');
         const eyeOriginPositions = [
             {
                 x: canvas.width / 2 + 25,
@@ -183,15 +180,14 @@ function drawEyes() {
                 height);
         }); 
     } else {
-        console.log('1024');
         const eyeOriginPositions = [
             {
-                x: canvas.width / 2 + 15,
-                y: canvas.height / 2 + 18,
+                x: canvas.width / 2 - 33,
+                y: canvas.height / 2 - 25,
             },
             {
-                x: canvas.width / 2 + 62,
-                y: canvas.height / 2 + 18,
+                x: canvas.width / 2 + 15,
+                y: canvas.height / 2 - 25,
             }
         ];
     
@@ -202,8 +198,8 @@ function drawEyes() {
     
         eyePositions.forEach((eyePosition) => {
             ctx.drawImage(eyeRobot,
-                eyePosition.x - eyeRobot.width / 1.5,
-                eyePosition.y - eyeRobot.height / 1.5,
+                eyePosition.x,
+                eyePosition.y,
                 (canvas.width) / 25,
                 height);
         });
@@ -286,16 +282,6 @@ function main() {
     password.forEach(inputPass => {
         inputPass.addEventListener('blur', () => {
             render();
-        })
-    })
-
-    inputs.forEach(input => {
-        input.addEventListener('input', () => {
-            const posicionCursor = input.selectionStart;
-            const inputRect = input.getBoundingClientRect();
-            const posicionX = inputRect.left + window.scrollX;
-            const posicionY = inputRect.top + window.scrollY;
-            console.log(posicionCursor, posicionX, posicionY);
         })
     })
 }
