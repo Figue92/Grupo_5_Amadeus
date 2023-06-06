@@ -75,14 +75,15 @@
                     <!-- subir img -->
 
                     <div id="addImage" class="avatar__register">
-                        <canvas>
-                            <label class="avatar" for="avatarProfile">
-                                <img id="imagen-preview-1" src="/images/courses/default-course.jpg"
-                                    alt="Imagen por defecto 1">
-                            </label>
-                            <input type="file" id="avatarProfile" name="avatarProfile" accept="image/*"
-                                onchange="cargarImagen(event, 'imagen-preview-1')">
-                        </canvas>
+                        <label class="avatar" for="avatarProfile"></label>
+                        <div class="canvas-container">
+                        <canvas></canvas>
+                            
+                                <img id="imagen-preview-1" src=""
+                                    alt="Ingrese una imagen">
+                        </div>    
+                            <input type="file" id="avatarProfile" name="avatarProfile" accept="image/*">
+                        
                     </div>
 
                     <div class="register__form--spam checkCondiciones">

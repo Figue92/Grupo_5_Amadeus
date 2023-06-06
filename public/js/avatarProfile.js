@@ -301,3 +301,20 @@ function main() {
 }
 
 window.onload = main();
+
+document.getElementById('avatarProfile').addEventListener('change', function(event) {
+    const input = event.target;
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const imagenPreview = document.getElementById('imagen-preview-1');
+        imagenPreview.src = e.target.result;
+        imagenPreview.style.display = 'inherit';
+        canvas.style.zIndex = '-1';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+    clearCanvas();
+    window.addEventListener('mousemove', () => clearCanvas());
+    
+  });

@@ -40,13 +40,13 @@ module.exports = {
             idRol: 2,
             avatar: req.file.filename,
             idAddress: address.id,
-          }).then((user) => {
+          })/* .then((user) => {
             db.Cart.create({
               idUser: user.id,
-            }).then(() => {
+            }) */.then(() => {
               return res.redirect("/users/login");
             });
-          });
+          /* }); */
         })
         .catch((error) => console.log(error));
     } else {

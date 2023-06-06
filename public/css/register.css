@@ -36,7 +36,10 @@
     margin: 10px auto;
 }
 
-.register__form--name, .register__form--surname, .register__form--pass, .register__form--repeatPass {
+.register__form--name,
+.register__form--surname,
+.register__form--pass,
+.register__form--repeatPass {
     width: 45%;
 }
 
@@ -57,7 +60,7 @@
     width: 30%;
 }
 
-.register__form--tel{ 
+.register__form--tel {
     width: 60%;
 }
 
@@ -71,11 +74,11 @@
 }
 
 .register__form div input:focus {
-    outline : none;
+    outline: none;
     border-bottom: 2px solid var(--colorAzul);
 }
 
-.register__form .register__form--spam { 
+.register__form .register__form--spam {
     margin: 10px 0px;
     text-align: left;
 }
@@ -101,7 +104,7 @@
 }
 
 .register__form__button--siguiente:hover {
-    background: linear-gradient(#dee5ff,lightskyblue);
+    background: linear-gradient(#dee5ff, lightskyblue);
 }
 
 .register__form--ingresar {
@@ -111,7 +114,7 @@
     text-align: center;
 }
 
-.register__form div .spam, .register__form div .avatar {
+.register__form div .spam {
     color: #000;
     position: initial;
 }
@@ -176,9 +179,20 @@
     margin: 0;
 }
 
-.avatar__register{
+.avatar__register {
     width: 70%;
     height: 120px;
+    position: relative;
+}
+
+.avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2 !important;
+    cursor: pointer !important;
 }
 
 .avatar__register label {
@@ -192,7 +206,7 @@
     object-position: center;
 }
 
-.avatar__register:hover img{
+.avatar__register:hover img {
     cursor: pointer;
 }
 
@@ -200,18 +214,33 @@
     display: none;
 }
 
-canvas {
-    /* background-color: aquamarine; */
+.canvas-container {
+    position: relative;
 }
 
-@media (max-width: 425px){
-    .register__form div label{ 
+canvas {
+    position: relative;
+    z-index: 1;
+}
+
+#imagen-preview-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+  }
+
+@media (max-width: 425px) {
+    .register__form div label {
         font-size: 12px;
     }
 }
 
 @media (min-width : 321px) {
-    .avatar__register{
+    .avatar__register {
         height: 150px;
     }
 }
@@ -225,14 +254,14 @@ canvas {
         margin-left: 12px;
     }
 
-    .avatar__register > label img {
+    .avatar__register>label img {
         display: block;
         width: 250px;
         height: 300px;
         margin: 10px auto;
     }
 
-    .avatar__register{
+    .avatar__register {
         height: 200px;
     }
 }
