@@ -31,10 +31,11 @@
                 tabindex="0">
                 <div class="row">
                   <div class="col-12 col-md-4">
-                    
+                    <div class="text-center">
                        <img
                       src="<%= /http/.test(avatar) ? avatar?.toString().trim() : `/images/users/${avatar || '1678374868659_products_.jpeg'}` %>"
                       alt="User Avatar">
+                    </div>
                       <div class="mt-3 text-center">
                         <label for="formFile" class="buttons buttons__primary">Cambiar imagen</label>
                         <input class="form-control" name="image" type="file" id="formFile" hidden>

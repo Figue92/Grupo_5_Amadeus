@@ -54,6 +54,17 @@
   letter-spacing: 1px;
 }
 
+#card-compra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#card-compra div {
+  width: 250px;
+  padding: 10px;
+}
+
 @media (min-width:769px) {
   .profile {
     /* padding-top: 50px; */

@@ -633,3 +633,13 @@ padding-top: 100px;
 .main__section__productos--article-ofertas img {
     /* width: 20%; */
 }
+
+@media (min-width : 1300px) {
+    .imagenes-carrusel{
+        height: 400px;
+     }
+}
+
+.profile img {
+    align-self: center;
+}

@@ -13,21 +13,23 @@
                         <img src="/images/productos/<%= image ? image[0].name : 'imageNull.jpeg'%> " alt="">
                     </section>
 
-                    <div>
-                        <div class="section__div--info-precio">
+                    <div class="section__div--info-precio">
 
-                            <div class="productDetail--descuento">
-                                $<%= price %>
-                            </div>
-
-                            <h3>$<%= price*((100-discount)/100) %></h3>
-                               <p>precio en un pago</p>
-
-                            <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %></p>
+                        <div class="productDetail--descuento">
+                            $<%= price %>
                         </div>
+
+                        <h3>$<%= price*((100-discount)/100) %>
+                        </h3>
+                        <p>precio en un pago</p>
+
+                        <p>12 cuotas sin interés de: $<%= (price/12).toFixed(2) %>
+                        </p>
                     </div>
+
                     <div class="section__div--info-btn">
-                        <button data-id="<%= id %>" id="btn-addCart" class="main__article_buton">Agregar al carrito</button>
+                        <button data-id="<%= id %>" id="btn-addCart" class="main__article_buton">Agregar al
+                            carrito</button>
                     </div>
                 </section>
 
@@ -51,7 +53,9 @@
                     <h2 class="productDetail__main__section--detallesDesktop">lo que tenés que saber de este producto:
                     </h2>
 
-                    <p class="productDetail__main__section__description"><%= description %></p>
+                    <p class="productDetail__main__section__description">
+                        <%= description %>
+                    </p>
 
                     <div class="productDetail--review pb-5"><iframe
                             src="https://www.youtube.com/embed/<%= linkVideo ? linkVideo.slice(17) : 'UIwtqkMgELo'%>"

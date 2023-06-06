@@ -12,6 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-family: var(--tipografiaPrincipal);
 }
 
 .productDetail__main__section-imagenPrincipal img {
@@ -23,7 +24,7 @@ width: 200px;
 .section--info-name {
     font-size: 22px;
     text-align: center;
-
+    width: 100%;
 }
 
 .section__div--info {
@@ -38,7 +39,6 @@ width: 200px;
     justify-content: start;
     align-items: flex-start;
     text-decoration: line-through;
-    padding: 15px;
 }
 
 .productDetail--descuento h3 {
@@ -48,6 +48,7 @@ width: 200px;
 }
 
 .section__div--info {
+    width: 80%;
     border: 2px solid grey;
     border-radius: 15px;
     display: flex;
@@ -55,10 +56,15 @@ width: 200px;
     align-items: center;
 }
 
+.section__div--info-precio {
+    padding: 10px;
+}
+
 .section__div--info-precio h3 {
     font-family: var(--tipografiaPrincipal);
     font-size: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
     color: rgb(79, 21, 216);
 }
 
@@ -67,8 +73,18 @@ width: 200px;
     text-align: center;
 }
 
+.section__div--info-btn button {
+    width: 80%;
+}
+
 .productDetail__main__images {
     display: none;
+}
+
+.section--caracteristicas {
+    margin-bottom: 10px;
+    /* width: 100%; */
+
 }
 
 .productDetail--review {
@@ -79,7 +95,7 @@ width: 200px;
 
 .productDetail--review iframe {
     width: 80%;
-
+    aspect-ratio: 16/9;
 }
 
 .productDetail__main__images img {
@@ -163,8 +179,10 @@ a {
     }
 }
 
-@media (max-width: 768px) {
- 
+@media (min-width: 769px) {
+    .section__div--info{
+        width: 60%;
+    }
 /*     #menu-icon {
         display: block;
     }
@@ -183,6 +201,17 @@ a {
         text-align: center;
         margin: 10px 0;
     }*/
+}
+
+@media (min-width: 1024px) {
+    .section__div--info{
+        width: 50%;
+    }
+
+    .productDetail__main {
+        gap: 20px;
+        margin-bottom: 10px;
+    }
 }
 
  

@@ -33,13 +33,11 @@ const pintarProducts = ({ products }) => {
       const template = `
       <div class="card-cart">
       <div class="card-cart-body">
-        <img class="col-4" src="/images/productos/${image[0].name}" alt="Imagen Producto">
-        <div class="col-8 position-relative">
-          <button onclick="removeProductFromCart(${id})"
-            class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:10px"><i
+      <button onclick="removeProductFromCart(${id})"
+            class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:5px;right:10px"><i
               style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
-  
-  
+        <img class="col-4" src="/images/productos/${image[0].name}" alt="Imagen Producto">
+        <div class="position-relative">
           <h5 class="card-title">${name}</h5>
           <p class="card-text col-lg-10 text-truncate">${description}</p>
           <h5 class="card-text text-black">${priceARG} ${discount ? `<span>${discount}%OFF</span>` : ""}</h5>

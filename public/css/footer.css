@@ -140,6 +140,11 @@
 
     .article--horarios {
         margin-left: 20%;
+        align-self: flex-start;
+    }
+
+    .article--ventatel {
+        align-self: flex-start;
     }
 
     .footer__section--nav {

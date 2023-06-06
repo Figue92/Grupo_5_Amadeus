@@ -29,8 +29,8 @@ justify-content: space-around;
     justify-content: space-around;
 } */
 .card-cart {
-width:300px;
-    display: flex;
+    max-width:300px;
+/*     display: flex; */
     gap: 15px;
     animation: fondoAnimado 10s infinite;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,13 +39,14 @@ width:300px;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-  
     margin: 10px;
-
-
 }
 
-
+.card-cart-body{
+    position: relative;
+    padding: 5px;
+    padding-left: 10px;
+}
 
 .info-card-cart {
     display: flex;
@@ -53,9 +54,15 @@ width:300px;
     align-items: center;
     
 }
-.card-box-container{
-width: 100%;
+#card-box-container{
+    width: 100%;
 
+}
+
+#card-comprar-cart {
+    bottom: 10px;
+    left: 10px;
+    width: 90%;
 }
 
 /* COMO QUERES PAGAR */
@@ -186,10 +193,32 @@ width: 100%;
         align-items: center;
 
     }
+
+    #card-comprar-cart {
+        margin-top: 0px !important;
+        bottom: 250px;
+        left: 48%;
+        width: 50%;
+    }
 }
 
 @media (min-width : 769px) {
     .main__carrito {
         /* padding-top: 50px; */
+    }
+}
+
+@media (min-width : 1025px) {
+    #card-comprar-cart {
+        margin-top: 10px !important;
+        bottom: 350px;
+        left: 59%;
+        width: 40%;
+    }
+
+    #card-box-container{
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
     }
 }

@@ -11,7 +11,7 @@
 }
 
 .cardsFav{
-    width: 25%;
+    width: 80%;
     animation: fondoAnimado 10s infinite;
     background-image: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
     background-size: 200% 100%;
@@ -54,8 +54,20 @@
     margin-bottom: 10px;
 }
 
+@media (min-width : 426px) {
+    .cardsFav {
+        width: 40%;
+    }
+}
+
 @media (min-width : 769px) {
-    .main__favorites {
-       /*  padding-top: 50px; */
+    .cardsFav {
+        width: 25%;
+    }
+}
+
+@media (min-width : 1025px) {
+    .cardsFav {
+        width: 20%;
     }
 }
