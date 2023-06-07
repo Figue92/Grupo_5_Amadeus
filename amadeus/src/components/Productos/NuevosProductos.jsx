@@ -8,44 +8,22 @@ import Modal from 'react-bootstrap/Modal';
 import { TrashDelete } from './TrashDelete';
 
 
-export default function NuevosProductos({ id, name, price, category, description, brand, discount, novelty, image, updProducto }) {
+export default function NuevosProductos({ producto, handleEdit, handleUpdate, setProducto }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
 
-    const [state, setState] = useState({
-        producto: {
-            id,
-            name,
-            description,
-            price,
-            discount,
-            image,
-            category: category.nameCategory,
-            brand: brand.name
-        }
+ const {
+id,
+name,
+price,
+discount,
+category,
+brand,
+description,
+novelty
 
-
-    });
-    const [setProductoEditado, setEditProducto] = useState(null)
-    const handleEdit = (id) => {
-      id ? UseFetch(`/productos/${id}`)
-      .then(({ok, data}) =>{
-    ok && setEditProducto(data.producto)
-      })
-      .catch(()=> console.error)
-      : setEditProducto(null)
-    }
-    
-    const handleUpdate = (formdata) => {
-      UseFetch(`/productos/${updProducto.id}`, 'PATCH', formdata)
-      .then(({ok}) => {
-        if(ok){
-          setEditProducto(null)
-          
-        }
-      })
-    }
+ } = producto
     
 
     return (
@@ -76,7 +54,7 @@ export default function NuevosProductos({ id, name, price, category, description
                                 </Modal.Header>
 
                                 <Modal.Body>
-                                    <OneProduct {...state.producto}/>
+                                    <OneProduct {...producto}/>
 
 
                                 </Modal.Body>
@@ -91,7 +69,8 @@ export default function NuevosProductos({ id, name, price, category, description
                         </Modal>
 
                     </div >
-                 {/*    <EditProduct  {...state.producto} handleUpdate={handleUpdate} handleEdit={handleEdit} updProducto={updProducto}/> */}
+                 <EditProduct
+                 producto={producto} setProducto={setProducto} handleEdit={handleEdit}/>
                     <TrashDelete id={id} name={name}/>
 
                 </div>

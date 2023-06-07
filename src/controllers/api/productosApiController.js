@@ -188,7 +188,7 @@ module.exports = {
                     total: 1,
                     url: `/api/productos/${id}`
                 },
-                data: updProducto
+                data: producto
             })
         } catch (error) {
 

@@ -10,7 +10,7 @@ import validate from "../../validations/addProductValidator";
 
 
 
-export const TablaProductos = ({ productos, loading, pages, currentPage, handleGetPage, handleAdd, handleEdit}) => {
+export const TablaProductos = ({ productos, loading, pages, currentPage, handleGetPage, handleAdd }) => {
   const paginator = [];
   for (let i = 1; i <= pages; i++) {
     paginator.push(i)
@@ -19,6 +19,27 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true)
+
+  const [producto, setProducto] = useState(null)
+  const handleEdit = (id) => {
+    id ? UseFetch(`/productos/${id}`)
+      .then(({ ok, data }) => {
+        ok && setProducto(data.producto)
+      })
+      .catch(() => console.error)
+      : setProducto(null)
+  }
+
+  const handleUpdate = (formdata) => {
+    UseFetch(`/productos/${producto.id}`, 'PATCH', formdata)
+      .then(({ ok }) => {
+        if (ok) {
+          setProducto(null)
+
+        }
+      })
+  }
+
 
   const [categoryState, setCategoryState] = useState({
     loading: true,
@@ -165,7 +186,7 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
                     Cargando...
                   </td>
                 </tr> :
-                (productos.map(producto => (<NuevosProductos key={producto.id} {...producto} handleEdit={handleEdit}/>)))
+                (productos.map(producto => (<NuevosProductos key={producto.id} producto={producto} handleEdit={handleEdit} handleUpdate={handleUpdate} setProducto={{ setProducto }} />)))
             }
 
 
@@ -178,11 +199,11 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
 TablaProductos.propTypes = {
   productos: PropTypes.array,
   pages: PropTypes.number,
-  updProducto: PropTypes.object,
+  producto: PropTypes.object,
   currentPage: PropTypes.number,
   handleGetPage: PropTypes.func,
   handleAdd: PropTypes.func,
   handleEdit: PropTypes.func,
-  
+
 }
 

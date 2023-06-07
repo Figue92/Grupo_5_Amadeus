@@ -9,23 +9,13 @@ import { PropTypes } from "prop-types";
 
 
 
-export const EditProduct = ({updProducto, handleEdit, handleUpdate}) => {
-
+export const EditProduct = ({ producto,  handleEdit, handleUpdate, setProducto}) => {
+ 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true)
-
-const [productState, setProductState] = useState([]);
-  useEffect(() => {
-    UseFetch('/productos?withPagination=false')
-      .then(({ ok, data }) => {
-        const { productos } = data;
-        setProductState({
-          productos
-        })
-      })
-      .catch(error => console.error)
-  }, []);
+  const handleShow = () => {
+    setShow(true)
+  }
 
   const [categoryState, setCategoryState] = useState({
     loading: true,
@@ -61,8 +51,6 @@ const [productState, setProductState] = useState([]);
   }, []);
 
 
-  
-  const [setProductoEditado, setEditProducto] = useState(null)
 
   const {
     name,
@@ -75,11 +63,11 @@ const [productState, setProductState] = useState([]);
     novelty,
     image: [image_1, image_2, image_3]
 
-  } = updProducto
+  } = producto
 
   const formik = useFormik({
     initialValues: {
-      name,
+      name: "producto",
       idBrand,
       idCategory,
       price,
@@ -89,7 +77,10 @@ const [productState, setProductState] = useState([]);
       novelty,
       image_1: image_1 ? image_1.urlImage : null,
       image_2: image_2 ? image_2.urlImage : null,
-      image_3: image_3 ? image_3.urlImage : null
+      image_3: image_3 ? image_3.urlImage : null,
+      image_1_id: image_1 ? image_1.id : null,
+      image_2_id: image_2 ? image_2.id : null,
+      image_3_id: image_3 ? image_3.id : null
 
     },
     validate,
@@ -117,13 +108,16 @@ const [productState, setProductState] = useState([]);
     ]
 
     fields.forEach(field => {
-      formik.setFieldValue(field, updProducto[field], false)
+      formik.setFieldValue(field, setProducto[field], false)
 
     })
     formik.setFieldValue("image_1", image_1 ? image_1.urlImage : null)
     formik.setFieldValue("image_2", image_2 ? image_2.urlImage : null)
     formik.setFieldValue("image_3", image_3 ? image_3.urlImage : null)
-  }, [setProductoEditado])
+    formik.setFieldValue("image_1_id", image_1 ? image_1.id : null)
+    formik.setFieldValue("image_2_id", image_2 ? image_2.id : null)
+    formik.setFieldValue("image_3_id", image_3 ? image_3.id : null)
+  }, [setProducto])
 
 
  
@@ -133,13 +127,13 @@ const [productState, setProductState] = useState([]);
         <Button variant="success" onClick={handleShow}>
           <i className="fa-solid fa-edit"></i>
         </Button>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} formik={formik} onHide={handleClose}>
           <Modal.Header closeButton>
 
             <Modal.Title>Editar Producto</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body>
+          <Modal.Body formik={formik}>
 
             <form className="row" onSubmit={formik.handleSubmit}>
               <div className="col-12 mb-3">
@@ -318,5 +312,6 @@ const [productState, setProductState] = useState([]);
 EditProduct.propTypes = {
   handleUpdate : PropTypes.func,
   updProducto: PropTypes.object,
-  handleEdit: PropTypes.func
+  handleEdit: PropTypes.func,
+  producto: PropTypes.array
 }

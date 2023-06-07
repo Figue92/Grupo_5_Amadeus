@@ -50,7 +50,7 @@ const handleAdd = (formdata) => {
   })
 }
 
-const [updProducto, setEditProducto] = useState(null)
+const [setProductoEditado, setEditProducto] = useState(null)
 const handleEdit = (id) => {
   id ? UseFetch(`/productos/${id}`)
   .then(({ok, data}) =>{
@@ -61,7 +61,7 @@ ok && setEditProducto(data.producto)
 }
 
 const handleUpdate = (formdata) => {
-  UseFetch(`/productos/${updProducto.id}`, 'PATCH', formdata)
+  UseFetch(`/productos/${producto.id}`, 'PATCH', formdata)
   .then(({ok}) => {
     if(ok){
       setEditProducto(null)
@@ -128,7 +128,7 @@ const handleDelete = (producto) => {
                 handleAdd={handleAdd}
                 handleEdit={handleEdit}
                 handleDelete={handleDelete}
-                updProducto={updProducto}/>
+                setProductoEditado={setProductoEditado}/>
             </div>
             </div>
       </div>
