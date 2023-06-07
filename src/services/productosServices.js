@@ -20,12 +20,12 @@ const getAllProductos = async (req, { withPagination = "false", page = 1, limit 
                 {
                     model: db.Brand,
                     association: "brand",
-                    attributes: ["name"]
+                    attributes: ["name","id"]
                 },
                 {
                     model: db.Category,
                     association: "category",
-                    attributes: ["nameCategory"]
+                    attributes: ["nameCategory","id"]
                 },
                 {
                     association: "usersFavorites"
