@@ -12,6 +12,7 @@ window.onload = function () {
     let inputRepeatPass = document.getElementById('password2');
     let inputCondiciones = document.querySelector('.checkCondiciones input');
     let inputPolitica = document.querySelector('.checkPolitica input');
+    let inputAvatar = document.getElementById('avatarProfile');
 
     let labelName = document.querySelector('.register__form--name label');
     let labelSurname = document.querySelector('.register__form--surname label');
@@ -29,6 +30,8 @@ window.onload = function () {
     let smallPassword = document.querySelector('.register__form--pass small');
     let smallCondiciones = document.querySelector('.checkCondiciones small');
     let smallPolitica = document.querySelector('.checkPolitica small');
+    let smallAvatar = document.getElementById('errorAvatar');
+    let errorMsgAvatar = getAvatarProfileErrorMsg();
 
     let errorsName = [];
     let errorsSurname = [];
@@ -37,6 +40,7 @@ window.onload = function () {
     let errorsTel = [];
     let errorsPassword = [];
     let errorsRepeatPass = [];
+    let errorsAvatar = [];
 
     campoVacio(inputName, errorsName);
     campoVacio(inputSurname, errorsSurname);
@@ -179,10 +183,10 @@ window.onload = function () {
         }
     }
 
-    if (/[a-zA-Z]/.test(inputName.value)) {
+    if (/[a-zA-Z\d]+/.test(inputName.value)) {
         moverLabel(labelName);
     }
-    if (/[a-zA-Z]/.test(inputSurname.value)) {
+    if (/[a-zA-Z\d]+/.test(inputSurname.value)) {
         moverLabel(labelSurname);
     }
     if (/[a-zA-Z]/.test(inputEmail.value)) {
@@ -377,6 +381,33 @@ window.onload = function () {
         }
         colocarError(errorsRepeatPass, '.errorsRepeatPass');
     })
+
+    if (inputAvatar.files.length === 0) {
+        if (errorMsgAvatar === ''){
+            if (!errorsAvatar.includes('Tocá mi nariz para cargar tu foto')) {
+                errorsAvatar.unshift('Tocá mi nariz para cargar tu foto');
+            }
+        }
+    } else {
+        const index = errorsAvatar.indexOf('Tocá mi nariz para cargar tu foto');
+        if (index !== -1) errorsAvatar.splice(index, 1);
+    }
+    colocarError(errorsAvatar, '.errorsAvatar');
+
+    inputAvatar.addEventListener('change', () => {
+        if (inputAvatar.files.length === 0) {
+            if (errorMsgAvatar === ''){
+                if (!errorsAvatar.includes('Tocá mi nariz para cargar tu foto')) {
+                    errorsAvatar.unshift('Tocá mi nariz para cargar tu foto');
+                }
+            }
+        } else {
+            smallAvatar.style.display = 'none';
+            const index = errorsAvatar.indexOf('Tocá mi nariz para cargar tu foto');
+            if (index !== -1) errorsAvatar.splice(index, 1);
+        }
+        colocarError(errorsAvatar, '.errorsAvatar');
+    });
 
     inputCondiciones.addEventListener('change', () => {
         if (inputCondiciones.checked) {

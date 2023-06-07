@@ -1,16 +1,17 @@
 <canvas id="chat-canvas" class="assistant"></canvas>
-
+<button class="close-button"><span class="circle"><span class="cross">x</span></span></button>
+<div class="help-button"><i class="fa-solid fa-comment-dots"></i></div>
 
 <div class="chat-container">
     <div id="chat-header">
         <h1>¿Necesitás ayuda?</h1>
     </div>
     <div id="message-section">
-        <div class="message" id="bot"><span id="bot-response">Espere un momento...</span></div>
+        <div class="message" id="bot"><span id="bot-response">¿En qué puedo ayudarte?</span></div>
     </div>
     <div id="input-section">
         <input id="input" type="text" placeholder="Escribe un mensaje" autocomplete="off" autofocus="autofocus" />
-        <button class="send" onclick="sendMessage()"> <!-- falta implementación de respuestas -->
+        <button class="send" onclick="sendMessage()">
             <div class="circle"><i class="fa-solid fa-paper-plane"></i></div>
         </button>
     </div>

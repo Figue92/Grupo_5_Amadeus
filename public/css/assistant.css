@@ -1,25 +1,55 @@
 .assistant {
     position: fixed;
-  bottom: 0;
-  left: 0;
-  transform: none;
-    /* background-color: #f0f0f0; */
-/*     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    bottom: 0;
+    left: 0;
+    transform: none;
     cursor: pointer;
 }
+
+    .close-button, .help-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        position: fixed;
+        bottom: 140px;
+        left: 0;
+    }
+
+    .help-button {
+        display: none;
+        left: 10px;
+        font-size: 24px;
+        color: white;
+    }
+
+    .close-button .circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #DDD;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .close-button .cross {
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
 
 .chat-container {
     height: 22.5vw;
     width: 17.5vw;
     background-color: white;
     position: fixed;
-    bottom: 10vw;
-    left: 2vw;
+    bottom: 9vw;
+    left: 3vw;
     display: none;
     transition: display 0.3s ease;
     overflow: auto;
-  }
+}
 
 .chat-container #chat-header {
     height: 2vw;
@@ -144,16 +174,16 @@
     .chat-container {
         height: 25vw;
         width: 28vw;
-        bottom: 12vw;
-        left: 2vw;
-      }
-    
+        bottom: 14vw;
+        left: 4vw;
+    }
+
     .chat-container #chat-header {
         height: 3vw;
         background: #000;
         padding: 0vw;
     }
-    
+
     .chat-container #chat-header h1 {
         color: #fff;
         font-size: 10px;
@@ -170,16 +200,16 @@
     .chat-container {
         height: 25vw;
         width: 28vw;
-        bottom: 14vw;
-        left: 2vw;
-      }
-    
+        bottom: 16vw;
+        left: 5vw;
+    }
+
     .chat-container #chat-header {
         height: 3vw;
         background: #000;
         padding: 0vw;
     }
-    
+
     .chat-container #chat-header h1 {
         color: #fff;
         font-size: 10px;
@@ -190,22 +220,35 @@
     .chat-container #input-section input {
         width: 20vw;
     }
+
+    .close-button, .help-button {
+        bottom: 125px;
+    }
+    
+    .close-button .circle {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .close-button .cross {
+        font-size: 18px;
+    }
 }
 
 @media (max-width : 600px) {
     .chat-container {
         height: 60vw;
         width: 70vw;
-        bottom: 20vw;
+        bottom: 22vw;
         left: 2vw;
-      }
-    
+    }
+
     .chat-container #chat-header {
         height: 7vw;
         background: #000;
         padding: 0vw;
     }
-    
+
     .chat-container #chat-header h1 {
         color: #fff;
         font-size: 10px;
@@ -226,18 +269,31 @@
         padding: 0vw;
         height: 8vw;
     }
-    
+
     .chat-container .send {
         margin-left: 2vw;
     }
-    
+
     .chat-container .send .circle {
         width: 3vw;
         height: 6.5vw;
     }
-    
+
     .chat-container .send .circle i {
         font-size: 4vw;
+    }
+
+    .close-button, .help-button {
+        bottom: 100px;
+    }
+    
+    .close-button .circle {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .close-button .cross {
+        font-size: 16px;
     }
 }
 
@@ -245,16 +301,16 @@
     .chat-container {
         height: 60vw;
         width: 70vw;
-        bottom: 30vw;
+        bottom: 25vw;
         left: 2vw;
-      }
-    
+    }
+
     .chat-container #chat-header {
         height: 7vw;
         background: #000;
         padding: 0vw;
     }
-    
+
     .chat-container #chat-header h1 {
         color: #fff;
         font-size: 10px;
@@ -275,17 +331,21 @@
         padding: 0vw;
         height: 8vw;
     }
-    
+
     .chat-container .send {
         margin-left: 2vw;
     }
-    
+
     .chat-container .send .circle {
         width: 3vw;
         height: 6.5vw;
     }
-    
+
     .chat-container .send .circle i {
         font-size: 4vw;
+    }
+
+    .close-button, .help-button {
+        bottom: 95px;
     }
 }
