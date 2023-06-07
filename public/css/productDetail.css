@@ -165,7 +165,7 @@ nav ul#menu.show {
 }
 
 li {
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 a {
@@ -176,6 +176,9 @@ a {
 @media (min-width: 426px) {
     .productDetail__main__section-imagenPrincipal img  {
         width: 50%;
+    }
+    .productDetail__main__images{
+        display: block;
     }
 }
 

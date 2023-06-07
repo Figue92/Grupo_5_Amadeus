@@ -11,8 +11,8 @@
       "image": [
         "1000.png",
          "mother giga.png",
-         "mother giga3.png",
-         "1677082210138_products_.png"
+         "mother giga3.png"
+       
       ]
    },
    {
@@ -25,7 +25,7 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "1678375914131_products_.png"
+         "X670E Taichi Carrara(M1).png"
       ]
    },
    {
@@ -38,7 +38,7 @@
       "discount": 30,
       "novedad": true,
       "image": [
-         "memoriaAdata.png",
+         "memoriaAdataddr58gb.png",
          "1678826638024_products_.jpg"
       ]
    },
@@ -52,7 +52,8 @@
       "discount": 20,
       "novedad": true,
       "image": [
-         "1678827340469_products_.jpg"
+         "procesadorRyzen.png",
+         "procesadorRyzen3.png"
       ]
    },
    {
@@ -80,7 +81,8 @@
       "novedad": true,
       "image": [
          "ARES.png",
-         "1678826958082_products_.jpg"
+         "aurisRedrago.png",
+         "aurisRedragon.png"
       ]
    },
    {
@@ -92,7 +94,8 @@
       "marca": "Logitech",
       "discount": 0,
       "novedad": false,
-      "image": ["Auriculares_Inalambricos.jpg"]
+      "image": ["aurisInalambricos.webp",
+   "aurisInalamLilas.webp"]
    },
    {
       "id": 8,
@@ -104,21 +107,23 @@
       "discount": 40,
       "novedad": false,
       "image": [
-         "placaMSI.png",
-         "1678827485714_products_.jpg"
+         "placadevideoGeforce.png"
+      
       ]
    },
    {
       "id": 9,
       "name": "Mother Asrock",
       "price": 270450,
-      "description": "Mother Asrock X670E Taichi Carrara AM5",
+      "description": "Mother Asrock H610 AM5",
       "category": "Motherboard",
       "marca": "AMD",
       "discount": 0,
       "novedad": true,
       "image": [
-         "1678827075449_products_.png"
+         "mother asrock610.png",
+         "motherasrock610.png"
+
       ]
    },
    {
@@ -131,20 +136,21 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "1678827173953_products_.jpg"
+         "tecladoHyperX.png"
       ]
    },
    {
       "id": 11,
       "name": "Procesador Intel",
       "price": 21600,
-      "description": "Procesador Intel Pentium Gold G6400 4.0GHz Socket 1200",
+      "description": "Procesador Intel Pentium Xeon G6400 4.0GHz Socket 1200",
       "category": "Procesadores",
       "marca": "Intel",
       "discount": 0,
       "novedad": true,
       "image": [
-         "1678827246923_products_.jpg"
+         "procesadorIntelXeon.png",
+         "procesadorIntelXeon2.png"
       ]
    },
    {
@@ -170,8 +176,8 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "Memoria_GeiL_DDR4_16GB_3000MHz_Super_Luce_RGB_Black_646b61f7-grn.jpg",
-         "Memoria2_GeiL_DDR4_16GB_3000MHz_Super_Luce_RGB_Black_981aafa9-grn.jpg" 
+         "1678826638024_products_.jpg"
+         
            ]
    },
    {
@@ -184,9 +190,7 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "Mouse_Logitech_M90_Black_12e6a9a6-grn.jpg" ,
-         "Mouse2_Logitech_M90_Black_39490f19-grn.jpg" ,
-         "Mouse3_Logitech_M90_Black_a024691d-grn.jpg" 
+         "mouseLogi.png"
            ]
    },
    {
@@ -199,8 +203,7 @@
       "discount": 0,
       "novedad": true,
       "image": [
-        "Mouse_ADATA_XPG_Infarex_M20_RGB_Ergonomic_5a0c179c-grn.jpg",
-        "Mouse2_ADATA_XPG_Infarex_M20_RGB_Ergonomic_703817ca-grn.jpg"
+        "mouseAdata.png"
            ]
    },
    {
@@ -213,11 +216,8 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "1683577369280_products_.png",
-       "Teclado_Redragon_Harpe_PRO_K503_RGB_ESP_96243639-grn.jpg",
-       "Teclado2_Redragon_Harpe_PRO_K503_RGB_ESP_7e706869-grn.jpg",
-       "Teclado3_Redragon_Harpe_PRO_K503_RGB_ESP_067c00e5-grn.jpg",
-       "Teclado4_Redragon_Harpe_PRO_K503_RGB_ESP_df85eb0c-grn.jpg"
+         "tecladoRedragon.png",
+       "tecladoRedragon2.jpg"
            ]
    },
    {
@@ -230,9 +230,9 @@
       "discount": 0,
       "novedad": false,
       "image": [
-         "ddr5-4800_u-dimm_memory_module_8gb_retail.png",
-       "Procesador_AMD_Ryzen_3_4100___Wraith_Stealth_Cooler_AM4_5b8b5ef2-grn.jpg",
-       "Procesador2_AMD_Ryzen_3_4100___Wraith_Stealth_Cooler_AM4_52a768ad-grn.jpg"
+         "procesadorRyzen.png",
+       "procesadorRyzen3.png",
+       "Ryzen.png"
            ]
    },
    {
@@ -245,24 +245,20 @@
       "discount": 0,
       "novedad": true,
       "image": [
-       "Procesador2_Intel_Core_i5_10400_4.3GHz_Turbo_Socket_1200_Comet_Lake_3a8c9807-grn.jpg",
-     "Procesador_Intel_Core_i5_10400_4.3GHz_Turbo_Socket_1200_Comet_Lake_7f69efff-grn.jpg"
+       "intelCorei5.png"
            ]
    },
    {
       "id": 19,
       "name": "Placa de Video Zotac",
       "price": 278900,
-      "description": "Placa de Video Zotac GeForce RTX 3070 Ti 8GB GDDR6X Trinity",
+      "description": "Placa de Video Zotac GeForce GTX 1080 Ti 8GB GDDR6X Trinity",
       "category": "Placas de Video",
       "marca": "GeForce",
       "discount": 0,
       "novedad": true,
       "image": [
-       "Placa_de_Video_Zotac_GeForce.jpg",
-       "Placa2_de_Video_Zotac_GeForce.jpg",
-       "Placa3_de_Video_Zotac_GeForce.jpg",
-       "Placa4_de_Video_Zotac_GeForce.jpg"
+       "placaZotac.png"
            ]
    },
    {
@@ -275,10 +271,7 @@
       "discount": 0,
       "novedad": true,
       "image": [
-       "Placa_de_Video_XFX_Radeon_RX.jpg",
-       "Placa2_de_Video_XFX_Radeon_RX.jpg",
-       "Placa3_de_Video_XFX_Radeon_RX.jpg",
-       "Placa4_de_Video_XFX_Radeon_RX.jpg"
+       "placaXFX.png"
            ]
    },
    {
@@ -291,9 +284,8 @@
       "discount": 0,
       "novedad": true,
       "image": [
-       "Gabinete_Corsair_iCUE_4000X.jpg",
-       "Gabinete2_Corsair_iCUE_4000X.jpg",
-       "Gabinete3_Corsair_iCUE_4000X.jpg"
+       "gabineteRTX geforcecorsair.webp",
+      "gabinetegeforce.webp"
            ]
    },
    {
@@ -306,10 +298,24 @@
       "discount": 0,
       "novedad": true,
       "image": [
-       "Gabinete_ASUS_TUF.jpg",
-       "Gabinete2_ASUS_TUF.jpg",
-       "Gabinete3_ASUS_TUF.jpg",
-       "Gabinete4_ASUS_TUF.jpg"
+         "gabinete.png"
+      
+           ]
+   },
+   {
+      "id": 23,
+      "name": "Web Cam",
+      "price": 20000,
+      "description": "Web Cam Logitech 1080p",
+      "category": "Accesorios",
+      "marca": "Logitech",
+      "discount": 0,
+      "novedad": true,
+      "image": [
+         "web cam.png",
+         "webCam2.png"
+      
            ]
    }
+
 ]
