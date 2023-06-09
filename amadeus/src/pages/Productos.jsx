@@ -44,9 +44,17 @@ export const Productos = () => {
 const handleAdd = (formdata) => {
   console.log(formdata);
   UseFetch('/productos/productos', 'POST', formdata)
-  .then(({ok,data}) => {
-    ok && 
-    console.log(data);
+  .then(({ok}) => {
+    ok && handleGetPage(productState.pages)
+    Swal.fire({
+      position : "center",
+      icon : "success",
+      title : "Curso agregado con éxito",
+      showConfirmButton : false,
+      timer : 1500
+    })
+  
+
   })
 }
 

@@ -11,7 +11,8 @@ import validate from "../../validations/addProductValidator";
 import { UseFetch } from '../../hooks/UseFetch';
 
 
-export default function NuevosProductos({ producto, handleUpdate }) {
+
+export default function NuevosProductos({ producto, handleUpdate, handleGetPage, productState }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true)
@@ -94,7 +95,7 @@ export default function NuevosProductos({ producto, handleUpdate }) {
       }
 
       handleUpdate(data)
-
+handleGetPage(productState.pages)
     }
   })
 
@@ -123,6 +124,25 @@ export default function NuevosProductos({ producto, handleUpdate }) {
     formik.setFieldValue("image_3_id", image_3 ? image_3.id : null)
   }, [producto])
 
+  const [product, setProduct] = useState(null);
+
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/api/productos/${id}`);
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.log('Error fetching product:', error);
+      }
+    };
+
+    fetchProduct();
+
+  }, []);
+
+
 
   return (
 
@@ -148,12 +168,43 @@ export default function NuevosProductos({ producto, handleUpdate }) {
               <div className='col-lg-12'>
                 <Modal.Header closeButton>
 
-                  <Modal.Title>Detalle del Producto</Modal.Title>
+                  <Modal.Title>{name}</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
+                  <div className="col-lg-12 mb-4">
+                    <div className="card shadow mb-4">
+                      <div className="card-header py-3">
+                        <small>SKU:{id}</small>
+                        <h5 className="m-0 font-weight-bold text-gray-800">{name}</h5>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "10rem" }} src={image_1.urlImage} alt="Imagen" />
+                      </div>
+                      <div className="card-body">
+                        <div className="text-center">
+                         
+                        </div>
+                        <p>{description}</p>
+                        <div className='d-flex row col-lg-10 justify-content-between'>
+                          <div className="d-flex align-items-between">
+                            <h6 className="font-weight-bold">Precio: </h6> <span>${price}</span>  </div>
+                          <div className="d-flex align-items-between">
+                            <h6 className="font-weight-bold">Descuento: </h6>
+                            <span>{discount}%</span>
+                          </div>
 
-                  <OneProduct />
+                          <div className="d-flex align-items-between">
+                            <h6 className="font-weight-bold">Categoría: </h6>
+                            <span> {category?.nameCategory}</span>
+                          </div>
+                          <div className="d-flex align-items-between">
+                            <h6 className="font-weight-bold">Marca: </h6>
+                            <span> {brand?.name}</span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 </Modal.Body>
 
                 <Modal.Footer>
@@ -167,7 +218,7 @@ export default function NuevosProductos({ producto, handleUpdate }) {
 
           </div >
           <EditProduct id={id} formik={formik} brandState={brandState} categoryState={categoryState} producto={producto} handleUpdate={handleUpdate} />
-          <TrashDelete id={id} name={name} />
+          <TrashDelete id={id} name={name} handleGetPage={handleGetPage} productState={productState}/>
 
         </div>
       </td>
@@ -179,7 +230,9 @@ export default function NuevosProductos({ producto, handleUpdate }) {
 
 NuevosProductos.propTypes = {
   producto: PropTypes.object,
-  handleUpdate: PropTypes.func
+  handleUpdate: PropTypes.func,
+  handleGetPage: PropTypes.func
+
 
 
 }

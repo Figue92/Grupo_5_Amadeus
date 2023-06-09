@@ -8,12 +8,33 @@ import Swal from 'sweetalert2';
 
 
 
-export const TrashDelete = ({id,name}) => {
+export const TrashDelete = ({id,name, handleGetPage}) => {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
 
+    const [productState, setProductState] = useState({
+      loading: true,
+      productos: [],
+      pages: null,
+      currentPage: null
+  
+    });
+      useEffect(() => {
+        UseFetch('/productos?withPagination=true')
+          .then(({ ok, data }) => {
+           
+            const { productos } = data;
+            setProductState({
+              loading: false,
+              productos: data.productos,
+              pages : data.pages,
+              currentPage : data.currentPage
+            })
+          })
+          .catch(error => console.error)
+      }, []);
 
     const handleDelete = () => {
         UseFetch(`/productos/${id}`, 'DELETE')
@@ -28,7 +49,9 @@ export const TrashDelete = ({id,name}) => {
             }
           })
           .then(() => {
+            
             handleClose();
+            handleGetPage(productState.pages)
           })
           .catch((error) => {
             console.error('Error al eliminar el producto:', error);
@@ -69,5 +92,6 @@ export const TrashDelete = ({id,name}) => {
 }
 TrashDelete.propTypes = {
     id: PropTypes.number,
-    name: PropTypes.string
+    name: PropTypes.string,
+    handleGetPage: PropTypes.func
   }
