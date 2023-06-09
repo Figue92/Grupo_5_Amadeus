@@ -254,7 +254,8 @@ const userMessage = [
     ["hacen factura"],
     ["instagram", "whatsapp", "redes", "wsp", "insta"],
     ["mouses", "monitores", "monitor", "placas de video", "placas", "memorias ram", "auriculares", "auris"],
-    ["bueno chau", "chau", "nos vemos", "muchas gracias"]
+    ["bueno chau", "chau", "nos vemos", "muchas gracias"],
+    ["cual es la mejor comision"]
 ];
 const botReply = [
     ["¡Hola!", "¡Hola!", "¡Hey!", "¡Hola!"],
@@ -298,7 +299,8 @@ const botReply = [
     ["Emitimos factura a pedido del cliente."],
     ["Podés encontrarnos en nuestras redes que se ubican al final de la página."],
     ["Tenemos cantidad de productos, si está publicado podés comprarlo."],
-    ["Vuelve prontos!", "Hasta la vista, baby!", "Sayonara"]
+    ["Vuelve prontos!", "Hasta la vista, baby!", "Sayonara"],
+    ["La 18, obvio !"]
 ];
 
 const alternative = [

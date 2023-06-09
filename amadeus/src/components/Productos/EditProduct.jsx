@@ -9,13 +9,36 @@ export const EditProduct = ({
   formik,
   brandState,
   categoryState,
-  setProducto,
+ 
 }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
   };
+
+  const [producto, setProducto] = useState(null)
+  const handleEdit = (id) => {
+    id ? UseFetch(`/productos/${id}`)
+    .then(({ok, data}) =>{
+  ok && setProducto(data.producto)
+    })
+    .catch(()=> console.error)
+    : setProducto(null)
+  }
+  
+  const handleUpdate = (formdata) => {
+    if(producto && producto.id){
+    UseFetch(`/productos/${producto.id}`, 'PATCH', formdata)
+    .then(({ok}) => {
+      if(ok){
+        setProducto(null)
+        handleGetPage(state.currentPage)
+        
+      }
+    })
+  }
+  }
 
   return (
     <>
@@ -28,8 +51,8 @@ export const EditProduct = ({
             <Modal.Title>Editar Producto</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body formik={formik}>
-            <form className="row" onSubmit={formik.handleSubmit}>
+          <Modal.Body>
+            <form className="row"  formik={formik} onSubmit={formik.handleSubmit}>
               <div className="col-12 mb-3">
                 <label htmlFor="name" className="form-label">
                   Nombre *
@@ -39,7 +62,7 @@ export const EditProduct = ({
                   className={`form-control 
             ${formik.errors.name ? "is-invalid" : null}`}
                   name="name"
-                  value={formik.values.name}
+                  value={formik.values.name || ""}
                   onChange={formik.handleChange}
                 />
                 {<small className="text-danger">{formik.errors.name}</small>}
@@ -101,7 +124,7 @@ export const EditProduct = ({
                     formik.errors.price ? "is-invalid" : null
                   }`}
                   name="price"
-                  value={formik.values.price}
+                  value={formik.values.price || ""}
                   onChange={formik.handleChange}
                 />
               </div>
@@ -113,7 +136,7 @@ export const EditProduct = ({
                   type="number"
                   className="form-control"
                   name="discount"
-                  value={formik.values.discount}
+                  value={formik.values.discount || ""}
                   onChange={formik.handleChange}
                 />
               </div>
@@ -139,7 +162,7 @@ export const EditProduct = ({
                   type="text"
                   className="form-control"
                   name="linkVideo"
-                  value={formik.values.linkVideo}
+                  value={formik.values.linkVideo || ""}
                   onChange={formik.handleChange}
                 />
                 {<small className="text-danger">{formik.errors.name}</small>}
@@ -202,7 +225,7 @@ export const EditProduct = ({
                 </div>
               </div>
 
-              <button className="btn btn-primary my-1" type="submit">
+              <button className="btn btn-primary my-1" type="submit" onClick={handleUpdate}>
                 Guardar
               </button>
             </form>
@@ -219,7 +242,5 @@ export const EditProduct = ({
 };
 EditProduct.propTypes = {
   handleUpdate: PropTypes.func,
-  updProducto: PropTypes.object,
-  handleEdit: PropTypes.func,
-  producto: PropTypes.array,
+  producto: PropTypes.object,
 };

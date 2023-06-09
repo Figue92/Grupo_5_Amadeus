@@ -20,12 +20,12 @@ const getAllProductos = async (req, { withPagination = "false", page = 1, limit 
                 {
                     model: db.Brand,
                     association: "brand",
-                    attributes: ["name","id"]
+                    attributes: ["name", "id"]
                 },
                 {
                     model: db.Category,
                     association: "category",
-                    attributes: ["nameCategory","id"]
+                    attributes: ["nameCategory", "id"]
                 },
                 {
                     association: "usersFavorites"
@@ -123,7 +123,7 @@ const createProducto = async (req) => {
         }
     }
 }
-const storeProduct = async (req) => {
+const storeProducto = async (req) => {
     try {
         const {
             name,
@@ -136,11 +136,6 @@ const storeProduct = async (req) => {
             linkVideo
         } = req.body
 
-        const files = [];
-        console.log(req.files);
-        for (const key in req.files) {
-            files.push(req.files[key][0].filename)
-        }
 
         const newProduct = await db.Product.create({
             name: name.trim(),
@@ -150,14 +145,15 @@ const storeProduct = async (req) => {
             idBrand,
             discount,
             novelty,
-            linkVideo,
-            image_1,
-            image_2,
-            image_3,
-            image_1_id,
-            image_2_id,
-            image_3_id,
+            linkVideo
         })
+
+
+        const files = [];
+        console.log(req.files);
+        for (const key in req.files) {
+            files.push(req.files[key][0].filename)
+        }
 
         files.forEach(async (file, index) => {
             await db.ProductImage.create({
@@ -167,8 +163,8 @@ const storeProduct = async (req) => {
             })
         });
 
-        const product = await getOneProducto(req, newProduct.id);
-        return product
+        const producto = await getOneProducto(req, newProduct.id);
+        return producto
 
     } catch (error) {
         console.log(error);
@@ -178,73 +174,84 @@ const storeProduct = async (req) => {
         }
     }
 }
-const updateProducto = async (productoId, productoData) => {
+const updateProducto = async (req) => {
     try {
 
-        const updProducto = await db.Product.update(
+        const
             {
-                name: productoData.name,
-                price: productoData.price,
-                description: productoData.description,
-                category: productoData.category,
-                marca: productoData.marca,
-                linkVideo: productoData.linkVideo,
+                name,
+                price,
+                description,
+                idCategory,
+                idBrand,
+                novelty,
+                discount,
+                linkVideo,
                 image_1,
                 image_2,
                 image_3,
                 image_1_id,
                 image_2_id,
-                image_3_id,
+                image_3_id
+            } = req.body
+        await db.Product.update({
+            name: name.trim(),
+            price,
+            description: description.trim(),
+            idCategory,
+            idBrand,
+            novelty,
+            discount,
+            linkVideo
 
-
-            },
+        },
             {
-                where: { id: productoId }
+                where: { id: req.params.id }
             }
         )
 
-if(image_1 === "null" && image_1_id !== "null"){
-    const image = await db.ProductImage.findByPk(image_1_id)
-fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
-    image.destroy()
-}
-if(image_2 === "null" && image_2_id !== "null"){
-    const image = await db.ProductImage.findByPk(image_2_id)
-fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
-    image.destroy()
-}
-if(image_3 === "null" && image_3_id !== "null"){
-    const image = await db.ProductImage.findByPk(image_3_id)
-fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
-    image.destroy()
-}
-const files = [];
+        if (image_1 === "null" && image_1_id !== "null") {
+            const image = await db.ProductImage.findByPk(image_1_id)
+            fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
+            image.destroy()
+        }
+        if (image_2 === "null" && image_2_id !== "null") {
+            const image = await db.ProductImage.findByPk(image_2_id)
+            fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
+            image.destroy()
+        }
+        if (image_3 === "null" && image_3_id !== "null") {
+            const image = await db.ProductImage.findByPk(image_3_id)
+            fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
+            image.destroy()
+        }
+        const files = [];
 
-for (const key in req.files) {
- files.push({
-    filename : req.files[key][0].filename,
-    fieldname : req.files[key][0].fieldname,
-    id: req.body[`${req.files[key][0].fieldname}_id` || null]
- })
-        
-    }
+        for (const key in req.files) {
+            files.push({
+                filename: req.files[key][0].filename,
+                fieldname: req.files[key][0].fieldname,
+                id: req.body[`${req.files[key][0].fieldname}_id` || null]
+            })
 
- files.forEach(async(file) => {
-    if(file.id !== "null"){
-        const image = await db.ProductImage.findByPk(file.id)
-        fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
-image.name = file.filename
-image.save()
-    }else{
-        await db.ProductImage.create({
-            name: filename,
-            idProduct: req.params.id
+        }
+
+        files.forEach(async (file) => {
+            if (file.id !== "null") {
+                const image = await db.ProductImage.findByPk(file.id)
+                fs.existsSync(`public/images/productos/${image.name}`) && fs.unlinkSync(`public/images/productos/${image.name}`)
+                image.name = file.filename
+                image.save()
+            } else {
+                await db.ProductImage.create({
+                    name: filename,
+                    idProduct: req.params.id
+                })
+            }
         })
-    }
- })
 
 
-const producto = await getOneProducto(req,req.params.id)
+        const producto = await getOneProducto(req, req.params.id)
 
         return producto
     } catch (error) {
@@ -394,5 +401,5 @@ module.exports = {
     destroyProducto,
     getNewestProductos,
     getOfferProductos,
-    storeProduct
+    storeProducto
 }

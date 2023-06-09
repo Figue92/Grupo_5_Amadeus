@@ -1,10 +1,8 @@
-const path = require('path');
-const db = require('../../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const moment = require('moment');
 
-const { getAllProductos, getOneProducto, createProducto, updateProducto, destroyProducto, getNewestProductos, getOfferProductos, storeProduct } = require('../../services/productosServices')
+const db = require('../../database/models');
+
+
+const { getAllProductos, getOneProducto, createProducto, updateProducto, destroyProducto, getNewestProductos, getOfferProductos, storeProducto } = require('../../services/productosServices')
 const createResponseError = ('../helpers/createResponseError.js')
 const { validationResult } = require('express-validator');
 const { getAllCategories } = require('../../services/categoryServices');
@@ -172,23 +170,18 @@ module.exports = {
     },
 
     update: async (req, res) => {
-        const id = req.params.id;
+      const {id} = req.params.id
         try {
-            const errors = validationResult(req);
+            const errors = validationResult(req, id);
 
             if (!errors.isEmpty()) throw {
                 status: 400,
                 message: errors.mapped()
             }
-            const updProducto = await updateProducto(req.params.id, req.body)
+            const producto = await updateProducto(req)
             return res.status(200).json({
                 ok: true,
-                meta: {
-                    status: 200,
-                    total: 1,
-                    url: `/api/productos/${id}`
-                },
-                data: producto
+                data:{ producto }
             })
         } catch (error) {
 
@@ -308,11 +301,11 @@ module.exports = {
     },
     storeImage: async (req, res) => {
         try {
-            const product = await storeProduct(req)
+            const producto = await storeProducto(req)
 
             return res.status(200).json({
                 ok: true,
-                data: { product }
+                data: { producto }
 
             })
         } catch (error) {

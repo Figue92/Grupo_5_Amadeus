@@ -50,36 +50,29 @@ const handleAdd = (formdata) => {
   })
 }
 
-const [setProductoEditado, setEditProducto] = useState(null)
-const handleEdit = (id) => {
+const [producto, setProducto] = useState(null)
+ const handleEdit = (id) => {
   id ? UseFetch(`/productos/${id}`)
   .then(({ok, data}) =>{
-ok && setEditProducto(data.producto)
+ok && setProducto(data.producto)
   })
   .catch(()=> console.error)
-  : setEditProducto(null)
+  : setProducto(null)
 }
-
+/*
 const handleUpdate = (formdata) => {
+  if(producto && producto.id){
   UseFetch(`/productos/${producto.id}`, 'PATCH', formdata)
   .then(({ok}) => {
     if(ok){
-      setEditProducto(null)
+      setProducto(null)
+      handleGetPage(state.currentPage)
       
     }
   })
 }
-
-
-const handleDelete = (producto) => {
-  UseFetch(`/productos/${id}`, 'DELETE', producto)
-  .then((ok) =>{
-    ok && 
-    console.log(producto)
-  })
 }
-
-
+ */
   const [categoryState, setCategoryState] = useState({
     loading: true,
     categories: []
@@ -127,8 +120,8 @@ const handleDelete = (producto) => {
                 handleGetPage={handleGetPage} 
                 handleAdd={handleAdd}
                 handleEdit={handleEdit}
-                handleDelete={handleDelete}
-                setProductoEditado={setProductoEditado}/>
+              /*   handleUpdate={handleUpdate} */
+                producto={producto}/>
             </div>
             </div>
       </div>

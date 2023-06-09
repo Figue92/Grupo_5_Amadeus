@@ -13,7 +13,8 @@
          "mother giga.png",
          "mother giga3.png"
        
-      ]
+      ],
+      "linkVideo": "https://youtu.be/nGyhcz68qdM"
    },
    {
       "id": 2,
@@ -26,7 +27,9 @@
       "novedad": true,
       "image": [
          "X670E Taichi Carrara(M1).png"
-      ]
+      ],
+      "linkVideo": "https://youtu.be/SZgChfDWEL4"
+      
    },
    {
       "id": 3,
@@ -40,21 +43,23 @@
       "image": [
          "memoriaAdataddr58gb.png",
          "1678826638024_products_.jpg"
-      ]
+      ],
+      "linkVideo": "https://youtu.be/QXTHv_LklaI"
    },
    {
       "id": 4,
       "name": "Procesador Ryzen",
       "price": 25300,
-      "description": "Procesador AMD Ryzen 3 4100 Sin cooler OEM",
+      "description": "Procesador AMD Ryzen 3 4100 OEM",
       "category": "Procesadores",
       "marca": "AMD",
       "discount": 20,
       "novedad": true,
       "image": [
-         "procesadorRyzen.png",
-         "procesadorRyzen3.png"
-      ]
+         "Mi proyecto.png"
+    
+      ],
+      "linkVideo": "https://youtu.be/Ipzo0uQ7y0c"
    },
    {
       "id": 5,
@@ -66,9 +71,12 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "auricular_p33_4auricular_p331-2b64876e71d6199a0516796982575071-640-0.webp",
+         "aurisCat.webp",
          "1678826894003_products_.jpg"
-      ]
+         
+        
+      ],
+      "linkVideo": "https://youtu.be/zbjbwJ20UmI"
    },
    {
       "id": 6,
@@ -83,7 +91,8 @@
          "ARES.png",
          "aurisRedrago.png",
          "aurisRedragon.png"
-      ]
+      ],
+      "linkVideo": "https://youtu.be/ESLFLYoB_As"
    },
    {
       "id": 7,
@@ -95,7 +104,8 @@
       "discount": 0,
       "novedad": false,
       "image": ["aurisInalambricos.webp",
-   "aurisInalamLilas.webp"]
+   "aurisInalamLilas.webp"],
+   "linkVideo": "https://youtu.be/25ON1eAFvp8"
    },
    {
       "id": 8,
@@ -107,24 +117,28 @@
       "discount": 40,
       "novedad": false,
       "image": [
-         "placadevideoGeforce.png"
+         "placaGeforce.png"
       
-      ]
+      ],
+      "linkVideo": "https://youtu.be/rPz-jhumX-c"
    },
    {
       "id": 9,
       "name": "Mother Asrock",
-      "price": 270450,
+      "price": 27450,
       "description": "Mother Asrock H610 AM5",
       "category": "Motherboard",
       "marca": "AMD",
       "discount": 0,
       "novedad": true,
       "image": [
+           "motherh610asrockk.png",
          "mother asrock610.png",
          "motherasrock610.png"
+       
 
-      ]
+      ],
+      "linkVideo": "https://youtu.be/zGUSA2IJZX8"
    },
    {
       "id": 10,
@@ -136,8 +150,10 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "tecladoHyperX.png"
-      ]
+         "tecladohyperx2.png",
+         "tecladohyperX.jpg"
+      ],
+      "linkVideo": "https://youtu.be/28VW9o9N4Ks"
    },
    {
       "id": 11,
@@ -149,9 +165,10 @@
       "discount": 0,
       "novedad": true,
       "image": [
-         "procesadorIntelXeon.png",
+       
          "procesadorIntelXeon2.png"
-      ]
+      ],
+      "linkVideo": "https://youtu.be/jEgeP4JjUUg"
    },
    {
       "id": 12,
@@ -163,8 +180,11 @@
       "discount": 20,
       "novedad": false,
       "image": [
-         "1678827565387_products_.jpg"
-      ]
+         "MouseRedragon-1.png",
+         "MouseRedragon2.png",
+         "MouseRedragon3.png"
+      ],
+      "linkVideo": "https://youtu.be/heOQTMHVrWg"
    },
    {
       "id": 13,
@@ -178,7 +198,8 @@
       "image": [
          "1678826638024_products_.jpg"
          
-           ]
+           ],
+           "linkVideo": "https://youtu.be/vy9OJr8IfQA"
    },
    {
       "id": 14,
@@ -191,7 +212,8 @@
       "novedad": true,
       "image": [
          "mouseLogi.png"
-           ]
+           ],
+      "linkVideo": "https://youtu.be/WwVq1Jh4WuE"
    },
    {
       "id": 15,
@@ -204,7 +226,8 @@
       "novedad": true,
       "image": [
         "mouseAdata.png"
-           ]
+           ],
+           "linkVideo": "https://youtu.be/_b9TceZszyA"
    },
    {
       "id": 16,
@@ -218,22 +241,25 @@
       "image": [
          "tecladoRedragon.png",
        "tecladoRedragon2.jpg"
-           ]
+           ],
+           "linkVideo": "https://youtu.be/LTOUfh46-yc"
    },
    {
       "id": 17,
       "name": "Procesador AMD",
       "price": 47300,
-      "description": "Procesador AMD Ryzen 3 4100 + Wraith Stealth Cooler AM4",
+      "description": "Procesador AMD Ryzen 7 4100 + Wraith Stealth Cooler AM4",
       "category": "Procesadores",
       "marca": "AMD",
       "discount": 0,
-      "novedad": false,
+      "novedad": true,
       "image": [
+         "Mi proyecto.png",
          "procesadorRyzen.png",
        "procesadorRyzen3.png",
        "Ryzen.png"
-           ]
+           ],
+           "linkVideo":"https://youtu.be/nQzCxS68PoI"
    },
    {
       "id": 18,
@@ -246,7 +272,7 @@
       "novedad": true,
       "image": [
        "intelCorei5.png"
-           ]
+           ],"linkVideo": "https://youtu.be/oPk2XEbWaSk"
    },
    {
       "id": 19,
@@ -259,7 +285,8 @@
       "novedad": true,
       "image": [
        "placaZotac.png"
-           ]
+           ],
+           "linkVideo": "https://youtu.be/2iVNmjkWxEk"
    },
    {
       "id": 20,
@@ -271,8 +298,9 @@
       "discount": 0,
       "novedad": true,
       "image": [
-       "placaXFX.png"
-           ]
+       "placaRadeon.png"
+           ],
+           "linkVideo": "https://youtu.be/utngfJQO7q0"
    },
    {
       "id": 21,
@@ -286,7 +314,8 @@
       "image": [
        "gabineteRTX geforcecorsair.webp",
       "gabinetegeforce.webp"
-           ]
+           ],
+           "linkVideo": "https://youtu.be/h1V7CGwrexY"
    },
    {
       "id": 22,
@@ -300,7 +329,8 @@
       "image": [
          "gabinete.png"
       
-           ]
+           ],
+           "linkVideo": "https://youtu.be/2Oxk7iC-eks"
    },
    {
       "id": 23,
@@ -315,7 +345,8 @@
          "web cam.png",
          "webCam2.png"
       
-           ]
+           ],
+           "linkVideo": "https://youtu.be/wvbyqAuyAHA"
    }
 
 ]

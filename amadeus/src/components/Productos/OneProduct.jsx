@@ -1,8 +1,28 @@
-import React from 'react'
+import { React, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 export const OneProduct = ({ id, name, description, price, image, category, brand, discount }) => {
   console.log({ id, name, description, price, image });
+
+  const [state, setState] = useState({
+    loading: true,
+    producto: []
+
+  });
+  useEffect(() => {
+    UseFetch(`/productos/${id}`)
+      .then(({ ok, data }) => {
+    
+        const { producto } = data;
+        setProductState({
+          loading: false,
+          producto: state.producto,
+          
+        })
+      })
+      .catch(error => console.error)
+  }, []);
+
   return (
     <div className="col-lg-12 mb-4">
       <div className="card shadow mb-4">

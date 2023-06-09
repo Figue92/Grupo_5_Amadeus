@@ -10,7 +10,7 @@ import validate from "../../validations/addProductValidator";
 
 
 
-export const TablaProductos = ({ productos, loading, pages, currentPage, handleGetPage, handleAdd }) => {
+export const TablaProductos = ({ productos, loading, pages, currentPage, handleGetPage, handleAdd, handleUpdate, handleEdit }) => {
   const paginator = [];
   for (let i = 1; i <= pages; i++) {
     paginator.push(i)
@@ -21,25 +21,29 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
   const handleShow = () => setShow(true)
 
   const [producto, setProducto] = useState(null)
-  const handleEdit = (id) => {
-    id ? UseFetch(`/productos/${id}`)
-      .then(({ ok, data }) => {
-        ok && setProducto(data.producto)
-      })
-      .catch(() => console.error)
-      : setProducto(null)
-  }
-
-  const handleUpdate = (formdata) => {
-    UseFetch(`/productos/${producto.id}`, 'PATCH', formdata)
+  /* const handleEdit = (id) => {
+     id ? UseFetch(`/productos/${id}`)
+       .then(({ ok, data }) => {
+         ok && setProducto(data.producto)
+       })
+       .catch(() => console.error)
+       : setProducto(null)
+   }
+  */
+  /* const handleUpdate = (formdata) => {
+    if(producto && producto.id){
+      UseFetch(`/productos/${producto.id}`, 'PATCH', formdata)
       .then(({ ok }) => {
         if (ok) {
           setProducto(null)
+          handleGetPage(state.currentPage)
 
         }
       })
-  }
+    }
 
+  }
+ */
 
   const [categoryState, setCategoryState] = useState({
     loading: true,
@@ -198,8 +202,8 @@ export const TablaProductos = ({ productos, loading, pages, currentPage, handleG
 }
 TablaProductos.propTypes = {
   productos: PropTypes.array,
-  pages: PropTypes.number,
   producto: PropTypes.object,
+  pages: PropTypes.number,
   currentPage: PropTypes.number,
   handleGetPage: PropTypes.func,
   handleAdd: PropTypes.func,

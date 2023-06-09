@@ -82,7 +82,7 @@ if(typeof file === 'object' && file !== null){
   )
 }
 EditImageProduct.propTypes = {
-    file: PropTypes.object,
+    file: PropTypes.string,
     setFieldValue: PropTypes.func,
     main: PropTypes.bool,
     name: PropTypes.string,

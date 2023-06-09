@@ -66,7 +66,5 @@ module.exports = [
     body('checkPolitica')
         .notEmpty().withMessage('Debes aceptar la política de privacidad'),
 
-    body('avatarProfile')
-        .notEmpty().withMessage('Debes agregar una linda foto de perfil')
 
 ]
