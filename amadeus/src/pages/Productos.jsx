@@ -2,6 +2,7 @@ import React from 'react'
 import { TablaProductos } from '../components/Productos/TablaProductos'
 import { useState, useEffect } from 'react'
 import { UseFetch } from '../hooks/UseFetch'
+import Swal from 'sweetalert2'
 
 export const Productos = () => {
   const [productState, setProductState] = useState({
@@ -49,7 +50,7 @@ const handleAdd = (formdata) => {
     Swal.fire({
       position : "center",
       icon : "success",
-      title : "Curso agregado con éxito",
+      title : "Producto agregado con éxito",
       showConfirmButton : false,
       timer : 1500
     })

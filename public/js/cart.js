@@ -213,7 +213,7 @@ btnBuy.addEventListener("click", async () => {
     const result = await Swal.fire({
       title: "¡Confirmaste tu pedido!",
       text: "Espera mientras procesamos la venta",
-      timer: 6000,
+      timer: 2000,
       timerProgressBar: true,
       showCancelButton: true,
       cancelButtonText: "Cancelar proceso",
