@@ -28,6 +28,7 @@
     "sequelize": "^6.30.0",
     "sequelize-paginate": "^1.1.6",
     "sweetalert2": "^11.7.5",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vercel": "^30.2.3"
   }
 }
